@@ -1,4 +1,4 @@
-</html>/* ==========================================
+/* ==========================================
    1. GLOBAL SYSTEM RESETS
    ========================================== */
 body {
@@ -298,4 +298,4 @@ body {
     font-size: 22px;
     box-shadow: 0 4px 15px rgba(10,47,77,0.3);
     z-index: 5000; /* Stays above everything else at all times */
-   }
+}
