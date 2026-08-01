@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ዳሎቻ ወረዳ የብልፅግና ፓርቲ | Dalocha woreda prosperity party</title>
+    <title>ዳሎቻ ወረዳ የብልፅግና ፓርቲ | Dalocha Woreda Prosperity Party</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -23,7 +23,7 @@
             <nav class="desktop-menu">
                 <a href="#message">Home</a>
                 <a href="#plan">About</a>
-                <a href="#Latest News">Latest</a>
+                <a href="#news">Latest News</a>
                 <a href="#Contact Us">Offices</a>
                 <a href="#geography">Explore</a>
             </nav>
@@ -49,7 +49,7 @@
             <li><a href="#geography">መርሆች</a></li>
             <li><a href="#population">ህዝብ</a></li>
             <li><a href="#Contact Us">አድራሻ</a></li>
-            <li><a href="#Latest News">ወቅታዊ ዜናዎች</a></li>
+            <li><a href="#news">ወቅታዊ ዜናዎች</a></li>
             <li><a href="#agriculture">ግብርና</a></li>
             <li><a href="#infrastructure">መሰረተ-ልማት</a></li>
             <li><a href="#micro">ጥቃቅን</a></li>
@@ -58,7 +58,7 @@
             <li><a href="#land">መሬት</a></li>
             <li><a href="#investment">ኢንቨስትመንት</a></li>
             <li><a href="#business">ነጋዴ</a></li>
-            <li><a href="#application">Aplication</a></li>
+            <li><a href="#application">Application</a></li>
         </ul>
     </nav>
 
@@ -109,11 +109,9 @@
                         <p>ውብ ጅማሮ እንኳን ወደ ውቧ ከተማችን በደህና መጡ! | Welcome to our beautiful city!</p>
                     </div>
                 </div>
-                  </div>
-                </div>
 
                 <div class="slide">
-                    <img src=".jpg" alt="ከዳሎቻ ብልፅግና ፓርቲ ጋር፣ ሁሉም ነገር ይቻላል!">
+                    <img src="1.jpg" alt="ከዳሎቻ ብልፅግና ፓርቲ ጋር፣ ሁሉም ነገር ይቻላል!">
                     <div class="slider-caption">
                         <p>ከዳሎቻ ብልፅግና ፓርቲ ጋር፣ ሁሉም ነገር ይቻላል! | With Dalocha Prosperity Party, Everything is Possible!</p>
                     </div>
@@ -123,7 +121,7 @@
                 <button class="slider-btn prev-btn" onclick="changeSlide(-1)">&#10094;</button>
                 <button class="slider-btn next-btn" onclick="changeSlide(1)">&#10095;</button>
 
-                <!-- NUMBERED INDICATORS (01, 02, 03...) -->
+                <!-- NUMBERED INDICATORS (01 through 07) -->
                 <div class="slide-numbers" id="slideNumbers">
                     <span class="num-item active" onclick="goToSlide(0)">01</span>
                     <span class="num-item" onclick="goToSlide(1)">02</span>
@@ -131,6 +129,7 @@
                     <span class="num-item" onclick="goToSlide(3)">04</span>
                     <span class="num-item" onclick="goToSlide(4)">05</span>
                     <span class="num-item" onclick="goToSlide(5)">06</span>
+                    <span class="num-item" onclick="goToSlide(6)">07</span>
                 </div>
             </div>
         </section>
@@ -155,6 +154,8 @@
 
         <!-- CONTENT SECTIONS -->
         <section class="info-sections">
+            
+            <!-- LEADER MESSAGE -->
             <article id="message" class="content-section">
                 <h2>የመሪው መልዕክት | Message</h2>
                 <hr>
@@ -163,6 +164,7 @@
                 </div>
             </article>
 
+            <!-- PLAN SECTION -->
             <article id="plan" class="content-section">
                 <h2>ፕላን | Our Plan</h2>
                 <hr>
@@ -170,6 +172,38 @@
                     <p>የምግብ ዋስትናን ማረጋገጥ፣ የመሰረተ-ልማት ግንባታዎችን ማፋጠን እና የጥቃቅንና አነስተኛ ኢንተርፕራይዞችን ማበረታታት የወቅቱ ዋና እቅዶቻችን ናቸው።</p>
                 </div>
             </article>
+
+            <!-- NEW LATEST NEWS SECTION -->
+            <article id="news" class="content-section">
+                <h2>ወቅታዊ ዜናዎች | Latest News</h2>
+                <hr>
+                <div class="news-list">
+                    
+                    <!-- News Item 1 -->
+                    <div class="news-card">
+                        <img src="2.jpg" alt="News Image 1" class="news-image">
+                        <div class="news-details">
+                            <span class="news-date"><i class="fa-regular fa-calendar"></i> ሀምሌ 2018 ዓ.ም | July 2026</span>
+                            <h3 class="news-title">የ2018 በጀት ዓመት አፈጻጸም ግምገማ እና የዕውቅና መርሃ ግብር ተካሄደ</h3>
+                            <p class="news-excerpt">የዳሎቻ ወረዳ ብልፅግና ፓርቲ ጽሕፈት ቤት በበጀት ዓመቱ የተከናወኑ የልማትና የመልካም አስተዳደር ስራዎችን በመገምገም ከፍተኛ ውጤት ላስመዘገቡ አካላት ዕውቅና ሰጥቷል።</p>
+                            <a href="#" class="read-more-btn">ሙሉውን ያንብቡ (Read More) →</a>
+                        </div>
+                    </div>
+
+                    <!-- News Item 2 -->
+                    <div class="news-card">
+                        <img src="5.jpg" alt="News Image 2" class="news-image">
+                        <div class="news-details">
+                            <span class="news-date"><i class="fa-regular fa-calendar"></i> ሰኔ 2018 ዓ.ም | June 2026</span>
+                            <h3 class="news-title">የከተማ ውበት እና የፀዳ አካባቢ ልማት ስራዎች ተጠናክረው ቀጥለዋል</h3>
+                            <p class="news-excerpt">በወረዳው ህዝብ እና አመራር የጋራ ጥረት የከተማዋን ገጽታ የሚቀይሩ የመሰረተ-ልማትና የአረንጓዴ ልማት ስራዎች በስፋት እየተከናወኑ ይገኛሉ።</p>
+                            <a href="#" class="read-more-btn">ሙሉውን ያንብቡ (Read More) →</a>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+
         </section>
     </main>
 
