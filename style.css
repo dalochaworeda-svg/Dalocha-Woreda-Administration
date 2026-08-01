@@ -17,8 +17,59 @@ body {
 }
 
 /* ==========================================
-   2. STICKY NAVBAR HEADER
+   2. TOP HEADER & STICKY NAVBAR
    ========================================== */
+.main-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e1e8ed;
+    padding: 8px 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-img {
+    height: 40px;
+    width: auto;
+}
+
+.brand-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0b2f4c;
+}
+
+.top-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.top-nav a.active, .top-nav a:hover {
+    color: #007bff;
+}
+
+/* DISTRICT BRANDING STICKY NAVBAR */
 .navbar {
     background-color: #0b2f4c;
     color: #ffffff;
@@ -108,7 +159,7 @@ body {
 
 /* Hide horizontal menu links on mobile screens */
 @media (max-width: 991px) {
-    .desktop-menu {
+    .desktop-menu, .top-nav {
         display: none;
     }
 }
@@ -228,7 +279,7 @@ body {
 .prev-btn { left: 12px; }
 .next-btn { right: 65px; } /* Prevent overlap with vertical number controls */
 
-/* Right-Side Numbered Slider Indicators (01 through 07) */
+/* Right-Side Numbered Slider Indicators (Adjusted for 8 slides) */
 .slide-numbers {
     position: absolute;
     right: 15px;
@@ -236,9 +287,9 @@ body {
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
     background: rgba(0, 0, 0, 0.4);
-    padding: 10px 8px;
+    padding: 8px 6px;
     border-radius: 10px;
     z-index: 20;
     backdrop-filter: blur(4px);
@@ -246,7 +297,7 @@ body {
 
 .num-item {
     color: rgba(255, 255, 255, 0.5);
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
     cursor: pointer;
     text-align: center;
@@ -259,7 +310,7 @@ body {
 
 .num-item.active {
     color: #ffffff;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 /* Slider Mobile Styling */
@@ -360,11 +411,11 @@ body {
 }
 
 /* ==========================================
-   7. RUNNING CONTENT ARTICLES & NEWS
+   7. RUNNING CONTENT ARTICLES, PLAN GRID & NEWS
    ========================================== */
 .content-section {
     background-color: #ffffff;
-    padding: 20px;
+    padding: 24px;
     margin-bottom: 20px;
     border-radius: 24px;
     border: 1px solid #e1e8ed;
@@ -382,6 +433,50 @@ body {
     height: 1px;
     background-color: #e1e8ed;
     margin-bottom: 15px;
+}
+
+/* Plan Section Grid Styling */
+.plan-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.plan-card {
+    background: #f8fafd;
+    border-left: 4px solid #007bff;
+    padding: 15px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.plan-number {
+    font-size: 22px;
+    font-weight: 800;
+    color: rgba(0, 123, 255, 0.2);
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.plan-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    color: #0b2f4c;
+}
+
+.plan-card p {
+    margin: 0;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .plan-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* NEWS CARD STYLING */
@@ -462,7 +557,106 @@ body {
 }
 
 /* ==========================================
-   8. FIXED CONTACT FAB FLOATING BUTTON
+   8. FOOTER SECTION STYLING
+   ========================================== */
+.custom-footer {
+    background-color: #0b2f4c;
+    color: #ffffff;
+    position: relative;
+    padding-top: 20px;
+    margin-top: 40px;
+}
+
+.footer-overlay-bar {
+    height: 4px;
+    background: linear-gradient(90deg, #64b5f6, #007bff);
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.footer-card .card-title {
+    font-size: 16px;
+    color: #64b5f6;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+}
+
+.bullet-list, .icon-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.bullet-list li {
+    margin-bottom: 8px;
+    color: #d1d5db;
+}
+
+.icon-list li a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.icon-list li a:hover {
+    color: #ffffff;
+}
+
+.icon-list i {
+    margin-right: 8px;
+    color: #64b5f6;
+}
+
+.social-grid {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.social-btn {
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.social-btn:hover {
+    background: #007bff;
+}
+
+.cta-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.cta-link {
+    display: inline-block;
+    margin-top: 6px;
+    color: #64b5f6;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* ==========================================
+   9. FIXED CONTACT FAB FLOATING BUTTON
    ========================================== */
 .fab-btn {
     position: fixed;
