@@ -9,9 +9,25 @@
 </head>
 <body>
 
+    <!-- TOP NAVBAR -->
     <header class="navbar">
         <div class="nav-container">
-            <h1 class="logo">ዳሎቻ ወረዳ የብልፅግና ፓርቲ</h1>
+            <div class="logo-group">
+                <div class="logo-text">
+                    <h1 class="logo">ዳሎቻ ወረዳ የብልፅግና ፓርቲ</h1>
+                    <p class="sub-slogan">ዳሎቻ በስራ፣ ብልፅግና በተግባር!</p>
+                </div>
+            </div>
+
+            <!-- DESKTOP QUICK LINKS -->
+            <nav class="desktop-menu">
+                <a href="#message">Home</a>
+                <a href="#plan">About</a>
+                <a href="#Latest News">Latest</a>
+                <a href="#Contact Us">Offices</a>
+                <a href="#geography">Explore</a>
+            </nav>
+
             <div class="nav-controls">
                 <div class="lang-selector">
                     <select>
@@ -24,6 +40,7 @@
         </div>
     </header>
 
+    <!-- MOBILE & QUICK SIDE MENU -->
     <nav class="side-menu" id="sideMenu">
         <ul>
             <li><a href="#plan">ስለኛ</a></li>
@@ -47,36 +64,75 @@
 
     <main class="content-wrapper">
 
+        <!-- SLIDER SECTION -->
         <section class="slider-section">
             <div class="slider-container">
+
                 <div class="slide active">
-                    <img src="1.jpg" alt="ዳሎቻ ወረዳ የብልፅግና ፓርቲ">
+                    <img src="6.jpg" alt="ስራችን ቃል፣ ውጤታችን ብልፅግና!">
                     <div class="slider-caption">
-                        <p>በስልጤ ዞን የዳሎቻ ወረዳ ብልጽግና ፓርቲ ጽ/ቤት | Dalocha Wereda Prosperity Party</p>
+                        <p>ተባብረን ወደ ታላቅ ስኬት! | Rising Together Towards Greater Heights</p>
                     </div>
                 </div>
+
                 <div class="slide">
-                    <img src="2.jpg" alt="Dalocha City Night View 2">
+                    <img src="2.jpg" alt="ዳሎቻ ወረዳ የብልፅግና ፓርቲ">
                     <div class="slider-caption">
-                        <p>ደማቅ እና ማራኪ ድባብ። ቃልን በተግባር | Vibrant and attractive atmosphere.</p>
+                        <p>የዳሎቻ ወረዳ ብልፅግና ፓርቲ ጽሕፈት ቤት | Dalocha Woreda Prosperity Party</p>
                     </div>
                 </div>
+
+                <div class="slide">
+                    <img src="4.jpg" alt="በአንድ ዓላማ ተሳስረን፣ በስኬት እናድጋለን!">
+                    <div class="slider-caption">
+                        <p>በአንድ ዓላማ ተሳስረን፣ በስኬት እናድጋለን! | United in Purpose, Growing in Success.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img src="5.jpg" alt="Dalocha City Night View 2">
+                    <div class="slider-caption">
+                        <p>ዳሎቻ በስራ፣ ብልፅግና በተግባር! | Dalocha in Action, Prosperity in Practice!</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img src="7.jpg" alt="የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና!">
+                    <div class="slider-caption">
+                        <p>የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና! | Dalocha’s People United, Prosperity Achieved!</p>
+                    </div>
+                </div>
+
                 <div class="slide">
                     <img src="3.jpg" alt="Dalocha City Night View 3">
                     <div class="slider-caption">
                         <p>ውብ ጅማሮ እንኳን ወደ ውቧ ከተማችን በደህና መጡ! | Welcome to our beautiful city!</p>
                     </div>
                 </div>
+
+                <!-- NAVIGATION BUTTONS -->
                 <button class="slider-btn prev-btn" onclick="changeSlide(-1)">&#10094;</button>
                 <button class="slider-btn next-btn" onclick="changeSlide(1)">&#10095;</button>
+
+                <!-- NUMBERED INDICATORS (01, 02, 03...) -->
+                <div class="slide-numbers" id="slideNumbers">
+                    <span class="num-item active" onclick="goToSlide(0)">01</span>
+                    <span class="num-item" onclick="goToSlide(1)">02</span>
+                    <span class="num-item" onclick="goToSlide(2)">03</span>
+                    <span class="num-item" onclick="goToSlide(3)">04</span>
+                    <span class="num-item" onclick="goToSlide(4)">05</span>
+                    <span class="num-item" onclick="goToSlide(5)">06</span>
+                </div>
             </div>
         </section>
 
+        <!-- SOCIO-ECONOMIC CARD -->
         <div class="intro-card">
             <h2>Socio-Economic and Geo-spatial Data</h2>
             <p>ማህበራዊ-ኢኮኖሚያዊ መረጃ</p>
         </div>
 
+        <!-- SEARCH AND FILTER CONTROLS -->
         <section class="controls-section">
             <div class="search-box">
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
@@ -88,6 +144,7 @@
             </div>
         </section>
 
+        <!-- CONTENT SECTIONS -->
         <section class="info-sections">
             <article id="message" class="content-section">
                 <h2>የመሪው መልዕክት | Message</h2>
@@ -107,12 +164,14 @@
         </section>
     </main>
 
+    <!-- FLOATING CONTACT BUTTON -->
     <div class="fab-btn">
         <i class="fa-regular fa-envelope"></i>
     </div>
 
+    <!-- JAVASCRIPT CONTROLLERS -->
     <script>
-        // Drawer Menu Script Controller
+        // Drawer Menu Controller
         const menuToggleBtn = document.getElementById('menuToggleBtn');
         const sideMenu = document.getElementById('sideMenu');
 
@@ -121,14 +180,12 @@
             e.stopPropagation();
         });
 
-        // Close menu panel when clicking a section redirect link
         document.querySelectorAll('#sideMenu a').forEach(link => {
             link.addEventListener('click', () => {
                 sideMenu.classList.remove('open');
             });
         });
 
-        // Close menu panel when clicking outside of it
         document.addEventListener('click', (e) => {
             if (!sideMenu.contains(e.target) && e.target !== menuToggleBtn) {
                 sideMenu.classList.remove('open');
@@ -138,16 +195,30 @@
         // Interactive Slide Controller
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
+        const numItems = document.querySelectorAll('.num-item');
 
         function showSlide(index) {
             slides[currentSlide].classList.remove('active');
+            numItems[currentSlide].classList.remove('active');
+            
             currentSlide = (index + slides.length) % slides.length;
+            
             slides[currentSlide].classList.add('active');
+            numItems[currentSlide].classList.add('active');
         }
 
         function changeSlide(direction) {
             showSlide(currentSlide + direction);
         }
+
+        function goToSlide(index) {
+            showSlide(index);
+        }
+
+        // Auto slide change every 5 seconds
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
     </script>
 </body>
 </html>
