@@ -3,30 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ብልፅግና ፓርቲ | Prosperity Party</title>
+    <title>ዳሎቻ ወረዳ የብልፅግና ፓርቲ | Dalocha Woreda Prosperity Party</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- 1. TOP BLUE CONTACT & SOCIAL BAR -->
-    <div class="top-bar">
-        <div class="top-bar-container">
-            <div class="top-bar-contact">
-                <i class="fa-solid fa-envelope"></i>
-                <a href="mailto:info@prosperity.org.et">info@prosperity.org.et</a>
-            </div>
-            <div class="top-bar-social">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-telegram"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <!-- 2. MAIN HEADER NAVIGATION -->
+    <!-- TOP HEADER & MAIN NAVIGATION -->
     <header class="main-header">
         <div class="header-container">
             <div class="brand-logo">
@@ -36,181 +19,338 @@
             
             <nav class="top-nav">
                 <ul>
-                    <li><a href="#" class="active-link">ዋና ገጽ</a></li>
-                    <li class="dropdown"><a href="#">ስለ እኛ <i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li class="dropdown"><a href="#">ወቅታዊ ጉዳዮች <i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li class="dropdown"><a href="#">የኢንስፔክሽንና የሥነ-ምግባር ኮሚሽን <i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li class="dropdown"><a href="#">ህትመት <i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li class="dropdown"><a href="#">ጉባኤ <i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li class="dropdown"><a href="#">ክፍሎች <i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li class="dropdown"><a href="#">Language <i class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="#message" class="active">ዋና ገጽ</a></li>
+                    <li class="dropdown">
+                        <a href="#plan">ስለ እኛ <i class="fa-solid fa-chevron-down"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#news">ወቅታዊ ጉዳዮች <i class="fa-solid fa-chevron-down"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">የኢንስፔክሽንና የሥነ-ምግባር ኮሚሽን <i class="fa-solid fa-chevron-down"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">ህትመት <i class="fa-solid fa-chevron-down"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">ጉባኤ <i class="fa-solid fa-chevron-down"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">ክፍሎች <i class="fa-solid fa-chevron-down"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Language <i class="fa-solid fa-chevron-down"></i></a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <!-- TOP NAVBAR (DISTRICT BRANDING) -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo-group">
+                <div class="logo-text">
+                    <h1 class="logo">ዳሎቻ ወረዳ የብልፅግና ፓርቲ</h1>
+                    <p class="sub-slogan">ዳሎቻ በስራ፣ ብልፅግና በተግባር!</p>
+                </div>
+            </div>
+
+            <!-- DESKTOP QUICK LINKS -->
+            <nav class="desktop-menu">
+                <a href="#message">Home</a>
+                <a href="#plan">About</a>
+                <a href="#news">Latest News</a>
+                <a href="#Contact Us">Offices</a>
+                <a href="#geography">Explore</a>
+            </nav>
+
+            <div class="nav-controls">
+                <div class="lang-selector">
+                    <select>
+                        <option value="am">አማርኛ</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+                <button class="menu-toggle" id="menuToggleBtn">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE & QUICK SIDE MENU -->
+    <nav class="side-menu" id="sideMenu">
+        <ul>
+            <li><a href="#plan">ስለኛ</a></li>
+            <li><a href="#message">መልዕክት</a></li>
+            <li><a href="#Prosperity Party">የብልፅግና ፓርቲ ዓላማዎች</a></li>
+            <li><a href="#geography">መርሆች</a></li>
+            <li><a href="#population">ህዝብ</a></li>
+            <li><a href="#Contact Us">አድራሻ</a></li>
+            <li><a href="#news">ወቅታዊ ዜናዎች</a></li>
+            <li><a href="#agriculture">ግብርና</a></li>
+            <li><a href="#infrastructure">መሰረተ-ልማት</a></li>
+            <li><a href="#micro">ጥቃቅን</a></li>
+            <li><a href="#finance">ፋይናንስ</a></li>
+            <li><a href="#Resources">ክምችት</a></li>
+            <li><a href="#land">መሬት</a></li>
+            <li><a href="#investment">ኢንቨስትመንት</a></li>
+            <li><a href="#business">ነጋዴ</a></li>
+            <!-- LINK UPDATED TO form.html -->
+            <li><a href="form.html">Application</a></li>
+        </ul>
+    </nav>
+
     <main class="content-wrapper">
 
-        <!-- 3. HERO BANNER & SIDEBAR RECENT POSTS -->
-        <section class="hero-grid-section">
-            <div class="hero-grid-container">
-                
-                <div class="hero-banner">
-                    <img src="banner.jpg" alt="Featured Image">
-                </div>
+        <!-- SLIDER SECTION -->
+        <section class="slider-section">
+            <div class="slider-container">
 
-                <div class="recent-posts-sidebar">
-                    <div class="sidebar-post-card">
-                        <div class="user-avatar">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <div class="post-info">
-                            <a href="#" class="post-title">"ለኢትዮጵያ አየር ኃይል፡ ሰማይ ወሰን ሆኖ አያውቅም" - ምክትል ጠቅላይ...</a>
-                            <span class="post-meta">Modified 6 Months ago.</span>
-                        </div>
-                    </div>
-
-                    <div class="sidebar-post-card">
-                        <div class="user-avatar">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <div class="post-info">
-                            <a href="#" class="post-title">"ሰላም ሲኖር ሴቶች ይበልጣሉ፤ ሴቶች ሲበዙ ደግሞ ሀገር ትጸናለች" - ዶ...</a>
-                            <span class="post-meta">Modified 2 Months ago.</span>
-                        </div>
+                <div class="slide active">
+                    <img src="6.jpg" alt="ስራችን ቃል፣ ውጤታችን ብልፅግና!">
+                    <div class="slider-caption">
+                        <p>ተባብረን ወደ ታላቅ ስኬት! | Rising Together Towards Greater Heights</p>
                     </div>
                 </div>
 
+                <div class="slide">
+                    <img src="2.jpg" alt="ዳሎቻ ወረዳ የብልፅግና ፓርቲ">
+                    <div class="slider-caption">
+                        <p>የዳሎቻ ወረዳ ብልፅግና ፓርቲ ጽሕፈት ቤት | Dalocha Woreda Prosperity Party</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img src="4.jpg" alt="በአንድ ዓላማ ተሳስረን፣ በስኬት እናድጋለን!">
+                    <div class="slider-caption">
+                        <p>በአንድ ዓላማ ተሳስረን፣ በስኬት እናድጋለን! | United in Purpose, Growing in Success.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img src="5.jpg" alt="Dalocha City Night View 2">
+                    <div class="slider-caption">
+                        <p>ዳሎቻ በስራ፣ ብልፅግና በተግባር! | Dalocha in Action, Prosperity in Practice!</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img src="7.jpg" alt="የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና!">
+                    <div class="slider-caption">
+                        <p>የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና! | Dalocha’s People United, Prosperity Achieved!</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img src="3.jpg" alt="Dalocha City Night View 3">
+                    <div class="slider-caption">
+                        <p>ውብ ጅማሮ እንኳን ወደ ውቧ ከተማችን በደህና መጡ! | Welcome to our beautiful city!</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img src="1.jpg" alt="ከዳሎቻ ብልፅግና ፓርቲ ጋር፣ ሁሉም ነገር ይቻላል!">
+                    <div class="slider-caption">
+                        <p>ከዳሎቻ ብልፅግና ፓርቲ ጋር፣ ሁሉም ነገር ይቻላል! | With Dalocha Prosperity Party, Everything is Possible!</p>
+                    </div>
+                </div>
+
+                <!-- NAVIGATION BUTTONS -->
+                <button class="slider-btn prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="slider-btn next-btn" onclick="changeSlide(1)">&#10095;</button>
+
+                <!-- NUMBERED INDICATORS -->
+                <div class="slide-numbers" id="slideNumbers">
+                    <span class="num-item active" onclick="goToSlide(0)">01</span>
+                    <span class="num-item" onclick="goToSlide(1)">02</span>
+                    <span class="num-item" onclick="goToSlide(2)">03</span>
+                    <span class="num-item" onclick="goToSlide(3)">04</span>
+                    <span class="num-item" onclick="goToSlide(4)">05</span>
+                    <span class="num-item" onclick="goToSlide(5)">06</span>
+                    <span class="num-item" onclick="goToSlide(6)">07</span>
+                </div>
             </div>
         </section>
 
-        <!-- 4. LEADERSHIP PROFILES SECTION -->
-        <section class="leadership-section">
-            <div class="leadership-container">
-                
-                <div class="leader-card">
-                    <div class="leader-img-wrapper">
-                        <img src="leader1.jpg" alt="ክቡር አቶ ተመስገን ጥሩነህ">
-                    </div>
-                    <h3 class="leader-name">ክቡር አቶ ተመስገን ጥሩነህ</h3>
-                    <p class="leader-role">የብልፅግና ፓርቲ ምክትል ፕሬዚዳንት</p>
-                </div>
+        <!-- SOCIO-ECONOMIC CARD -->
+        <div class="intro-card">
+            <h2>Socio-Economic and Geo-spatial Data</h2>
+            <p>ማህበራዊ-ኢኮኖሚያዊ መረጃ</p>
+        </div>
 
-                <div class="leader-card">
-                    <div class="leader-img-wrapper">
-                        <img src="leader2.jpg" alt="ክቡር ዶ/ር ዐብይ አህመድ">
-                    </div>
-                    <h3 class="leader-name">ክቡር ዶ/ር ዐብይ አህመድ</h3>
-                    <p class="leader-role">የብልፅግና ፓርቲ ፕሬዚዳንት</p>
-                </div>
-
-                <div class="leader-card">
-                    <div class="leader-img-wrapper">
-                        <img src="leader3.jpg" alt="ክቡር አቶ አደም ፋራህ">
-                    </div>
-                    <h3 class="leader-name">ክቡር አቶ አደም ፋራህ</h3>
-                    <p class="leader-role">የብልፅግና ፓርቲ ምክትል ፕሬዚዳንት እና ዋና ጽ/ቤት ኃላፊ</p>
-                </div>
-
+        <!-- SEARCH AND FILTER CONTROLS -->
+        <section class="controls-section">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" placeholder="ፈልግ... Search...">
+            </div>
+            <div class="filter-box">
+                <span>ሁሉም ክፍሎች</span>
+                <i class="fa-solid fa-chevron-down"></i>
             </div>
         </section>
 
-        <!-- 5. REGISTRATION FORM (TARGET OF FOOTER LINK) -->
-        <section id="application" class="form-section">
-            <div class="form-container">
-                <h2 class="form-title">የአዲስ አባላት ምዝገባ ማመልከቻ ፎርም</h2>
-                <hr class="form-divider">
+        <!-- CONTENT SECTIONS -->
+        <section class="info-sections">
+            
+            <!-- LEADER MESSAGE -->
+            <article id="message" class="content-section">
+                <h2>የመሪው መልዕክት | Message</h2>
+                <hr>
+                <div class="section-body">
+                    <p>እንኳን ወደ ዳሎቻ ወረዳ ይፋዊ ድረ-ገጽ በደህና መጡ። ይህ መድረክ የወረዳችንን ልማት፣ ማህበራዊ አገልግሎቶች እና የወደፊት እቅዶች ለህዝባችን ተደራሽ ለማድረግ የተዘጋጀ ነው።</p>
+                </div>
+            </article>
 
-                <p class="required-note">* Indicates Required Fields</p>
+            <!-- STRUCTURED PLAN SECTION -->
+            <article id="plan" class="content-section">
+                <h2>የፓርቲው ዋና ዋና እቅዶች እና አቅጣጫዎች | Our Plan</h2>
+                <hr>
+                <div class="section-body">
+                    <div class="plan-grid">
+                        
+                        <div class="plan-card">
+                            <div class="plan-number">01</div>
+                            <h3>ዋና መግቢያ (Core Mission)</h3>
+                            <p>የዳሎቻ ወረዳ የብልፅግና ፓርቲ ግብርናን በማዘመን፣ መሰረተ-ልማትን በማስፋፋት፣ የስራ እድልን በመፍጠር እና አገልጋይ አመራርን በመገንባት የማህበረሰባችንን ሁለንተናዊ እድገት ለማረጋገጥ ይሰራል፡፡</p>
+                        </div>
 
-                <form action="#" method="POST" class="registration-form">
+                        <div class="plan-card">
+                            <div class="plan-number">02</div>
+                            <h3>ለስራና ውጤት ትኩረት መስጠት (Action-Oriented)</h3>
+                            <p>የግብርና አቅምን ወደ ኢኮኖሚያዊ እድገት በመቀየር፣ ህዝባዊ መሰረተ-ልማቶችን በማደስ እና ለወጣቶችና ስራ ፈጣሪዎች ምቹ ሁኔታን በመፍጠር የዳሎቻ ወረዳን ዘላቂ ትራንስፎርሜሽን ማረጋገጥ፡፡</p>
+                        </div>
+
+                        <div class="plan-card">
+                            <div class="plan-number">03</div>
+                            <h3>ህዝባዊ አንድነት (Community-Centered)</h3>
+                            <p>ዘመናዊ ግብርናን፣ አስተማማኝ የመሰረተ-ልማት አገልግሎቶችን እና አካታች አሰራርን በመተግበር የዳሎቻ ወረዳ ህዝብን ለጋራ ብልፅግና በአንድነት ማሰለፍ፡፡</p>
+                        </div>
+
+                        <div class="plan-card">
+                            <div class="plan-number">04</div>
+                            <h3>ተፅዕኖ ፈጣሪ ስራዎች (High-Impact Goals)</h3>
+                            <p>የግብርና ቴክኖሎጂን፣ የጠነከረ መሰረተ-ልማትን እና የወጣቶች እቅምን በማቀናጀት ለዳሎቻ ወረዳ ብሩህ የወደፊት ጊዜን መገንባት፡፡</p>
+                        </div>
+
+                        <div class="plan-card">
+                            <div class="plan-number">05</div>
+                            <h3>የወደፊት ራዕይ (Visionary Path)</h3>
+                            <p>ዳሎቻ ወረዳን በራሷ የምትተማመን፣ የዘመናዊ አገልግሎት አሰጣጥ እና የዘላቂ ልማት ሞዴል ማድረግ፡፡</p>
+                        </div>
+
+                        <div class="plan-card">
+                            <div class="plan-number">06</div>
+                            <h3>ልማትና ኢኮኖሚ (Agriculture & Economy)</h3>
+                            <p>በእያንዳንዱ የዳሎቻ አባወራ የምግብ ዋስትናንና የኢኮኖሚ አቅምን ለማረጋገጥ የግብርና ምርታማነትንና የጥቃቅን ኢንተርፕራይዞችን ማስፋፋት፡፡</p>
+                        </div>
+
+                        <div class="plan-card">
+                            <div class="plan-number">07</div>
+                            <h3>መልካም አስተዳደር (Governance & Service)</h3>
+                            <p>ግልፅነትን፣ ዲጂታል አሰራርን እና ፍትሃዊ አገልግሎትን በመዘርጋት በዳሎቻ ወረዳ የህዝብ አመኔታንና ማህበራዊ እድገትን ማጠናከር፡፡</p>
+                        </div>
+
+                        <div class="plan-card">
+                            <div class="plan-number">08</div>
+                            <h3>አካታች እድገት (Inclusive Growth)</h3>
+                            <p>ለሴቶች፣ ወጣቶች እና አርሶ አደሮች እኩል የኢኮኖሚ እድል በመፍጠር በዳሎቻ ወረዳ ሁለንተናዊና አካታች እድገትን ማረጋገጥ፡፡</p>
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+
+            <!-- LATEST NEWS SECTION -->
+            <article id="news" class="content-section">
+                <h2>ወቅታዊ ዜናዎች | Latest News</h2>
+                <hr>
+                <div class="news-list">
                     
-                    <div class="form-group">
-                        <label for="fullname">ሙሉ ስም <span class="required-star">*</span></label>
-                        <input type="text" id="fullname" name="fullname" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>ጾታ <span class="required-star">*</span></label>
-                        <div class="radio-group">
-                            <label class="radio-label">
-                                <input type="radio" name="gender" value="male" required>
-                                <span>ወንድ</span>
-                            </label>
-                            <label class="radio-label">
-                                <input type="radio" name="gender" value="female">
-                                <span>ሴት</span>
-                            </label>
+                    <!-- News Item 1 -->
+                    <div class="news-card">
+                        <img src="2.jpg" alt="News Image 1" class="news-image">
+                        <div class="news-details">
+                            <span class="news-date"><i class="fa-regular fa-calendar"></i> ሀምሌ 23/2018 ዓ.ም | July 2026</span>
+                            <h3 class="news-title">የሰብዓዊ ድጋፍ ሉዓላዊነትን ለማብሰር የተዘጋጀ የንቅናቄ መድረክ ተካሄደ</h3>
+                            <p class="news-excerpt">በስልጤ ዞን የዳሎቻ ወረዳ ግብርና ጽሕፈት ቤት የምግብ ዋስትናን እና የሰብዓዊ ድጋፍ ሉዓላዊነትን በራስ አቅም ለማረጋገጥ የሚያስችል የንቅናቄ መድረክ ከወረዳ አመራሮች ጋር አካሂዷል።</p>
+                            <a href="#" class="read-more-btn">ሙሉውን ያንብቡ (Read More) →</a>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="age">ዕድሜ <span class="required-star">*</span></label>
-                        <input type="number" id="age" name="age" min="18" max="120" required>
+                    <!-- News Item 2 -->
+                    <div class="news-card">
+                        <img src="5.jpg" alt="News Image 2" class="news-image">
+                        <div class="news-details">
+                            <span class="news-date"><i class="fa-regular fa-calendar"></i> ሰኔ 2018 ዓ.ም | June 2026</span>
+                            <h3 class="news-title">የከተማ ውበት እና የፀዳ አካባቢ ልማት ስራዎች ተጠናክረው ቀጥለዋል</h3>
+                            <p class="news-excerpt">በወረዳው ህዝብ እና አመራር የጋራ ጥረት የከተማዋን ገጽታ የሚቀይሩ የመሰረተ-ልማትና የአረንጓዴ ልማት ስራዎች በስፋት እየተከናወኑ ይገኛሉ።</p>
+                            <a href="#" class="read-more-btn">ሙሉውን ያንብቡ (Read More) →</a>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="region">አድራሻ፡ ክልል <span class="required-star">*</span></label>
-                        <input type="text" id="region" name="region" required>
-                    </div>
+                </div>
+            </article>
 
-                    <div class="form-group">
-                        <button type="submit" class="submit-btn">አስገባ</button>
-                    </div>
-
-                </form>
-            </div>
         </section>
-
     </main>
 
-    <!-- 6. FOOTER SECTION -->
+    <!-- MAIN FOOTER SECTION -->
     <footer class="custom-footer">
+        <div class="footer-overlay-bar"></div>
         <div class="footer-container">
             
+            <!-- Column 1: Objectives -->
             <div class="footer-card">
                 <h3 class="card-title">የብልፅግና ፓርቲ ዓላማዎች</h3>
                 <ul class="bullet-list">
-                    <li>ጠንካራ፣ ዲሞክራሲያዊ፣ ቅቡልነት ያለው፤ ዘላቂ ሀገረ-መንግሥትና ብሔረ-መንግሥት ግንባታ፤</li>
+                    <li>ጠንካራ፣ ዴሞክራሲያዊ፣ ቅርፅና ቅቡልነት ያለው፣ ዘላቂ ሀገረ-መንግሥትና ኅብረ-ብሔራዊ አንድነት መገንባት፤</li>
                     <li>ልማትና ፍትሐዊ ተጠቃሚነትን የሚያረጋግጥ አነቃቂ የኢኮኖሚ ሥርዓት መገንባት፤</li>
-                    <li>ሁለንተናዊ ብልፅግናን የሚያረጋግጥ ማኅበራዊ ልማት ማረጋገጥ፤</li>
+                    <li>ሁሉንአቀፍ ብልፅግናን የሚያረጋግጥ ማህበራዊ ልማትን ማረጋገጥ፤</li>
                     <li>ሀገራዊ ክብርና ጥቅምን ማዕከል ያደረገ የውጭ ግንኙነት ማካሄድ።</li>
                 </ul>
             </div>
 
+            <!-- Column 2: Quick Links -->
             <div class="footer-card">
                 <h3 class="card-title">ፈጣን አገናኞች</h3>
                 <ul class="icon-list">
-                    <li><a href="#"><i class="fa-solid fa-house"></i> ዋና ገጽ</a></li>
-                    <li><a href="#"><i class="fa-solid fa-building"></i> ቅ/ጽ/ቤት</a></li>
-                    <li><a href="#"><i class="fa-solid fa-newspaper"></i> ዜና</a></li>
-                    <li><a href="#"><i class="fa-solid fa-bullhorn"></i> መግለጫዎች</a></li>
-                    <li><a href="#"><i class="fa-solid fa-envelope"></i> ያግኙን</a></li>
+                    <li><a href="#message"><i class="fa-solid fa-house"></i> ዋና ገጽ</a></li>
+                    <li><a href="#Contact Us"><i class="fa-solid fa-building"></i> ቅ/ጽ/ቤት</a></li>
+                    <li><a href="#news"><i class="fa-solid fa-newspaper"></i> ዜና</a></li>
+                    <li><a href="#"><i class="fa-solid fa-book-open"></i> መጽሔቶች</a></li>
+                    <li><a href="#Contact Us"><i class="fa-solid fa-envelope"></i> ያግኙን</a></li>
                 </ul>
             </div>
 
+            <!-- Column 3: Address / Contact -->
             <div class="footer-card">
                 <h3 class="card-title">አድራሻ</h3>
-                <ul class="icon-list">
-                    <li><a href="tel:+251111543137"><i class="fa-solid fa-phone"></i> +251 111 543 137</a></li>
-                    <li><a href="mailto:info@prosperity.org.et"><i class="fa-solid fa-envelope"></i> info@prosperity.org.et</a></li>
-                    <li><a><i class="fa-solid fa-location-dot"></i> አዲስ አበባ, ኢትዮጵያ</a></li>
-                    <li><a href="#"><i class="fa-solid fa-map-pin"></i> በ Google ካርታ ላይ ይመልከቱ</a></li>
+                <ul class="icon-list contact-info">
+                    <li><i class="fa-solid fa-phone"></i> +251 111 543 137</li>
+                    <li><i class="fa-solid fa-envelope"></i> info@prosperity.org.et</li>
+                    <li><i class="fa-solid fa-location-dot"></i> አዲስ አበባ, ኢትዮጵያ</li>
+                    <li>
+                        <i class="fa-solid fa-map-pin"></i> 
+                        <a href="#" class="highlight-link">በ Google ካርታ ላይ ይመልከቱ</a>
+                    </li>
                 </ul>
             </div>
 
+            <!-- Column 4: Principles -->
             <div class="footer-card">
                 <h3 class="card-title">መርሆች</h3>
                 <ul class="bullet-list">
                     <li>ሕዝባዊነት</li>
-                    <li>ዲሞክራሲያዊነት</li>
+                    <li>ዴሞክራሲያዊነት</li>
                     <li>የሕግ የበላይነት</li>
                     <li>ልማትና ፍትሐዊ ተጠቃሚነት</li>
-                    <li>ተግባራዊ እውነታ</li>
-                    <li>ሀገራዊ አንድነትና ኅብረ-ብሔራዊነት</li>
+                    <li>ተግባራዊ እውነት</li>
+                    <li>ሀገራዊ አንድነትና ኅብረ ብሔራዊነት</li>
                 </ul>
             </div>
 
+            <!-- Column 5: Social Media & Action -->
             <div class="footer-card center-align">
                 <h3 class="card-title">ማህበራዊ ሚዲያ</h3>
                 <div class="social-grid">
@@ -219,15 +359,71 @@
                     <a href="#" class="social-btn"><i class="fa-brands fa-telegram"></i></a>
                     <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
                 </div>
-                
                 <div class="cta-box">
-                    <p class="cta-question">የብልፅግና አባል መሆን ይፈልጋሉ?</p>
-                    <a href="#application" class="cta-link">ይህንን ፎርም ይሙሉ</a>
+                    <p>የብልፅግና አባል መሆን ይፈልጋሉ?</p>
+                    <!-- LINK UPDATED TO form.html -->
+                    <a href="form.html" class="cta-link">ይህንን ፎርም ይሙሉ</a>
                 </div>
             </div>
 
         </div>
     </footer>
 
+    <!-- FLOATING CONTACT BUTTON -->
+    <div class="fab-btn">
+        <i class="fa-regular fa-envelope"></i>
+    </div>
+
+    <!-- JAVASCRIPT CONTROLLERS -->
+    <script>
+        // Drawer Menu Controller
+        const menuToggleBtn = document.getElementById('menuToggleBtn');
+        const sideMenu = document.getElementById('sideMenu');
+
+        menuToggleBtn.addEventListener('click', function(e) {
+            sideMenu.classList.toggle('open');
+            e.stopPropagation();
+        });
+
+        document.querySelectorAll('#sideMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                sideMenu.classList.remove('open');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!sideMenu.contains(e.target) && e.target !== menuToggleBtn) {
+                sideMenu.classList.remove('open');
+            }
+        });
+
+        // Interactive Slide Controller
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const numItems = document.querySelectorAll('.num-item');
+
+        function showSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            numItems[currentSlide].classList.remove('active');
+            
+            currentSlide = (index + slides.length) % slides.length;
+            
+            slides[currentSlide].classList.add('active');
+            numItems[currentSlide].classList.add('active');
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        function goToSlide(index) {
+            showSlide(index);
+        }
+
+        // Auto slide change every 5 seconds
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+    </script>
 </body>
 </html>
