@@ -983,12 +983,21 @@
                 <h2>የብልፅግና ፓርቲ አባልነት መመዝገቢያ ፎርም</h2>
                 <p>እባክዎን ከዚህ በታች ያሉትን መረጃዎች በጥንቃቄ ይሙሉ::</p>
 
-                <!-- Form Action: replace YOUR_FORM_ID with Formspree link -->
-                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <!-- FORMSPREE ACTION ENDPOINT WITH ADVANCED VALIDATION -->
+                <form action="https://formspree.io/f/xaewwlde" method="POST">
                     
-                    <div class="form-group">
-                        <label for="fullName">ሙሉ ስም (Full Name) *</label>
-                        <input type="text" id="fullName" name="fullName" placeholder="ምሳሌ፡ አበበ ከበደ ተሰማ" required>
+                    <!-- Optional: Custom redirect URL after successful submission -->
+                    <!-- <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html"> -->
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">ሙሉ ስም (Full Name) *</label>
+                            <input type="text" id="fullName" name="fullName" minlength="3" placeholder="ምሳሌ፡ አበበ ከበደ ተሰማ" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">ኢሜይል (Email Address) *</label>
+                            <input type="email" id="email" name="_replyto" placeholder="example@gmail.com" required>
+                        </div>
                     </div>
 
                     <div class="form-row">
@@ -1001,7 +1010,7 @@
                         </div>
                         <div class="form-group">
                             <label for="phone">ስልክ ቁጥር (Phone Number) *</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+251 9..." required>
+                            <input type="tel" id="phone" name="phone" pattern="(\+251|0)[97]\d{8}" title="እባክዎን ትክክለኛ የኢትዮጵያ ስልክ ቁጥር ያስገቡ (ምሳሌ፡ 0912345678 ወይም +251912345678)" placeholder="09... ወይም +2519..." required>
                         </div>
                     </div>
 
