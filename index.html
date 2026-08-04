@@ -19,7 +19,7 @@
             
             <nav class="top-nav" aria-label="Main Navigation">
                 <ul>
-                    <li><a href="#message" class="active">ዋና ገጽ</a></li>
+                    <li><a href="#message-section" class="active">ዋና ገጽ</a></li>
                     <li class="dropdown">
                         <a href="#plan">ስለ እኛ <i class="fa-solid fa-chevron-down"></i></a>
                     </li>
@@ -53,23 +53,24 @@
 
             <!-- DESKTOP QUICK LINKS -->
             <nav class="desktop-menu" aria-label="Quick Links">
-                <a href="#message">Home</a>
+                <a href="#message-section">Home</a>
                 <a href="#plan">About</a>
                 <a href="#news">Latest News</a>
                 <a href="#sectors">Sectors</a>
                 <a href="#contact-us">Offices</a>
             </nav>
-                    <button type="button" class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
-                        Language <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <ul class="lang-dropdown-menu" id="langDropdown">
-                        <li><a href="#" data-lang="am">አማርኛ</a></li>
-                        <li><a href="#" data-lang="en">English</a></li>
-                    </ul>
-                </div>
 
-                <button class="menu-toggle" id="menuToggleBtn" aria-label="ማውጫ ክፈት/ዝጋ" aria-expanded="false">☰</button>
+            <div class="lang-selector-wrapper">
+                <button type="button" class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+                    Language <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <ul class="lang-dropdown-menu" id="langDropdown">
+                    <li><a href="#" data-lang="am">አማርኛ</a></li>
+                    <li><a href="#" data-lang="en">English</a></li>
+                </ul>
             </div>
+
+            <button class="menu-toggle" id="menuToggleBtn" aria-label="ማውጫ ክፈት/ዝጋ" aria-expanded="false">☰</button>
         </div>
     </header>
 
@@ -77,7 +78,7 @@
     <nav class="side-menu" id="sideMenu" aria-label="Mobile Menu">
         <ul>
             <li><a href="#plan">ስለኛ</a></li>
-            <li><a href="#message">መልዕክት</a></li>
+            <li><a href="#message-section">መልዕክት</a></li>
             <li><a href="#prosperity-party">የብልፅግና ፓርቲ ዓላማዎች</a></li>
             <li><a href="#principles">መርሆች</a></li>
             <li><a href="#population">ህዝብና ጂኦግራፊ</a></li>
@@ -87,7 +88,7 @@
             <li><a href="#sectors">አደረጃጀት ዘርፍ</a></li>
             <li><a href="#finance">ፋይናንስና ኢንቨስትመንት</a></li>
             <li><a href="#contact-us">አድራሻ</a></li>
-            <li><a href="form.html">Application Form</a></li>
+            <li><a href="#register">Application Form</a></li>
         </ul>
     </nav>
 
@@ -164,7 +165,7 @@
         </section>
 
         <!-- SOCIO-ECONOMIC CARD -->
-        <div class="intro-card" id="population">
+        <section class="intro-card" id="population">
             <h2>ማህበራዊ-ኢኮኖሚያዊ እና ጂኦ-ስፓሻል መረጃዎች</h2>
             <p><strong>የዳሎቻ ወረዳ አጠቃላይ መረጃ፦</strong><br>
             ዳሎቻ ወረዳ በማዕከላዊ ኢትዮጵያ ክልል በስልጤ ዞን ውስጥ የሚገኝ ወረዳ ነው። ወረዳው በሰሜን ከስልጤ፣ በምዕራብ ከዉልባረግ፣ በደቡብ ከሳንኩራ እና በምስራቅ ከላንፉሮ ወረዳዎች ጋር ይዋሰናል።</p>
@@ -174,7 +175,7 @@
             <p><strong>የገጠር እና ከተማ ስርጭት፦</strong> የወረዳው ህዝብ በአብዛኛው በገጠር የሚኖር ሲሆን፣ 92.4% ገደማ በገጠር የሚኖር እና 7.6% ያህሉ ብቻ በከተማ (በዋናነት ዳሎቻ ከተማ) ይኖራል።</p>
             <p>2. <strong>የብሔር እና የቋንቋ ስርጭት፦</strong> አብዛኛው የወረዳው ነዋሪ (99.1%) የስልጤ ብሔር ተወላጅ ነው። ቋንቋ: የስልጤ ቋንቋ (ስልጥኛ) በ99.6% ነዋሪዎች ዘንድ የሚነገር ነው።</p>
             <p>3. <strong>የሃይማኖት ስርጭት፦</strong> የእስልምና ሃይማኖት ተከተይ የሆነው የህዝብ ክፍል 99.5% ገደማ ነው።</p>
-        </div>
+        </section>
 
         <!-- SEARCH AND FILTER CONTROLS -->
         <section class="controls-section">
@@ -197,7 +198,7 @@
         <section class="info-sections">
             
             <!-- LEADER MESSAGE -->
-            <article id="message" class="content-section">
+            <article id="message-section" class="content-section">
                 <h2>የመሪው መልዕክት | Message</h2>
                 <hr>
                 <div class="section-body">
@@ -334,6 +335,80 @@
                 </div>
             </article>
 
+            <!-- MEMBERSHIP FORM SECTION -->
+            <section class="content-section" id="register">
+                <div class="form-container">
+                    <h2>የብልፅግና ፓርቲ አባልነት መመዝገቢያ ፎርም</h2>
+                    <hr>
+                    <p>እባክዎን ከዚህ በታች ያሉትን መረጃዎች በጥንቃቄ ይሙሉ::</p>
+
+                    <form action="https://formspree.io/f/xaewwlde" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">ሙሉ ስም (Full Name) *</label>
+                                <input type="text" id="fullName" name="fullName" minlength="3" placeholder="ምሳሌ፡ አበበ ከበደ ተሰማ" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">ኢሜይል (Email Address) *</label>
+                                <input type="email" id="email" name="_replyto" placeholder="example@gmail.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>ጾታ (Sex) *</label>
+                                <div class="radio-group">
+                                    <label><input type="radio" name="gender" value="Male" required> ወንድ</label>
+                                    <label><input type="radio" name="gender" value="Female"> ሴት</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">ስልክ ቁጥር (Phone Number) *</label>
+                                <input type="tel" id="phone" name="phone" pattern="(\+251|0)[97]\d{8}" title="እባክዎን ትክክለኛ የኢትዮጵያ ስልክ ቁጥር ያስገቡ (ምሳሌ፡ 0912345678 ወይም +251912345678)" placeholder="09... ወይም +2519..." required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="education">የትምህርት ደረጃ (Education Level) *</label>
+                                <select id="education" name="education" required>
+                                    <option value="" disabled selected>ይምረጡ...</option>
+                                    <option value="Primary">መሰረታዊ / የመጀመሪያ ደረጃ</option>
+                                    <option value="HighSchool">ሁለተኛ ደረጃ (10ኛ/12ኛ)</option>
+                                    <option value="TVET">ዲፕሎማ (TVET/College)</option>
+                                    <option value="Bachelor">የመጀመሪያ ዲግሪ (Bachelor's)</option>
+                                    <option value="Master">ማስተርስ (Master's)</option>
+                                    <option value="PhD">ዶክተሬት (PhD)</option>
+                                    <option value="Other">ሌላ</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="occupation">የሥራ መስክ (Occupation)</label>
+                                <input type="text" id="occupation" name="occupation" placeholder="ምሳሌ፡ መምህር / ነጋዴ / ተማሪ">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">ከተማ/ቀበሌ (City / Town / Kebele) *</label>
+                                <input type="text" id="city" name="city" placeholder="ምሳሌ፡ ዳሎቻ / ቀበሌ 01" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="woreda">ወረዳ (Woreda) *</label>
+                                <input type="text" id="woreda" name="woreda" placeholder="ምሳሌ፡ ዳሎቻ ወረዳ" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formMessage">ተጨማሪ አስተያየት ወይም መልዕክት (Message)</label>
+                            <textarea id="formMessage" name="message" rows="4" placeholder="እዚህ ጋር ጽሑፍ ማስገባት ይችላሉ..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">አስገባ (Submit Application)</button>
+                    </form>
+                </div>
+            </section>
+
         </section>
     </main>
 
@@ -354,7 +429,7 @@
             <div class="footer-card">
                 <h3 class="card-title">ፈጣን አገናኞች</h3>
                 <ul class="icon-list">
-                    <li><a href="#message"><i class="fa-solid fa-house"></i> ዋና ገጽ</a></li>
+                    <li><a href="#message-section"><i class="fa-solid fa-house"></i> ዋና ገጽ</a></li>
                     <li><a href="#news"><i class="fa-solid fa-newspaper"></i> ዜና</a></li>
                     <li><a href="#publications"><i class="fa-solid fa-book-open"></i> መጽሔቶች</a></li>
                     <li><a href="#contact-us"><i class="fa-solid fa-envelope"></i> ያግኙን</a></li>
@@ -390,82 +465,9 @@
                     <a href="#" class="social-btn" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
                 </div>
                 <div style="margin-top: 20px;">
-                    <a href="form.html" class="read-more-btn">አባል ይሁኑ (Join Us)</a>
+                    <a href="#register" class="read-more-btn">አባል ይሁኑ (Join Us)</a>
                 </div>
             </div>
-            <!-- MEMBERSHIP FORM SECTION -->
-       <section class="content-section" id="register">
-    <div class="form-container">
-        <h2>የብልፅግና ፓርቲ አባልነት መመዝገቢያ ፎርም</h2>
-        <hr>
-        <p>እባክዎን ከዚህ በታች ያሉትን መረጃዎች በጥንቃቄ ይሙሉ::</p>
-
-        <form action="https://formspree.io/f/xaewwlde" method="POST">
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="fullName">ሙሉ ስም (Full Name) *</label>
-                    <input type="text" id="fullName" name="fullName" placeholder="አበበ ከበደ" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">ኢሜይል (Email Address) *</label>
-                    <input type="email" id="email" name="_replyto" placeholder="example@gmail.com" required>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label>ጾታ (Gender) *</label>
-                    <div class="radio-group">
-                        <label><input type="radio" name="gender" value="Male" required> ወንድ (Male)</label>
-                        <label><input type="radio" name="gender" value="Female"> ሴት (Female)</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="phone">ስልክ ቁጥር (Phone Number) *</label>
-                    <input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="0912345678" pattern="(\+251|0)[97]\d{8}" required>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="education">የትምህርት ደረጃ (Education Level) *</label>
-                    <select id="education" name="education" required>
-                        <option value="" disabled selected>ይምረጡ...</option>
-                        <option value="Primary">መሰረታዊ / የመጀመሪያ ደረጃ</option>
-                        <option value="HighSchool">ሁለተኛ ደረጃ (10ኛ/12ኛ)</option>
-                        <option value="TVET">ዲፕሎማ (TVET/College)</option>
-                        <option value="Bachelor">የመጀመሪያ ዲግሪ (Bachelor's)</option>
-                        <option value="Master">ማስተርስ (Master's)</option>
-                        <option value="PhD">ዶክተሬት (PhD)</option>
-                        <option value="Other">ሌላ</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="occupation">የሥራ መስክ (Occupation)</label>
-                    <input type="text" id="occupation" name="occupation" placeholder="ምሳሌ፡ መምህር / ነጋዴ">
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="city">ከተማ/ቀበሌ (City / Kebele) *</label>
-                    <input type="text" id="city" name="city" placeholder="ምሳሌ፡ ዳሎቻ / ቀበሌ 01" required>
-                </div>
-                <div class="form-group">
-                    <label for="woreda">ወረዳ (Woreda) *</label>
-                    <input type="text" id="woreda" name="woreda" placeholder="ምሳሌ፡ ዳሎቻ ወረዳ" required>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="formMessage">ተጨማሪ አስተያየት (Message)</label>
-                <textarea id="formMessage" name="message" rows="4" placeholder="እዚህ ጋር ጽሑፍ ማስገባት ይችላሉ..."></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn">አስገባ (Submit Application)</button>
-        </form>
-    </div>
-</section>
         </div>
     </footer>
 
@@ -496,11 +498,26 @@
             showSlide(index);
         }
 
-        // Toggle side menu on mobile
-        document.getElementById('menuToggleBtn').addEventListener('click', function() {
-            const sideMenu = document.getElementById('sideMenu');
-            sideMenu.classList.toggle('open');
+        // Toggle mobile menu
+        const menuToggleBtn = document.getElementById('menuToggleBtn');
+        const sideMenu = document.getElementById('sideMenu');
+
+        menuToggleBtn.addEventListener('click', function() {
+            const isOpen = sideMenu.classList.toggle('open');
+            menuToggleBtn.setAttribute('aria-expanded', isOpen);
         });
+
+        // Toggle language menu
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+
+        if (langBtn) {
+            langBtn.addEventListener('click', function() {
+                const expanded = langBtn.getAttribute('aria-expanded') === 'true' || false;
+                langBtn.setAttribute('aria-expanded', !expanded);
+                langDropdown.classList.toggle('show');
+            });
+        }
     </script>
 </body>
 </html>
