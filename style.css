@@ -692,6 +692,9 @@ body {
 /* ==========================================
    10. MEDIA QUERIES & RESPONSIVE DESIGNS
    ========================================== */
+/* ==========================================
+   10. MEDIA QUERIES & RESPONSIVE DESIGNS
+   ========================================== */
 @media (min-width: 992px) {
     .menu-toggle {
         display: none;
@@ -702,6 +705,13 @@ body {
     .desktop-menu, 
     .top-nav {
         display: none;
+    }
+
+    /* Keeps language selector and mobile toggle visible in header */
+    .nav-controls,
+    .lang-selector {
+        display: flex !important;
+        align-items: center;
     }
 }
 
