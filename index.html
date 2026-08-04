@@ -415,11 +415,174 @@
                     <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
                     <a href="#" class="social-btn"><i class="fa-brands fa-telegram"></i></a>
                 </div>
-                <div class="cta-box">
-                    <p>የብልፅግና አባል መሆን ይፈልጋሉ?</p>
-                    <a href="form.html" class="cta-link">ይህንን ፎርም ይሙሉ</a>
+                <<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>የአባልነት መመዝገቢያ ፎርም | Membership Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .form-container {
+            max-width: 650px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .form-container h2 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 8px;
+        }
+        .form-container p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+        .form-row .form-group {
+            flex: 1;
+        }
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 5px;
+        }
+        .radio-group label {
+            font-weight: normal;
+            cursor: pointer;
+        }
+        .submit-btn {
+            width: 100%;
+            background-color: #0056b3;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #003d80;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 15px;
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="content-wrapper">
+        <div class="form-container">
+            <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> ወደ ዋና ገጽ ተመለስ (Back)</a>
+            <h2>የብልፅግና ፓርቲ አባልነት መመዝገቢያ ፎርም</h2>
+            <p>እባክዎን ከዚህ በታች ያሉትን መረጃዎች በጥንቃቄ ይሙሉ::</p>
+
+            <!-- Update action attribute with your Formspree/backend endpoint -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="fullName">ሙሉ ስም (Full Name) *</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="ምሳሌ፡ አበበ ከበደ ተሰማ" required>
                 </div>
-            </div>
+
+                <!-- Gender & Phone -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>ጾታ (Sex) *</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="gender" value="Male" required> ወንድ</label>
+                            <label><input type="radio" name="gender" value="Female"> ሴት</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">ስልክ ቁጥር (Phone Number) *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+251 9..." required>
+                    </div>
+                </div>
+
+                <!-- Education & Occupation -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="education">የትምህርት ደረጃ (Education Level) *</label>
+                        <select id="education" name="education" required>
+                            <option value="" disabled selected>ይምረጡ...</option>
+                            <option value="Primary">መሰረታዊ / የመጀመሪያ ደረጃ</option>
+                            <option value="HighSchool">ሁለተኛ ደረጃ (10ኛ/12ኛ)</option>
+                            <option value="TVET">ዲፕሎማ (TVET/College)</option>
+                            <option value="Bachelor">የመጀመሪያ ዲግሪ (Bachelor's)</option>
+                            <option value="Master">ማስተርስ (Master's)</option>
+                            <option value="PhD">ዶክተሬት (PhD)</option>
+                            <option value="Other">ሌላ</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="occupation">የሥራ መስክ (Occupation)</label>
+                        <input type="text" id="occupation" name="occupation" placeholder="ምሳሌ፡ መምህር / ነጋዴ / ተማሪ">
+                    </div>
+                </div>
+
+                <!-- City & Woreda/Kebele -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">ከተማ/ቀበሌ (City / Town) *</label>
+                        <input type="text" id="city" name="city" placeholder="ምሳሌ፡ ዳሎቻ" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kebele">ቀበሌ / ዞን (Kebele / Zone)</label>
+                        <input type="text" id="kebele" name="kebele" placeholder="ምሳሌ፡ ጎለጨባ / ስልጤ">
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">ኢሜይል (Email Address)</label>
+                    <input type="email" id="email" name="email" placeholder="example@gmail.com">
+                </div>
+
+                <!-- Additional Remarks -->
+                <div class="form-group">
+                    <label for="comments">ተጨማሪ አስተያየት (Additional Notes)</label>
+                    <textarea id="comments" name="comments" rows="3" placeholder="ተጨማሪ የሚገልጹት መረጃ ካለ..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">ምዝገባውን ላክ (Submit Registration)</button>
+            </form>
+        </div>
+    </main>
+</body>
 
         </div>
     </footer>
