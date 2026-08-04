@@ -746,18 +746,15 @@ body {
 /* ==========================================
    11. LANGUAGE SELECTOR DROPDOWN STYLES
    ========================================== */
-/* ==========================================
-   11. LANGUAGE SELECTOR DROPDOWN STYLES
-   ========================================== */
 .lang-selector {
     position: relative;
     display: inline-block;
 }
 
 .lang-btn {
-    background: #ffffff;
-    color: #2c3e50; /* Changed from white to dark gray for visibility */
-    border: 1px solid #dcdfe6; /* Darker border suited for light backgrounds */
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
     padding: 6px 14px;
     border-radius: 20px;
     font-size: 13px;
@@ -769,23 +766,22 @@ body {
 }
 
 .lang-btn:hover {
-    background-color: #f8f9fa;
-    border-color: #b0b5be;
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .lang-dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%;
+    top: calc(100% + 6px);
     right: 0;
-    margin-top: 4px;
     background-color: #ffffff;
-    min-width: 120px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 130px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     list-style: none;
-    padding: 0;
-    overflow: hidden;
+    padding: 6px 0;
+    margin: 0;
     z-index: 9999;
 }
 
