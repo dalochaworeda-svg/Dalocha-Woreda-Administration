@@ -520,5 +520,26 @@
             });
         }
     </script>
+    <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const langBtn = document.getElementById('langBtn');
+    const langMenu = document.getElementById('langMenu');
+
+    if (langBtn && langMenu) {
+      // Toggle dropdown open/close when clicking the button
+      langBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langMenu.classList.toggle('show');
+      });
+
+      // Close dropdown when clicking outside of it
+      document.addEventListener('click', (e) => {
+        if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+          langMenu.classList.remove('show');
+        }
+      });
+    }
+  });
+</script>
 </body>
 </html>
