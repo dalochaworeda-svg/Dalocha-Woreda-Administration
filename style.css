@@ -762,6 +762,7 @@ body {
     display: flex;
     align-items: center;
     gap: 6px;
+    transition: background-color 0.2s ease;
 }
 
 .lang-dropdown-menu {
@@ -769,14 +770,14 @@ body {
     position: absolute;
     top: 100%;
     right: 0;
-    margin-top: 6px;
+    margin-top: 4px;
     background-color: #ffffff;
     min-width: 120px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
-    list-style: none; /* Removes bullet points */
+    list-style: none;
     padding: 0;
-    margin: 4px 0 0 0;
+    overflow: hidden; /* Keeps child hover states inside rounded corners */
     z-index: 9999;
 }
 
@@ -785,7 +786,7 @@ body {
 }
 
 .lang-dropdown-menu li {
-    list-style: none; /* Extra safeguard against bullets */
+    list-style: none;
     margin: 0;
 }
 
@@ -795,13 +796,13 @@ body {
     color: #2c3e50;
     text-decoration: none;
     font-size: 14px;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .lang-dropdown-menu li a:hover {
     background-color: #f3f6f9;
     color: #007bff;
 }
-
 /* ==========================================
    12. MEMBERSHIP FORM STYLING
    ========================================== */
