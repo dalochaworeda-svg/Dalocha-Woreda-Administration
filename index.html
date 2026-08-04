@@ -3,557 +3,1137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-am="ዳሎቻ ወረዳ የብልፅግና ፓርቲ | Dalocha Woreda Prosperity Party" data-en="Dalocha Woreda Prosperity Party">ዳሎቻ ወረዳ የብልፅግና ፓርቲ | Dalocha Woreda Prosperity Party</title>
-    <link rel="stylesheet" href="style.css">
+    <title>የዳሎቻ ወረዳ ብልፅግና ፓርቲ ድህረ ገጽ</title>
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ==========================================
+           1. GLOBAL SYSTEM RESETS & RESPONSIVENESS
+           ========================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f6f9;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+
+        .content-wrapper {
+            padding: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================
+           2. TOP HEADER & STICKY NAVBAR
+           ========================================== */
+        .main-header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e1e8ed;
+            padding: 8px 20px;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .brand-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0b2f4c;
+        }
+
+        .top-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-nav a {
+            text-decoration: none;
+            color: #555;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .top-nav a.active, 
+        .top-nav a:hover {
+            color: #007bff;
+        }
+
+        /* DISTRICT BRANDING STICKY NAVBAR */
+        .navbar {
+            background-color: #0b2f4c;
+            color: #ffffff;
+            padding: 12px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 4000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .sub-slogan {
+            margin: 2px 0 0 0;
+            font-size: 12px;
+            color: #64b5f6;
+            font-weight: 500;
+        }
+
+        /* Desktop Horizontal Quick Links */
+        .desktop-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .desktop-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .desktop-menu a:hover {
+            color: #64b5f6;
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-selector select {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 6px 12px;
+            border-radius: 20px;
+            outline: none;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .menu-toggle {
+            background: rgba(255, 255, 255, 0.12);
+            border: none;
+            color: #ffffff;
+            font-size: 22px;
+            padding: 4px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .menu-toggle:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Focus states for accessibility */
+        .search-box input:focus,
+        .lang-selector select:focus,
+        .menu-toggle:focus,
+        .social-btn:focus,
+        .slider-btn:focus,
+        .cta-link:focus,
+        .read-more-btn:focus {
+            outline: 2px solid #64b5f6;
+            outline-offset: 2px;
+        }
+
+        /* ==========================================
+           3. DROP-DOWN ACCORDION MENU OVERLAY
+           ========================================== */
+        .side-menu {
+            position: fixed;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            max-height: calc(100vh - 60px);
+            background-color: #0b2f4c;
+            z-index: 3000;
+            overflow-y: auto;
+            transition: top 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .side-menu.open {
+            top: 55px;
+        }
+
+        .side-menu ul {
+            list-style: none;
+            padding: 10px 0;
+            margin: 0;
+        }
+
+        .side-menu ul li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .side-menu ul li a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 25px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .side-menu ul li a:hover,
+        .side-menu ul li a:active {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* ==========================================
+           4. APP IMAGE CAROUSEL SLIDER & INDICATORS
+           ========================================== */
+        .slider-section {
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 65vh;
+            min-height: 350px;
+            overflow: hidden;
+            border-radius: 24px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .slide {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-caption {
+            position: absolute;
+            bottom: 25px;
+            left: 40px;
+            background: rgba(0, 0, 0, 0.65);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 12px;
+            max-width: 70%;
+            backdrop-filter: blur(4px);
+        }
+
+        .slider-caption p {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.4);
+            color: #ffffff;
+            border: none;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 14px;
+            z-index: 10;
+            transition: background-color 0.2s ease;
+        }
+
+        .slider-btn:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .prev-btn { left: 12px; }
+        .next-btn { right: 65px; }
+
+        /* Right-Side Numbered Slider Indicators */
+        .slide-numbers {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 8px 6px;
+            border-radius: 10px;
+            z-index: 20;
+            backdrop-filter: blur(4px);
+        }
+
+        .num-item {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .num-item:hover {
+            color: #ffffff;
+        }
+
+        .num-item.active {
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        /* ==========================================
+           5. CENTRAL BLUE COMPONENT BANNER
+           ========================================== */
+        .intro-card {
+            background: linear-gradient(180deg, #e3f2fd 0%, #cbe5fe 100%);
+            border-radius: 24px;
+            padding: 35px 20px;
+            text-align: center;
+            margin: 20px 0;
+            border: 1px solid rgba(33, 150, 243, 0.15);
+        }
+
+        .intro-card h2 {
+            margin: 0 0 10px 0;
+            color: #0b4582;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .intro-card p {
+            margin: 0 0 10px 0;
+            color: #1e62a6;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        /* ==========================================
+           6. FILTERS & DISCOVERY CONTROLS
+           ========================================== */
+        .controls-section {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 15px 14px 45px;
+            background-color: #ffffff;
+            border: 1px solid #e1e8ed;
+            border-radius: 30px;
+            font-size: 15px;
+            transition: border-color 0.2s ease;
+        }
+
+        .search-box input:focus {
+            border-color: #007bff;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #7f8c8d;
+        }
+
+        .filter-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            border: 1px solid #e1e8ed;
+            padding: 14px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 15px;
+            color: #2c3e50;
+            min-width: 160px;
+            transition: border-color 0.2s ease;
+        }
+
+        .filter-box:hover {
+            border-color: #007bff;
+        }
+
+        /* ==========================================
+           7. RUNNING CONTENT ARTICLES, PLAN GRID & NEWS
+           ========================================== */
+        .content-section {
+            background-color: #ffffff;
+            padding: 24px;
+            margin-bottom: 20px;
+            border-radius: 24px;
+            border: 1px solid #e1e8ed;
+            scroll-margin-top: 75px;
+        }
+
+        .content-section h2 {
+            color: #0b2f4c;
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .content-section hr {
+            border: 0;
+            height: 1px;
+            background-color: #e1e8ed;
+            margin-bottom: 15px;
+        }
+
+        .section-body p {
+            line-height: 1.6;
+            color: #4a5568;
+        }
+
+        /* Plan Section Grid Styling */
+        .plan-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .plan-card {
+            background: #f8fafd;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            border-radius: 8px;
+            position: relative;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.12);
+        }
+
+        .plan-number {
+            font-size: 22px;
+            font-weight: 800;
+            color: rgba(0, 123, 255, 0.2);
+            position: absolute;
+            top: 10px;
+            right: 15px;
+        }
+
+        .plan-card h3 {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+            color: #0b2f4c;
+        }
+
+        .plan-card p {
+            margin: 0;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* NEWS CARD STYLING */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .news-card {
+            display: flex;
+            gap: 20px;
+            background: #ffffff;
+            border: 1px solid #e1e8ed;
+            border-radius: 16px;
+            padding: 16px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .news-image {
+            width: 200px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .news-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .news-date {
+            font-size: 12px;
+            color: #007bff;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .news-title {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+            color: #0b2f4c;
+            line-height: 1.35;
+        }
+
+        .news-excerpt {
+            margin: 0 0 10px 0;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .read-more-btn {
+            font-size: 13px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s ease;
+        }
+
+        .read-more-btn:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+
+        /* ==========================================
+           8. MEMBERSHIP FORM STYLING
+           ========================================== */
+        .form-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 24px;
+            border: 1px solid #e1e8ed;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #0b2f4c;
+            margin-bottom: 8px;
+            font-size: 22px;
+        }
+
+        .form-container p {
+            text-align: center;
+            color: #555;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 14px;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            border-color: #007bff;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .radio-group label {
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #0b2f4c;
+            color: #ffffff;
+            padding: 14px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #007bff;
+        }
+
+        /* ==========================================
+           9. FOOTER SECTION STYLING
+           ========================================== */
+        .custom-footer {
+            background-color: #0b2f4c;
+            color: #ffffff;
+            position: relative;
+            padding-top: 20px;
+            margin-top: 40px;
+        }
+
+        .footer-overlay-bar {
+            height: 4px;
+            background: linear-gradient(90deg, #64b5f6, #007bff);
+            width: 100%;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-card .card-title {
+            font-size: 16px;
+            color: #64b5f6;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 8px;
+        }
+
+        .bullet-list, .icon-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .bullet-list li {
+            margin-bottom: 8px;
+            color: #d1d5db;
+        }
+
+        .icon-list li a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .icon-list li a:hover {
+            color: #ffffff;
+        }
+
+        .icon-list i {
+            margin-right: 8px;
+            color: #64b5f6;
+        }
+
+        .social-grid {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .social-btn {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .social-btn:hover {
+            background: #007bff;
+        }
+
+        .cta-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .cta-link {
+            display: inline-block;
+            margin-top: 6px;
+            color: #64b5f6;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .cta-link:hover {
+            color: #ffffff;
+        }
+
+        /* ==========================================
+           10. FIXED CONTACT FAB FLOATING BUTTON
+           ========================================== */
+        .fab-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #0a2f4d;
+            color: #ffffff;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            box-shadow: 0 4px 15px rgba(10, 47, 77, 0.3);
+            z-index: 5000;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            text-decoration: none;
+        }
+
+        .fab-btn:hover {
+            transform: scale(1.05);
+            background-color: #007bff;
+        }
+
+        /* ==========================================
+           11. MEDIA QUERIES & RESPONSIVE DESIGNS
+           ========================================== */
+        @media (min-width: 992px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .desktop-menu, 
+            .top-nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .plan-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .news-card {
+                flex-direction: column;
+            }
+            
+            .news-image {
+                width: 100%;
+                height: 180px;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .controls-section {
+                flex-direction: column;
+            }
+            
+            .slider-caption {
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+                max-width: 85%;
+                padding: 8px 14px;
+            }
+            
+            .slider-caption p {
+                font-size: 12px;
+            }
+            
+            .next-btn {
+                right: 50px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- TOP HEADER & MAIN NAVIGATION -->
-    <header class="main-header">
-        <div class="header-container">
-            <div class="brand-logo">
-                <img src="13.jpg" alt="Prosperity Party Logo" class="brand-img">
-                <span class="brand-title" data-am="ብልፅግና ፓርቲ" data-en="Prosperity Party">ብልፅግና ፓርቲ</span>
-            </div>
-            
-            <nav class="top-nav">
-                <ul>
-                    <li><a href="#message" class="active" data-am="ዋና ገጽ" data-en="Home">ዋና ገጽ</a></li>
-                    <li class="dropdown">
-                        <a href="#plan" data-am="ስለ እኛ" data-en="About Us">ስለ እኛ <i class="fa-solid fa-chevron-down"></i></a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#news" data-am="ወቅታዊ ጉዳዮች" data-en="Latest News">ወቅታዊ ጉዳዮች <i class="fa-solid fa-chevron-down"></i></a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#inspection" data-am="የኢንስፔክሽንና የሥነ-ምግባር ኮሚሽን" data-en="Ethics & Inspection Commission">የኢንስፔክሽንና የሥነ-ምግባር ኮሚሽን <i class="fa-solid fa-chevron-down"></i></a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#publications" data-am="ህትመት" data-en="Publications">ህትመት <i class="fa-solid fa-chevron-down"></i></a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#sectors" data-am="ክፍሎች" data-en="Sectors">ክፍሎች <i class="fa-solid fa-chevron-down"></i></a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- TOP NAVBAR (DISTRICT BRANDING & LANGUAGE SWITCHER) -->
+    <!-- STICKY NAVBAR -->
     <header class="navbar">
         <div class="nav-container">
             <div class="logo-group">
-                <div class="logo-text">
-                    <h1 class="logo" data-am="ዳሎቻ ወረዳ የብልፅግና ፓርቲ" data-en="Dalocha Woreda Prosperity Party">ዳሎቻ ወረዳ የብልፅግና ፓርቲ</h1>
-                    <p class="sub-slogan" data-am="ዳሎቻ በስራ፣ ብልፅግና በተግባር!" data-en="Dalocha in Action, Prosperity in Practice!">ዳሎቻ በስራ፣ ብልፅግና በተግባር!</p>
-                </div>
+                <h1 class="logo">ዳሎቻ ወረዳ ብልፅግና ፓርቲ</h1>
+                <p class="sub-slogan">Prosperity Party Dalocha Woreda</p>
             </div>
 
-            <!-- DESKTOP QUICK LINKS -->
+            <!-- Desktop Links -->
             <nav class="desktop-menu">
-                <a href="#message" data-am="ዋና ገጽ" data-en="Home">ዋና ገጽ</a>
-                <a href="#plan" data-am="ስለ እኛ" data-en="About">ስለ እኛ</a>
-                <a href="#news" data-am="ወቅታዊ ዜናዎች" data-en="Latest News">ወቅታዊ ዜናዎች</a>
-                <a href="#sectors" data-am="ክፍሎች" data-en="Sectors">ክፍሎች</a>
-                <a href="#contact-us" data-am="አድራሻ" data-en="Offices">አድራሻ</a>
+                <a href="#about">ስለ እኛ</a>
+                <a href="#plans">ዕቅዶች</a>
+                <a href="#news">ዜናዎች</a>
+                <a href="#register">አባልነት</a>
             </nav>
 
             <div class="nav-controls">
                 <div class="lang-selector">
-                    <!-- LANGUAGE SWITCHER DROPDOWN -->
-                    <select id="langSelect" onchange="switchLanguage(this.value)">
+                    <select aria-label="ቋንቋ ይምረጡ">
                         <option value="am">አማርኛ</option>
                         <option value="en">English</option>
                     </select>
                 </div>
-                <button class="menu-toggle" id="menuToggleBtn">☰</button>
+                <button class="menu-toggle" id="menuToggle" aria-label="ሜኑ ክፈት/ዝጋ">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- MOBILE & QUICK SIDE MENU -->
+    <!-- ACCORDION SIDE MENU (Mobile) -->
     <nav class="side-menu" id="sideMenu">
         <ul>
-            <li><a href="#plan" data-am="ስለኛ" data-en="About Us">ስለኛ</a></li>
-            <li><a href="#message" data-am="መልዕክት" data-en="Message">መልዕክት</a></li>
-            <li><a href="#prosperity-party" data-am="የብልፅግና ፓርቲ ዓላማዎች" data-en="Party Objectives">የብልፅግና ፓርቲ ዓላማዎች</a></li>
-            <li><a href="#principles" data-am="መርሆች" data-en="Principles">መርሆች</a></li>
-            <li><a href="#population" data-am="ህዝብና ጂኦግራፊ" data-en="Demographics">ህዝብና ጂኦግራፊ</a></li>
-            <li><a href="#news" data-am="ወቅታዊ ዜናዎች" data-en="Latest News">ወቅታዊ ዜናዎች</a></li>
-            <li><a href="#sectors" data-am="ህዝባዊ ዘርፍ" data-en="Public Sector">ህዝባዊ ዘርፍ</a></li>
-            <li><a href="#infrastructure" data-am="መሰረተ-ልማት" data-en="Infrastructure">መሰረተ-ልማት</a></li>
-            <li><a href="#sectors" data-am="አደረጃጀት ዘርፍ" data-en="Organizational Sector">አደረጃጀት ዘርፍ</a></li>
-            <li><a href="#finance" data-am="ፋይናንስና ኢንቨስትመንት" data-en="Finance & Investment">ፋይናንስና ኢንቨስትመንት</a></li>
-            <li><a href="#contact-us" data-am="አድራሻ" data-en="Contact Us">አድራሻ</a></li>
-            <li><a href="form.html" data-am="የአባልነት ፎርም" data-en="Application Form">የአባልነት ፎርም</a></li>
+            <li><a href="#about">ስለ እኛ (About)</a></li>
+            <li><a href="#plans">ዕቅዶች (Plans)</a></li>
+            <li><a href="#news">ዜና እና መረጃ (News)</a></li>
+            <li><a href="#register">የአባልነት መመዝገቢያ (Membership)</a></li>
         </ul>
     </nav>
 
+    <!-- MAIN CONTENT WRAPPER -->
     <main class="content-wrapper">
 
-        <!-- SLIDER SECTION -->
+        <!-- CAROUSEL SLIDER SECTION -->
         <section class="slider-section">
             <div class="slider-container">
-
                 <div class="slide active">
-                    <img src="6.jpg" alt="ጠቅላይ ሚኒስትር ዶክተር አብይ አህመድ">
+                    <img src="https://via.placeholder.com/1200x500/0b2f4c/ffffff?text=Dalocha+Woreda+Prosperity" alt="ዳሎቻ ወረዳ">
                     <div class="slider-caption">
-                        <p data-am="ተባብረን ወደ ታላቅ ስኬት!" data-en="Rising Together Towards Greater Heights!">ተባብረን ወደ ታላቅ ስኬት!</p>
+                        <p>የዳሎቻ ወረዳ ብልፅግና ፓርቲ ጽህፈት ቤት</p>
                     </div>
                 </div>
-
                 <div class="slide">
-                    <img src="2.jpg" alt="ስልጤ ዞን ብልፅግና ፓርቲ ቅ/ፅ/ቤት ወ/ሮ ነኢማ ሙኒር">
+                    <img src="https://via.placeholder.com/1200x500/007bff/ffffff?text=Development+Projects" alt="የልማት ስራዎች">
                     <div class="slider-caption">
-                        <p data-am="የህዝብ ተሳትፎ መመሪያችን፣ ሁለንተናዊ እድገት ግባችን!" data-en="Public engagement is our guide, comprehensive development is our goal!">የህዝብ ተሳትፎ መመሪያችን፣ ሁለንተናዊ እድገት ግባችን!</p>
+                        <p>የህዝባችንን ተጠቃሚነት የሚያረጋግጡ የልማት ስራዎች</p>
                     </div>
                 </div>
 
-                <div class="slide">
-                    <img src="3.jpg" alt="የዳሎቻ ወረዳ ዋና እስተዳደር አቶ ሪድዋን ሞሶሮ">
-                    <div class="slider-caption">
-                        <p data-am="ከህዝብ ጋር በቅንጅት፣ ለሁለንተናዊ እድገትና እኩልነት!" data-en="Together with the public, for all-inclusive growth and equality!">ከህዝብ ጋር በቅንጅት፣ ለሁለንተናዊ እድገትና እኩልነት!</p>
-                    </div>
-                </div>
+                <button class="slider-btn prev-btn" id="prevBtn" aria-label="ቀዳሚ"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="slider-btn next-btn" id="nextBtn" aria-label="ቀጣይ"><i class="fa-solid fa-chevron-right"></i></button>
 
-                <div class="slide">
-                    <img src="4.jpg" alt="ዳሎቻ ወረዳ የብልፅግና ፓርቲ">
-                    <div class="slider-caption">
-                        <p data-am="በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ!" data-en="Empowering Youth, Transforming Services: The Digital Future of Dalocha!">በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ!</p>
-                    </div>
-                </div>
-
-                <div class="slide">
-                    <img src="8.JPG" alt="Dalocha City">
-                    <div class="slider-caption">
-                        <p data-am="ዳሎቻ በስራ፣ ብልፅግና በተግባር!" data-en="Dalocha in Action, Prosperity in Practice!">ዳሎቻ በስራ፣ ብልፅግና በተግባር!</p>
-                    </div>
-                </div>
-
-                <div class="slide">
-                    <img src="12.JPG" alt="የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና!">
-                    <div class="slider-caption">
-                        <p data-am="የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና!" data-en="Dalocha’s People United, Prosperity Achieved!">የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና!</p>
-                    </div>
-                </div>
-
-                <div class="slide">
-                    <img src="1.jpg" alt="የብልፅግና ፓርቲ">
-                    <div class="slider-caption">
-                        <p data-am="በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ!" data-en="Empowering Youth, Transforming Services: The Digital Future of Ethiopia!">በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ!</p>
-                    </div>
-                </div>
-
-                <!-- NAVIGATION BUTTONS -->
-                <button class="slider-btn prev-btn" onclick="changeSlide(-1)">&#10094;</button>
-                <button class="slider-btn next-btn" onclick="changeSlide(1)">&#10095;</button>
-
-                <!-- NUMBERED INDICATORS -->
-                <div class="slide-numbers" id="slideNumbers">
+                <div class="slide-numbers">
                     <span class="num-item active" onclick="goToSlide(0)">01</span>
                     <span class="num-item" onclick="goToSlide(1)">02</span>
-                    <span class="num-item" onclick="goToSlide(2)">03</span>
-                    <span class="num-item" onclick="goToSlide(3)">04</span>
-                    <span class="num-item" onclick="goToSlide(4)">05</span>
-                    <span class="num-item" onclick="goToSlide(5)">06</span>
-                    <span class="num-item" onclick="goToSlide(6)">07</span>
                 </div>
             </div>
         </section>
 
-        <!-- SOCIO-ECONOMIC CARD -->
-        <div class="intro-card" id="population">
-            <h2 data-am="ማህበራዊ-ኢኮኖሚያዊ እና ጂኦ-ስፓሻል መረጃዎች" data-en="Socio-Economic & Geospatial Information">ማህበራዊ-ኢኮኖሚያዊ እና ጂኦ-ስፓሻል መረጃዎች</h2>
-            <p><strong data-am="የዳሎቻ ወረዳ አጠቃላይ መረጃ፦" data-en="General Information of Dalocha Woreda:">የዳሎቻ ወረዳ አጠቃላይ መረጃ፦</strong><br>
-            <span data-am="ዳሎቻ ወረዳ በማዕከላዊ ኢትዮጵያ ክልል (ቀደም ሲል በደቡብ ብሔሮች፣ ብሔረሰቦችና ሕዝቦች ክልል) በስልጤ ዞን ውስጥ የሚገኝ ወረዳ ነው። ወረዳው በሰሜን ከስልጤ፣ በምዕራብ ከዉልባረግ፣ በደቡብ ከሳንኩራ እና በምስራቅ ከላንፉሮ ወረዳዎች ጋር ይዋሰናል።" data-en="Dalocha Woreda is located in the Silte Zone of the Central Ethiopia Regional State. It borders Silte to the north, Wulbareg to the west, Sankura to the south, and Lanfuro to the east.">ዳሎቻ ወረዳ በማዕከላዊ ኢትዮጵያ ክልል (ቀደም ሲል በደቡብ ብሔሮች፣ ብሔረሰቦችና ሕዝቦች ክልል) በስልጤ ዞን ውስጥ የሚገኝ ወረዳ ነው። ወረዳው በሰሜን ከስልጤ፣ በምዕራብ ከዉልባረግ፣ በደቡብ ከሳንኩራ እና በምስራቅ ከላንፉሮ ወረዳዎች ጋር ይዋሰናል።</span></p>
+        <!-- INTRO BANNER -->
+        <section class="intro-card" id="about">
+            <h2>እንኳን ወደ ዳሎቻ ወረዳ ብልፅግና ፓርቲ ድህረ ገጽ በሰላም መጡ!</h2>
+            <p>በወረዳችን ሁለንተናዊ እድገት፣ የህዝቦች እኩልነትና ብልፅግና ለማረጋገጥ በቁርጠኝነት እንሰራለን::</p>
+        </section>
 
-            <p><strong data-am="የህዝብ ብዛት እና የስነ-ህዝብ ትንተና (Demographic Analysis)፦" data-en="Population Size and Demographic Analysis:">የህዝብ ብዛት እና የስነ-ህዝብ ትንተና (Demographic Analysis)፦</strong></p>
-            <p data-am="1. የህዝብ ብዛት እና እድገት፦ የ2007 (እ.ኤ.አ) ማዕከላዊ ስታቲስቲክስ ኤጀንሲ ህዝብ ቆጠራ: በቆጠራው መሠረት የዳሎቻ ወረዳ የህዝብ ብዛት 89,807 (44,960 ወንዶች እና 44,847 ሴቶች) ነበር። የአሁኑ ግምት (ከ2022-2026): በየዓመቱ በሚመዘገበው ~2.3% እስከ 2.8% የህዝብ እድገት መጠን መሠረት፣ የወረዳው ህዝብ በአሁኑ ወቅት በግምት ከ126,000 እስከ 140,000 ይደርሳል ተብሎ ይገመታል።" 
-               data-en="1. Population and Growth: According to the 2007 census, the population was 89,807 (44,960 males and 44,847 females). Current estimation (2022-2026): Based on an annual growth rate of ~2.3% to 2.8%, the woreda population is estimated to be between 126,000 and 140,000.">
-               1. የህዝብ ብዛት እና እድገት፦ የ2007 (እ.ኤ.አ) ማዕከላዊ ስታቲስቲክስ ኤጀንሲ ህዝብ ቆጠራ: በቆጠራው መሠረት የዳሎቻ ወረዳ የህዝብ ብዛት 89,807 (44,960 ወንዶች እና 44,847 ሴቶች) ነበር። የአሁኑ ግምት (ከ2022-2026): በየዓመቱ በሚመዘገበው ~2.3% እስከ 2.8% የህዝብ እድገት መጠን መሠረት፣ የወረዳው ህዝብ በአሁኑ ወቅት በግምት ከ126,000 እስከ 140,000 ይደርሳል ተብሎ ይገመታል።
-            </p>
-            <p data-am="የገጠር እና ከተማ ስርጭት፦ የወረዳው ህዝብ በአብዛኛው በገጠር የሚኖር ሲሆን፣ 92.4% ገደማ በገጠር የሚኖር እና 7.6% ያህሉ ብቻ በከተማ (በዋናነት ዳሎቻ ከተማ) ይኖራል።" 
-               data-en="Rural and Urban Distribution: The majority of the population lives in rural areas (~92.4%), with only about 7.6% living in urban centers (mainly Dalocha town).">
-               የገጠር እና ከተማ ስርጭት፦ የወረዳው ህዝብ በአብዛኛው በገጠር የሚኖር ሲሆን፣ 92.4% ገደማ በገጠር የሚኖር እና 7.6% ያህሉ ብቻ በከተማ (በዋናነት ዳሎቻ ከተማ) ይኖራል።
-            </p>
-            <p data-am="2. የብሔር እና የቋንቋ ስርጭት፦ አብዛኛው የወረዳው ነዋሪ (99.1%) የስልጤ ብሔር ተወላጅ ነው። ሌሎች ብሔረሰቦች በድምሩ 0.9% ያህሉን ይሸፍናሉ። ቋንቋ: የስልጤ ቋንቋ (ስልጥኛ) በ99.6% ነዋሪዎች ዘንድ የሚነገር ሲሆን ነው።" 
-               data-en="2. Ethnic and Linguistic Distribution: The majority of residents (99.1%) belong to the Silte ethnic group. Other ethnic groups account for 0.9%. Language: Silte language (Silt'e) is spoken by over 99.6% of the population.">
-               2. የብሔር እና የቋንቋ ስርጭት፦ አብዛኛው የወረዳው ነዋሪ (99.1%) የስልጤ ብሔር ተወላጅ ነው። ሌሎች ብሔረሰቦች በድምሩ 0.9% ያህሉን ይሸፍናሉ። ቋንቋ: የስልጤ ቋንቋ (ስልጥኛ) በ99.6% ነዋሪዎች ዘንድ የሚነገር ሲሆን ነው።
-            </p>
-            <p data-am="3. የሃይማኖት ስርጭት፦ እስልምና: የእስልምና ሃይማኖት ተከተይ የሆነው የህዝብ ክፍል 99.5% ገደማ ነው።" 
-               data-en="3. Religious Distribution: Islam is followed by approximately 99.5% of the population.">
-               3. የሃይማኖት ስርጭት፦ እስልምና: የእስልምና ሃይማኖት ተከተይ የሆነው የህዝብ ክፍል 99.5% ገደማ ነው።
-            </p>
-        </div>
-
-        <!-- SEARCH AND FILTER CONTROLS -->
-        <section class="controls-section">
+        <!-- SEARCH CONTROLS -->
+        <div class="controls-section">
             <div class="search-box">
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                <input type="text" placeholder="ፈልግ... Search..." data-am="ፈልግ..." data-en="Search...">
+                <input type="text" placeholder="ዜናዎችን ወይም መረጃዎችን ይፈልጉ...">
             </div>
             <div class="filter-box">
-                <span data-am="ሁሉም ክፍሎች" data-en="All Sectors">ሁሉም ክፍሎች</span>
+                <span>በምድብ ይለዩ</span>
                 <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </div>
+
+        <!-- PLANS SECTION -->
+        <section class="content-section" id="plans">
+            <h2>የፓርቲው አቅጣጫዎችና ዋና ዋና ዕቅዶች</h2>
+            <hr>
+            <div class="plan-grid">
+                <div class="plan-card">
+                    <span class="plan-number">01</span>
+                    <h3>የኢኮኖሚ እድገት</h3>
+                    <p>በወረዳችን የግብርና ምርታማነትን ማሳደግና የአነስተኛ ኢንተርፕራይዞችን ማስፋፋት::</p>
+                </div>
+                <div class="plan-card">
+                    <span class="plan-number">02</span>
+                    <h3>ማህበራዊ ልማት</h3>
+                    <p>የትምህርትና የጤና አገልግሎቶችን ጥራትና ተዳራሽነት ማረጋገጥ::</p>
+                </div>
             </div>
         </section>
 
-        <!-- CONTENT SECTIONS -->
-        <section class="info-sections">
-            
-            <!-- LEADER MESSAGE -->
-            <article id="message" class="content-section">
-                <h2 data-am="የመሪው መልዕክት | Message" data-en="Leader's Message | Message">የመሪው መልዕክት | Message</h2>
-                <hr>
-                <div class="section-body">
-                    <p data-am="እንኳን ወደ ዳሎቻ ወረዳ ይፋዊ ድረ-ገጽ በደህና መጡ። ይህ መድረክ የወረዳችንን ልማት፣ ማህበራዊ አገልግሎቶች እና የወደፊት እቅዶች ለህዝባችን ተደራሽ ለማድረግ የተዘጋጀ ነው። የብልፅግና ጉዞአችን የሰው ኃይልን፣ የተፈጥሮ ሀብትን እና ማህበራዊ ካፒታልን በዘመናዊ እውቀት እና ቴክኖሎጂ የምናሳድግበት መሰረታዊ የለውጥ ሂደት ነው። የዳሎቻ ወረዳ ዋና አስተዳደር አቶ ሪድዋን ሞሶሮ፡ የወረዳ አስተዳደር በመንግሥት አስተዳደራዊ መዋቅር ውስጥ ለህዝብ ቅርብ የሆነ የአስተዳደር እርከን ሲሆን፣ የህዝብን ፍላጎት መሠረት በማድረግ ዘላቂ ልማትን፣ መልካም አስተዳደርን፣ የህግ የበላይነትን እና ፍትሃዊ የአገልግሎት አሰጣጥን ለማረጋገጥ ይሰራል። አስተዳደሩ በህዝብ ተሳትፎ፣ በተጠያቂነት፣ በግልጽነት እና በቅንጅታዊ አሰራር ላይ ተመስርቶ የአካባቢውን ማህበራዊ፣ ኢኮኖሚያዊና አስተዳደራዊ እድገት ለማፋጠን ያለማቋረጥ ይሰራል። የወረዳ አስተዳደሩ ዋና ኃላፊነቶች የመንግሥት ፖሊሲዎችንና ፕሮግራሞችን በውጤታማነት ማስፈጸም፣ የልማት እቅዶችን ማቀድና መተግበር፣ የመሠረተ ልማት ስራዎችን ማስፋፋት፣ ለህዝብ ፈጣንና ቀልጣፋ አገልግሎት መስጠት፣ የሰላምና የፀጥታ ሁኔታን ማስጠበቅ፣ የህግ የበላይነትን ማረጋገጥ እና ከህዝብ ጋር ያለውን ግንኙነት ማጠናከር ናቸው። በኢኮኖሚ ዘርፍ የግብርና ምርታማነትን ማሳደግ፣ ኢንቨስትመንትን ማበረታታት፣ የስራ እድል መፍጠር፣ የማይክሮና አነስተኛ ኢንተርፕራይዞችን ማጠናከር እና የወጣቶችና የሴቶች ኢኮኖሚያዊ ተሳትፎን ማሳደግ ትኩረት የሚሰጣቸው ጉዳዮች ናቸው። በማህበራዊ ዘርፍ የትምህርት፣ የጤና፣ የንጹህ ውሃ፣ የመንገድ፣ የቴክኖሎጂ እና ሌሎች መሰረታዊ አገልግሎቶችን ለህዝብ በፍትሃዊነት ለማዳረስ በቅንጅት ይሰራል። እንዲሁም የአካባቢ ጥበቃ፣ የተፈጥሮ ሀብት አያያዝ፣ የአደጋ መከላከልና ዝግጁነት በተግባር እንዲተገበሩ ያደርጋል። የወረዳ አስተዳደሩ የህዝብን አስተያየት፣ ጥቆማና ቅሬታ በመቀበል እና በአግባቡ ምላሽ በመስጠት የህዝብ እምነትን ለማጠናከር ይሰራል። በተጨማሪም ከመንግሥት ተቋማት፣ ከማህበረሰብ አደረጃጀቶች፣ ከሃይማኖት ተቋማት፣ ከግሉ ዘርፍ እና ከልማት አጋሮች ጋር በመቀናጀት የልማት ግቦችን ለማሳካት ይተጋል። በብልጽግና ፓርቲ መርሆዎች መሠረት የወረዳ አስተዳደሩ የህዝብን አንድነት፣ ሰላም፣ ፍትህ፣ ልማትና ብልጽግና ለማረጋገጥ በሙሉ ቁርጠኝነት ይሰራል። በተጠያቂነት፣ በግልጽነት፣ በፍትሃዊነት እና በህዝብ ተሳትፎ ላይ በመመስረት ለሁሉም ዜጎች የተሻለ አገልግሎት በመስጠት የአካባቢውን ሁለንተናዊ እድገት ለማፋጠን በትጋት ይሰራል።"
-                       data-en="Welcome to the official website of Dalocha Woreda. This platform is designed to make our district's development, social services, and future plans accessible to the public. Our journey of prosperity is a fundamental process of transforming human potential, natural resources, and social capital through modern knowledge and technology. Dalocha Woreda Chief Administrator Mr. Ridwan Mosoro noted that local governance serves as the closest administrative tier to the citizens, working tirelessly to ensure sustainable development, good governance, rule of law, and equitable service delivery. The administration focuses on expanding infrastructure, enhancing agricultural productivity, fostering economic opportunities for youth and women, and maintaining peace and security.">
-                       እንኳን ወደ ዳሎቻ ወረዳ ይፋዊ ድረ-ገጽ በደህና መጡ። ይህ መድረክ የወረዳችንን ልማት፣ ማህበራዊ አገልግሎቶች እና የወደፊት እቅዶች ለህዝባችን ተደራሽ ለማድረግ የተዘጋጀ ነው። የብልፅግና ጉዞአችን የሰው ኃይልን፣ የተፈጥሮ ሀብትን እና ማህበራዊ ካፒታልን በዘመናዊ እውቀት እና ቴክኖሎጂ የምናሳድግበት መሰረታዊ የለውጥ ሂደት ነው። የዳሎቻ ወረዳ ዋና አስተዳደር አቶ ሪድዋን ሞሶሮ፡ የወረዳ አስተዳደር በመንግሥት አስተዳደራዊ መዋቅር ውስጥ ለህዝብ ቅርብ የሆነ የአስተዳደር እርከን ሲሆን፣ የህዝብን ፍላጎት መሠረት በማድረግ ዘላቂ ልማትን፣ መልካም አስተዳደርን፣ የህግ የበላይነትን እና ፍትሃዊ የአገልግሎት አሰጣጥን ለማረጋገጥ ይሰራል። አስተዳደሩ በህዝብ ተሳትፎ፣ በተጠያቂነት፣ በግልጽነት እና በቅንጅታዊ አሰራር ላይ ተመስርቶ የአካባቢውን ማህበራዊ፣ ኢኮኖሚያዊና አስተዳደራዊ እድገት ለማፋጠን ያለማቋረጥ ይሰራል። የወረዳ አስተዳደሩ ዋና ኃላፊነቶች የመንግሥት ፖሊሲዎችንና ፕሮግራሞችን በውጤታማነት ማስፈጸም፣ የልማት እቅዶችን ማቀድና መተግበር፣ የመሠረተ ልማት ስራዎችን ማስፋፋት፣ ለህዝብ ፈጣንና ቀልጣፋ አገልግሎት መስጠት፣ የሰላምና የፀጥታ ሁኔታን ማስጠበቅ፣ የህግ የበላይነትን ማረጋገጥ እና ከህዝብ ጋር ያለውን ግንኙነት ማጠናከር ናቸው። በኢኮኖሚ ዘርፍ የግብርና ምርታማነትን ማሳደግ፣ ኢንቨስትመንትን ማበረታታት፣ የስራ እድል መፍጠር፣ የማይክሮና አነስተኛ ኢንተርፕራይዞችን ማጠናከር እና የወጣቶችና የሴቶች ኢኮኖሚያዊ ተሳትፎን ማሳደግ ትኩረት የሚሰጣቸው ጉዳዮች ናቸው። በማህበራዊ ዘርፍ የትምህርት፣ የጤና፣ የንጹህ ውሃ፣ የመንገድ፣ የቴክኖሎጂ እና ሌሎች መሰረታዊ አገልግሎቶችን ለህዝብ በፍትሃዊነት ለማዳረስ በቅንጅት ይሰራል። እንዲሁም የአካባቢ ጥበቃ፣ የተፈጥሮ ሀብት አያያዝ፣ የአደጋ መከላከልና ዝግጁነት በተግባር እንዲተገበሩ ያደርጋል። የወረዳ አስተዳደሩ የህዝብን አስተያየት፣ ጥቆማና ቅሬታ በመቀበል እና በአግባቡ ምላሽ በመስጠት የህዝብ እምነትን ለማጠናከር ይሰራል። በተጨማሪም ከመንግሥት ተቋማት፣ ከማህበረሰብ አደረጃጀቶች፣ ከሃይማኖት ተቋማት፣ ከግሉ ዘርፍ እና ከልማት አጋሮች ጋር በመቀናጀት የልማት ግቦችን ለማሳካት ይተጋል። በብልጽግና ፓርቲ መርሆዎች መሠረት የወረዳ አስተዳደሩ የህዝብን አንድነት፣ ሰላም፣ ፍትህ፣ ልማትና ብልጽግና ለማረጋገጥ በሙሉ ቁርጠኝነት ይሰራል። በተጠያቂነት፣ በግልጽነት፣ በፍትሃዊነት እና በህዝብ ተሳትፎ ላይ በመመስረት ለሁሉም ዜጎች የተሻለ አገልግሎት በመስጠት የአካባቢውን ሁለንተናዊ እድገት ለማፋጠን በትጋት ይሰራል።
-                    </p>
-                    <p data-am="የዳሎቻ ወረዳ ብልፅግና ፓርቲ ጽሕፈት ቤት ኃላፊ መልእክት፡ የብልፅግና ጉዞአችን የሰው ኃይልን፣ የተፈጥሮ ሀብትን እና ማህበራዊ ካፒታልን በዘመናዊ እውቀት እና ቴክኖሎጂ የምናሳድግበት መሰረታዊ የለውጥ ሂደት ነው። ዛሬ የምንገኝበት ዓለም በዲጂታል እውቀት ፍጥነት የሚመራ በመሆኑ ለዳሎቻ ወረዳ እድገት የሳይንስና ቴክኖሎጂን አቅም መገንባት፣ የዲጂታል ክህሎትን በወረዳችን ማዳበር እንዲሁም አሰራሮችን ወደ ዲጂታል መለወጥ የፓርቲያችን ወሳኝ የትግል አጀንዳ ነው። የብልፅግና ፓርቲ እሳቤ ግልጽ ነው ቴክኖሎጂ ለእኛ የቅንጦት ሳይሆን የልማት፣ የፍትሃዊነት እና የመረጃ ግልጽነት ማረጋገጫ መሳሪያ ነው። ይህ የዲጂታል መድረክ ከዲጂታል ባርነት ወጥተን የራሳችንን መረጃዎች በራሳችን ተቆጣጥረን ለህዝብ አገልግሎት የምናውልበት የሉዓላዊነት ማሳያ ነው። በዚሁ መሰረት ቢሮክራሲን ሰብሮ አገልግሎትን በዲጂታል መንገድ ለዜጎች በፍጥነት፣ በግልጽ እና በብቃት ለማቅረብ እየሰራን እንገኛለን። የወረዳችን ሳይንስና ቴክኖሎጂ ጽሕፈት ቤት የገነባው ይህ ዌብሳይት ሀገራችን እየቀረጸችው ባለው 'ዲጂታል ኢትዮጵያ' ራዕይ ውስጥ የዳሎቻ ወረዳን የቴክኖሎጂ ሽግግር ማሳያ ነው። ይህ መድረክ ዲጂታል ኢኮኖሚን በመገንባት፣ የመረጃ ተደራሽነትን በማስፋት እና ለወጣቶች የፈጠራ ስራ ምቹ ምህዳር በመፍጠር የሀገራችንን ሁለንተናዊ የብልፅግና ጉዞ ወደ ተሻለ ደረጃ የሚያሸጋግር ነው። የወደፊት የልማት ምዕራፋችን በሙሉ አቅሙ በቴክኖሎጂ የተደገፈ በመሆኑ ወጣቶቻችን በፈጠራ ስራዎቻቸው ሀገራቸውን እንዲለውጡ እና በዲጂታል ኢኮኖሚ ውስጥ ተወዳዳሪ እንዲሆኑ ጽኑ ፍላጎት አለን። በየደረጃው ያለው አመራር ይህንን ዘመናዊ አሰራር ተላብሶ ህዝብን በቅርበት የሚያገለግልበትን መድረክ መፍጠሩ የለውጥ ጉዞአችንን የሚደግፍና የሚያጠናክር እርምጃ ነው። በመጨረሻም የዳሎቻ ወረዳ ህዝብ ከዚህ የቴክኖሎጂ መድረክ የሚገኙ እድሎችን በመጠቀም በፈጠራ ስራዎች እንዲሳተፉ እና ለወረዳችን እድገት የቴክኖሎጂ አሻራቸውን እንዲያሳርፉ ጥሪዬን እያስተላለፍኩ ይህንን ዌብሳይት ላለማዉ የወረዳችን ሳይንስ ፣ ኢንፎርሜሽና እና ቴክህኖሎጂ ጽ/ቤት ላቅ ያለ ምስጋናዬን አቀርባለሁ ።"
-                       data-en="Message from Dalocha Woreda Prosperity Party Office Head: Technology is not a luxury for us, but a crucial tool for development, equity, and transparency. Moving towards digital transformation cuts bureaucracy and allows rapid, transparent services for our citizens. This web portal built by our Science and Technology office reflects Dalocha's tech transition aligned with Digital Ethiopia.">
-                       የዳሎቻ ወረዳ ብልፅግና ፓርቲ ጽሕፈት ቤት ኃላፊ መልእክት፡ የብልፅግና ጉዞአችን የሰው ኃይልን፣ የተፈጥሮ ሀብትን እና ማህበራዊ ካፒታልን በዘመናዊ እውቀት እና ቴክኖሎጂ የምናሳድግበት መሰረታዊ የለውጥ ሂደት ነው። ዛሬ የምንገኝበት ዓለም በዲጂታል እውቀት ፍጥነት የሚመራ በመሆኑ ለዳሎቻ ወረዳ እድገት የሳይንስና ቴክኖሎጂን አቅም መገንባት፣ የዲጂታል ክህሎትን በወረዳችን ማዳበር እንዲሁም አሰራሮችን ወደ ዲጂታል መለወጥ የፓርቲያችን ወሳኝ የትግል አጀንዳ ነው። የብልፅግና ፓርቲ እሳቤ ግልጽ ነው ቴክኖሎጂ ለእኛ የቅንጦት ሳይሆን የልማት፣ የፍትሃዊነት እና የመረጃ ግልጽነት ማረጋገጫ መሳሪያ ነው። ይህ የዲጂታል መድረክ ከዲጂታል ባርነት ወጥተን የራሳችንን መረጃዎች በራሳችን ተቆጣጥረን ለህዝብ አገልግሎት የምናውልበት የሉዓላዊነት ማሳያ ነው። በዚሁ መሰረት ቢሮክራሲን ሰብሮ አገልግሎትን በዲጂታል መንገድ ለዜጎች በፍጥነት፣ በግልጽ እና በብቃት ለማቅረብ እየሰራን እንገኛለን። የወረዳችን ሳይንስና ቴክኖሎጂ ጽሕፈት ቤት የገነባው ይህ ዌብሳይት ሀገራችን እየቀረጸችው ባለው 'ዲጂታል ኢትዮጵያ' ራዕይ ውስጥ የዳሎቻ ወረዳን የቴክኖሎጂ ሽግግር ማሳያ ነው። ይህ መድረክ ዲጂታል ኢኮኖሚን በመገንባት፣ የመረጃ ተደራሽነትን በማስፋት እና ለወጣቶች የፈጠራ ስራ ምቹ ምህዳር በመፍጠር የሀገራችንን ሁለንተናዊ የብልፅግና ጉዞ ወደ ተሻለ ደረጃ የሚያሸጋግር ነው። የወደፊት የልማት ምዕራፋችን በሙሉ አቅሙ በቴክኖሎጂ የተደገፈ በመሆኑ ወጣቶቻችን በፈጠራ ስራዎቻቸው ሀገራቸውን እንዲለውጡ እና በዲጂታል ኢኮኖሚ ውስጥ ተወዳዳሪ እንዲሆኑ ጽኑ ፍላጎት አለን። በየደረጃው ያለው አመራር ይህንን ዘመናዊ አሰራር ተላብሶ ህዝብን በቅርበት የሚያገለግልበትን መድረክ መፍጠሩ የለውጥ ጉዞአችንን የሚደግፍና የሚያጠናክር እርምጃ ነው። በመጨረሻም የዳሎቻ ወረዳ ህዝብ ከዚህ የቴክኖሎጂ መድረክ የሚገኙ እድሎችን በመጠቀም በፈጠራ ስራዎች እንዲሳተፉ እና ለወረዳችን እድገት የቴክኖሎጂ አሻራቸውን እንዲያሳርፉ ጥሪዬን እያስተላለፍኩ ይህንን ዌብሳይት ላለማዉ የወረዳችን ሳይንስ ፣ ኢንፎርሜሽና እና ቴክህኖሎጂ ጽ/ቤት ላቅ ያለ ምስጋናዬን አቀርባለሁ ።
-                    </p>
-                    <p data-am="ሰብሪ ስሩር (ዳሎቻ ወረዳ ሳይንስና ኢንፎርሜሽን ቴክኖሎጂ ሀላፊ)፡ ሳይንስ፣ ቴክኖሎጂ እና ኢኖቬሽን የዘመናዊ ልማት መሠረቶች ሲሆኑ፣ ዲጂታል ቴክኖሎጂም የመንግሥት አገልግሎትን ለማዘመን፣ የዜጎችን ተሳትፎ ለማጠናከር፣ የወጣቶችን አቅም ለማሳደግ እና የኢኮኖሚ እድገትን ለማፋጠን ከፍተኛ ሚና ያበረክታሉ። በዳሎቻ ወረዳ ሳይንስና ኢንፎርሜሽን ቴክኖሎጂ ዘርፍ የምንሰራው ሥራ ቴክኖሎጂን ለህብረተሰቡ ተደራሽ ማድረግ፣ ወጣቶችን በዲጂታል ክህሎት ማብቃት፣ የፈጠራ ባህልን ማጎልበት፣ እንዲሁም በመረጃና በቴክኖሎጂ የተደገፈ አገልግሎት ለመስጠት ነው። በተለይም ለተማሪዎችና ለወጣቶች የዲጂታል ሊተረሲ፣ የፕሮግራሚንግ፣ የዳታ ሳይንስ፣ የአርቴፊሻል ኢንተለጀንስ እና ሌሎች ዘመናዊ የቴክኖሎጂ ክህሎቶችን የሚያጎለብቱ ስልጠናዎችን በማስፋፋት የተወዳዳሪ ትውልድ ለመፍጠር በትጋት እየሰራን ነው። እነዚህ ተግባራት ወጣቶች የሥራ ፈጣሪዎች እንዲሆኑ፣ በዲጂታል ኢኮኖሚ ተሳታፊ እንዲሆኑ እና የሀገራቸውን እድገት በእውቀት እንዲደግፉ ያግዛሉ። እንዲሁም በወረዳችን የፈጠራ ስራዎችን ማበረታታት፣ የሳይንስና ቴክኖሎጂ ኤግዚቢሽኖችን ማዘጋጀት፣ ከትምህርት ተቋማት፣ ከመንግሥት ተቋማት እና ከሌሎች አጋር አካላት ጋር በመተባበር ለህብረተሰቡ የሚጠቅሙ ቴክኖሎጂያዊ መፍትሄዎችን ለማስፋፋት እየሰራን ነው። የብልፅግና ፓርቲ የሀገራችንን ዲጂታል ለውጥ ለማፋጠን የያዘውን አቅጣጫ በመደገፍ፣ ወረዳችን በቴክኖሎጂ የተመራ፣ በእውቀት የተገነባ እና በፈጠራ የሚያድግ ማህበረሰብ እንዲኖረው በቅንነት፣ በተጠያቂነት እና በትጋት እንቀጥላለን። ይህ ድህረ ገጽ የመረጃ፣ የእውቀት እና የተሞክሮ መጋራት መድረክ በመሆኑ፣ የምናከናውናቸውን ተግባራት፣ ስኬቶች፣ የስልጠና መርሃ ግብሮች፣ የፈጠራ ስራዎች እና የዲጂታል ለውጥ እንቅስቃሴዎችን በቀጣይነት እናቀርባለን። ህብረተሰቡም በገንቢ አስተያየት፣ በተሳትፎ እና በትብብር የዚህ ጉዞ አካል እንዲሆን በክብር እንጋብዛለን። በአንድነት ስንሰራ በእውቀት የተመራ፣ በቴክኖሎጂ የተጠናከረ፣ በፈጠራ የበለፀገ እና ለትውልድ የሚጠቅም ዳሎቻ ወረዳን መገንባት እንችላለን።"
-                       data-en="Seberi Serur (Dalocha Woreda Science & Information Technology Head): Science, technology, and innovation are the bedrock of modern development. Our efforts focus on enhancing digital literacy, programming, data science, and AI training among youth to empower future entrepreneurs.">
-                       ሰብሪ ስሩር (ዳሎቻ ወረዳ ሳይንስና ኢንፎርሜሽን ቴክኖሎጂ ሀላፊ)፡ ሳይንስ፣ ቴክኖሎጂ እና ኢኖቬሽን የዘመናዊ ልማት መሠረቶች ሲሆኑ፣ ዲጂታል ቴክኖሎጂም የመንግሥት አገልግሎትን ለማዘመን፣ የዜጎችን ተሳትፎ ለማጠናከር፣ የወጣቶችን አቅም ለማሳደግ እና የኢኮኖሚ እድገትን ለማፋጠን ከፍተኛ ሚና ያበረክታሉ። በዳሎቻ ወረዳ ሳይንስና ኢንፎርሜሽን ቴክኖሎጂ ዘርፍ የምንሰራው ሥራ ቴክኖሎጂን ለህብረተሰቡ ተደራሽ ማድረግ፣ ወጣቶችን በዲጂታል ክህሎት ማብቃት፣ የፈጠራ ባህልን ማጎልበት፣ እንዲሁም በመረጃና በቴክኖሎጂ የተደገፈ አገልግሎት ለመስጠት ነው። በተለይም ለተማሪዎችና ለወጣቶች የዲጂታል ሊተረሲ፣ የፕሮግራሚንግ፣ የዳታ ሳይንስ፣ የአርቴፊሻል ኢንተለጀንስ እና ሌሎች ዘመናዊ የቴክኖሎጂ ክህሎቶችን የሚያጎለብቱ ስልጠናዎችን በማስፋፋት የተወዳዳሪ ትውልድ ለመፍጠር በትጋት እየሰራን ነው። እነዚህ ተግባራት ወጣቶች የሥራ ፈጣሪዎች እንዲሆኑ፣ በዲጂታል ኢኮኖሚ ተሳታፊ እንዲሆኑ እና የሀገራቸውን እድገት በእውቀት እንዲደግፉ ያግዛሉ። እንዲሁም በወረዳችን የፈጠራ ስራዎችን ማበረታታት፣ የሳይንስና ቴክኖሎጂ ኤግዚቢሽኖችን ማዘጋጀት፣ ከትምህርት ተቋማት፣ ከመንግሥት ተቋማት እና ከሌሎች አጋር አካላት ጋር በመተባበር ለህብረተሰቡ የሚጠቅሙ ቴክኖሎጂያዊ መፍትሄዎችን ለማስፋፋት እየሰራን ነው። የብልፅግና ፓርቲ የሀገራችንን ዲጂታል ለውጥ ለማፋጠን የያዘውን አቅጣጫ በመደገፍ፣ ወረዳችን በቴክኖሎጂ የተመራ፣ በእውቀት የተገነባ እና በፈጠራ የሚያድግ ማህበረሰብ እንዲኖረው በቅንነት፣ በተጠያቂነት እና በትጋት እንቀጥላለን። ይህ ድህረ ገጽ የመረጃ፣ የእውቀት እና የተሞክሮ መጋራት መድረክ በመሆኑ፣ የምናከናውናቸውን ተግባራት፣ ስኬቶች፣ የስልጠና መርሃ ግብሮች፣ የፈጠራ ስራዎች እና የዲጂታል ለውጥ እንቅስቃሴዎችን በቀጣይነት እናቀርባለን። ህብረተሰቡም በገንቢ አስተያየት፣ በተሳትፎ እና በትብብር የዚህ ጉዞ አካል እንዲሆን በክብር እንጋብዛለን። በአንድነት ስንሰራ በእውቀት የተመራ፣ በቴክኖሎጂ የተጠናከረ፣ በፈጠራ የበለፀገ እና ለትውልድ የሚጠቅም ዳሎቻ ወረዳን መገንባት እንችላለን።
-                    </p>
-                </div>
-            </article>
-
-            <!-- PLAN SECTION -->
-            <article id="plan" class="content-section">
-                <h2 data-am="የፓርቲው ዋና ዋና እቅዶች እና አቅጣጫዎች | Our Plan" data-en="Party Goals & Strategic Directions | Our Plan">የፓርቲው ዋና ዋና እቅዶች እና አቅጣጫዎች | Our Plan</h2>
-                <hr>
-                <div class="section-body">
-                    <p><strong data-am="ዳሎቻ ወረዳ የብልፅግና ፓርቲ ዋና ዋና ዓላማዎች፦" data-en="Main Objectives of Dalocha Woreda Prosperity Party:">ዳሎቻ ወረዳ የብልፅግና ፓርቲ ዋና ዋና ዓላማዎች፦</strong><br>
-                    <span data-am="1. አካታች የኢኮኖሚና የግብርና እድገት ማረጋገጥ፦ የዳሎቻ ወረዳን አርሶ አደሮችና አበዳሪዎችን በዘመናዊ ግብርና፣ በሌማት ትሩፋትና በቴክኖሎጂ በመደገፍ ምርታማነትን ማሳደግ እና የህዝቡን ገቢ ማሻሻል።" data-en="1. Ensuring Inclusive Economic and Agricultural Growth: Supporting local farmers with modern agriculture and technology to boost productivity and income.">1. አካታች የኢኮኖሚና የግብርና እድገት ማረጋገጥ፦ የዳሎቻ ወረዳን አርሶ አደሮችና አበዳሪዎችን በዘመናዊ ግብርና፣ በሌማት ትሩፋትና በቴክኖሎጂ በመደገፍ ምርታማነትን ማሳደግ እና የህዝቡን ገቢ ማሻሻል።</span><br>
-                    <span data-am="2. መሰረተ-ልማትና ማህበራዊ አገልግሎቶችን ማስፋፋት፦ በወረዳው የሚገኙ የመንገድ፣ የንጹህ መጠጥ ውሃ፣ የትምህርት፣ የጤና እና የኤሌክትሪክ አገልግሎቶችን ጥራትና ተደራሽነት ማሳደግ።" data-en="2. Expanding Infrastructure & Social Services: Improving road networks, clean water access, education, healthcare, and electricity.">2. መሰረተ-ልማትና ማህበራዊ አገልግሎቶችን ማስፋፋት፦ በወረዳው የሚገኙ የመንገድ፣ የንጹህ መጠጥ ውሃ፣ የትምህርት፣ የጤና እና የኤሌክትሪክ አገልግሎቶችን ጥራትና ተደራሽነት ማሳደግ።</span><br>
-                    <span data-am="3. የወጣቶችና የሴቶች ተጠቃሚነትን ማረጋገጥ፦ በጥቃቅንና አነስተኛ ኢንተርፕራይዞች እንዲሁም በስራ ፈጠራ እድሎች አማካኝነት የህብረተሰቡን ኢኮኖሚያዊ አቅም መገንባት።" data-en="3. Empowering Youth and Women: Enhancing economic capability through small and medium enterprises and job creation opportunities.">3. የወጣቶችና የሴቶች ተጠቃሚነትን ማረጋገጥ፦ በጥቃቅንና አነስተኛ ኢንተርፕራይዞች እንዲሁም በስራ ፈጠራ እድሎች አማካኝነት የህብረተሰቡን ኢኮኖሚያዊ አቅም መገንባት።</span><br>
-                    <span data-am="4. ሰላም፣ ደህንነትና ህብረ-ብሔራዊ አንድነትን ማጠናከር፦ በወረዳው ውስጥ የህግ የበላይነትን ማስፈን፣ የህዝብ ለህዝብ ግንኙነትን እና ሰላምና አብሮነትን ማጠናከር።" data-en="4. Strengthening Peace, Security, and Unity: Ensuring rule of law, peaceful coexistence, and strong community engagement.">4. ሰላም፣ ደህንነትና ህብረ-ብሔራዊ አንድነትን ማጠናከር፦ በወረዳው ውስጥ የህግ የበላይነትን ማስፈን፣ የህዝብ ለህዝብ ግንኙነትን እና ሰላምና አብሮነትን ማጠናከር።</span><br>
-                    <span data-am="5. አገልጋይና ግልጽ አሰራር ያለው አመራር መገንባት፦ በወረዳው እና በገበሬ ቀበሌዎች ፈጣን፣ ውጤታማና ከሙስና የጸዳ መልካም አስተዳደርን ለአካባቢው ህዝብ ማቅረብ።" data-en="5. Building Servant Leadership & Transparent Governance: Delivering efficient, effective, and corruption-free public services across all kebeles.">5. አገልጋይና ግልጽ አሰራር ያለው አመራር መገንባት፦ በወረዳው እና በገበሬ ቀበሌዎች ፈጣን፣ ውጤታማና ከሙስና የጸዳ መልካም አስተዳደርን ለአካባቢው ህዝብ ማቅረብ።</span></p>
-                    
-                    <div class="plan-grid">
-                        <div class="plan-card">
-                            <div class="plan-number">01</div>
-                            <h3 data-am="ዋና መግቢያ (Core Mission)" data-en="Core Mission">ዋና መግቢያ (Core Mission)</h3>
-                            <p data-am="የዳሎቻ ወረዳ ብልፅግና ፓርቲ ዋና ዓላማዎችና ግቦች (Core Mission) በዋናነት በአካባቢው ዘላቂ ልማትን፣ መልካም አስተዳደርን እና የህዝብ ተጠቃሚነትን ማረጋገጥ ላይ ያተኮሩ ሲሆን የሚከተሉትን ዋና ዋና ነጥቦች ያካተቱ ናቸው፦
-
-1. ዲጂታል ሽግግር እና ዘመናዊ አሰራር፦ አገልግሎቶችን በዲጂታል መንገድ በፍጥነት እና በግልጽነት ማቅረብ።
-2. የኢኮኖሚ እድገት፦ በግብርና፣ በስራ እድል ፈጠራ እና በዲጂታል ኢኮኖሚ ህዝቡን ተጠቃሚ ማድረግ።
-3. መልካም አስተዳደር፦ በፍትሃዊነት እና በተጠያቂነት አገልግሎት ማቅረብ።
-4. ሰላምና ደህንነት፦ ከህብረተሰቡ ጋር በቅንጅት ሰላምን ማስጠበቅ።" 
-                               data-en="The core mission of Dalocha Woreda Prosperity Party is centered around sustainable development, good governance, and public benefit:
-
-1. Digital Transformation & Modern Governance: Fast and transparent service delivery.
-2. Economic Growth: Empowering citizens through modern agriculture and job creation.
-3. Good Governance: Accountable and fair public leadership.
-4. Peace & Security: Ensuring community peace and rule of law.">
-                               የዳሎቻ ወረዳ ብልፅግና ፓርቲ ዋና ዓላማዎችና ግቦች (Core Mission) በዋናነት በአካባቢው ዘላቂ ልማትን፣ መልካም አስተዳደርን እና የህዝብ ተጠቃሚነትን ማረጋገጥ ላይ ያተኮሩ ሲሆን የሚከተሉትን ዋና ዋና ነጥቦች ያካተቱ ናቸው፦
-
-1. ዲጂታል ሽግግር እና ዘመናዊ አሰራር፦ አገልግሎቶችን በዲጂታል መንገድ በፍጥነት እና በግልጽነት ማቅረብ።
-2. የኢኮኖሚ እድገት፦ በግብርና፣ በስራ እድል ፈጠራ እና በዲጂታል ኢኮኖሚ ህዝቡን ተጠቃሚ ማድረግ።
-3. መልካም አስተዳደር፦ በፍትሃዊነት እና በተጠያቂነት አገልግሎት ማቅረብ።
-4. ሰላምና ደህንነት፦ ከህብረተሰቡ ጋር በቅንጅት ሰላምን ማስጠበቅ።
-                            </p>    
-                        </div>
-                        <div class="plan-card">
-                            <div class="plan-number">02</div>
-                            <h3 data-am="ለስራና ውጤት ትኩረት መስጠት (Action-Oriented)" data-en="Action-Oriented Focus">ለስራና ውጤት ትኩረት መስጠት (Action-Oriented)</h3>
-                            <p data-am="የግብርና አቅምን ወደ ኢኮኖሚያዊ እድገት በመቀየር፣ ህዝባዊ መሰረተ-ልማቶችን በማደስ እና ለወጣቶችና ስራ ፈጣሪዎች ምቹ ሁኔታን በመፍጠር የዳሎቻ ወረዳን ዘላቂ ትራንስፎርሜሽን ማረጋገጥ፡፡" 
-                               data-en="Converting agricultural potential into economic growth, renovating public infrastructure, and creating favorable opportunities for youth and local entrepreneurs.">
-                               የግብርና አቅምን ወደ ኢኮኖሚያዊ እድገት በመቀየር፣ ህዝባዊ መሰረተ-ልማቶችን በማደስ እና ለወጣቶችና ስራ ፈጣሪዎች ምቹ ሁኔታን በመፍጠር የዳሎቻ ወረዳን ዘላቂ ትራንስፎርሜሽን ማረጋገጥ፡፡
-                            </p>
-                        </div>
-                        <div class="plan-card">
-                            <div class="plan-number">03</div>
-                            <h3 data-am="ህዝባዊ አንድነት (Community-Centered)" data-en="Community-Centered Unity">ህዝባዊ አንድነት (Community-Centered)</h3>
-                            <p data-am="ዘመናዊ ግብርናን፣ አስተማማኝ የመሰረተ-ልማት አገልግሎቶችን እና አካታች አሰራርን በመተግበር የዳሎቻ ወረዳ ህዝብን ለጋራ ብልፅግና በአንድነት ማሰለፍ፡፡" 
-                               data-en="Uniting the community for shared prosperity by providing modern agriculture, trustworthy infrastructure, and inclusive policies.">
-                               ዘመናዊ ግብርናን፣ አስተማማኝ የመሰረተ-ልማት አገልግሎቶችን እና አካታች አሰራርን በመተግበር የዳሎቻ ወረዳ ህዝብን ለጋራ ብልፅግና በአንድነት ማሰለፍ፡፡
-                            </p>
-                        </div>
-                        <div class="plan-card">
-                            <div class="plan-number">04</div>
-                            <h3 data-am="ተፅዕኖ ፈጣሪ ስራዎች (High-Impact Goals)" data-en="High-Impact Goals">ተፅዕኖ ፈጣሪ ስራዎች (High-Impact Goals)</h3>
-                            <p data-am="የግብርና ቴክኖሎጂን፣ የጠነከረ መሰረተ-ልማትን እና የወጣቶች እቅምን በማቀናጀት ለዳሎቻ ወረዳ ብሩህ የወደፊት ጊዜን መገንባት፡፡" 
-                               data-en="Building a bright future for Dalocha Woreda by integrating agricultural tech, robust infrastructure, and youth empowerment projects.">
-                               የግብርና ቴክኖሎጂን፣ የጠነከረ መሰረተ-ልማትን እና የወጣቶች እቅምን በማቀናጀት ለዳሎቻ ወረዳ ብሩህ የወደፊት ጊዜን መገንባት፡፡
-                            </p>
-                        </div>
+        <!-- NEWS SECTION -->
+        <section class="content-section" id="news">
+            <h2>አዳዲስ ዜናዎችና መረጃዎች</h2>
+            <hr>
+            <div class="news-list">
+                <article class="news-card">
+                    <img src="https://via.placeholder.com/200x130/0b2f4c/ffffff?text=News+1" alt="ዜና" class="news-image">
+                    <div class="news-details">
+                        <span class="news-date">ነሐሴ 2026</span>
+                        <h3 class="news-title">የአባላት የምክክር መድረክ በተሳካ ሁኔታ ተካሄደ</h3>
+                        <p class="news-excerpt">በወረዳችን የፓርቲውን የወደፊት ስራዎች በተመለከተ ከአባላት ጋር ጥልቅ ውይይት ተደረገ...</p>
+                        <a href="#" class="read-more-btn">ሙሉውን አንብብ <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                </div>
-            </article>
-
-            <!-- PROSPERITY PARTY & PRINCIPLES -->
-            <article id="prosperity-party" class="content-section">
-                <h2 data-am="የብልፅግና ፓርቲ ዓላማዎችና መርሆች | Objectives & Principles" data-en="Objectives & Principles of Prosperity Party">የብልፅግና ፓርቲ ዓላማዎችና መርሆች | Objectives & Principles</h2>
-                <hr>
-                <div class="section-body" id="principles">
-                    <h3 data-am="መሰረታዊ መርሆች፦" data-en="Core Principles:">መሰረታዊ መርሆች፦</h3>
-                    <ul>
-                        <li data-am="ሕዝባዊነት፦ የህዝብን ድምፅና ፍላጎት ማዕከል ያደረገ አገልግሎት መስጠት።" data-en="Public Centricity: Service delivery centered on the needs and voices of the people."><strong>ሕዝባዊነት፦</strong> የህዝብን ድምፅና ፍላጎት ማዕከል ያደረገ አገልግሎት መስጠት።</li>
-                        <li data-am="ዴሞክራሲያዊነት፦ አሳታፊና አቅፎ ደጋፊ አሰራርን ማስፈን።" data-en="Democracy: Establishing an inclusive and supportive system."><strong>ዴሞክራሲያዊነት፦</strong> አሳታፊና አቅፎ ደጋፊ አሰራርን ማስፈን።</li>
-                        <li data-am="የሕግ የበላይነት፦ ፍትሃዊነትንና ግልጽነትን ማረጋገጥ።" data-en="Rule of Law: Ensuring fairness and transparency."><strong>የሕግ የበላይነት፦</strong> ፍትሃዊነትንና ግልጽነትን ማረጋገጥ።</li>
-                        <li data-am="ሀገራዊ አንድነትና ኅብረ ብሔራዊነት፦ ህብረብሄራዊ አንድነትን ማጠናከር።" data-en="National Unity & Multinationalism: Strengthening national unity amidst diversity."><strong>ሀገራዊ አንድነትና ኅብረ ብሔራዊነት፦</strong> ህብረብሄራዊ አንድነትን ማጠናከር።</li>
-                    </ul>
-                </div>
-            </article>
-
-            <!-- LATEST NEWS SECTION -->
-            <article id="news" class="content-section">
-                <h2 data-am="ወቅታዊ ዜናዎች | Latest News" data-en="Latest News">ወቅታዊ ዜናዎች | Latest News</h2>
-                <hr>
-                <div class="news-list">
-                    <div class="news-card">
-                        <img src="14.jfif" alt="News Image 1" class="news-image">
-                        <div class="news-details">
-                            <span class="news-date"><i class="fa-regular fa-calendar"></i> ሀምሌ 27/2018 ዓ.ም | August 2026</span>
-                            <h3 class="news-title" data-am="በዳሎቻ ወረዳ በአንድ ጀምበር የተካሄደው የአረንጓዴ ልማት አሻራ ችግኝ ተከላ መርኃ ግብር በስኬት ተጠናቀቀ" data-en="Green Legacy Tree Planting Campaign Successfully Completed in Dalocha Woreda">በዳሎቻ ወረዳ በአንድ ጀምበር የተካሄደው የአረንጓዴ ልማት አሻራ ችግኝ ተከላ መርኃ ግብር በስኬት ተጠናቀቀ</h3>
-                            <p class="news-excerpt" data-am="በዳሎቻ ወረዳ ሀምሌ 27 ቀን 2018 ዓ.ም ከጠዋቱ 12:00 ሰዓት ጀምሮ በሁሉም ቀበሌዎች በይፋ ሲካሄድ የዋለው የ2018 ዓ.ም የአረንጓዴ ልማት አሻራ የችግኝ ተከላ መርኃ ግብር ማምሻውን በስኬት ተጠናቋል። የወረዳዊ መርኃ ግብሩ ማስጀመሪያ በጎለጨባ ቀበሌ ሰይደሌ ንዑስ ተፋሰስ ላይ ተካሂዷል..." 
-                               data-en="The Green Legacy Initiative tree planting program officially held across all kebeles in Dalocha woreda ended with great success...">በዳሎቻ ወረዳ ሀምሌ 27 ቀን 2018 ዓ.ም ከጠዋቱ 12:00 ሰዓት ጀምሮ በሁሉም ቀበሌዎች በይፋ ሲካሄድ የዋለው የ2018 ዓ.ም የአረንጓዴ ልማት አሻራ የችግኝ ተከላ መርኃ ግብር ማምሻውን በስኬት ተጠናቋል። የወረዳዊ መርኃ ግብሩ ማስጀመሪያ በጎለጨባ ቀበሌ ሰይደሌ ንዑስ ተፋሰስ ላይ ተካሂዷል...</p>
-                            <a href="#" class="read-more-btn" data-am="ሙሉውን ያንብቡ (Read More) →" data-en="Read More →">ሙሉውን ያንብቡ (Read More) →</a>
-                        </div>
-                    </div>
-
-                    <div class="news-card">
-                        <img src="2.jpg" alt="News Image 2" class="news-image">
-                        <div class="news-details">
-                            <span class="news-date"><i class="fa-regular fa-calendar"></i> ሀምሌ 23/2018 ዓ.ም | July 2026</span>
-                            <h3 class="news-title" data-am="የሰብዓዊ ድጋፍ ሉዓላዊነትን ለማብሰር የተዘጋጀ የንቅናቄ መድረክ ተካሄደ" data-en="Movement Forum Organized to Declare Humanitarian Self-Reliance Held">የሰብዓዊ ድጋፍ ሉዓላዊነትን ለማብሰር የተዘጋጀ የንቅናቄ መድረክ ተካሄደ</h3>
-                            <p class="news-excerpt" data-am="በስልጤ ዞን የዳሎቻ ወረዳ ግብርና ጽሕፈት ቤት የምግብ ዋስትናን እና የሰብዓዊ ድጋፍ ሉዓላዊነትን በራስ አቅም ለማረጋገጥ የሚያስችል የንቅናቄ መድረክ አካሂዷል።" data-en="Silte Zone Dalocha Woreda Agriculture Office conducted a mobilization platform to ensure food security and self-reliant humanitarian support.">በስልጤ ዞን የዳሎቻ ወረዳ ግብርና ጽሕፈት ቤት የምግብ ዋስትናን እና የሰብዓዊ ድጋፍ ሉዓላዊነትን በራስ አቅም ለማረጋገጥ የሚያስችል የንቅናቄ መድረክ አካሂዷል።</p>
-                            <a href="#" class="read-more-btn" data-am="ሙሉውን ያንብቡ (Read More) →" data-en="Read More →">ሙሉውን ያንብቡ (Read More) →</a>
-                        </div>
-                    </div>
-
-                    <div class="news-card">
-                        <img src="7997.jpg" alt="News Image 3" class="news-image">
-                        <div class="news-details">
-                            <span class="news-date"><i class="fa-regular fa-calendar"></i> ሰኔ 2018 ዓ.ም | June 2026</span>
-                            <h3 class="news-title" data-am="የከተማ ውበት እና የፀዳ አካባቢ ልማት ስራዎች ተጠናክረው ቀጥለዋል" data-en="Urban Beautification and Environmental Cleanliness Efforts Continue">የከተማ ውበት እና የፀዳ አካባቢ ልማት ስራዎች ተጠናክረው ቀጥለዋል</h3>
-                            <p class="news-excerpt" data-am="በወረዳው ህዝብ እና አመራር የጋራ ጥረት የከተማዋን ገጽታ የሚቀይሩ የመሰረተ-ልማትና የአረንጓዴ ልማት ስራዎች በስፋት እየተከናወኑ ይገኛሉ።" data-en="Through joint efforts of community members and leadership, infrastructure and green development projects transforming the town image are underway.">በወረዳው ህዝብ እና አመራር የጋራ ጥረት የከተማዋን ገጽታ የሚቀይሩ የመሰረተ-ልማትና የአረንጓዴ ልማት ስራዎች በስፋት እየተከናወኑ ይገኛሉ።</p>
-                            <a href="#" class="read-more-btn" data-am="ሙሉውን ያንብቡ (Read More) →" data-en="Read More →">ሙሉውን ያንብቡ (Read More) →</a>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- SECTORS SECTION -->
-            <article id="sectors" class="content-section">
-                <h2 data-am="የልማት ክፍሎች | Key Sectors" data-en="Key Sectors | Key Sectors">የልማት ክፍሎች | Key Sectors</h2>
-                <hr>
-                <div class="section-body">
-                    <div id="agriculture" style="margin-bottom: 20px;">
-                        <h3 data-am="ግብርና (Agriculture)" data-en="Agriculture"><i class="fa-solid fa-wheat-awn"></i> ግብርና (Agriculture)</h3>
-                        <p data-am="በወረዳችን ምርታማነትን ለማሳደግ ዘመናዊ የግብርና ቴክኖሎጂዎችን መጠቀምና የአርሶ አደሩን ገቢ ማሳደግ ትኩረት የተሰጠው አጀንዳ ነው።" data-en="Using modern agricultural technology to increase productivity and farmer income is a core focus in our district.">በወረዳችን ምርታማነትን ለማሳደግ ዘመናዊ የግብርና ቴክኖሎጂዎችን መጠቀምና የአርሶ አደሩን ገቢ ማሳደግ ትኩረት የተሰጠው አጀንዳ ነው።</p>
-                    </div>
-                    <div id="infrastructure" style="margin-bottom: 20px;">
-                        <h3 data-am="መሰረተ-ልማት (Infrastructure)" data-en="Infrastructure"><i class="fa-solid fa-road"></i> መሰረተ-ልማት (Infrastructure)</h3>
-                        <p data-am="የመንገድ፣ የውሃ፣ የመብራትና የቴሌኮም አውታሮችን በማስፋፋት የወረዳችንን ህዝብ ተጠቃሚነት ማረጋገጥ።" data-en="Ensuring public benefit by expanding road, water, electricity, and telecommunication networks.">የመንገድ፣ የውሃ፣ የመብራትና የቴሌኮም አውታሮችን በማስፋፋት የወረዳችንን ህዝብ ተጠቃሚነት ማረጋገጥ。</p>
-                    </div>
-                    <div id="micro" style="margin-bottom: 20px;">
-                        <h3 data-am="ጥቃቅንና አነስተኛ (Micro Enterprises)" data-en="Micro & Small Enterprises"><i class="fa-solid fa-briefcase"></i> ጥቃቅንና አነስተኛ (Micro Enterprises)</h3>
-                        <p data-am="ለወጣቶችና ሴቶች የስራ እድል መፍጠር፣ የስራ ፈጠራ ክህሎትን ማሳደግና የፋይናንስ ድጋፍ ማመቻቸት።" data-en="Creating employment for youth and women, fostering entrepreneurship skills, and facilitating financial support.">ለወጣቶችና ሴቶች የስራ እድል መፍጠር፣ የስራ ፈጠራ ክህሎትን ማሳደግና የፋይናንስ ድጋፍ ማመቻቸት。</p>
-                    </div>
-                    <div id="finance" style="margin-bottom: 20px;">
-                        <h3 data-am="ፋይናንስና ኢንቨስትመንት (Finance & Investment)" data-en="Finance & Investment"><i class="fa-solid fa-coins"></i> ፋይናንስና ኢንቨስትመንት (Finance & Investment)</h3>
-                        <p data-am="ለባለሀብቶች ምቹ የኢንቨስትመንት ሁኔታዎችን በመፍጠር የወረዳችንን የኢኮኖሚ አቅም ማሳደግ።" data-en="Boosting local economic capacity by creating favorable investment opportunities for investors.">ለባለሀብቶች ምቹ የኢንቨስትመንት ሁኔታዎችን በመፍጠር የወረዳችንን የኢኮኖሚ አቅም ማሳደግ。</p>
-                    </div>
-                    <div id="admin-structure" style="margin-bottom: 20px;">
-                        <h3 data-am="የአስተዳደር እና የፖለቲካ መዋቅር (Administrative Structure)" data-en="Administrative Structure"><i class="fa-solid fa-sitemap"></i> የአስተዳደር እና የፖለቲካ መዋቅር (Administrative Structure)</h3>
-                        <p data-am="በዳሎቻ ወረዳ ዋናውን የፖለቲካ እና የመንግስት አስተዳደር የሚመራው ብልፅግና ፓርቲ ነው። የፓርቲው መዋቅር እስከ ቀበሌ ደረጃ የተዘረጋ ሲሆን፣ የህዝብ አደረጃጀቶችን (የወጣቶች እና የሴቶች አደረጃጀቶችን) በማስተባበር እና የልማት ስራዎችን በማስፈጸም ረገድ ግንባር ቀደም ሚና ይጫወታል።" 
-                           data-en="The main political and administrative leadership in Dalocha Woreda is guided by the Prosperity Party. Structuring reaches kebele levels, coordinating youth and women organizations.">
-                           በዳሎቻ ወረዳ ዋናውን የፖለቲካ እና የመንግስት አስተዳደር የሚመራው ብልፅግና ፓርቲ ነው። የፓርቲው መዋቅር እስከ ቀበሌ ደረጃ የተዘረጋ ሲሆን፣ የህዝብ አደረጃጀቶችን (የወጣቶች እና የሴቶች አደረጃጀቶችን) በማስተባበር እና የልማት ስራዎችን በማስፈጸም ረገድ ግንባር ቀደም ሚና ይጫወታል።
-                        </p>
-                    </div>
-                    <div id="youth-wing" style="margin-bottom: 20px;">
-                        <h3 data-am="የወጣቶች ክንፍ (Youth Wing)" data-en="Youth Wing"><i class="fa-solid fa-users"></i> የወጣቶች ክንፍ (Youth Wing)</h3>
-                        <p data-am="በዳሎቻ ወረዳ እና በስልጤ ዞን ደረጃ ያለው የወጣቶች ክንፍ (Youth Wing) በዋነኝነት በብልፅግና ፓርቲ እና በወረዳው የወጣቶች አደረጃጀቶች ስር የሚንቀሳቀስ መዋቅር ነው።
-የዚህ ዘርፍ ዋና ዋና ተግባራት፦
-- የፖለቲካ እና የህዝብ አደረጃጀት
-- የስራ እድል ፈጠራ
-- የበጎ ፍቃድ አገልግሎቶች
-- የሰላም እና የደህንነት ስራዎች" 
-                           data-en="The Youth Wing operates under the Prosperity Party to engage local youth:
-- Political & Community Mobilization
-- Job Creation & Entrepreneurship
-- Volunteer Community Service
-- Peace & Security Initiatives">
-                           በዳሎቻ ወረዳ እና በስልጤ ዞን ደረጃ ያለው የወጣቶች ክንፍ (Youth Wing) በዋነኝነት በብልፅግና ፓርቲ እና በወረዳው የወጣቶች አደረጃጀቶች ስር የሚንቀሳቀስ መዋቅር ነው።
-የዚህ ዘርፍ ዋና ዋና ተግባራት፦
-- የፖለቲካ እና የህዝብ አደረጃጀት
-- የስራ እድል ፈጠራ
-- የበጎ ፍቃድ አገልግሎቶች
-- የሰላም እና የደህንነት ስራዎች
-                        </p>
-                    </div>
-                </div>
-            </article>
-
-            <!-- CONTACT SECTION -->
-            <article id="contact-us" class="content-section">
-                <h2 data-am="አድራሻና ቅሬታ ማስተናገጃ | Contact Us" data-en="Contact Us | Contact Us">አድራሻና ቅሬታ ማስተናገጃ | Contact Us</h2>
-                <hr>
-                <div class="section-body">
-                    <p><strong data-am="የስልክ ቁጥር፦" data-en="Phone Number:">የስልክ ቁጥር፦</strong> +251 932 528 348</p>
-                    <p><strong data-am="ኢሜይል፦" data-en="Email Address:">ኢሜይል፦</strong> dalochaworeda@gmail.com</p>
-                    <p><strong data-am="አድራሻ፦" data-en="Office Address:">አድራሻ፦</strong> <span data-am="ዳሎቻ ወረዳ፣ ስልጤ ዞን፣ ኢትዮጵያ" data-en="Dalocha Woreda, Silte Zone, Ethiopia">ዳሎቻ ወረዳ፣ ስልጤ ዞን፣ ኢትዮጵያ</span></p>
-                </div>
-            </article>
-
+                </article>
+            </div>
         </section>
+
+        <!-- MEMBERSHIP FORM SECTION -->
+        <section class="content-section" id="register">
+            <div class="form-container">
+                <h2>የብልፅግና ፓርቲ አባልነት መመዝገቢያ ፎርም</h2>
+                <p>እባክዎን ከዚህ በታች ያሉትን መረጃዎች በጥንቃቄ ይሙሉ::</p>
+
+                <!-- UPDATED FORMSPREE ACTION ENDPOINT -->
+                <form action="https://formspree.io/f/xaewwlde" method="POST">
+                    
+                    <div class="form-group">
+                        <label for="fullName">ሙሉ ስም (Full Name) *</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="ምሳሌ፡ አበበ ከበደ ተሰማ" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>ጾታ (Sex) *</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="gender" value="Male" required> ወንድ</label>
+                                <label><input type="radio" name="gender" value="Female"> ሴት</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">ስልክ ቁጥር (Phone Number) *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+251 9..." required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="education">የትምህርት ደረጃ (Education Level) *</label>
+                            <select id="education" name="education" required>
+                                <option value="" disabled selected>ይምረጡ...</option>
+                                <option value="Primary">መሰረታዊ / የመጀመሪያ ደረጃ</option>
+                                <option value="HighSchool">ሁለተኛ ደረጃ (10ኛ/12ኛ)</option>
+                                <option value="TVET">ዲፕሎማ (TVET/College)</option>
+                                <option value="Bachelor">የመጀመሪያ ዲግሪ (Bachelor's)</option>
+                                <option value="Master">ማስተርስ (Master's)</option>
+                                <option value="PhD">ዶክተሬት (PhD)</option>
+                                <option value="Other">ሌላ</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="occupation">የሥራ መስክ (Occupation)</label>
+                            <input type="text" id="occupation" name="occupation" placeholder="ምሳሌ፡ መምህር / ነጋዴ / ተማሪ">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">ከተማ/ቀበሌ (City / Town / Kebele) *</label>
+                            <input type="text" id="city" name="city" placeholder="ምሳሌ፡ ዳሎቻ / ቀበሌ 01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="woreda">ወረዳ (Woreda) *</label>
+                            <input type="text" id="woreda" name="woreda" placeholder="ምሳሌ፡ ዳሎቻ ወረዳ" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">ተጨማሪ አስተያየት ወይም መልዕክት (Message)</label>
+                        <textarea id="message" name="message" rows="4" placeholder="እዚህ ጋር ጽሑፍ ማስገባት ይችላሉ..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">አስገባ (Submit Application)</button>
+
+                </form>
+            </div>
+        </section>
+
     </main>
 
-    <!-- MAIN FOOTER SECTION -->
+    <!-- FOOTER -->
     <footer class="custom-footer">
         <div class="footer-overlay-bar"></div>
         <div class="footer-container">
-            
-            <!-- Column 1: Objectives -->
             <div class="footer-card">
-                <h3 class="card-title" data-am="የብልፅግና ፓርቲ ዓላማዎች" data-en="Party Objectives">የብልፅግና ፓርቲ ዓላማዎች</h3>
+                <h3 class="card-title">አድራሻ</h3>
                 <ul class="bullet-list">
-                    <li data-am="ጠንካራ፣ ዴሞክራሲያዊ፣ ቅርፅና ቅቡልነት ያለው፣ ዘላቂ ሀገረ-መንግሥትና ኅብረ-ብሔራዊ አንድነት መገንባት፤" data-en="Building a strong, democratic, and legitimate state with lasting national unity;">ጠንካራ፣ ዴሞክራሲያዊ፣ ቅርፅና ቅቡልነት ያለው፣ ዘላቂ ሀገረ-መንግሥትና ኅብረ-ብሔራዊ አንድነት መገንባት፤</li>
-                    <li data-am="ልማትና ፍትሐዊ ተጠቃሚነትን የሚያረጋግጥ አነቃቂ የኢኮኖሚ ሥርዓት መገንባት፤" data-en="Creating an invigorating economic system that guarantees development and equity;">ልማትና ፍትሐዊ ተጠቃሚነትን የሚያረጋግጥ አነቃቂ የኢኮኖሚ ሥርዓት መገንባት፤</li>
-                    <li data-am="ሁሉንአቀፍ ብልፅግናን የሚያረጋግጥ ማህበራዊ ልማትን ማረጋገጥ፤" data-en="Ensuring social development that delivers all-inclusive prosperity;">ሁሉንአቀፍ ብልፅግናን የሚያረጋግጥ ማህበራዊ ልማትን ማረጋገጥ፤</li>
-                    <li data-am="ሀገራዊ ክብርና ጥቅምን ማዕከል ያደረገ የውጭ ግንኙነት ማካሄድ።" data-en="Executing foreign relations centered on national honor and interest.">ሀገራዊ ክብርና ጥቅምን ማዕከል ያደረገ የውጭ ግንኙነት ማካሄድ።</li>
+                    <li>ዳሎቻ ወረዳ፣ ኢትዮጵያ</li>
+                    <li>ስልክ፡ +251 11 XXX XXXX</li>
+                    <li>ኢሜይል፡ info@dalocha.gov.et</li>
                 </ul>
             </div>
-
-            <!-- Column 2: Quick Links -->
             <div class="footer-card">
-                <h3 class="card-title" data-am="ፈጣን አገናኞች" data-en="Quick Links">ፈጣን አገናኞች</h3>
+                <h3 class="card-title">ፈጣን ማስፈንጠሪያዎች</h3>
                 <ul class="icon-list">
-                    <li><a href="#message" data-am="ዋና ገጽ" data-en="Home"><i class="fa-solid fa-house"></i> ዋና ገጽ</a></li>
-                    <li><a href="#news" data-am="ዜና" data-en="News"><i class="fa-solid fa-newspaper"></i> ዜና</a></li>
-                    <li><a href="#publications" data-am="መጽሔቶች" data-en="Publications"><i class="fa-solid fa-book-open"></i> መጽሔቶች</a></li>
-                    <li><a href="#contact-us" data-am="ያግኙን" data-en="Contact Us"><i class="fa-solid fa-envelope"></i> ያግኙን</a></li>
+                    <li><a href="#about"><i class="fa-solid fa-angle-right"></i> ስለ እኛ</a></li>
+                    <li><a href="#plans"><i class="fa-solid fa-angle-right"></i> ዕቅዶች</a></li>
+                    <li><a href="#register"><i class="fa-solid fa-angle-right"></i> የአባልነት ፎርም</a></li>
                 </ul>
             </div>
-
-            <!-- Column 3: Address / Contact -->
             <div class="footer-card">
-                <h3 class="card-title" data-am="አድራሻ" data-en="Contact Info">አድራሻ</h3>
-                <ul class="icon-list contact-info">
-                    <li><i class="fa-solid fa-phone"></i> +251932528348</li>
-                    <li><i class="fa-solid fa-envelope"></i> dalochaworeda@gmail.com</li>
-                    <li data-am="ዳሎቻ, ኢትዮጵያ" data-en="Dalocha, Ethiopia"><i class="fa-solid fa-location-dot"></i> ዳሎቻ, ኢትዮጵያ</li>
-                </ul>
-            </div>
-
-            <!-- Column 4: Principles -->
-            <div class="footer-card">
-                <h3 class="card-title" data-am="መርሆች" data-en="Principles">መርሆች</h3>
-                <ul class="bullet-list">
-                    <li data-am="ሕዝባዊነት" data-en="Public-Centricity">ሕዝባዊነት</li>
-                    <li data-am="ዴሞክራሲያዊነት" data-en="Democracy">ዴሞክራሲያዊነት</li>
-                    <li data-am="የሕግ የበላይነት" data-en="Rule of Law">የሕግ የበላይነት</li>
-                    <li data-am="ልማትና ፍትሐዊ ተጠቃሚነት" data-en="Equitable Development">ልማትና ፍትሐዊ ተጠቃሚነት</li>
-                    <li data-am="ተግባራዊ እውነት" data-en="Pragmatism & Truth">ተግባራዊ እውነት</li>
-                    <li data-am="ሀገራዊ አንድነትና ኅብረ ብሔራዊነት" data-en="Multinational Unity">ሀገራዊ አንድነትና ኅብረ ብሔራዊነት</li>
-                </ul>
-            </div>
-
-            <!-- Column 5: Social Media & Action -->
-            <div class="footer-card center-align">
-                <h3 class="card-title" data-am="ማህበራዊ ሚዲያ" data-en="Social Media">ማህበራዊ ሚዲያ</h3>
+                <h3 class="card-title">ማህበራዊ ሚዲያ</h3>
                 <div class="social-grid">
-                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#" class="social-btn"><i class="fa-brands fa-telegram"></i></a>
-                </div>
-                <div style="margin-top: 20px;">
-                    <a href="form.html" class="read-more-btn" style="display:inline-block; padding:8px 15px; text-decoration:none;" data-am="አባል ይሁኑ (Join Us)" data-en="Join Us (Membership)">አባል ይሁኑ (Join Us)</a>
+                    <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT: SLIDER & LANGUAGE SWITCHER -->
+    <!-- FLOATING CONTACT BUTTON (FAB) -->
+    <a href="#register" class="fab-btn" aria-label="አባል ይሁኑ">
+        <i class="fa-solid fa-user-plus"></i>
+    </a>
+
+    <!-- JAVASCRIPT FOR INTERACTIVITY -->
     <script>
-        // --- 1. DYNAMIC LANGUAGE SWITCHER ENGINE ---
-        function switchLanguage(lang) {
-            const translatableElements = document.querySelectorAll('[data-am][data-en]');
+        // Mobile Navigation Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const sideMenu = document.getElementById('sideMenu');
 
-            translatableElements.forEach(el => {
-                if (lang === 'en') {
-                    // Handle input/textarea placeholders
-                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                        el.placeholder = el.getAttribute('data-en');
-                    } else {
-                        // Preserve icons inside elements if present
-                        const icon = el.querySelector('i');
-                        if (icon) {
-                            el.innerHTML = '';
-                            el.appendChild(icon);
-                            el.appendChild(document.createTextNode(' ' + el.getAttribute('data-en')));
-                        } else {
-                            el.textContent = el.getAttribute('data-en');
-                        }
-                    }
-                } else {
-                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                        el.placeholder = el.getAttribute('data-am');
-                    } else {
-                        const icon = el.querySelector('i');
-                        if (icon) {
-                            el.innerHTML = '';
-                            el.appendChild(icon);
-                            el.appendChild(document.createTextNode(' ' + el.getAttribute('data-am')));
-                        } else {
-                            el.textContent = el.getAttribute('data-am');
-                        }
-                    }
-                }
-            });
-
-            // Save choice in localStorage
-            localStorage.setItem('selectedLanguage', lang);
-        }
-
-        // Initialize saved language on DOM load
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('selectedLanguage') || 'am';
-            const langSelect = document.getElementById('langSelect');
-            
-            if (langSelect) {
-                langSelect.value = savedLang;
-            }
-            switchLanguage(savedLang);
+        menuToggle.addEventListener('click', () => {
+            sideMenu.classList.toggle('open');
         });
 
-        // --- 2. IMAGE SLIDER LOGIC ---
+        // Close side menu when clicking on links
+        document.querySelectorAll('.side-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                sideMenu.classList.remove('open');
+            });
+        });
+
+        // Carousel Slider Functionality
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         const numItems = document.querySelectorAll('.num-item');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
 
         function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            numItems.forEach(item => item.classList.remove('active'));
+
             if (index >= slides.length) currentSlide = 0;
             else if (index < 0) currentSlide = slides.length - 1;
             else currentSlide = index;
 
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === currentSlide);
-            });
-            numItems.forEach((num, i) => {
-                num.classList.toggle('active', i === currentSlide);
-            });
-        }
-
-        function changeSlide(direction) {
-            showSlide(currentSlide + direction);
+            slides[currentSlide].classList.add('active');
+            if (numItems[currentSlide]) {
+                numItems[currentSlide].classList.add('active');
+            }
         }
 
         function goToSlide(index) {
             showSlide(index);
         }
 
-        // Toggle Side Menu
-        document.getElementById('menuToggleBtn').addEventListener('click', function() {
-            const sideMenu = document.getElementById('sideMenu');
-            sideMenu.style.display = sideMenu.style.display === 'block' ? 'none' : 'block';
-        });
+        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+
+        // Auto slide change every 5 seconds
+        setInterval(() => {
+            showSlide(currentSlide + 1);
+        }, 5000);
     </script>
 </body>
 </html>
