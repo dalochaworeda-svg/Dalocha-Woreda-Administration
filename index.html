@@ -60,14 +60,17 @@
                 <a href="#contact-us">Offices</a>
             </nav>
 
-            <div class="nav-controls">
-                <div class="lang-selector">
-                    <select id="languageSelect" aria-label="Select Language">
-                        <option value="am">አማርኛ</option>
-                        <option value="en">English</option>
-                    </select>
+            div class="lang-selector">
+                    <button type="button" class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+                        Language <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <ul class="lang-dropdown-menu" id="langDropdown">
+                        <li><a href="#" data-lang="am">አማርኛ</a></li>
+                        <li><a href="#" data-lang="en">English</a></li>
+                    </ul>
                 </div>
-                <button class="menu-toggle" id="menuToggleBtn" aria-label="Toggle Navigation">☰</button>
+
+                <button class="menu-toggle" id="menuToggleBtn" aria-label="ማውጫ ክፈት/ዝጋ" aria-expanded="false">☰</button>
             </div>
         </div>
     </header>
