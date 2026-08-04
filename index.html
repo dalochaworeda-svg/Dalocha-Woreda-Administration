@@ -59,19 +59,12 @@
                 <a href="#sectors">Sectors</a>
                 <a href="#contact-us">Offices</a>
             </nav>
-            <div class="lang-selector">
-  <button class="lang-btn" id="langBtn">
-    Language 
-    <i class="chevron-icon">∨</i> <!-- Replace with your arrow icon -->
-  </button>
-  
-  <!-- Make sure this uses class "lang-dropdown-menu" -->
-  <ul class="lang-dropdown-menu" id="langMenu">
-    <li><a href="?lang=en">English</a></li>
-    <li><a href="?lang=am">አማርኛ</a></li>
-  </ul>
+  <div class="lang-selector">
+  <select class="lang-select-native" onchange="switchLanguage(this.value)">
+    <option value="en">English</option>
+    <option value="am">አማርኛ</option>
+  </select>
 </div>
-
             <button class="menu-toggle" id="menuToggleBtn" aria-label="ማውጫ ክፈት/ዝጋ" aria-expanded="false">☰</button>
         </div>
     </header>
