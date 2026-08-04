@@ -7,7 +7,7 @@ Dalocha Woreda Prosperity part
 ሁለንተናዊ ብልጽግናን የሚያሰፍን ማኅበራዊ ልማትን ማረጋገጥ፤
 ሀገራዊ ክብርንና ጥቅምን ማዕከል ያደረገ የውጭ ግንኙነት ማካሄድ፡፡
        አድራሻ
-+251
++251932528348
 (https://github.com/dalochaworeda-svg/)
 ዳሎቻ , ኢትዮጵያ
     መርሆች
