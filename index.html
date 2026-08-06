@@ -60,13 +60,18 @@
                 <a href="#contact-us">Offices</a>
             </nav>
 <div class="nav-controls">
-  <div class="lang-selector">
-    <select id="languageSelect">
-      <option value="am">አማርኛ</option>
-      <option value="en">English</option>
-    </select>
-  </div>
-  <button type="button" class="menu-toggle" id="menuToggleBtn" aria-expanded="false">☰</button>
+    <div class="lang-selector">
+        <button type="button" class="lang-btn" id="langBtn" aria-expanded="false" aria-haspopup="true">
+            <i class="fa-solid fa-globe"></i> 
+            <span>Language</span> 
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <ul class="lang-dropdown-menu" id="langMenu">
+            <li><a href="#" data-lang="am">አማርኛ</a></li>
+            <li><a href="#" data-lang="en">English</a></li>
+        </ul>
+    </div>
+    <button type="button" class="menu-toggle" id="menuToggleBtn">☰</button>
 </div>
     </header>
 
