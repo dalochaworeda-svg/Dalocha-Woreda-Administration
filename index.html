@@ -523,7 +523,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-am][data-en]').forEach(el => {
       const translation = el.getAttribute(`data-${lang}`);
       if (translation) {
-        el.textContent = translation;
+        // Find existing icon elements inside the link (if any)
+        const icon = el.querySelector('i, svg');
+        
+        // Update text node specifically so inner icons aren't deleted
+        if (icon) {
+          el.childNodes[0].nodeValue = translation + ' ';
+        } else {
+          el.textContent = translation;
+        }
       }
     });
 
