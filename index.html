@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="am" translate="no">
 <head>
-    <meta name="google" content="notranslate">
-    <!-- Rest of your head -->
-</head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
     <title>ዳሎቻ ወረዳ ብልፅግና ፓርቲ | Dalocha Woreda Prosperity Party</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,48 +12,65 @@
 
     <!-- MAIN HEADER & NAVIGATION -->
     <header class="main-header">
-        <div class="header-container">
+        <div class="header-container nav-container">
             <div class="brand-logo">
                 <img src="13.jpg" alt="Dalocha Woreda Prosperity Party Logo" class="brand-img">
-                <span class="brand-title">ዳሎቻ ወረዳ ብልፅግና ፓርቲ</span>
+                <span class="brand-title" data-am="ዳሎቻ ወረዳ ብልፅግና ፓርቲ" data-en="Dalocha District Prosperity Party">ዳሎቻ ወረዳ ብልፅግና ፓርቲ</span>
             </div>
             
-            <ul class="top-nav">
-  <li>
-    <a href="#" data-am="ዋና ገጽ" data-en="Home page">ዋና ገጽ</a>
-  </li>
-  
-  <li class="dropdown">
-    <a href="#" data-am="ስለ እኛ" data-en="About us">
-      ስለ እኛ <i class="fa-solid fa-chevron-down"></i>
-    </a>
-  </li>
+            <ul class="top-nav desktop-menu">
+                <li>
+                    <a href="#" data-am="ዋና ገጽ" data-en="Home page">ዋና ገጽ</a>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" data-am="ስለ እኛ" data-en="About us">
+                        ስለ እኛ <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                </li>
 
-  <li class="dropdown">
-    <a href="#" data-am="ወቅታዊ ጉዳዮች" data-en="Current Affairs">
-      ወቅታዊ ጉዳዮች <i class="fa-solid fa-chevron-down"></i>
-    </a>
-  </li>
+                <li class="dropdown">
+                    <a href="#" data-am="ወቅታዊ ጉዳዮች" data-en="Current Affairs">
+                        ወቅታዊ ጉዳዮች <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                </li>
 
-  <li class="dropdown">
-    <a href="#" data-am="የኤንስፔክሽንና የሥነ-ምግባር ኮሚሽን" data-en="Inspection and Ethics Commission">
-      የኤንስፔክሽንና የሥነ-ምግባር ኮሚሽን <i class="fa-solid fa-chevron-down"></i>
-    </a>
-  </li>
+                <li class="dropdown">
+                    <a href="#" data-am="የኤንስፔክሽንና የሥነ-ምግባር ኮሚሽን" data-en="Inspection and Ethics Commission">
+                        የኤንስፔክሽንና የሥነ-ምግባር ኮሚሽን <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                </li>
 
-  <li class="dropdown">
-    <a href="#" data-am="ሕትመት" data-en="Publication">
-      ሕትመት <i class="fa-solid fa-chevron-down"></i>
-    </a>
-  </li>
+                <li class="dropdown">
+                    <a href="#" data-am="ሕትመት" data-en="Publication">
+                        ሕትመት <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                </li>
 
-  <li class="dropdown">
-    <a href="#" data-am="ክፍሎች" data-en="Rooms">
-      ክፍሎች <i class="fa-solid fa-chevron-down"></i>
-    </a>
-  </li>
-</ul>
+                <li class="dropdown">
+                    <a href="#" data-am="ክፍሎች" data-en="Rooms">
+                        ክፍሎች <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Controls Area: Language Dropdown + Mobile Toggle -->
+            <div class="nav-controls">
+                <div class="lang-selector">
+                    <button type="button" class="lang-btn" id="langBtn" aria-expanded="false">
+                        <span id="currentLangLabel">አማርኛ</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <ul class="lang-dropdown-menu" id="langMenu">
+                        <li><a href="#" data-lang="am">አማርኛ</a></li>
+                        <li><a href="#" data-lang="en">English</a></li>
+                    </ul>
+                </div>
+                
+                <button type="button" class="menu-toggle" id="menuToggleBtn">☰</button>
+            </div>
         </div>
+    </header>
 
        <!-- DISTRICT BRANDING NAVBAR -->
         <div class="nav-container">
