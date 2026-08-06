@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
     margin: 0;
@@ -102,12 +106,14 @@ body {
 /* Focus states for accessibility */
 .search-box input:focus,
 .lang-selector select:focus,
+.lang-btn:focus,
 .menu-toggle:focus,
 .social-btn:focus,
 .slider-btn:focus,
 .cta-link:focus,
 .read-more-btn:focus,
-.sector-filter-select:focus {
+.filter-box select:focus,
+.fab-btn:focus {
     outline: 2px solid #64b5f6;
     outline-offset: 2px;
 }
@@ -129,7 +135,7 @@ body {
 }
 
 .side-menu.open {
-    top: 55px;
+    top: 60px; /* Aligned with sticky navbar height */
 }
 
 .side-menu ul {
@@ -203,6 +209,7 @@ body {
     border-radius: 12px;
     max-width: 70%;
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .slider-caption p {
@@ -249,6 +256,7 @@ body {
     border-radius: 10px;
     z-index: 20;
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .num-item {
@@ -324,6 +332,7 @@ body {
 
 .search-box input:focus {
     border-color: #007bff;
+    outline: none;
 }
 
 .search-icon {
@@ -349,7 +358,8 @@ body {
     border-color: #007bff;
 }
 
-.sector-filter-select {
+/* Target HTML <select id="sectorFilter"> directly */
+.filter-box select {
     width: 100%;
     border: none;
     background: transparent;
@@ -665,6 +675,7 @@ body {
     font-size: 22px;
     box-shadow: 0 4px 15px rgba(10, 47, 77, 0.3);
     z-index: 5000;
+    text-decoration: none;
     transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
@@ -839,6 +850,7 @@ body {
 .form-group textarea:focus {
     border-color: #007bff;
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    outline: none;
 }
 
 .radio-group {
