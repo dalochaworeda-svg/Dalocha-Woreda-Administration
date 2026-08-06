@@ -508,37 +508,38 @@
         });
 
         // Toggle language menu
-        const langBtn = document.getElementById('langBtn');
-        const langDropdown = document.getElementById('langDropdown');
+const langBtn = document.getElementById('langBtn');
+const langMenu = document.getElementById('langMenu');
 
-        if (langBtn) {
-            langBtn.addEventListener('click', function() {
-                const expanded = langBtn.getAttribute('aria-expanded') === 'true' || false;
-                langBtn.setAttribute('aria-expanded', !expanded);
-                langDropdown.classList.toggle('show');
-            });
-        }
-    </script>
-    <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const langBtn = document.getElementById('langBtn');
-    const langMenu = document.getElementById('langMenu');
-
-    if (langBtn && langMenu) {
-      // Toggle dropdown open/close when clicking the button
-      langBtn.addEventListener('click', (e) => {
+if (langBtn && langMenu) {
+    langBtn.addEventListener('click', function(e) {
         e.stopPropagation();
+        const expanded = langBtn.getAttribute('aria-expanded') === 'true';
+        langBtn.setAttribute('aria-expanded', !expanded);
         langMenu.classList.toggle('show');
-      });
+    });
+        }
+<!-- LANGUAGE DROPDOWN INTERACTION SCRIPT -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const langBtn = document.getElementById('langBtn');
+        const langMenu = document.getElementById('langMenu');
 
-      // Close dropdown when clicking outside of it
-      document.addEventListener('click', (e) => {
-        if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
-          langMenu.classList.remove('show');
+        if (langBtn && langMenu) {
+          // Toggle dropdown open/close when clicking the button
+          langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langMenu.classList.toggle('show');
+          });
+
+          // Close dropdown when clicking outside of it
+          document.addEventListener('click', (e) => {
+            if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+              langMenu.classList.remove('show');
+            }
+          });
         }
       });
-    }
-  });
-</script>
+    </script>
 </body>
 </html>
