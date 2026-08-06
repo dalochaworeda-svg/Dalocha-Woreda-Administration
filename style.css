@@ -106,7 +106,8 @@ body {
 .social-btn:focus,
 .slider-btn:focus,
 .cta-link:focus,
-.read-more-btn:focus {
+.read-more-btn:focus,
+.sector-filter-select:focus {
     outline: 2px solid #64b5f6;
     outline-offset: 2px;
 }
@@ -335,21 +336,28 @@ body {
 
 .filter-box {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     background: #ffffff;
     border: 1px solid #e1e8ed;
-    padding: 14px 20px;
     border-radius: 30px;
-    cursor: pointer;
-    font-size: 15px;
-    color: #2c3e50;
-    min-width: 160px;
+    padding: 0 15px;
+    min-width: 180px;
     transition: border-color 0.2s ease;
 }
 
 .filter-box:hover {
     border-color: #007bff;
+}
+
+.sector-filter-select {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    color: #2c3e50;
+    cursor: pointer;
+    padding: 14px 5px;
+    outline: none;
 }
 
 /* ==========================================
@@ -379,6 +387,35 @@ body {
 
 .section-body p {
     line-height: 1.6;
+    color: #4a5568;
+}
+
+/* Key Sectors Display Grid */
+.sector-item {
+    background: #f8fafd;
+    border-left: 4px solid #007bff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.2s ease;
+}
+
+.sector-item:hover {
+    transform: translateX(4px);
+}
+
+.sector-item h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    color: #0b2f4c;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sector-item p {
+    margin: 0;
+    font-size: 14px;
     color: #4a5568;
 }
 
@@ -529,6 +566,12 @@ body {
     padding-bottom: 8px;
 }
 
+.footer-card.center-align {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .bullet-list, .icon-list {
     list-style: none;
     padding: 0;
@@ -540,6 +583,10 @@ body {
 .bullet-list li {
     margin-bottom: 8px;
     color: #d1d5db;
+}
+
+.icon-list li {
+    margin-bottom: 8px;
 }
 
 .icon-list li a {
