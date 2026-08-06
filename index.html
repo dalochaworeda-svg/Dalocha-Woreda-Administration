@@ -526,7 +526,6 @@
     });
   }
 </script>
-
 <!-- LANGUAGE SWITCHER SCRIPT -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -537,27 +536,35 @@ document.addEventListener('DOMContentLoaded', () => {
   function setLanguage(lang) {
     document.querySelectorAll('[data-am][data-en]').forEach(el => {
       const translation = el.getAttribute(`data-${lang}`);
-      if (translation) {
-        // Find existing icon elements inside the link (if any)
-        const icon = el.querySelector('i, svg');
-        
-        // Update text node specifically so inner icons aren't deleted
-        if (icon) {
-          el.childNodes[0].nodeValue = translation + ' ';
-        } else {
-          el.textContent = translation;
+      if (!translation) return;
+
+      // Check if element contains child HTML nodes (like icon tags <i>)
+      let textUpdated = false;
+      for (let node of el.childNodes) {
+        if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== '') {
+          node.nodeValue = translation + ' ';
+          textUpdated = true;
+          break;
         }
+      }
+
+      // If no text node was found (pure text element), set textContent directly
+      if (!textUpdated) {
+        el.textContent = translation;
       }
     });
 
+    // Update Language Dropdown Button Text
     if (currentLangLabel) {
       currentLangLabel.textContent = (lang === 'am') ? 'አማርኛ' : 'English';
     }
 
+    // Store state in browser storage
     localStorage.setItem('selectedLang', lang);
     document.documentElement.lang = lang;
   }
 
+  // Handle Dropdown Mechanics
   if (langBtn && langMenu) {
     langBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -583,6 +590,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Load initial saved language or default to Amharic ('am')
   const savedLang = localStorage.getItem('selectedLang') || 'am';
   setLanguage(savedLang);
 });
