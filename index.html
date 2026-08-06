@@ -473,61 +473,68 @@
 
         </section>
     </main>
-    <!-- JAVASCRIPT FOR SLIDER & NAVIGATION -->
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const numItems = document.querySelectorAll('.num-item');
+    <!-- SLIDER & NAVIGATION SCRIPT -->
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const numItems = document.querySelectorAll('.num-item');
 
-        function showSlide(index) {
-            if (index >= slides.length) currentSlide = 0;
-            else if (index < 0) currentSlide = slides.length - 1;
-            else currentSlide = index;
+  function showSlide(index) {
+    if (index >= slides.length) currentSlide = 0;
+    else if (index < 0) currentSlide = slides.length - 1;
+    else currentSlide = index;
 
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === currentSlide);
-            });
-            numItems.forEach((num, i) => {
-                num.classList.toggle('active', i === currentSlide);
-            });
-        }
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === currentSlide);
+    });
+    numItems.forEach((num, i) => {
+      num.classList.toggle('active', i === currentSlide);
+    });
+  }
 
-        function changeSlide(direction) {
-            showSlide(currentSlide + direction);
-        }
+  function changeSlide(direction) {
+    showSlide(currentSlide + direction);
+  }
 
-        function goToSlide(index) {
-            showSlide(index);
-        }
+  function goToSlide(index) {
+    showSlide(index);
+  }
 
-        // Toggle mobile menu
-        const menuToggleBtn = document.getElementById('menuToggleBtn');
-        const sideMenu = document.getElementById('sideMenu');
+  // Toggle mobile menu
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const sideMenu = document.getElementById('sideMenu');
 
-        menuToggleBtn.addEventListener('click', function() {
-            const isOpen = sideMenu.classList.toggle('open');
-            menuToggleBtn.setAttribute('aria-expanded', isOpen);
-        });
-
-      <!-- Google Translate Widget Init Script -->
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'am',
-    includedLanguages: 'am,en',
-    autoDisplay: false
-  }, 'google_translate_element');
-}
+  if (menuToggleBtn && sideMenu) {
+    menuToggleBtn.addEventListener('click', function() {
+      const isOpen = sideMenu.classList.toggle('open');
+      menuToggleBtn.setAttribute('aria-expanded', isOpen);
+    });
+  }
 </script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-<!-- Language Switcher Listener Script -->
+<!-- LANGUAGE SWITCHER SCRIPT -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const langBtn = document.getElementById('langBtn');
   const langMenu = document.getElementById('langMenu');
+  const currentLangLabel = document.getElementById('currentLangLabel');
 
-  // Toggle Dropdown Menu
+  function setLanguage(lang) {
+    document.querySelectorAll('[data-am][data-en]').forEach(el => {
+      const translation = el.getAttribute(`data-${lang}`);
+      if (translation) {
+        el.textContent = translation;
+      }
+    });
+
+    if (currentLangLabel) {
+      currentLangLabel.textContent = (lang === 'am') ? 'አማርኛ' : 'English';
+    }
+
+    localStorage.setItem('selectedLang', lang);
+    document.documentElement.lang = lang;
+  }
+
   if (langBtn && langMenu) {
     langBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -542,21 +549,19 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Handle Language Selection & Trigger Google Translate
     langMenu.querySelectorAll('a[data-lang]').forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
-        const lang = link.getAttribute('data-lang');
-        
-        // Change Google Translate cookie
-        document.cookie = `googtrans=/am/${lang}; path=/`;
-        document.cookie = `googtrans=/am/${lang}; domain=${window.location.hostname}; path=/`;
-        
-        // Reload page to apply translation state
-        window.location.reload();
+        const selectedLang = link.getAttribute('data-lang');
+        setLanguage(selectedLang);
+        langMenu.classList.remove('show');
+        langBtn.setAttribute('aria-expanded', 'false');
       });
     });
   }
+
+  const savedLang = localStorage.getItem('selectedLang') || 'am';
+  setLanguage(savedLang);
 });
 </script>
 </body>
