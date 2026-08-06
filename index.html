@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<!-- MAIN HEADER & NAVIGATION -->
+
+    <!-- MAIN HEADER & NAVIGATION -->
     <header class="main-header">
         <div class="nav-container">
             <!-- Branding / Logo -->
@@ -28,23 +29,25 @@
                 <a href="#sectors" data-am="ዘርፎች" data-en="Sectors">ዘርፎች</a>
                 <a href="#contact-us" data-am="አድራሻ" data-en="Offices">አድራሻ</a>
             </nav>
-          <!-- Navigation Controls (Language Switcher & Mobile Menu Button) -->
-<div class="nav-controls">
-    <div class="lang-selector">
-        <button type="button" class="lang-btn" id="langBtn" aria-expanded="false">
-            <i class="fa-solid fa-globe"></i> 
-            <span id="currentLangLabel">አማርኛ</span> 
-            <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <ul class="lang-dropdown-menu" id="langMenu">
-            <li><a href="#" data-lang="am">አማርኛ</a></li>
-            <li><a href="#" data-lang="en">English</a></li>
-        </ul>
-    </div>
-    
-    <!-- ADDED ACCESSIBILITY ATTRIBUTES HERE -->
-    <button type="button" class="menu-toggle" id="menuToggleBtn" aria-label="Toggle Navigation Menu" aria-expanded="false">☰</button>
-</div>
+
+            <!-- Navigation Controls (Language Switcher & Mobile Menu Button) -->
+            <div class="nav-controls">
+                <div class="lang-selector">
+                    <button type="button" class="lang-btn" id="langBtn" aria-expanded="false">
+                        <i class="fa-solid fa-globe"></i> 
+                        <span id="currentLangLabel">አማርኛ</span> 
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <ul class="lang-dropdown-menu" id="langMenu">
+                        <li><a href="#" data-lang="am">አማርኛ</a></li>
+                        <li><a href="#" data-lang="en">English</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="menu-toggle" id="menuToggleBtn" aria-label="Toggle Navigation Menu" aria-expanded="false">☰</button>
+            </div>
+        </div>
+    </header>
+
     <!-- MOBILE SIDE MENU -->
     <nav class="side-menu" id="sideMenu" aria-label="Mobile Menu">
         <ul>
@@ -63,64 +66,58 @@
         </ul>
     </nav>
 
+    <!-- MAIN CONTENT WRAPPER -->
     <main class="content-wrapper">
-       <!-- SLIDER SECTION -->
-<section class="slider-section">
-    <div class="slider-container">
-        <!-- Slide 1 (Added 'active' class here) -->
-        <div class="slide active">
-            <img src="500.JPG" alt="የዳሎቻ ወረዳ ዋና እስተዳደር አቶ ሪድዋን ሞሶሮ">
-            <div class="slider-caption">
-                <p data-am="ከህዝብ ጋር በቅንጅት፣ ለሁለንተናዊ እድገትና እኩልነት!" data-en="Together with the public, for all-inclusive growth and equality!">ከህዝብ ጋር በቅንጅት፣ ለሁለንተናዊ እድገትና እኩልነት!</p>
+        <!-- SLIDER SECTION -->
+        <section class="slider-section">
+            <div class="slider-container">
+                <div class="slide active">
+                    <img src="500.JPG" alt="የዳሎቻ ወረዳ ዋና እስተዳደር አቶ ሪድዋን ሞሶሮ">
+                    <div class="slider-caption">
+                        <p data-am="ከህዝብ ጋር በቅንጅት፣ ለሁለንተናዊ እድገትና እኩልነት!" data-en="Together with the public, for all-inclusive growth and equality!">ከህዝብ ጋር በቅንጅት፣ ለሁለንተናዊ እድገትና እኩልነት!</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img src="4.jpg" alt="ዳሎቻ ወረዳ የብልፅግና ፓርቲ">
+                    <div class="slider-caption">
+                        <p data-am="በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ!" data-en="Empowering Youth, Transforming Services: The Digital Future of Dalocha!">በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ!</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img src="8.JPG" alt="Dalocha City">
+                    <div class="slider-caption">
+                        <p data-am="ዳሎቻ በስራ፣ ብልፅግና በተግባር!" data-en="Dalocha in Action, Prosperity in Practice!">ዳሎቻ በስራ፣ ብልፅግና በተግባር!</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img src="12.JPG" alt="የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና!">
+                    <div class="slider-caption">
+                        <p data-am="የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና!" data-en="Dalocha’s People United, Prosperity Achieved!">የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና!</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img src="1.jpg" alt="የብልፅግና ፓርቲ">
+                    <div class="slider-caption">
+                        <p data-am="በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ!" data-en="Empowering Youth, Transforming Services: The Digital Future of Ethiopia!">በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ!</p>
+                    </div>
+                </div>
+
+                <button class="slider-btn prev-btn" onclick="changeSlide(-1)" aria-label="Previous Slide">&#10094;</button>
+                <button class="slider-btn next-btn" onclick="changeSlide(1)" aria-label="Next Slide">&#10095;</button>
+
+                <div class="slide-numbers" id="slideNumbers">
+                    <span class="num-item active" onclick="goToSlide(0)">01</span>
+                    <span class="num-item" onclick="goToSlide(1)">02</span>
+                    <span class="num-item" onclick="goToSlide(2)">03</span>
+                    <span class="num-item" onclick="goToSlide(3)">04</span>
+                    <span class="num-item" onclick="goToSlide(4)">05</span>
+                </div>
             </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="slide">
-            <img src="4.jpg" alt="ዳሎቻ ወረዳ የብልፅግና ፓርቲ">
-            <div class="slider-caption">
-                <p data-am="በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ!" data-en="Empowering Youth, Transforming Services: The Digital Future of Dalocha!">በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ!</p>
-            </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="slide">
-            <img src="8.JPG" alt="Dalocha City">
-            <div class="slider-caption">
-                <p data-am="ዳሎቻ በስራ፣ ብልፅግና በተግባር!" data-en="Dalocha in Action, Prosperity in Practice!">ዳሎቻ በስራ፣ ብልፅግና በተግባር!</p>
-            </div>
-        </div>
-
-        <!-- Slide 4 -->
-        <div class="slide">
-            <img src="12.JPG" alt="የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና!">
-            <div class="slider-caption">
-                <p data-am="የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና!" data-en="Dalocha’s People United, Prosperity Achieved!">የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና!</p>
-            </div>
-        </div>
-
-        <!-- Slide 5 -->
-        <div class="slide">
-            <img src="1.jpg" alt="የብልፅግና ፓርቲ">
-            <div class="slider-caption">
-                <p data-am="በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ!" data-en="Empowering Youth, Transforming Services: The Digital Future of Ethiopia!">በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ!</p>
-            </div>
-        </div>
-
-        <!-- NAVIGATION BUTTONS -->
-        <button class="slider-btn prev-btn" onclick="changeSlide(-1)" aria-label="Previous Slide">&#10094;</button>
-        <button class="slider-btn next-btn" onclick="changeSlide(1)" aria-label="Next Slide">&#10095;</button>
-
-        <!-- NUMBERED INDICATORS (Matched to 5 slides) -->
-        <div class="slide-numbers" id="slideNumbers">
-            <span class="num-item active" onclick="goToSlide(0)">01</span>
-            <span class="num-item" onclick="goToSlide(1)">02</span>
-            <span class="num-item" onclick="goToSlide(2)">03</span>
-            <span class="num-item" onclick="goToSlide(3)">04</span>
-            <span class="num-item" onclick="goToSlide(4)">05</span>
-        </div>
-    </div>
-</section>
+        </section>
 
         <!-- SOCIO-ECONOMIC CARD -->
         <section class="intro-card" id="population">
@@ -156,7 +153,6 @@
 
         <!-- CONTENT SECTIONS -->
         <section class="info-sections">
-            
             <!-- LEADER MESSAGE -->
             <article id="message-section" class="content-section">
                 <h2>የመሪው መልዕክት | Message</h2>
@@ -295,66 +291,7 @@
                 </div>
             </article>
 
-            
-    <!-- MAIN FOOTER SECTION -->
-    <footer class="custom-footer">
-        <div class="footer-overlay-bar"></div>
-        <div class="footer-container">
-            <div class="footer-card">
-                <h3 class="card-title">የብልፅግና ፓርቲ ዓላማዎች</h3>
-                <ul class="bullet-list">
-                    <li>ጠንካራ፣ ዴሞክራሲያዊ፣ ቅርፅና ቅቡልነት ያለው፣ ዘላቂ ሀገረ-መንግሥትና ኅብረ-ብሔራዊ አንድነት መገንባት፤</li>
-                    <li>ልማትና ፍትሐዊ ተጠቃሚነትን የሚያረጋግጥ አነቃቂ የኢኮኖሚ ሥርዓት መገንባት፤</li>
-                    <li>ሁሉንአቀፍ ብልፅግናን የሚያረጋግጥ ማህበራዊ ልማትን ማረጋገጥ፤</li>
-                    <li>ሀገራዊ ክብርና ጥቅምን ማዕከል ያደረገ የውጭ ግንኙነት ማካሄድ።</li>
-                </ul>
-            </div>
-
-            <div class="footer-card">
-                <h3 class="card-title">ፈጣን አገናኞች</h3>
-                <ul class="icon-list">
-                    <li><a href="#message-section"><i class="fa-solid fa-house"></i> ዋና ገጽ</a></li>
-                    <li><a href="#news"><i class="fa-solid fa-newspaper"></i> ዜና</a></li>
-                    <li><a href="#publications"><i class="fa-solid fa-book-open"></i> መጽሔቶች</a></li>
-                    <li><a href="#contact-us"><i class="fa-solid fa-envelope"></i> ያግኙን</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-card">
-                <h3 class="card-title">አድራሻ</h3>
-                <ul class="icon-list contact-info">
-                    <li><i class="fa-solid fa-phone"></i> +251 932 528 348</li>
-                    <li><i class="fa-solid fa-envelope"></i> dalochaworeda@gmail.com</li>
-                    <li><i class="fa-solid fa-location-dot"></i> ዳሎቻ, ኢትዮጵያ</li>
-                </ul>
-            </div>
-
-            <div class="footer-card">
-                <h3 class="card-title">መርሆች</h3>
-                <ul class="bullet-list">
-                    <li>ሕዝባዊነት</li>
-                    <li>ዴሞክራሲያዊነት</li>
-                    <li>የሕግ የበላይነት</li>
-                    <li>ልማትና ፍትሐዊ ተጠቃሚነት</li>
-                    <li>ተግባራዊ እውነት</li>
-                    <li>ሀገራዊ አንድነትና ኅብረ ብሔራዊነት</li>
-                </ul>
-            </div>
-
-            <div class="footer-card center-align">
-                <h3 class="card-title">ማህበራዊ ሚዲያ</h3>
-                <div class="social-grid">
-                    <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#" class="social-btn" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
-                </div>
-                <div style="margin-top: 20px;">
-                    <a href="#register" class="read-more-btn">አባል ይሁኑ (Join Us)</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-<!-- MEMBERSHIP FORM SECTION -->
+            <!-- MEMBERSHIP FORM SECTION -->
             <section class="content-section" id="register">
                 <div class="form-container">
                     <h2>የብልፅግና ፓርቲ አባልነት መመዝገቢያ ፎርም</h2>
@@ -427,133 +364,185 @@
                     </form>
                 </div>
             </section>
-
         </section>
     </main>
 
-<!-- UNIFIED SLIDER, NAVIGATION & LANGUAGE SCRIPT -->
-<script>
-// 1. Image Slider Logic (Global scope so onclick attributes work)
-let currentSlide = 0;
+    <!-- MAIN FOOTER SECTION -->
+    <footer class="custom-footer">
+        <div class="footer-overlay-bar"></div>
+        <div class="footer-container">
+            <div class="footer-card">
+                <h3 class="card-title">የብልፅግና ፓርቲ ዓላማዎች</h3>
+                <ul class="bullet-list">
+                    <li>ጠንካራ፣ ዴሞክራሲያዊ፣ ቅርፅና ቅቡልነት ያለው፣ ዘላቂ ሀገረ-መንግሥትና ኅብረ-ብሔራዊ አንድነት መገንባት፤</li>
+                    <li>ልማትና ፍትሐዊ ተጠቃሚነትን የሚያረጋግጥ አነቃቂ የኢኮኖሚ ሥርዓት መገንባት፤</li>
+                    <li>ሁሉንአቀፍ ብልፅግናን የሚያረጋግጥ ማህበራዊ ልማትን ማረጋገጥ፤</li>
+                    <li>ሀገራዊ ክብርና ጥቅምን ማዕከል ያደረገ የውጭ ግንኙነት ማካሄድ።</li>
+                </ul>
+            </div>
 
-function showSlide(index) {
-  const slides = document.querySelectorAll('.slide');
-  const numItems = document.querySelectorAll('.num-item');
+            <div class="footer-card">
+                <h3 class="card-title">ፈጣን አገናኞች</h3>
+                <ul class="icon-list">
+                    <li><a href="#message-section"><i class="fa-solid fa-house"></i> ዋና ገጽ</a></li>
+                    <li><a href="#news"><i class="fa-solid fa-newspaper"></i> ዜና</a></li>
+                    <li><a href="#publications"><i class="fa-solid fa-book-open"></i> መጽሔቶች</a></li>
+                    <li><a href="#contact-us"><i class="fa-solid fa-envelope"></i> ያግኙን</a></li>
+                </ul>
+            </div>
 
-  if (!slides.length) return;
+            <div class="footer-card">
+                <h3 class="card-title">አድራሻ</h3>
+                <ul class="icon-list contact-info">
+                    <li><i class="fa-solid fa-phone"></i> +251 932 528 348</li>
+                    <li><i class="fa-solid fa-envelope"></i> dalochaworeda@gmail.com</li>
+                    <li><i class="fa-solid fa-location-dot"></i> ዳሎቻ, ኢትዮጵያ</li>
+                </ul>
+            </div>
 
-  if (index >= slides.length) currentSlide = 0;
-  else if (index < 0) currentSlide = slides.length - 1;
-  else currentSlide = index;
+            <div class="footer-card">
+                <h3 class="card-title">መርሆች</h3>
+                <ul class="bullet-list">
+                    <li>ሕዝባዊነት</li>
+                    <li>ዴሞክራሲያዊነት</li>
+                    <li>የሕግ የበላይነት</li>
+                    <li>ልማትና ፍትሐዊ ተጠቃሚነት</li>
+                    <li>ተግባራዊ እውነት</li>
+                    <li>ሀገራዊ አንድነትና ኅብረ ብሔራዊነት</li>
+                </ul>
+            </div>
 
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === currentSlide);
-  });
-  numItems.forEach((num, i) => {
-    num.classList.toggle('active', i === currentSlide);
-  });
-}
+            <div class="footer-card center-align">
+                <h3 class="card-title">ማህበራዊ ሚዲያ</h3>
+                <div class="social-grid">
+                    <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="social-btn" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                </div>
+                <div style="margin-top: 20px;">
+                    <a href="#register" class="read-more-btn">አባል ይሁኑ (Join Us)</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-function changeSlide(direction) {
-  showSlide(currentSlide + direction);
-}
+    <!-- UNIFIED SLIDER, NAVIGATION & LANGUAGE SCRIPT -->
+    <script>
+    // 1. Image Slider Logic
+    let currentSlide = 0;
 
-function goToSlide(index) {
-  showSlide(index);
-}
+    function showSlide(index) {
+        const slides = document.querySelectorAll('.slide');
+        const numItems = document.querySelectorAll('.num-item');
 
-// 2. DOM-dependent UI Logic
-document.addEventListener('DOMContentLoaded', () => {
-  // Mobile Side Menu Toggle
-  const menuToggleBtn = document.getElementById('menuToggleBtn');
-  const sideMenu = document.getElementById('sideMenu');
+        if (!slides.length) return;
 
-  if (menuToggleBtn && sideMenu) {
-    menuToggleBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = sideMenu.classList.toggle('open');
-      menuToggleBtn.setAttribute('aria-expanded', isOpen);
-    });
+        if (index >= slides.length) currentSlide = 0;
+        else if (index < 0) currentSlide = slides.length - 1;
+        else currentSlide = index;
 
-    // Auto-close menu on link click
-    sideMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        sideMenu.classList.remove('open');
-      });
-    });
-  }
-
-  // Language Switching Logic
-  const langBtn = document.getElementById('langBtn');
-  const langMenu = document.getElementById('langMenu');
-  const currentLangLabel = document.getElementById('currentLangLabel');
-
-  function setLanguage(lang) {
-    const elements = document.querySelectorAll('[data-am][data-en]');
-
-    elements.forEach(el => {
-      const translation = el.getAttribute(`data-${lang}`);
-      if (!translation) return;
-
-      // Handle Inputs & Textareas
-      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-        el.placeholder = translation;
-        return;
-      }
-
-      // Preserve child elements (e.g., icons <i>) while replacing text
-      const icon = el.querySelector('i, svg');
-      if (icon) {
-        // Keep the icon, update text next to it
-        el.childNodes.forEach(node => {
-          if (node.nodeType === Node.TEXT_NODE) {
-            node.nodeValue = translation + ' ';
-          }
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === currentSlide);
         });
-      } else {
-        // Standard text elements
-        el.textContent = translation;
-      }
-    });
-
-    // Update Dropdown Header Text
-    if (currentLangLabel) {
-      currentLangLabel.textContent = (lang === 'am') ? 'አማርኛ' : 'English';
+        numItems.forEach((num, i) => {
+            num.classList.toggle('active', i === currentSlide);
+        });
     }
 
-    // Save Preference
-    localStorage.setItem('selectedLang', lang);
-    document.documentElement.lang = lang;
-  }
+    function changeSlide(direction) {
+        showSlide(currentSlide + direction);
+    }
 
-  // Language Dropdown Mechanics
-  if (langBtn && langMenu) {
-    langBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isExpanded = langMenu.classList.toggle('show');
-      langBtn.setAttribute('aria-expanded', isExpanded);
+    function goToSlide(index) {
+        showSlide(index);
+    }
+
+    // 2. DOM-dependent UI Logic
+    document.addEventListener('DOMContentLoaded', () => {
+        // Mobile Side Menu Toggle
+        const menuToggleBtn = document.getElementById('menuToggleBtn');
+        const sideMenu = document.getElementById('sideMenu');
+
+        if (menuToggleBtn && sideMenu) {
+            menuToggleBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = sideMenu.classList.toggle('open');
+                menuToggleBtn.setAttribute('aria-expanded', isOpen);
+            });
+
+            // Auto-close menu on link click
+            sideMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    sideMenu.classList.remove('open');
+                });
+            });
+        }
+
+        // Language Switching Logic
+        const langBtn = document.getElementById('langBtn');
+        const langMenu = document.getElementById('langMenu');
+        const currentLangLabel = document.getElementById('currentLangLabel');
+
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll('[data-am][data-en]');
+
+            elements.forEach(el => {
+                const translation = el.getAttribute(`data-${lang}`);
+                if (!translation) return;
+
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    el.placeholder = translation;
+                    return;
+                }
+
+                const icon = el.querySelector('i, svg');
+                if (icon) {
+                    el.childNodes.forEach(node => {
+                        if (node.nodeType === Node.TEXT_NODE) {
+                            node.nodeValue = translation + ' ';
+                        }
+                    });
+                } else {
+                    el.textContent = translation;
+                }
+            });
+
+            if (currentLangLabel) {
+                currentLangLabel.textContent = (lang === 'am') ? 'አማርኛ' : 'English';
+            }
+
+            localStorage.setItem('selectedLang', lang);
+            document.documentElement.lang = lang;
+        }
+
+        // Language Dropdown Mechanics
+        if (langBtn && langMenu) {
+            langBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isExpanded = langMenu.classList.toggle('show');
+                langBtn.setAttribute('aria-expanded', isExpanded);
+            });
+
+            document.addEventListener('click', () => {
+                langMenu.classList.remove('show');
+                if (langBtn) langBtn.setAttribute('aria-expanded', 'false');
+            });
+
+            langMenu.querySelectorAll('a[data-lang]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const selectedLang = link.getAttribute('data-lang');
+                    setLanguage(selectedLang);
+                    langMenu.classList.remove('show');
+                    if (langBtn) langBtn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
+        // Initialize Language
+        const savedLang = localStorage.getItem('selectedLang') || 'am';
+        setLanguage(savedLang);
     });
-
-    document.addEventListener('click', () => {
-      langMenu.classList.remove('show');
-      if (langBtn) langBtn.setAttribute('aria-expanded', 'false');
-    });
-
-    langMenu.querySelectorAll('a[data-lang]').forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const selectedLang = link.getAttribute('data-lang');
-        setLanguage(selectedLang);
-        langMenu.classList.remove('show');
-        if (langBtn) langBtn.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
-
-  // Initialize Language (Default to Amharic)
-  const savedLang = localStorage.getItem('selectedLang') || 'am';
-  setLanguage(savedLang);
-});
-</script>
+    </script>
 </body>
 </html>
