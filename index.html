@@ -442,83 +442,103 @@
 
         </section>
     </main>
-    <!-- SLIDER & NAVIGATION SCRIPT -->
+
+<!-- UNIFIED SLIDER, NAVIGATION & LANGUAGE SCRIPT -->
 <script>
-  let currentSlide = 0;
+// 1. Image Slider Logic (Global scope so onclick attributes work)
+let currentSlide = 0;
+
+function showSlide(index) {
   const slides = document.querySelectorAll('.slide');
   const numItems = document.querySelectorAll('.num-item');
 
-  function showSlide(index) {
-    if (index >= slides.length) currentSlide = 0;
-    else if (index < 0) currentSlide = slides.length - 1;
-    else currentSlide = index;
+  if (!slides.length) return;
 
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === currentSlide);
-    });
-    numItems.forEach((num, i) => {
-      num.classList.toggle('active', i === currentSlide);
-    });
-  }
+  if (index >= slides.length) currentSlide = 0;
+  else if (index < 0) currentSlide = slides.length - 1;
+  else currentSlide = index;
 
-  function changeSlide(direction) {
-    showSlide(currentSlide + direction);
-  }
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === currentSlide);
+  });
+  numItems.forEach((num, i) => {
+    num.classList.toggle('active', i === currentSlide);
+  });
+}
 
-  function goToSlide(index) {
-    showSlide(index);
-  }
+function changeSlide(direction) {
+  showSlide(currentSlide + direction);
+}
 
-  // Toggle mobile menu
+function goToSlide(index) {
+  showSlide(index);
+}
+
+// 2. DOM-dependent UI Logic
+document.addEventListener('DOMContentLoaded', () => {
+  // Mobile Side Menu Toggle
   const menuToggleBtn = document.getElementById('menuToggleBtn');
   const sideMenu = document.getElementById('sideMenu');
 
   if (menuToggleBtn && sideMenu) {
-    menuToggleBtn.addEventListener('click', function() {
+    menuToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const isOpen = sideMenu.classList.toggle('open');
       menuToggleBtn.setAttribute('aria-expanded', isOpen);
     });
+
+    // Auto-close menu on link click
+    sideMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        sideMenu.classList.remove('open');
+      });
+    });
   }
-</script>
-<!-- LANGUAGE SWITCHER SCRIPT -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
+
+  // Language Switching Logic
   const langBtn = document.getElementById('langBtn');
   const langMenu = document.getElementById('langMenu');
   const currentLangLabel = document.getElementById('currentLangLabel');
 
   function setLanguage(lang) {
-    document.querySelectorAll('[data-am][data-en]').forEach(el => {
+    const elements = document.querySelectorAll('[data-am][data-en]');
+
+    elements.forEach(el => {
       const translation = el.getAttribute(`data-${lang}`);
       if (!translation) return;
 
-      // Check if element contains child HTML nodes (like icon tags <i>)
-      let textUpdated = false;
-      for (let node of el.childNodes) {
-        if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== '') {
-          node.nodeValue = translation + ' ';
-          textUpdated = true;
-          break;
-        }
+      // Handle Inputs & Textareas
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = translation;
+        return;
       }
 
-      // If no text node was found (pure text element), set textContent directly
-      if (!textUpdated) {
+      // Preserve child elements (e.g., icons <i>) while replacing text
+      const icon = el.querySelector('i, svg');
+      if (icon) {
+        // Keep the icon, update text next to it
+        el.childNodes.forEach(node => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            node.nodeValue = translation + ' ';
+          }
+        });
+      } else {
+        // Standard text elements
         el.textContent = translation;
       }
     });
 
-    // Update Language Dropdown Button Text
+    // Update Dropdown Header Text
     if (currentLangLabel) {
       currentLangLabel.textContent = (lang === 'am') ? 'አማርኛ' : 'English';
     }
 
-    // Store state in browser storage
+    // Save Preference
     localStorage.setItem('selectedLang', lang);
     document.documentElement.lang = lang;
   }
 
-  // Handle Dropdown Mechanics
+  // Language Dropdown Mechanics
   if (langBtn && langMenu) {
     langBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -526,11 +546,9 @@ document.addEventListener('DOMContentLoaded', () => {
       langBtn.setAttribute('aria-expanded', isExpanded);
     });
 
-    document.addEventListener('click', (e) => {
-      if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
-        langMenu.classList.remove('show');
-        langBtn.setAttribute('aria-expanded', 'false');
-      }
+    document.addEventListener('click', () => {
+      langMenu.classList.remove('show');
+      if (langBtn) langBtn.setAttribute('aria-expanded', 'false');
     });
 
     langMenu.querySelectorAll('a[data-lang]').forEach(link => {
@@ -539,12 +557,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedLang = link.getAttribute('data-lang');
         setLanguage(selectedLang);
         langMenu.classList.remove('show');
-        langBtn.setAttribute('aria-expanded', 'false');
+        if (langBtn) langBtn.setAttribute('aria-expanded', 'false');
       });
     });
   }
 
-  // Load initial saved language or default to Amharic ('am')
+  // Initialize Language (Default to Amharic)
   const savedLang = localStorage.getItem('selectedLang') || 'am';
   setLanguage(savedLang);
 });
