@@ -1,549 +1,759 @@
 <!DOCTYPE html>
-<html lang="am" translate="no">
+<html lang="am">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google" content="notranslate">
-    <title>ዳሎቻ ወረዳ ብልፅግና ፓርቲ | Dalocha Woreda Prosperity Party</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta
+charset="UTF-8">
+    <meta
+name="viewport" content="width=device-width,
+initial-scale=1.0">
+    <title>ዳሎቻ ወረዳ ብልፅግና ፓርቲ | Dalocha
+Woreda Prosperity Party</title>
+    <link
+rel="stylesheet" href="style.css">
+    <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-    <!-- MAIN HEADER & NAVIGAnTION -->
-    <header class="main-header">
-        <div class="nav-container">
-            <!-- Branding / Logo -->
-            <div class="logo-group">
-                <div class="logo-text">
-                    <h1 class="logo" data-am="ዳሎቻ ወረዳ የብልፅግና ፓርቲ" data-en="Dalocha Woreda Prosperity Party">ዳሎቻ ወረዳ የብልፅግና ፓርቲ</h1>
-                    <p class="sub-slogan" data-am="ዳሎቻ በስራ፣ ብልፅግና በተግባር!" data-en="Dalocha in Action, Prosperity in Practice!">ዳሎቻ በስራ፣ ብልፅግና በተግባር!</p>
-                </div>
-            </div>
-
-            <!-- Desktop Quick Links -->
-            <nav class="desktop-menu" aria-label="Quick Links">
-                <a href="#message-section" data-am="ዋና ገጽ" data-en="Home">ዋና ገጽ</a>
-                <a href="#plan" data-am="ስለ እኛ" data-en="About">ስለ እኛ</a>
-                <a href="#news" data-am="ወቅታዊ ዜናዎች" data-en="Latest News">ወቅታዊ ዜናዎች</a>
-                <a href="#sectors" data-am="ዘርፎች" data-en="Sectors">ዘርፎች</a>
-                <a href="#contact-us" data-am="አድራሻ" data-en="Offices">አድራሻ</a>
-            </nav>
-
-            <!-- Navigation Controls (Language Switcher & Mobile Menu Button) -->
-            <div class="nav-controls">
-                <div class="lang-selector">
-                    <button type="button" class="lang-btn" id="langBtn" aria-expanded="false">
-                        <i class="fa-solid fa-globe"></i> 
-                        <span id="currentLangLabel">አማርኛ</span> 
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <ul class="lang-dropdown-menu" id="langMenu">
-                        <li><a href="#" data-lang="am">አማርኛ</a></li>
-                        <li><a href="#" data-lang="en">English</a></li>
-                    </ul>
-                </div>
-                <button type="button" class="menu-toggle" id="menuToggleBtn" aria-label="Toggle Navigation Menu" aria-expanded="false">☰</button>
-            </div>
-        </div>
-    </header>
-
-    <!-- MOBILE SIDE MENU -->
-    <nav class="side-menu" id="sideMenu" aria-label="Mobile Menu">
-        <ul>
-            <li><a href="#plan" data-am="ስለኛ" data-en="About Us">ስለኛ</a></li>
-            <li><a href="#message-section" data-am="መልዕክት" data-en="Message">መልዕክት</a></li>
-            <li><a href="#prosperity-party" data-am="የብልፅግና ፓርቲ ዓላማዎች" data-en="Prosperity Party Objectives">የብልፅግና ፓርቲ ዓላማዎች</a></li>
-            <li><a href="#principles" data-am="መርሆች" data-en="Principles">መርሆች</a></li>
-            <li><a href="#population" data-am="ህዝብና ጂኦግራፊ" data-en="Population & Geography">ህዝብና ጂኦግራፊ</a></li>
-            <li><a href="#news" data-am="ወቅታዊ ዜናዎች" data-en="Latest News">ወቅታዊ ዜናዎች</a></li>
-            <li><a href="#sectors" data-am="ህዝባዊ ዘርፍ" data-en="Public Sector">ህዝባዊ ዘርፍ</a></li>
-            <li><a href="#infrastructure" data-am="መሰረተ-ልማት" data-en="Infrastructure">መሰረተ-ልማት</a></li>
-            <li><a href="#sectors" data-am="አደረጃጀት ዘርፍ" data-en="Organizational Sector">አደረጃጀት ዘርፍ</a></li>
-            <li><a href="#finance" data-am="ፋይናንስና ኢንቨስትመንት" data-en="Finance & Investment">ፋይናንስና ኢንቨስትመንት</a></li>
-            <li><a href="#contact-us" data-am="አድራሻ" data-en="Offices">አድራሻ</a></li>
-            <li><a href="#register" data-am="የምዝገባ ቅጽ" data-en="Application Form">የምዝገባ ቅጽ</a></li>
-        </ul>
-    </nav>
-
-    <!-- MAIN CONTENT WRAPPER -->
-    <main class="content-wrapper">
-        <!-- SLIDER SECTION -->
-        <section class="slider-section">
-            <div class="slider-container">
-                <div class="slide active">
-                    <img src="500.JPG" alt="የዳሎቻ ወረዳ ዋና እስተዳደር አቶ ሪድዋን ሞሶሮ">
-                    <div class="slider-caption">
-                        <p data-am="ከህዝብ ጋር በቅንጅት፣ ለሁለንተናዊ እድገትና እኩልነት!" data-en="Together with the public, for all-inclusive growth and equality!">ከህዝብ ጋር በቅንጅት፣ ለሁለንተናዊ እድገትና እኩልነት!</p>
-                    </div>
-                </div>
-
-                <div class="slide">
-                    <img src="4.jpg" alt="ዳሎቻ ወረዳ የብልፅግና ፓርቲ">
-                    <div class="slider-caption">
-                        <p data-am="በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ!" data-en="Empowering Youth, Transforming Services: The Digital Future of Dalocha!">በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ!</p>
-                    </div>
-                </div>
-
-                <div class="slide">
-                    <img src="8.JPG" alt="Dalocha City">
-                    <div class="slider-caption">
-                        <p data-am="ዳሎቻ በስራ፣ ብልፅግና በተግባር!" data-en="Dalocha in Action, Prosperity in Practice!">ዳሎቻ በስራ፣ ብልፅግና በተግባር!</p>
-                    </div>
-                </div>
-
-                <div class="slide">
-                    <img src="12.JPG" alt="የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና!">
-                    <div class="slider-caption">
-                        <p data-am="የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና!" data-en="Dalocha’s People United, Prosperity Achieved!">የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና!</p>
-                    </div>
-                </div>
-
-                <div class="slide">
-                    <img src="1.jpg" alt="የብልፅግና ፓርቲ">
-                    <div class="slider-caption">
-                        <p data-am="በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ!" data-en="Empowering Youth, Transforming Services: The Digital Future of Ethiopia!">በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ!</p>
-                    </div>
-                </div>
-
-                <button class="slider-btn prev-btn" onclick="changeSlide(-1)" aria-label="Previous Slide">&#10094;</button>
-                <button class="slider-btn next-btn" onclick="changeSlide(1)" aria-label="Next Slide">&#10095;</button>
-
-                <div class="slide-numbers" id="slideNumbers">
-                    <span class="num-item active" onclick="goToSlide(0)">01</span>
-                    <span class="num-item" onclick="goToSlide(1)">02</span>
-                    <span class="num-item" onclick="goToSlide(2)">03</span>
-                    <span class="num-item" onclick="goToSlide(3)">04</span>
-                    <span class="num-item" onclick="goToSlide(4)">05</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- SOCIO-ECONOMIC CARD -->
-        <section class="intro-card" id="population">
-            <h2>ማህበራዊ-ኢኮኖሚያዊ እና ጂኦ-ስፓሻል መረጃዎች</h2>
-            <p><strong>የዳሎቻ ወረዳ አጠቃላይ መረጃ፦</strong><br>
-            ዳሎቻ ወረዳ በማዕከላዊ ኢትዮጵያ ክልል በስልጤ ዞን ውስጥ የሚገኝ ወረዳ ነው። ወረዳው በሰሜን ከስልጤ፣ በምዕራብ ከዉልባረግ፣ በደቡብ ከሳንኩራ እና በምስራቅ ከላንፉሮ ወረዳዎች ጋር ይዋሰናል።</p>
-
-            <p><strong>የህዝብ ብዛት እና የስነ-ህዝብ ትንተና (Demographic Analysis)፦</strong></p>
-            <p>1. <strong>የህዝብ ብዛት እና እድገት፦</strong> በየዓመቱ በሚመዘገበው ~2.3% እስከ 2.8% የህዝብ እድገት መጠን መሠረት፣ የወረዳው ህዝብ በአሁኑ ወቅት በግምት ከ126,000 እስከ 140,000 ይደርሳል ተብሎ ይገመታል።</p>
-            <p><strong>የገጠር እና ከተማ ስርጭት፦</strong> የወረዳው ህዝብ በአብዛኛው በገጠር የሚኖር ሲሆን፣ 92.4% ገደማ በገጠር የሚኖር እና 7.6% ያህሉ ብቻ በከተማ (በዋናነት ዳሎቻ ከተማ) ይኖራል።</p>
-            <p>2. <strong>የብሔር እና የቋንቋ ስርጭት፦</strong> አብዛኛው የወረዳው ነዋሪ (99.1%) የስልጤ ብሔር ተወላጅ ነው። ቋንቋ: የስልጤ ቋንቋ (ስልጥኛ) በ99.6% ነዋሪዎች ዘንድ የሚነገር ነው።</p>
-            <p>3. <strong>የሃይማኖት ስርጭት፦</strong> የእስልምና ሃይማኖት ተከተይ የሆነው የህዝብ ክፍል 99.5% ገደማ ነው።</p>
-        </section>
-
-        <!-- SEARCH AND FILTER CONTROLS -->
-        <section class="controls-section">
-            <div class="search-box">
-                <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                <input type="text" id="searchInput" placeholder="ፈልግ... Search..." aria-label="Search content">
-            </div>
-            <div class="filter-box">
-                <select id="sectorFilter" aria-label="Filter by Sector">
-                    <option value="all">ሁሉም ክፍሎች</option>
-                    <option value="agriculture">ግብርና</option>
-                    <option value="infrastructure">መሰረተ-ልማት</option>
-                    <option value="Women's Wing">የሴቶች ክንፍ</option>
-                    <option value="finance">ፋይናንስና ኢንቨስትመንት</option>
-                    <option value="Youth Wing">ወጣቶች ክንፋ</option>
-                    <option value="Organizational Sector">አደረጃጀት ዘርፍ</option>
-
-                </select>
-            </div>
-        </section>
-
-        <!-- CONTENT SECTIONS -->
-        <section class="info-sections">
-            <!-- LEADER MESSAGE -->
-            <article id="message-section" class="content-section">
-                <h2>የመሪው መልዕክት | Message</h2>
-                <hr>
-                <div class="section-body">
-                    <p>እንኳን ወደ ዳሎቻ ወረዳ ይፋዊ ድረ-ገጽ በደህና መጡ። ይህ መድረክ የወረዳችንን ልማት፣ ማህበራዊ አገልግሎቶች እና የወደፊት እቅዶች ለህዝባችን ተደራሽ ለማድረግ የተዘጋጀ ነው። የብልፅግና ጉዞአችን የሰው ኃይልን፣ የተፈጥሮ ሀብትን እና ማህበራዊ ካፒታልን በዘመናዊ እውቀት እና ቴክኖሎጂ የምናሳድግበት መሰረታዊ የለውጥ ሂደት ነው።</p>
-                    <p><strong>የዳሎቻ ወረዳ ዋና አስተዳደር አቶ ሪድዋን ሞሶሮ፡</strong> የወረዳ አስተዳደር በመንግሥት አስተዳደራዊ መዋቅር ውስጥ ለህዝብ ቅርብ የሆነ የአስተዳደር እርከን ሲሆን፣ የህዝብን ፍላጎት መሠረት በማድረግ ዘላቂ ልማትን፣ መልካም አስተዳደርን፣ የህግ የበላይነትን እና ፍትሃዊ የአገልግሎት አሰጣጥን ለማረጋገጥ ይሰራል።</p>
-                    <p><strong>የዳሎቻ ወረዳ ብልፅግና ፓርቲ ጽሕፈት ቤት ኃላፊ መልእክት፡</strong> ዛሬ የምንገኝበት ዓለም በዲጂታል እውቀት ፍጥነት የሚመራ በመሆኑ ለዳሎቻ ወረዳ እድገት የሳይንስና ቴክኖሎጂን አቅም መገንባት፣ የዲጂታል ክህሎትን በወረዳችን ማዳበር እንዲሁም አሰራሮችን ወደ ዲጂታል መለወጥ የፓርቲያችን ወሳኝ የትግል አጀንዳ ነው።</p>
-                    <p><strong>ሰብሪ ስሩር (ዳሎቻ ወረዳ ሳይንስና ኢንፎርሜሽን ቴክኖሎጂ ሀላፊ)፡</strong> ሳይንስ፣ ቴክኖሎጂ እና ኢኖቬሽን የዘመናዊ ልማት መሠረቶች ሲሆኑ፣ ዲጂታል ቴክኖሎጂም የመንግሥት አገልግሎትን ለማዘመን፣ የዜጎችን ተሳትፎ ለማጠናከር፣ የወጣቶችን አቅም ለማሳደግ እና የኢኮኖሚ እድገትን ለማፋጠን ከፍተኛ ሚና ያበረክታሉ።</p>
-                </div>
-            </article>
-
-            <!-- PLAN SECTION -->
-            <article id="plan" class="content-section">
-                <h2>የፓርቲው ዋና ዋና እቅዶች እና አቅጣጫዎች | Our Plan</h2>
-                <hr>
-                <div class="section-body">
-                    <p><strong>ዳሎቻ ወረዳ የብልፅግና ፓርቲ ዋና ዋና ዓላማዎች፦</strong></p>
-                    <ol>
-                        <li>አካታች የኢኮኖሚና የግብርና እድገት ማረጋገጥ</li>
-                        <li>መሰረተ-ልማትና ማህበራዊ አገልግሎቶችን ማስፋፋት</li>
-                        <li>የወጣቶችና የሴቶች ተጠቃሚነትን ማረጋገጥ</li>
-                        <li>ሰላም፣ ደህንነትና ህብረ-ብሔራዊ አንድነትን ማጠናከር</li>
-                        <li>አገልጋይና ግልጽ አሰራር ያለው አመራር መገንባት</li>
-                    </ol>
-                    
-                    <div class="plan-grid">
-                        <div class="plan-card">
-                            <div class="plan-number">01</div>
-                            <h3>ዋና መግቢያ (Core Mission)</h3>
-                            <p>የዳሎቻ ወረዳ ብልፅግና ፓርቲ ዋና ዓላማዎችና ግቦች በዋናነት በአካባቢው ዘላቂ ልማትን፣ መልካም አስተዳደርን እና የህዝብ ተጠቃሚነትን ማረጋገጥ ላይ ያተኮሩ ናቸው።</p>
-                        </div>
-                        <div class="plan-card">
-                            <div class="plan-number">02</div>
-                            <h3>ለስራና ውጤት ትኩረት መስጠት (Action-Oriented)</h3>
-                            <p>የግብርና አቅምን ወደ ኢኮኖሚያዊ እድገት በመቀየር፣ ህዝባዊ መሰረተ-ልማቶችን በማደስ እና ለወጣቶችና ስራ ፈጣሪዎች ምቹ ሁኔታን መፍጠር፡፡</p>
-                        </div>
-                        <div class="plan-card">
-                            <div class="plan-number">03</div>
-                            <h3>ህዝባዊ አንድነት (Community-Centered)</h3>
-                            <p>ዘመናዊ ግብርናን፣ አስተማማኝ የመሰረተ-ልማት አገልግሎቶችን እና አካታች አሰራርን በመተግበር የዳሎቻ ወረዳ ህዝብን ለጋራ ብልፅግና በአንድነት ማሰለፍ፡፡</p>
-                        </div>
-                        <div class="plan-card">
-                            <div class="plan-number">04</div>
-                            <h3>ተፅዕኖ ፈጣሪ ስራዎች (High-Impact Goals)</h3>
-                            <p>የግብርና ቴክኖሎጂን፣ የጠነከረ መሰረተ-ልማትን እና የወጣቶች እቅምን በማቀናጀት ለዳሎቻ ወረዳ ብሩህ የወደፊት ጊዜን መገንባት፡፡</p>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- PROSPERITY PARTY & PRINCIPLES -->
-            <article id="prosperity-party" class="content-section">
-                <h2>የብልፅግና ፓርቲ ዓላማዎችና መርሆች | Objectives & Principles</h2>
-                <hr>
-                <div class="section-body" id="principles">
-                    <h3>መሰረታዊ መርሆች፦</h3>
-                    <ul>
-                        <li><strong>ሕዝባዊነት፦</strong> የህዝብን ድምፅና ፍላጎት ማዕከል ያደረገ አገልግሎት መስጠት።</li>
-                        <li><strong>ዴሞክራሲያዊነት፦</strong> አሳታፊና አቅፎ ደጋፊ አሰራርን ማስፈን።</li>
-                        <li><strong>የሕግ የበላይነት፦</strong> ፍትሃዊነትንና ግልጽነትን ማረጋገጥ።</li>
-                        <li><strong>ሀገራዊ አንድነትና ኅብረ ብሔራዊነት፦</strong> ህብረብሄራዊ አንድነትን ማጠናከር።</li>
-                    </ul>
-                </div>
-            </article>
-
-            <!-- LATEST NEWS SECTION -->
-            <article id="news" class="content-section">
-                <h2>ወቅታዊ ዜናዎች | Latest News</h2>
-                <hr>
-                <div class="news-list">
-                    <div class="news-card">
-                        <img src="14.jfif" alt="News Image 1" class="news-image">
-                        <div class="news-details">
-                            <span class="news-date"><i class="fa-regular fa-calendar"></i> ሀምሌ 27/2018 ዓ.ም | August 2026</span>
-                            <h3 class="news-title">በዳሎቻ ወረዳ በአንድ ጀምበር የተካሄደው የአረንጓዴ ልማት አሻራ ችግኝ ተከላ መርኃ ግብር በስኬት ተጠናቀቀ</h3>
-                            <p class="news-excerpt">በዳሎቻ ወረዳ ሀምሌ 27 ቀን 2018 ዓ.ም ከጠዋቱ 12:00 ሰዓት ጀምሮ በሁሉም ቀበሌዎች በይፋ ሲካሄድ የዋለው የአረንጓዴ ልማት አሻራ የችግኝ ተከላ መርኃ ግብር ማምሻውን በስኬት ተጠናቋል።</p>
-                            <a href="#" class="read-more-btn">ሙሉውን ያንብቡ (Read More) &rarr;</a>
-                        </div>
-                    </div>
-
-                    <div class="news-card">
-                        <img src="2.jpg" alt="News Image 2" class="news-image">
-                        <div class="news-details">
-                            <span class="news-date"><i class="fa-regular fa-calendar"></i> ሀምሌ 23/2018 ዓ.ም | July 2026</span>
-                            <h3 class="news-title">የሰብዓዊ ድጋፍ ሉዓላዊነትን ለማብሰር የተዘጋጀ የንቅናቄ መድረክ ተካሄደ</h3>
-                            <p class="news-excerpt">በስልጤ ዞን የዳሎቻ ወረዳ ግብርና ጽሕፈት ቤት የምግብ ዋስትናን እና የሰብዓዊ ድጋፍ ሉዓላዊነትን በራስ አቅም ለማረጋገጥ የሚያስችል የንቅናቄ መድረክ አካሂዷል።</p>
-                            <a href="#" class="read-more-btn">ሙሉውን ያንብቡ (Read More) &rarr;</a>
-                        </div>
-                    </div>
-
-                    <div class="news-card">
-                        <img src="7997.jpg" alt="News Image 3" class="news-image">
-                        <div class="news-details">
-                            <span class="news-date"><i class="fa-regular fa-calendar"></i> ሰኔ 2018 ዓ.ም | June 2026</span>
-                            <h3 class="news-title">የከተማ ውበት እና የፀዳ አካባቢ ልማት ስራዎች ተጠናክረው ቀጥለዋል</h3>
-                            <p class="news-excerpt">በወረዳው ህዝብ እና አመራር የጋራ ጥረት የከተማዋን ገጽታ የሚቀይሩ የመሰረተ-ልማትና የአረንጓዴ ልማት ስራዎች በስፋት እየተከናወኑ ይገኛሉ።</p>
-                            <a href="#" class="read-more-btn">ሙሉውን ያንብቡ (Read More) &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- SECTORS SECTION -->
-            <article id="sectors" class="content-section">
-                <h2>የልማት ክፍሎች | Key Sectors</h2>
-                <hr>
-                <div class="section-body">
-                    <div id="agriculture" class="sector-item">
-                        <h3><i class="fa-solid fa-wheat-awn"></i> ግብርና (Agriculture)</h3>
-                        <p>በወረዳችን ምርታማነትን ለማሳደግ ዘመናዊ የግብርና ቴክኖሎጂዎችን መጠቀምና የአርሶ አደሩን ገቢ ማሳደግ ትኩረት የተሰጠው አጀንዳ ነው።</p>
-                    </div>
-                    <div id="infrastructure" class="sector-item">
-                        <h3><i class="fa-solid fa-road"></i> መሰረተ-ልማት (Infrastructure)</h3>
-                        <p>የመንገድ፣ የውሃ፣ የመብራትና የቴሌኮም አውታሮችን በማስፋፋት የወረዳችንን ህዝብ ተጠቃሚነት ማረጋገጥ።</p>
-                    </div>
-                    <div id="micro" class="sector-item">
-                        <h3><i class="fa-solid fa-briefcase"></i> ጥቃቅንና አነስተኛ (Micro Enterprises)</h3>
-                        <p>ለወጣቶችና ሴቶች የስራ እድል መፍጠር፣ የስራ ፈጠራ ክህሎትን ማሳደግና የፋይናንስ ድጋፍ ማመቻቸት።</p>
-                    </div>
-                    <div id="finance" class="sector-item">
-                        <h3><i class="fa-solid fa-coins"></i> ፋይናንስና ኢንቨስትመንት (Finance & Investment)</h3>
-                        <p>ለባለሀብቶች ምቹ የኢንቨስትመንት ሁኔታዎችን በመፍጠር የወረዳችንን የኢኮኖሚ አቅም ማሳደግ።</p>
-                    </div>
-                </div>
-            </article>
-
-            <!-- CONTACT SECTION -->
-            <article id="contact-us" class="content-section">
-                <h2>አድራሻና ቅሬታ ማስተናገጃ | Contact Us</h2>
-                <hr>
-                <div class="section-body">
-                    <p><strong>የስልክ ቁጥር፦</strong> +251 932 528 348</p>
-                    <p><strong>ኢሜይል፦</strong> dalochaworeda@gmail.com</p>
-                    <p><strong>አድራሻ፦</strong> ዳሎቻ ወረዳ፣ ስልጤ ዞን፣ ኢትዮጵያ</p>
-                </div>
-            </article>
-
-            <!-- MEMBERSHIP FORM SECTION -->
-            <section class="content-section" id="register">
-                <div class="form-container">
-                    <h2>የብልፅግና ፓርቲ አባልነት መመዝገቢያ ፎርም</h2>
-                    <hr>
-                    <p>እባክዎን ከዚህ በታች ያሉትን መረጃዎች በጥንቃቄ ይሙሉ::</p>
-
-                    <form action="https://formspree.io/f/xaewwlde" method="POST">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="fullName">ሙሉ ስም (Full Name) *</label>
-                                <input type="text" id="fullName" name="fullName" minlength="3" placeholder="ምሳሌ፡ አበበ ከበደ ተሰማ" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">ኢሜይል (Email Address) *</label>
-                                <input type="email" id="email" name="_replyto" placeholder="example@gmail.com" required>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>ጾታ (Sex) *</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="gender" value="Male" required> ወንድ</label>
-                                    <label><input type="radio" name="gender" value="Female"> ሴት</label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">ስልክ ቁጥር (Phone Number) *</label>
-                                <input type="tel" id="phone" name="phone" pattern="(\+251|0)[97]\d{8}" title="እባክዎን ትክክለኛ የኢትዮጵያ ስልክ ቁጥር ያስገቡ (ምሳሌ፡ 0912345678 ወይም +251912345678)" placeholder="09... ወይም +2519..." required>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="education">የትምህርት ደረጃ (Education Level) *</label>
-                                <select id="education" name="education" required>
-                                    <option value="" disabled selected>ይምረጡ...</option>
-                                    <option value="Primary">መሰረታዊ / የመጀመሪያ ደረጃ</option>
-                                    <option value="HighSchool">ሁለተኛ ደረጃ (10ኛ/12ኛ)</option>
-                                    <option value="TVET">ዲፕሎማ (TVET/College)</option>
-                                    <option value="Bachelor">የመጀመሪያ ዲግሪ (Bachelor's)</option>
-                                    <option value="Master">ማስተርስ (Master's)</option>
-                                    <option value="PhD">ዶክተሬት (PhD)</option>
-                                    <option value="Other">ሌላ</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="occupation">የሥራ መስክ (Occupation)</label>
-                                <input type="text" id="occupation" name="occupation" placeholder="ምሳሌ፡ መምህር / ነጋዴ / ተማሪ">
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="city">ከተማ/ቀበሌ (City / Town / Kebele) *</label>
-                                <input type="text" id="city" name="city" placeholder="ምሳሌ፡ ዳሎቻ / ቀበሌ 01" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="woreda">ወረዳ (Woreda) *</label>
-                                <input type="text" id="woreda" name="woreda" placeholder="ምሳሌ፡ ዳሎቻ ወረዳ" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="formMessage">ተጨማሪ አስተያየት ወይም መልዕክት (Message)</label>
-                            <textarea id="formMessage" name="message" rows="4" placeholder="እዚህ ጋር ጽሑፍ ማስገባት ይችላሉ..."></textarea>
-                        </div>
-
-                        <button type="submit" class="submit-btn">አስገባ (Submit Application)</button>
-                    </form>
-                </div>
-            </section>
-        </section>
-    </main>
-
-    <!-- MAIN FOOTER SECTION -->
-    <footer class="custom-footer">
-        <div class="footer-overlay-bar"></div>
-        <div class="footer-container">
-            <div class="footer-card">
-                <h3 class="card-title">የብልፅግና ፓርቲ ዓላማዎች</h3>
-                <ul class="bullet-list">
-                    <li>ጠንካራ፣ ዴሞክራሲያዊ፣ ቅርፅና ቅቡልነት ያለው፣ ዘላቂ ሀገረ-መንግሥትና ኅብረ-ብሔራዊ አንድነት መገንባት፤</li>
-                    <li>ልማትና ፍትሐዊ ተጠቃሚነትን የሚያረጋግጥ አነቃቂ የኢኮኖሚ ሥርዓት መገንባት፤</li>
-                    <li>ሁሉንአቀፍ ብልፅግናን የሚያረጋግጥ ማህበራዊ ልማትን ማረጋገጥ፤</li>
-                    <li>ሀገራዊ ክብርና ጥቅምን ማዕከል ያደረገ የውጭ ግንኙነት ማካሄድ።</li>
-                </ul>
-            </div>
-
-            <div class="footer-card">
-                <h3 class="card-title">ፈጣን አገናኞች</h3>
-                <ul class="icon-list">
-                    <li><a href="#message-section"><i class="fa-solid fa-house"></i> ዋና ገጽ</a></li>
-                    <li><a href="#news"><i class="fa-solid fa-newspaper"></i> ዜና</a></li>
-                    <li><a href="#publications"><i class="fa-solid fa-book-open"></i> መጽሔቶች</a></li>
-                    <li><a href="#contact-us"><i class="fa-solid fa-envelope"></i> ያግኙን</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-card">
-                <h3 class="card-title">አድራሻ</h3>
-                <ul class="icon-list contact-info">
-                    <li><i class="fa-solid fa-phone"></i> +251 932 528 348</li>
-                    <li><i class="fa-solid fa-envelope"></i> dalochaworeda@gmail.com</li>
-                    <li><i class="fa-solid fa-location-dot"></i> ዳሎቻ, ኢትዮጵያ</li>
-                </ul>
-            </div>
-
-            <div class="footer-card">
-                <h3 class="card-title">መርሆች</h3>
-                <ul class="bullet-list">
-                    <li>ሕዝባዊነት</li>
-                    <li>ዴሞክራሲያዊነት</li>
-                    <li>የሕግ የበላይነት</li>
-                    <li>ልማትና ፍትሐዊ ተጠቃሚነት</li>
-                    <li>ተግባራዊ እውነት</li>
-                    <li>ሀገራዊ አንድነትና ኅብረ ብሔራዊነት</li>
-                </ul>
-            </div>
-
-            <div class="footer-card center-align">
-                <h3 class="card-title">ማህበራዊ ሚዲያ</h3>
-                <div class="social-grid">
-                    <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#" class="social-btn" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
-                </div>
-                <div style="margin-top: 20px;">
-                    <a href="#register" class="read-more-btn">አባል ይሁኑ (Join Us)</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- UNIFIED SLIDER, NAVIGATION & LANGUAGE SCRIPT -->
-    <script>
-    // 1. Image Slider Logic
-    let currentSlide = 0;
-
-    function showSlide(index) {
-        const slides = document.querySelectorAll('.slide');
-        const numItems = document.querySelectorAll('.num-item');
-
-        if (!slides.length) return;
-
-        if (index >= slides.length) currentSlide = 0;
-        else if (index < 0) currentSlide = slides.length - 1;
-        else currentSlide = index;
-
-        slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === currentSlide);
-        });
-        numItems.forEach((num, i) => {
-            num.classList.toggle('active', i === currentSlide);
-        });
-    }
-
-    function changeSlide(direction) {
-        showSlide(currentSlide + direction);
-    }
-
-    function goToSlide(index) {
-        showSlide(index);
-    }
-
-    // 2. DOM-dependent UI Logic
-    document.addEventListener('DOMContentLoaded', () => {
-        // Mobile Side Menu Toggle
-        const menuToggleBtn = document.getElementById('menuToggleBtn');
-        const sideMenu = document.getElementById('sideMenu');
-
-        if (menuToggleBtn && sideMenu) {
-            menuToggleBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const isOpen = sideMenu.classList.toggle('open');
-                menuToggleBtn.setAttribute('aria-expanded', isOpen);
-            });
-
-            // Auto-close menu on link click
-            sideMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    sideMenu.classList.remove('open');
-                });
-            });
-        }
-
-        // Language Switching Logic
-        const langBtn = document.getElementById('langBtn');
-        const langMenu = document.getElementById('langMenu');
-        const currentLangLabel = document.getElementById('currentLangLabel');
-
-        function setLanguage(lang) {
-            const elements = document.querySelectorAll('[data-am][data-en]');
-
-            elements.forEach(el => {
-                const translation = el.getAttribute(`data-${lang}`);
-                if (!translation) return;
-
-                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                    el.placeholder = translation;
-                    return;
-                }
-
-                const icon = el.querySelector('i, svg');
-                if (icon) {
-                    el.childNodes.forEach(node => {
-                        if (node.nodeType === Node.TEXT_NODE) {
-                            node.nodeValue = translation + ' ';
-                        }
-                    });
-                } else {
-                    el.textContent = translation;
-                }
-            });
-
-            if (currentLangLabel) {
-                currentLangLabel.textContent = (lang === 'am') ? 'አማርኛ' : 'English';
-            }
-
-            localStorage.setItem('selectedLang', lang);
-            document.documentElement.lang = lang;
-        }
-
-        // Language Dropdown Mechanics
-        if (langBtn && langMenu) {
-            langBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const isExpanded = langMenu.classList.toggle('show');
-                langBtn.setAttribute('aria-expanded', isExpanded);
-            });
-
-            document.addEventListener('click', () => {
-                langMenu.classList.remove('show');
-                if (langBtn) langBtn.setAttribute('aria-expanded', 'false');
-            });
-
-            langMenu.querySelectorAll('a[data-lang]').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const selectedLang = link.getAttribute('data-lang');
-                    setLanguage(selectedLang);
-                    langMenu.classList.remove('show');
-                    if (langBtn) langBtn.setAttribute('aria-expanded', 'false');
-                });
-            });
-        }
-
-        // Initialize Language
-        const savedLang = localStorage.getItem('selectedLang') || 'am';
-        setLanguage(savedLang);
-    });
-    </script>
+ 
+    <!-- MAIN
+HEADER & NAVIGATION -->
+    <header
+class="main-header">
+        <div
+class="header-container">
+            <div
+class="brand-logo">
+               <img src="13.jpg" alt="Dalocha Woreda Prosperity Party
+Logo" class="brand-img">
+               <span class="brand-title">ዳሎቻ ወረዳ ብልፅግና ፓርቲ</span>
+           </div>
+            
+            <nav
+class="top-nav" aria-label="Main Navigation">
+               <ul>
+                   <li><a href="#message-section"
+class="active">ዋና ገጽ</a></li>
+                   <li class="dropdown">
+                       <a href="#plan">ስለ እኛ <i class="fa-solid
+fa-chevron-down"></i></a>
+                    </li>
+                   <li class="dropdown">
+                       <a href="#news">ወቅታዊ ጉዳዮች <i class="fa-solid
+fa-chevron-down"></i></a>
+                   </li>
+                   <li class="dropdown">
+                       <a href="#inspection">የኢንስፔክሽንና የሥነ-ምግባር ኮሚሽን <i class="fa-solid
+fa-chevron-down"></i></a>
+                   </li>
+                   <li class="dropdown">
+                       <a href="#publications">ህትመት <i class="fa-solid
+fa-chevron-down"></i></a>
+                    </li>
+                   <li class="dropdown">
+                       <a href="#sectors">ክፍሎች <i class="fa-solid
+fa-chevron-down"></i></a>
+                   </li>
+                   <li class="dropdown">
+                       <a href="#">Language <i class="fa-solid
+fa-chevron-down"></i></a>
+                   </li>
+               </ul>
+           </nav>
+        </div>
+ 
+        <!--
+DISTRICT BRANDING NAVBAR -->
+        <div
+class="nav-container">
+            <div
+class="logo-group">
+               <div class="logo-text">
+                   <h1 class="logo">ዳሎቻ ወረዳ የብልፅግና ፓርቲ</h1>
+                   <p class="sub-slogan">ዳሎቻ በስራ፣ ብልፅግና በተግባር!</p>
+               </div>
+           </div>
+ 
+            <!--
+DESKTOP QUICK LINKS -->
+            <nav class="desktop-menu"
+aria-label="Quick Links">
+                <a
+href="#message-section">Home</a>
+                <a
+href="#plan">About</a>
+                <a
+href="#news">Latest News</a>
+                <a
+href="#sectors">Sectors</a>
+                <a
+href="#contact-us">Offices</a>
+           </nav>
+<div class="nav-controls">
+  <div
+class="lang-selector">...</div>
+  <button
+type="button" class="menu-toggle"
+id="menuToggleBtn">☰</button>
+</div>        
+                   <select>
+                        <option
+value="am">አማርኛ</option>
+                       <option value="en">English</option>
+                   </select>
+               </div>
+               <button class="menu-toggle"
+id="menuToggleBtn">☰</button>
+           </div>
+        </div>
+    </header>
+ 
+    <!-- MOBILE
+& QUICK SIDE MENU -->
+    <nav
+class="side-menu" id="sideMenu" aria-label="Mobile
+Menu">
+        <ul>
+           <li><a href="#plan">ስለኛ</a></li>
+           <li><a href="#message-section">መልዕክት</a></li>
+            <li><a
+href="#prosperity-party">የብልፅግና ፓርቲ ዓላማዎች</a></li>
+           <li><a href="#principles">መርሆች</a></li>
+           <li><a href="#population">ህዝብና ጂኦግራፊ</a></li>
+           <li><a href="#news">ወቅታዊ ዜናዎች</a></li>
+           <li><a href="#sectors">ህዝባዊ ዘርፍ</a></li>
+           <li><a href="#infrastructure">መሰረተ-ልማት</a></li>
+           <li><a href="#sectors">አደረጃጀት ዘርፍ</a></li>
+           <li><a href="#finance">ፋይናንስና ኢንቨስትመንት</a></li>
+           <li><a href="#contact-us">አድራሻ</a></li>
+            <li><a
+href="#register">Application Form</a></li>
+        </ul>
+    </nav>
+ 
+    <main
+class="content-wrapper">
+ 
+        <!-- SLIDER
+SECTION -->
+        <section
+class="slider-section">
+            <div
+class="slider-container">
+ 
+               <div class="slide active">
+                   <img src="6.jpg" alt="ጠቅላይ ሚኒስትር ዶክተር አብይ አህመድ">
+                   <div class="slider-caption">
+                       <p>ተባብረንወደ ታላቅ ስኬት! | Rising
+Together Towards Greater Heights</p>
+                    </div>
+               </div>
+ 
+               <div class="slide">
+                   <img src="2.jpg" alt="ስልጤዞን ብልፅግና ፓርቲ ቅ/ፅ/ቤትወ/ሮ ነኢማ ሙኒር">
+                   <div class="slider-caption">
+                       <p>የህዝብተሳትፎ መመሪያችን፣ ሁለንተናዊ እድገት ግባችን! | Public
+engagement is our guide, comprehensive development is our goal</p>
+                   </div>
+               </div>
+ 
+               <div class="slide">
+                   <img src="3.jpg" alt="የዳሎቻ ወረዳ ዋና እስተዳደር አቶ ሪድዋን ሞሶሮ">
+                   <div class="slider-caption">
+                       <p>ከህዝብጋር በቅንጅት፣ ለሁለንተናዊ እድገትና እኩልነት! | Together
+with the public, for all-inclusive growth and equality!</p>
+                   </div>
+               </div>
+ 
+               <div class="slide">
+                   <img src="4.jpg" alt="ዳሎቻ ወረዳ የብልፅግና ፓርቲ">
+                   <div class="slider-caption">
+                       <p>በፈጠራናበዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ! | Empowering
+Youth, Transforming Services: The Digital Future of Dalocha!</p>
+                   </div>
+               </div>
+ 
+               <div class="slide">
+                   <img src="8.JPG" alt="Dalocha City">
+                   <div class="slider-caption">
+                       <p>ዳሎቻበስራ፣ ብልፅግና በተግባር! | Dalocha in
+Action, Prosperity in Practice!</p>
+                   </div>
+               </div>
+ 
+               <div class="slide">
+                   <img src="12.JPG" alt="የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና!">
+                    <div
+class="slider-caption">
+                       <p>የዳሎቻህዝብ ጥረት፣ የጋራ ብልፅግና! | Dalocha’s
+People United, Prosperity Achieved!</p>
+                   </div>
+               </div>
+ 
+               <div class="slide">
+                    <img src="1.jpg" alt="የብልፅግና ፓርቲ">
+                   <div class="slider-caption">
+                       <p>በፈጠራናበዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ! | Empowering
+Youth, Transforming Services: The Digital Future of Ethiopia!</p>
+                   </div>
+                </div>
+ 
+               <!-- NAVIGATION BUTTONS -->
+               <button class="slider-btn prev-btn"
+onclick="changeSlide(-1)" aria-label="Previous
+Slide">&#10094;</button>
+               <button class="slider-btn next-btn" onclick="changeSlide(1)"
+aria-label="Next Slide">&#10095;</button>
+ 
+               <!-- NUMBERED INDICATORS -->
+               <div class="slide-numbers" id="slideNumbers">
+                   <span class="num-item active"
+onclick="goToSlide(0)">01</span>
+                   <span class="num-item"
+onclick="goToSlide(1)">02</span>
+                   <span class="num-item"
+onclick="goToSlide(2)">03</span>
+                   <span class="num-item"
+onclick="goToSlide(3)">04</span>
+                   <span class="num-item"
+onclick="goToSlide(4)">05</span>
+                   <span class="num-item"
+onclick="goToSlide(5)">06</span>
+                   <span class="num-item"
+onclick="goToSlide(6)">07</span>
+               </div>
+           </div>
+        </section>
+ 
+        <!--
+SOCIO-ECONOMIC CARD -->
+        <section
+class="intro-card" id="population">
+            <h2>ማህበራዊ-ኢኮኖሚያዊ እና ጂኦ-ስፓሻል መረጃዎች</h2>
+           <p><strong>የዳሎቻ ወረዳአጠቃላይ መረጃ፦</strong><br>
+            ዳሎቻ ወረዳ በማዕከላዊ ኢትዮጵያ ክልል በስልጤ ዞን ውስጥ የሚገኝ ወረዳ ነው። ወረዳው በሰሜን ከስልጤ፣ በምዕራብ ከዉልባረግ፣ በደቡብ ከሳንኩራ እና በምስራቅ ከላንፉሮ ወረዳዎች ጋር ይዋሰናል።</p>
+ 
+           <p><strong>የህዝብ ብዛትእና የስነ-ህዝብ ትንተና (Demographic
+Analysis)፦</strong></p>
+           <p>1. <strong>የህዝብ ብዛትእና እድገት፦</strong>በየዓመቱ በሚመዘገበው ~2.3% እስከ 2.8% የህዝብ እድገት መጠን መሠረት፣ የወረዳው ህዝብ በአሁኑ ወቅት በግምት ከ126,000 እስከ 140,000 ይደርሳል ተብሎ ይገመታል።</p>
+           <p><strong>የገጠር እናከተማ ስርጭት፦</strong>የወረዳው ህዝብ በአብዛኛው በገጠር የሚኖር ሲሆን፣ 92.4% ገደማ በገጠር የሚኖር እና 7.6% ያህሉ ብቻ በከተማ (በዋናነት ዳሎቻ ከተማ) ይኖራል።</p>
+           <p>2. <strong>የብሔር እናየቋንቋ ስርጭት፦</strong>አብዛኛው የወረዳው ነዋሪ (99.1%) የስልጤ ብሔር ተወላጅ ነው። ቋንቋ: የስልጤ ቋንቋ (ስልጥኛ) በ99.6% ነዋሪዎች ዘንድ የሚነገር ነው።</p>
+           <p>3. <strong>የሃይማኖት ስርጭት፦</strong>የእስልምና ሃይማኖት ተከተይ የሆነው የህዝብ ክፍል 99.5% ገደማ ነው።</p>
+       </section>
+ 
+        <!-- SEARCH
+AND FILTER CONTROLS -->
+        <section
+class="controls-section">
+            <div
+class="search-box">
+                <i
+class="fa-solid fa-magnifying-glass search-icon"></i>
+               <input type="text" id="searchInput"
+placeholder="ፈልግ...
+Search..." aria-label="Search content">
+           </div>
+            <div
+class="filter-box">
+               <select id="sectorFilter" aria-label="Filter by
+Sector">
+                   <option value="all">ሁሉም ክፍሎች</option>
+                   <option value="agriculture">ግብርና</option>
+                   <option value="infrastructure">መሰረተ-ልማት</option>
+                   <option value="micro">ጥቃቅንና አነስተኛ</option>
+                   <option value="finance">ፋይናንስና ኢንቨስትመንት</option>
+               </select>
+           </div>
+       </section>
+ 
+        <!--
+CONTENT SECTIONS -->
+        <section
+class="info-sections">
+            
+            <!--
+LEADER MESSAGE -->
+           <article id="message-section" class="content-section">
+               <h2>የመሪውመልዕክት |
+Message</h2>
+               <hr>
+               <div class="section-body">
+                   <p>እንኳንወደ ዳሎቻ ወረዳ ይፋዊ ድረ-ገጽ በደህና መጡ። ይህ መድረክ የወረዳችንን ልማት፣ ማህበራዊ አገልግሎቶች እና የወደፊት እቅዶች ለህዝባችን ተደራሽ ለማድረግ የተዘጋጀ ነው። የብልፅግና ጉዞአችን የሰው ኃይልን፣ የተፈጥሮ ሀብትን እና ማህበራዊ ካፒታልን በዘመናዊ እውቀት እና ቴክኖሎጂ የምናሳድግበት መሰረታዊ የለውጥ ሂደት ነው።</p>
+                   <p><strong>የዳሎቻ ወረዳዋና አስተዳደር አቶ ሪድዋን ሞሶሮ፡</strong>የወረዳ አስተዳደር በመንግሥት አስተዳደራዊ መዋቅር ውስጥ ለህዝብ ቅርብ የሆነ የአስተዳደር እርከን ሲሆን፣ የህዝብን ፍላጎት መሠረት በማድረግ ዘላቂ ልማትን፣ መልካም አስተዳደርን፣ የህግ የበላይነትን እና ፍትሃዊ የአገልግሎት አሰጣጥን ለማረጋገጥ ይሰራል።</p>
+                   <p><strong>የዳሎቻ ወረዳብልፅግና ፓርቲ ጽሕፈት ቤት ኃላፊ መልእክት፡</strong>ዛሬ የምንገኝበት ዓለም በዲጂታል እውቀት ፍጥነት የሚመራ በመሆኑ ለዳሎቻ ወረዳ እድገት የሳይንስና ቴክኖሎጂን አቅም መገንባት፣ የዲጂታል ክህሎትን በወረዳችን ማዳበር እንዲሁም አሰራሮችን ወደ ዲጂታል መለወጥ የፓርቲያችን ወሳኝ የትግል አጀንዳ ነው።</p>
+                   <p><strong>ሰብሪ ስሩር
+(ዳሎቻ ወረዳ ሳይንስና ኢንፎርሜሽን ቴክኖሎጂ ሀላፊ)፡</strong> ሳይንስ፣ ቴክኖሎጂ እና ኢኖቬሽን የዘመናዊ ልማት መሠረቶች ሲሆኑ፣ ዲጂታል ቴክኖሎጂም የመንግሥት አገልግሎትን ለማዘመን፣ የዜጎችን ተሳትፎ ለማጠናከር፣ የወጣቶችን አቅም ለማሳደግ እና የኢኮኖሚ እድገትን ለማፋጠን ከፍተኛ ሚና ያበረክታሉ።</p>
+               </div>
+           </article>
+ 
+            <!--
+PLAN SECTION -->
+           <article id="plan" class="content-section">
+               <h2>የፓርቲውዋና ዋና እቅዶች እና አቅጣጫዎች | Our
+Plan</h2>
+               <hr>
+               <div class="section-body">
+                   <p><strong>ዳሎቻ ወረዳየብልፅግና ፓርቲ ዋና ዋና ዓላማዎች፦</strong></p>
+                   <ol>
+                       <li>አካታችየኢኮኖሚና የግብርና እድገት ማረጋገጥ</li>
+                       <li>መሰረተ-ልማትና ማህበራዊ አገልግሎቶችን ማስፋፋት</li>
+                       <li>የወጣቶችናየሴቶች ተጠቃሚነትን ማረጋገጥ</li>
+                       <li>ሰላም፣ደህንነትና ህብረ-ብሔራዊ አንድነትን ማጠናከር</li>
+                       <li>አገልጋይናግልጽ አሰራር ያለው አመራር መገንባት</li>
+                   </ol>
+                    
+                   <div class="plan-grid">
+                       <div class="plan-card">
+                           <div class="plan-number">01</div>
+                           <h3>ዋናመግቢያ (Core
+Mission)</h3>
+                           <p>የዳሎቻ ወረዳ ብልፅግና ፓርቲ ዋና ዓላማዎችና ግቦች በዋናነት በአካባቢው ዘላቂ ልማትን፣ መልካም አስተዳደርን እና የህዝብ ተጠቃሚነትን ማረጋገጥ ላይ ያተኮሩ ናቸው።</p>
+                       </div>
+                       <div class="plan-card">
+                           <div class="plan-number">02</div>
+                            <h3>ለስራና ውጤት ትኩረት መስጠት
+(Action-Oriented)</h3>
+                           <p>የግብርናአቅምን ወደ ኢኮኖሚያዊ እድገት በመቀየር፣ ህዝባዊ መሰረተ-ልማቶችን በማደስ እና ለወጣቶችና ስራ ፈጣሪዎች ምቹ ሁኔታን መፍጠር፡፡</p>
+                       </div>
+                       <div class="plan-card">
+                           <div class="plan-number">03</div>
+                           <h3>ህዝባዊአንድነት
+(Community-Centered)</h3>
+                           <p>ዘመናዊግብርናን፣ አስተማማኝ የመሰረተ-ልማት አገልግሎቶችን እና አካታች አሰራርን በመተግበር የዳሎቻ ወረዳ ህዝብን ለጋራ ብልፅግና በአንድነት ማሰለፍ፡፡</p>
+                       </div>
+                       <div class="plan-card">
+                           <div class="plan-number">04</div>
+                           <h3>ተፅዕኖፈጣሪ ስራዎች (High-Impact
+Goals)</h3>
+                           <p>የግብርናቴክኖሎጂን፣ የጠነከረ መሰረተ-ልማትን እና የወጣቶች እቅምን በማቀናጀት ለዳሎቻ ወረዳ ብሩህ የወደፊት ጊዜን መገንባት፡፡</p>
+                       </div>
+                   </div>
+               </div>
+           </article>
+ 
+            <!--
+PROSPERITY PARTY & PRINCIPLES -->
+           <article id="prosperity-party"
+class="content-section">
+               <h2>የብልፅግናፓርቲ ዓላማዎችና መርሆች | Objectives
+& Principles</h2>
+               <hr>
+               <div class="section-body" id="principles">
+                    <h3>መሰረታዊ መርሆች፦</h3>
+                   <ul>
+                       <li><strong>ሕዝባዊነት፦</strong> የህዝብን ድምፅናፍላጎት ማዕከል ያደረገ አገልግሎት መስጠት።</li>
+                       <li><strong>ዴሞክራሲያዊነት፦</strong> አሳታፊና አቅፎ ደጋፊ አሰራርን ማስፈን።</li>
+                       <li><strong>የሕግ የበላይነት፦</strong>ፍትሃዊነትንና ግልጽነትን ማረጋገጥ።</li>
+                       <li><strong>ሀገራዊ አንድነትናኅብረ ብሔራዊነት፦</strong>ህብረብሄራዊ አንድነትን ማጠናከር።</li>
+                   </ul>
+               </div>
+           </article>
+ 
+            <!--
+LATEST NEWS SECTION -->
+           <article id="news" class="content-section">
+               <h2>ወቅታዊዜናዎች | Latest
+News</h2>
+               <hr>
+               <div class="news-list">
+                   <div class="news-card">
+                       <img src="14.jfif" alt="News Image 1"
+class="news-image">
+                       <div class="news-details">
+                           <span class="news-date"><i class="fa-regular
+fa-calendar"></i> ሀምሌ 27/2018 ዓ.ም
+| August 2026</span>
+                           <h3 class="news-title">በዳሎቻ ወረዳ በአንድ ጀምበር የተካሄደው የአረንጓዴ ልማት አሻራ ችግኝ ተከላ መርኃ ግብር በስኬት ተጠናቀቀ</h3>
+                           <p class="news-excerpt">በዳሎቻ ወረዳ ሀምሌ 27 ቀን 2018 ዓ.ም ከጠዋቱ
+12:00 ሰዓት ጀምሮ በሁሉም ቀበሌዎች በይፋ ሲካሄድ የዋለው የአረንጓዴ ልማት አሻራ የችግኝ ተከላ መርኃ ግብር ማምሻውን በስኬት ተጠናቋል።</p>
+                           <a href="#" class="read-more-btn">ሙሉውን ያንብቡ (Read More)
+&rarr;</a>
+                       </div>
+                   </div>
+ 
+                   <div class="news-card">
+                        <img src="2.jpg"
+alt="News Image 2" class="news-image">
+                       <div class="news-details">
+                           <span class="news-date"><i class="fa-regular
+fa-calendar"></i> ሀምሌ 23/2018 ዓ.ም
+| July 2026</span>
+                            <h3
+class="news-title">የሰብዓዊ ድጋፍሉዓላዊነትን ለማብሰር የተዘጋጀ የንቅናቄ መድረክ ተካሄደ</h3>
+                           <p class="news-excerpt">በስልጤ ዞን የዳሎቻ ወረዳ ግብርና ጽሕፈት ቤት የምግብ ዋስትናን እና የሰብዓዊ ድጋፍ ሉዓላዊነትን በራስ አቅም ለማረጋገጥ የሚያስችል የንቅናቄ መድረክ አካሂዷል።</p>
+                            <a href="#"
+class="read-more-btn">ሙሉውን ያንብቡ
+(Read More) &rarr;</a>
+                       </div>
+                   </div>
+ 
+                   <div class="news-card">
+                       <img src="7997.jpg" alt="News Image 3" class="news-image">
+                       <div class="news-details">
+                           <span class="news-date"><i class="fa-regular
+fa-calendar"></i> ሰኔ 2018 ዓ.ም | June
+2026</span>
+                           <h3 class="news-title">የከተማ ውበት እና የፀዳ አካባቢ ልማት ስራዎች ተጠናክረው ቀጥለዋል</h3>
+                           <p class="news-excerpt">በወረዳው ህዝብ እና አመራር የጋራ ጥረት የከተማዋን ገጽታ የሚቀይሩ የመሰረተ-ልማትና የአረንጓዴ ልማት ስራዎች በስፋት እየተከናወኑ ይገኛሉ።</p>
+                           <a href="#" class="read-more-btn">ሙሉውን ያንብቡ (Read More)
+&rarr;</a>
+                       </div>
+                   </div>
+               </div>
+           </article>
+ 
+            <!--
+SECTORS SECTION -->
+           <article id="sectors" class="content-section">
+               <h2>የልማትክፍሎች | Key
+Sectors</h2>
+               <hr>
+               <div class="section-body">
+                   <div id="agriculture" class="sector-item">
+                       <h3><i class="fa-solid fa-wheat-awn"></i> ግብርና (Agriculture)</h3>
+                       <p>በወረዳችንምርታማነትን ለማሳደግ ዘመናዊ የግብርና ቴክኖሎጂዎችን መጠቀምና የአርሶ አደሩን ገቢ ማሳደግ ትኩረት የተሰጠው አጀንዳ ነው።</p>
+                   </div>
+                   <div id="infrastructure" class="sector-item">
+                       <h3><i class="fa-solid fa-road"></i> መሰረተ-ልማት
+(Infrastructure)</h3>
+                       <p>የመንገድ፣የውሃ፣ የመብራትና የቴሌኮም አውታሮችን በማስፋፋት የወረዳችንን ህዝብ ተጠቃሚነት ማረጋገጥ።</p>
+                   </div>
+                   <div id="micro" class="sector-item">
+                        <h3><i class="fa-solid
+fa-briefcase"></i> ጥቃቅንና አነስተኛ
+(Micro Enterprises)</h3>
+                       <p>ለወጣቶችናሴቶች የስራ እድል መፍጠር፣ የስራ ፈጠራ ክህሎትን ማሳደግና የፋይናንስ ድጋፍ ማመቻቸት።</p>
+                   </div>
+                   <div id="finance" class="sector-item">
+                       <h3><i class="fa-solid fa-coins"></i> ፋይናንስና ኢንቨስትመንት (Finance
+& Investment)</h3>
+                       <p>ለባለሀብቶችምቹ የኢንቨስትመንት ሁኔታዎችን በመፍጠር የወረዳችንን የኢኮኖሚ አቅም ማሳደግ።</p>
+                   </div>
+               </div>
+            </article>
+ 
+            <!--
+CONTACT SECTION -->
+           <article id="contact-us"
+class="content-section">
+               <h2>አድራሻናቅሬታ ማስተናገጃ | Contact
+Us</h2>
+               <hr>
+               <div class="section-body">
+                   <p><strong>የስልክ ቁጥር፦</strong>
++251 932 528 348</p>
+                   <p><strong>ኢሜይል፦</strong> dalochaworeda@gmail.com</p>
+                   <p><strong>አድራሻ፦</strong> ዳሎቻ ወረዳ፣ስልጤ ዞን፣ ኢትዮጵያ</p>
+               </div>
+            </article>
+ 
+            
+    <!-- MAIN
+FOOTER SECTION -->
+    <footer
+class="custom-footer">
+        <div
+class="footer-overlay-bar"></div>
+        <div
+class="footer-container">
+            <div
+class="footer-card">
+                <h3
+class="card-title">የብልፅግና ፓርቲዓላማዎች</h3>
+                <ul
+class="bullet-list">
+                   <li>ጠንካራ፣ዴሞክራሲያዊ፣ ቅርፅና ቅቡልነት ያለው፣ ዘላቂ ሀገረ-መንግሥትና ኅብረ-ብሔራዊ አንድነት መገንባት፤</li>
+                   <li>ልማትናፍትሐዊ ተጠቃሚነትን የሚያረጋግጥ አነቃቂ የኢኮኖሚ ሥርዓት መገንባት፤</li>
+                   <li>ሁሉንአቀፍብልፅግናን የሚያረጋግጥ ማህበራዊ ልማትን ማረጋገጥ፤</li>
+                   <li>ሀገራዊክብርና ጥቅምን ማዕከል ያደረገ የውጭ ግንኙነት ማካሄድ።</li>
+               </ul>
+           </div>
+ 
+            <div
+class="footer-card">
+                <h3
+class="card-title">ፈጣን አገናኞች</h3>
+                <ul
+class="icon-list">
+                   <li><a href="#message-section"><i
+class="fa-solid fa-house"></i> ዋና ገጽ</a></li>
+                   <li><a href="#news"><i class="fa-solid
+fa-newspaper"></i> ዜና</a></li>
+                   <li><a href="#publications"><i
+class="fa-solid fa-book-open"></i> መጽሔቶች</a></li>
+                   <li><a href="#contact-us"><i
+class="fa-solid fa-envelope"></i> ያግኙን</a></li>
+               </ul>
+           </div>
+ 
+            <div
+class="footer-card">
+                <h3
+class="card-title">አድራሻ</h3>
+                <ul
+class="icon-list contact-info">
+                   <li><i class="fa-solid fa-phone"></i> +251
+932 528 348</li>
+                   <li><i class="fa-solid fa-envelope"></i>
+dalochaworeda@gmail.com</li>
+                   <li><i class="fa-solid fa-location-dot"></i>ዳሎቻ, ኢትዮጵያ</li>
+               </ul>
+           </div>
+ 
+            <div
+class="footer-card">
+                <h3
+class="card-title">መርሆች</h3>
+                <ul
+class="bullet-list">
+                   <li>ሕዝባዊነት</li>
+                   <li>ዴሞክራሲያዊነት</li>
+                   <li>የሕግየበላይነት</li>
+                   <li>ልማትናፍትሐዊ ተጠቃሚነት</li>
+                   <li>ተግባራዊእውነት</li>
+                   <li>ሀገራዊአንድነትና ኅብረ ብሔራዊነት</li>
+               </ul>
+           </div>
+ 
+            <div
+class="footer-card center-align">
+                <h3
+class="card-title">ማህበራዊ ሚዲያ</h3>
+               <div class="social-grid">
+                   <a href="#" class="social-btn" aria-label="Facebook"><i
+class="fa-brands fa-facebook-f"></i></a>
+                   <a href="#" class="social-btn"
+aria-label="Twitter"><i class="fa-brands
+fa-twitter"></i></a>
+                   <a href="#" class="social-btn"
+aria-label="Telegram"><i class="fa-brands
+fa-telegram"></i></a>
+               </div>
+               <div style="margin-top: 20px;">
+                   <a href="#register" class="read-more-btn">አባል ይሁኑ (Join
+Us)</a>
+               </div>
+           </div>
+        </div>
+    </footer>
+<!-- MEMBERSHIP FORM SECTION -->
+           <section class="content-section"
+id="register">
+               <div class="form-container">
+                   <h2>የብልፅግናፓርቲ አባልነት መመዝገቢያ ፎርም</h2>
+                   <hr>
+                   <p>እባክዎንከዚህ በታች ያሉትን መረጃዎች በጥንቃቄ ይሙሉ::</p>
+ 
+                   <form action="https://formspree.io/f/xaewwlde"
+method="POST">
+                       <div class="form-row">
+                            <div
+class="form-group">
+                                <label
+for="fullName">ሙሉ ስም
+(Full Name) *</label>
+                                <input
+type="text" id="fullName" name="fullName"
+minlength="3" placeholder="ምሳሌ፡ አበበ ከበደ ተሰማ" required>
+                           </div>
+                           <div class="form-group">
+                                <label
+for="email">ኢሜይል (Email Address) *</label>
+                                <input
+type="email" id="email" name="_replyto" placeholder="example@gmail.com"
+required>
+                           </div>
+                       </div>
+ 
+                       <div class="form-row">
+                           <div class="form-group">
+                                <label>ጾታ (Sex)
+*</label>
+                                <div
+class="radio-group">
+                                   <label><input type="radio" name="gender"
+value="Male" required> ወንድ</label>
+                                   <label><input
+type="radio" name="gender" value="Female"> ሴት</label>
+                                </div>
+                           </div>
+                           <div class="form-group">
+                                <label
+for="phone">ስልክ ቁጥር
+(Phone Number) *</label>
+                                <input
+type="tel" id="phone" name="phone"
+pattern="(\+251|0)[97]\d{8}" title="እባክዎን ትክክለኛ የኢትዮጵያ ስልክ ቁጥር ያስገቡ (ምሳሌ፡ 0912345678 ወይም +251912345678)"
+placeholder="09... ወይም +2519..." required>
+                            </div>
+                       </div>
+ 
+                       <div class="form-row">
+                           <div class="form-group">
+                                <label
+for="education">የትምህርት ደረጃ
+(Education Level) *</label>
+                                <select
+id="education" name="education" required>
+                                    <option
+value="" disabled selected>ይምረጡ...</option>
+                                    <option
+value="Primary">መሰረታዊ / የመጀመሪያደረጃ</option>
+                                    <option
+value="HighSchool">ሁለተኛ ደረጃ
+(10ኛ/12ኛ)</option>
+                                    <option
+value="TVET">ዲፕሎማ (TVET/College)</option>
+                                    <option
+value="Bachelor">የመጀመሪያ ዲግሪ
+(Bachelor's)</option>
+                                    <option
+value="Master">ማስተርስ (Master's)</option>
+                                    <option
+value="PhD">ዶክተሬት (PhD)</option>
+                                    <option
+value="Other">ሌላ</option>
+                                </select>
+                           </div>
+                           <div class="form-group">
+                                <label
+for="occupation">የሥራ መስክ
+(Occupation)</label>
+                                <input
+type="text" id="occupation" name="occupation"
+placeholder="ምሳሌ፡መምህር / ነጋዴ / ተማሪ">
+                           </div>
+                       </div>
+ 
+                       <div class="form-row">
+                           <div class="form-group">
+                                <label
+for="city">ከተማ/ቀበሌ
+(City / Town / Kebele) *</label>
+                                <input
+type="text" id="city" name="city"
+placeholder="ምሳሌ፡ዳሎቻ / ቀበሌ 01"
+required>
+                           </div>
+                            <div
+class="form-group">
+                                <label
+for="woreda">ወረዳ (Woreda) *</label>
+                                <input
+type="text" id="woreda" name="woreda"
+placeholder="ምሳሌ፡ዳሎቻ ወረዳ"
+required>
+                           </div>
+                       </div>
+ 
+                       <div class="form-group">
+                           <label for="formMessage">ተጨማሪ አስተያየት ወይም መልዕክት (Message)</label>
+                           <textarea id="formMessage" name="message"
+rows="4" placeholder="እዚህ ጋርጽሑፍ ማስገባት ይችላሉ..."></textarea>
+                       </div>
+ 
+                       <button type="submit" class="submit-btn">አስገባ (Submit
+Application)</button>
+                   </form>
+               </div>
+            </section>
+ 
+       </section>
+    </main>
+    <!-- JAVASCRIPT
+FOR SLIDER & NAVIGATION -->
+    <script>
+        let
+currentSlide = 0;
+        const slides =
+document.querySelectorAll('.slide');
+        const numItems
+= document.querySelectorAll('.num-item');
+ 
+        function
+showSlide(index) {
+            if (index
+>= slides.length) currentSlide = 0;
+            else if
+(index < 0) currentSlide = slides.length - 1;
+            else
+currentSlide = index;
+ 
+           slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i ===
+currentSlide);
+            });
+           numItems.forEach((num, i) => {
+               num.classList.toggle('active', i === currentSlide);
+            });
+        }
+ 
+        function
+changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+ 
+        function
+goToSlide(index) {
+           showSlide(index);
+        }
+ 
+        // Toggle
+mobile menu
+        const
+menuToggleBtn = document.getElementById('menuToggleBtn');
+        const sideMenu
+= document.getElementById('sideMenu');
+ 
+       menuToggleBtn.addEventListener('click', function() {
+            const
+isOpen = sideMenu.classList.toggle('open');
+           menuToggleBtn.setAttribute('aria-expanded', isOpen);
+        });
+ 
+        // Toggle
+language menu
+        const langBtn
+= document.getElementById('langBtn');
+        const
+langDropdown = document.getElementById('langDropdown');
+ 
+        if (langBtn) {
+           langBtn.addEventListener('click', function() {
+                const expanded =
+langBtn.getAttribute('aria-expanded') === 'true' || false;
+               langBtn.setAttribute('aria-expanded', !expanded);
+               langDropdown.classList.toggle('show');
+            });
+        }
+    </script>
+    <script>
+  document.addEventListener('DOMContentLoaded',
+() => {
+    const langBtn =
+document.getElementById('langBtn');
+    const langMenu =
+document.getElementById('langMenu');
+ 
+    if (langBtn
+&& langMenu) {
+      // Toggle
+dropdown open/close when clicking the button
+     langBtn.addEventListener('click', (e) => {
+       e.stopPropagation();
+       langMenu.classList.toggle('show');
+      });
+ 
+      // Close
+dropdown when clicking outside of it
+     document.addEventListener('click', (e) => {
+        if
+(!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+         langMenu.classList.remove('show');
+        }
+      });
+    }
+  });
+</script>
 </body>
 </html>
