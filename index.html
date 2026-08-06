@@ -64,59 +64,63 @@
     </nav>
 
     <main class="content-wrapper">
-        <!-- SLIDER SECTION -->
-        <section class="slider-section">
-            <div class="slider-container">
- <div class="slide">
-                    <img src="500.JPG" alt="የዳሎቻ ወረዳ ዋና እስተዳደር አቶ ሪድዋን ሞሶሮ">
-                    <div class="slider-caption">
-                        <p>ከህዝብ ጋር በቅንጅት፣ ለሁለንተናዊ እድገትና እኩልነት! | Together with the public, for all-inclusive growth and equality!</p>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="4.jpg" alt="ዳሎቻ ወረዳ የብልፅግና ፓርቲ">
-                    <div class="slider-caption">
-                        <p>በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ! | Empowering Youth, Transforming Services: The Digital Future of Dalocha!</p>
-                    </div>
-                </div>
-
-                <div class="slide">
-                    <img src="8.JPG" alt="Dalocha City">
-                    <div class="slider-caption">
-                        <p>ዳሎቻ በስራ፣ ብልፅግና በተግባር! | Dalocha in Action, Prosperity in Practice!</p>
-                    </div>
-                </div>
-
-                <div class="slide">
-                    <img src="12.JPG" alt="የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና!">
-                    <div class="slider-caption">
-                        <p>የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና! | Dalocha’s People United, Prosperity Achieved!</p>
-                    </div>
-                </div>
-
-                <div class="slide">
-                    <img src="1.jpg" alt="የብልፅግና ፓርቲ">
-                    <div class="slider-caption">
-                        <p>በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ! | Empowering Youth, Transforming Services: The Digital Future of Ethiopia!</p>
-                    </div>
-                </div>
-
-                <!-- NAVIGATION BUTTONS -->
-                <button class="slider-btn prev-btn" onclick="changeSlide(-1)" aria-label="Previous Slide">&#10094;</button>
-                <button class="slider-btn next-btn" onclick="changeSlide(1)" aria-label="Next Slide">&#10095;</button>
-
-                <!-- NUMBERED INDICATORS -->
-                <div class="slide-numbers" id="slideNumbers">
-                    <span class="num-item active" onclick="goToSlide(0)">01</span>
-                    <span class="num-item" onclick="goToSlide(1)">02</span>
-                    <span class="num-item" onclick="goToSlide(2)">03</span>
-                    <span class="num-item" onclick="goToSlide(3)">04</span>
-                    <span class="num-item" onclick="goToSlide(4)">05</span>
-                    <span class="num-item" onclick="goToSlide(5)">06</span>
-                    <span class="num-item" onclick="goToSlide(6)">07</span>
-                </div>
+       <!-- SLIDER SECTION -->
+<section class="slider-section">
+    <div class="slider-container">
+        <!-- Slide 1 (Added 'active' class here) -->
+        <div class="slide active">
+            <img src="500.JPG" alt="የዳሎቻ ወረዳ ዋና እስተዳደር አቶ ሪድዋን ሞሶሮ">
+            <div class="slider-caption">
+                <p data-am="ከህዝብ ጋር በቅንጅት፣ ለሁለንተናዊ እድገትና እኩልነት!" data-en="Together with the public, for all-inclusive growth and equality!">ከህዝብ ጋር በቅንጅት፣ ለሁለንተናዊ እድገትና እኩልነት!</p>
             </div>
-        </section>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+            <img src="4.jpg" alt="ዳሎቻ ወረዳ የብልፅግና ፓርቲ">
+            <div class="slider-caption">
+                <p data-am="በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ!" data-en="Empowering Youth, Transforming Services: The Digital Future of Dalocha!">በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ!</p>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+            <img src="8.JPG" alt="Dalocha City">
+            <div class="slider-caption">
+                <p data-am="ዳሎቻ በስራ፣ ብልፅግና በተግባር!" data-en="Dalocha in Action, Prosperity in Practice!">ዳሎቻ በስራ፣ ብልፅግና በተግባር!</p>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide">
+            <img src="12.JPG" alt="የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና!">
+            <div class="slider-caption">
+                <p data-am="የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና!" data-en="Dalocha’s People United, Prosperity Achieved!">የዳሎቻ ህዝብ ጥረት፣ የጋራ ብልፅግና!</p>
+            </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide">
+            <img src="1.jpg" alt="የብልፅግና ፓርቲ">
+            <div class="slider-caption">
+                <p data-am="በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ!" data-en="Empowering Youth, Transforming Services: The Digital Future of Ethiopia!">በፈጠራና በዲጂታል እውቀት፡ የዳሎቻን ነገ እንገንባ!</p>
+            </div>
+        </div>
+
+        <!-- NAVIGATION BUTTONS -->
+        <button class="slider-btn prev-btn" onclick="changeSlide(-1)" aria-label="Previous Slide">&#10094;</button>
+        <button class="slider-btn next-btn" onclick="changeSlide(1)" aria-label="Next Slide">&#10095;</button>
+
+        <!-- NUMBERED INDICATORS (Matched to 5 slides) -->
+        <div class="slide-numbers" id="slideNumbers">
+            <span class="num-item active" onclick="goToSlide(0)">01</span>
+            <span class="num-item" onclick="goToSlide(1)">02</span>
+            <span class="num-item" onclick="goToSlide(2)">03</span>
+            <span class="num-item" onclick="goToSlide(3)">04</span>
+            <span class="num-item" onclick="goToSlide(4)">05</span>
+        </div>
+    </div>
+</section>
 
         <!-- SOCIO-ECONOMIC CARD -->
         <section class="intro-card" id="population">
