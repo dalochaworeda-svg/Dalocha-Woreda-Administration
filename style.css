@@ -189,7 +189,17 @@ body {
     display: block;
 }
 
-.slide img {
+/* FIX: Force picture element to span full width and height */
+.slide picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* FIX: Target both .slide img and .carousel-img */
+.slide img,
+.carousel-img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -206,6 +216,7 @@ body {
     border-radius: 12px;
     max-width: 70%;
     backdrop-filter: blur(4px);
+    z-index: 5;
 }
 
 .slider-caption p {
