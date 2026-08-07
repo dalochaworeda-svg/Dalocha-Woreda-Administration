@@ -167,13 +167,11 @@ body {
 .slider-container {
     position: relative;
     width: 100%;
-    /* Set a flexible height using aspect-ratio so images scale naturally */
-    aspect-ratio: 16 / 9;
-    max-height: 550px;
+    height: 480px; /* Reduced container height for a cleaner desktop balance */
     overflow: hidden;
     border-radius: 24px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-    background-color: #f5d656; /* Blends with yellow background */
+    background-color: #0b2f4c; /* Neutral dark blue theme background */
 }
 
 .slide {
@@ -193,9 +191,8 @@ body {
 .slide img {
     width: 100%;
     height: 100%;
-    /* 'contain' fits the entire photo without cutting top or bottom */
-    object-fit: contain; 
-    object-position: center;
+    object-fit: cover; /* Fills entire container - NO yellow side bars */
+    object-position: center 20%; /* Anchors focus near upper-middle to keep faces visible */
 }
 /* ==========================================
    5. CENTRAL BLUE COMPONENT BANNER
