@@ -173,7 +173,7 @@ body {
     overflow: hidden;
     border-radius: 24px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-    background-color: #0b2f4c; /* Fallback background for smooth rendering */
+    background-color: #f7d560; /* Matches yellow photo background to blend seamless edges */
 }
 
 .slide {
@@ -191,8 +191,8 @@ body {
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: top center; /* Keeps upper portions (faces) fully visible */
+    object-fit: contain; /* Displays the ENTIRE image without cropping top or bottom */
+    object-position: center center;
 }
 
 .slider-caption {
@@ -270,7 +270,6 @@ body {
     color: #ffffff;
     font-size: 16px;
 }
-
 /* ==========================================
    5. CENTRAL BLUE COMPONENT BANNER
    ========================================== */
