@@ -157,6 +157,7 @@ body {
 }
 
 /* ==========================================
+  /* ==========================================
    4. APP IMAGE CAROUSEL SLIDER & INDICATORS
    ========================================== */
 .slider-section {
@@ -164,14 +165,15 @@ body {
     margin-top: 5px;
 }
 
+/* Mobile-First Base Styles */
 .slider-container {
     position: relative;
     width: 100%;
-    height: 480px; /* Reduced container height for a cleaner desktop balance */
+    height: 320px; /* Shorter, fitted height for phones */
     overflow: hidden;
-    border-radius: 24px;
+    border-radius: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-    background-color: #0b2f4c; /* Neutral dark blue theme background */
+    background-color: #0b2f4c;
 }
 
 .slide {
@@ -191,8 +193,84 @@ body {
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Fills entire container - NO yellow side bars */
-    object-position: center 20%; /* Anchors focus near upper-middle to keep faces visible */
+    object-fit: cover;
+    object-position: center top; /* Focuses on faces on phone screens */
+}
+
+.slider-caption {
+    position: absolute;
+    bottom: 25px;
+    left: 40px;
+    background: rgba(0, 0, 0, 0.65);
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 12px;
+    max-width: 70%;
+    backdrop-filter: blur(4px);
+}
+
+.slider-caption p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    border: none;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 14px;
+    z-index: 10;
+    transition: background-color 0.2s ease;
+}
+
+.slider-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.prev-btn { left: 12px; }
+.next-btn { right: 65px; }
+
+/* Right-Side Numbered Slider Indicators */
+.slide-numbers {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 8px 6px;
+    border-radius: 10px;
+    z-index: 20;
+    backdrop-filter: blur(4px);
+}
+
+.num-item {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.num-item:hover {
+    color: #ffffff;
+}
+
+.num-item.active {
+    color: #ffffff;
+    font-size: 16px;
 }
 /* ==========================================
    5. CENTRAL BLUE COMPONENT BANNER
