@@ -3,28 +3,15 @@
    ========================================== */
 *, *::before, *::after {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%;
 }
 
 body {
-    min-height: 100vh;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #f3f6f9;
     color: #2c3e50;
-    line-height: 1.5;
     overflow-x: hidden;
-}
-
-img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-    height: auto;
 }
 
 .content-wrapper {
@@ -33,82 +20,17 @@ img, picture, video, canvas, svg {
     margin: 0 auto;
 }
 
-/* Accessibility Focus States */
-:focus-visible,
-.search-box input:focus,
-.lang-selector select:focus,
-.menu-toggle:focus,
-.social-btn:focus,
-.slider-btn:focus,
-.cta-link:focus,
-.read-more-btn:focus {
-    outline: 2px solid #64b5f6;
-    outline-offset: 2px;
-}
-
 /* ==========================================
    2. TOP HEADER & STICKY NAVBAR
    ========================================== */
 .main-header {
-    background-color: #ffffff;
-    border-bottom: 1px solid #e1e8ed;
-    padding: 8px 20px;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.brand-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.brand-img {
-    height: 40px;
-    width: auto;
-}
-
-.brand-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: #0b2f4c;
-}
-
-.top-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-}
-
-.top-nav a {
-    text-decoration: none;
-    color: #555;
-    font-size: 14px;
-    font-weight: 500;
-    transition: color 0.2s ease;
-}
-
-.top-nav a.active, 
-.top-nav a:hover {
-    color: #007bff;
-}
-
-/* Sticky Navbar */
-.navbar {
     background-color: #0b2f4c;
     color: #ffffff;
     padding: 12px 20px;
     position: sticky;
     top: 0;
     z-index: 4000;
+    border-bottom: 1px solid #e1e8ed;
 }
 
 .nav-container {
@@ -138,7 +60,7 @@ img, picture, video, canvas, svg {
     font-weight: 500;
 }
 
-/* Desktop Navigation Links */
+/* Desktop Horizontal Quick Links */
 .desktop-menu {
     display: flex;
     gap: 20px;
@@ -175,6 +97,18 @@ img, picture, video, canvas, svg {
 
 .menu-toggle:hover {
     background: rgba(255, 255, 255, 0.25);
+}
+
+/* Focus states for accessibility */
+.search-box input:focus,
+.lang-selector select:focus,
+.menu-toggle:focus,
+.social-btn:focus,
+.slider-btn:focus,
+.cta-link:focus,
+.read-more-btn:focus {
+    outline: 2px solid #64b5f6;
+    outline-offset: 2px;
 }
 
 /* ==========================================
@@ -300,7 +234,7 @@ img, picture, video, canvas, svg {
 .prev-btn { left: 12px; }
 .next-btn { right: 65px; }
 
-/* Slide Indicators */
+/* Right-Side Numbered Slider Indicators */
 .slide-numbers {
     position: absolute;
     right: 15px;
@@ -448,7 +382,7 @@ img, picture, video, canvas, svg {
     color: #4a5568;
 }
 
-/* Plan Grid */
+/* Plan Section Grid Styling */
 .plan-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -492,7 +426,7 @@ img, picture, video, canvas, svg {
     line-height: 1.5;
 }
 
-/* News Cards */
+/* NEWS CARD STYLING */
 .news-list {
     display: flex;
     flex-direction: column;
@@ -702,8 +636,7 @@ img, picture, video, canvas, svg {
 }
 
 @media (max-width: 991px) {
-    .desktop-menu, 
-    .top-nav {
+    .desktop-menu {
         display: none;
     }
 
@@ -724,7 +657,7 @@ img, picture, video, canvas, svg {
     .news-card {
         flex-direction: column;
     }
-
+    
     .news-image {
         width: 100%;
         height: 180px;
@@ -735,7 +668,7 @@ img, picture, video, canvas, svg {
     .controls-section {
         flex-direction: column;
     }
-
+    
     .slider-caption {
         left: 15px;
         right: 15px;
@@ -743,41 +676,22 @@ img, picture, video, canvas, svg {
         max-width: 85%;
         padding: 8px 14px;
     }
-
+    
     .slider-caption p {
         font-size: 12px;
     }
-
+    
     .next-btn {
         right: 50px;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
     }
 }
 
 /* ==========================================
    11. LANGUAGE SELECTOR DROPDOWN STYLES
    ========================================== */
-.navbar, .nav-container, .nav-controls {
-    overflow: visible !important;
-}
-
 .lang-selector {
     position: relative;
     display: inline-block;
-}
-
-.lang-selector select {
-    background: rgba(255, 255, 255, 0.15);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 6px 12px;
-    border-radius: 20px;
-    outline: none;
-    font-size: 13px;
-    cursor: pointer;
 }
 
 .lang-btn {
@@ -791,6 +705,11 @@ img, picture, video, canvas, svg {
     display: flex;
     align-items: center;
     gap: 6px;
+    transition: background 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .lang-dropdown-menu {
@@ -798,10 +717,10 @@ img, picture, video, canvas, svg {
     position: absolute;
     top: 100%;
     right: 0;
-    margin-top: 6px;
+    margin-top: 8px;
     background-color: #ffffff;
-    min-width: 140px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    min-width: 130px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     list-style: none;
     padding: 6px 0;
@@ -812,17 +731,13 @@ img, picture, video, canvas, svg {
     display: block !important;
 }
 
-.lang-dropdown-menu li {
-    list-style: none;
-    margin: 0;
-}
-
 .lang-dropdown-menu li a {
     display: block;
     padding: 8px 16px;
     color: #2c3e50;
     text-decoration: none;
     font-size: 14px;
+    transition: background 0.2s ease;
 }
 
 .lang-dropdown-menu li a:hover {
@@ -840,6 +755,12 @@ img, picture, video, canvas, svg {
     border: 1px solid #e1e8ed;
     max-width: 800px;
     margin: 20px auto;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
 }
 
 .form-group {
@@ -864,8 +785,6 @@ img, picture, video, canvas, svg {
     border-radius: 6px;
     font-size: 14px;
     box-sizing: border-box;
-    font-family: inherit;
-    color: inherit;
 }
 
 .form-group input:focus,
@@ -905,4 +824,10 @@ img, picture, video, canvas, svg {
 
 .submit-btn:hover {
     background-color: #007bff;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
 }
