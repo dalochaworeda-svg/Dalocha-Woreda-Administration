@@ -157,7 +157,6 @@ body {
 }
 
 /* ==========================================
-  /* ==========================================
    4. APP IMAGE CAROUSEL SLIDER & INDICATORS
    ========================================== */
 .slider-section {
@@ -169,7 +168,7 @@ body {
 .slider-container {
     position: relative;
     width: 100%;
-    height: 320px; /* Shorter, fitted height for phones */
+    height: 350px;
     overflow: hidden;
     border-radius: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
@@ -194,7 +193,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top; /* Focuses on faces on phone screens */
+    object-position: center 60%; /* Vertically centers the face inside the frame */
 }
 
 .slider-caption {
@@ -271,6 +270,76 @@ body {
 .num-item.active {
     color: #ffffff;
     font-size: 16px;
+}
+
+/* ==========================================
+   10. MEDIA QUERIES & RESPONSIVE DESIGNS
+   ========================================== */
+@media (min-width: 992px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .slider-container {
+        height: 480px;
+        border-radius: 24px;
+    }
+
+    .slide img {
+        object-fit: cover;
+        object-position: center 60%; /* Centers face & shoulders on wide PC screens */
+    }
+}
+
+@media (max-width: 991px) {
+    .desktop-menu {
+        display: none;
+    }
+
+    .nav-controls,
+    .lang-selector {
+        display: flex !important;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .plan-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .news-card {
+        flex-direction: column;
+    }
+    
+    .news-image {
+        width: 100%;
+        height: 180px;
+    }
+}
+
+@media (max-width: 600px) {
+    .controls-section {
+        flex-direction: column;
+    }
+    
+    .slider-caption {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        max-width: 85%;
+        padding: 8px 14px;
+    }
+    
+    .slider-caption p {
+        font-size: 12px;
+    }
+    
+    .next-btn {
+        right: 50px;
+    }
 }
 /* ==========================================
    5. CENTRAL BLUE COMPONENT BANNER
