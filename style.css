@@ -633,9 +633,20 @@ body {
 /* ==========================================
    10. MEDIA QUERIES & RESPONSIVE DESIGNS
    ========================================== */
+/* PC & Desktop Screens (992px and wider) */
 @media (min-width: 992px) {
     .menu-toggle {
         display: none;
+    }
+
+    .slider-container {
+        height: 500px; /* Taller banner height for PC screens */
+        border-radius: 24px;
+    }
+
+    .slide img {
+        object-fit: cover;
+        object-position: center 20%; /* Keeps faces centered on wide PC screens */
     }
 }
 
@@ -689,7 +700,6 @@ body {
         right: 50px;
     }
 }
-
 /* ==========================================
    11. LANGUAGE SELECTOR DROPDOWN STYLES
    ========================================== */
