@@ -212,19 +212,26 @@
                data-am-placeholder="ፈልግ..." 
                data-en-placeholder="Search..." 
                aria-label="Search content">
-    </div>
-    <div class="filter-box">
-        <select id="sectorFilter" aria-label="Filter by Sector">
-            <option value="all" data-am="ሁሉም ክፍሎች" data-en="All Sectors">ሁሉም ክፍሎች</option>
-            <option value="Head of the Political Sector" data-am="ፓለቲካ ዘርፍ" data-en="Head of the Political Sector">ፓለቲካ ዘርፍ</option>
-            <option value="infrastructure" data-am="መሰረተ-ልማት" data-en="Infrastructure">መሰረተ-ልማት</option>
-            <option value="Women's Wing" data-am="የሴቶች ክንፍ" data-en="Women's Wing">የሴቶች ክንፍ</option>
-            <option value="Dalocha Woreda Prosperity Party members" data-am="የዳሎቻ ወረዳ የብልፅግና አባላት" data-en="Dalocha Woreda Prosperity Party members">የዳሎቻ ወረዳ የብልፅግና አባላት</option>
-            <option value="Youth Wing" data-am="ወጣቶች ክንፍ" data-en="Youth Wing">ወጣቶች ክንፍ</option>
-            <option value="Organizational and Inspection Sector" data-am="የአደረጃጀት እና ኢንስፔክሽን ዘርፍ" data-en="Organizational and Inspection Sector">የአደረጃጀት እና ኢንስፔክሽን ዘርፍ</option>
-        </select>
-    </div>
-</section>
+   <div class="filter-box">
+    <select id="sectorFilter" aria-label="Filter by Sector">
+        <option value="all" data-am="ሁሉም ክፍሎች" data-en="All Sectors">ሁሉም ክፍሎች</option>
+        <option value="political-sector" data-am="ፖለቲካ ዘርፍ" data-en="Political Sector">ፖለቲካ ዘርፍ</option>
+        <option value="infrastructure" data-am="መሰረተ-ልማት" data-en="Infrastructure">መሰረተ-ልማት</option>
+        <option value="womens-wing" data-am="የሴቶች ክንፍ" data-en="Women's Wing">የሴቶች ክንፍ</option>
+        
+        <!-- Kebeles grouped directly under Dalocha Woreda PP Members heading -->
+        <optgroup label="የዳሎቻ ወረዳ የብልፅግና አባላት (Dalocha Woreda PP Members)" data-am="የዳሎቻ ወረዳ የብልፅግና አባላት" data-en="Dalocha Woreda Prosperity Party Members">
+            <option value="kebele_01" data-am="ዳሎቻ 01 ቀበሌ" data-en="Dalocha 01 Kebele">ዳሎቻ 01 ቀበሌ</option>
+            <option value="kebele_02" data-am="ዳሎቻ 02 ቀበሌ" data-en="Dalocha 02 Kebele">ዳሎቻ 02 ቀበሌ</option>
+            <option value="wera" data-am="ወራ ቀበሌ" data-en="Wera Kebele">ወራ ቀበሌ</option>
+            <option value="siltana" data-am="ስልጣና ቀበሌ" data-en="Siltana Kebele">ስልጣና ቀበሌ</option>
+            <option value="gedeb" data-am="ገደብ ቀበሌ" data-en="Gedeb Kebele">ገደብ ቀበሌ</option>
+        </optgroup>
+
+        <option value="youth-wing" data-am="ወጣቶች ክንፍ" data-en="Youth Wing">ወጣቶች ክንፍ</option>
+        <option value="organizational-inspection" data-am="የአደረጃጀት እና ኢንስፔክሽን ዘርፍ" data-en="Organizational and Inspection Sector">የአደረጃጀት እና ኢንስፔክሽን ዘርፍ</option>
+    </select>
+</div>
 
         <<!-- CONTENT SECTIONS -->
 <section class="info-sections">
