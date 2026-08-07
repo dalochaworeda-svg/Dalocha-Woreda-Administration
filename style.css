@@ -44,6 +44,14 @@ body {
 .logo-group {
     display: flex;
     align-items: center;
+    gap: 12px; /* Space between logo image and text */
+}
+
+.header-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    display: block;
 }
 
 .logo {
@@ -189,21 +197,19 @@ body {
     display: block;
 }
 
-/* FIX: Force picture element to span full width and height */
 .slide picture {
     display: block;
     width: 100%;
     height: 100%;
 }
 
-/* FIX: Target both .slide img and .carousel-img */
 .slide img,
 .carousel-img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 60%; /* Vertically centers the face inside the frame */
+    object-position: center 60%;
 }
 
 .slider-caption {
@@ -283,75 +289,6 @@ body {
     font-size: 16px;
 }
 
-/* ==========================================
-   10. MEDIA QUERIES & RESPONSIVE DESIGNS
-   ========================================== */
-@media (min-width: 992px) {
-    .menu-toggle {
-        display: none;
-    }
-
-    .slider-container {
-        height: 480px;
-        border-radius: 24px;
-    }
-
-    .slide img {
-        object-fit: cover;
-        object-position: center 60%; /* Centers face & shoulders on wide PC screens */
-    }
-}
-
-@media (max-width: 991px) {
-    .desktop-menu {
-        display: none;
-    }
-
-    .nav-controls,
-    .lang-selector {
-        display: flex !important;
-        align-items: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .plan-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 650px) {
-    .news-card {
-        flex-direction: column;
-    }
-    
-    .news-image {
-        width: 100%;
-        height: 180px;
-    }
-}
-
-@media (max-width: 600px) {
-    .controls-section {
-        flex-direction: column;
-    }
-    
-    .slider-caption {
-        left: 15px;
-        right: 15px;
-        bottom: 15px;
-        max-width: 85%;
-        padding: 8px 14px;
-    }
-    
-    .slider-caption p {
-        font-size: 12px;
-    }
-    
-    .next-btn {
-        right: 50px;
-    }
-}
 /* ==========================================
    5. CENTRAL BLUE COMPONENT BANNER
    ========================================== */
@@ -709,36 +646,54 @@ body {
     transform: scale(1.05);
     background-color: #007bff;
 }
-.logo-group {
-    display: flex;
-    align-items: center;
-    gap: 12px; /* Space between logo image and text */
-}
-
-.header-logo {
-    height: 50px; /* Adjust height as needed */
-    width: auto;
-    object-fit: contain;
-    display: block;
-}
 
 /* ==========================================
    10. MEDIA QUERIES & RESPONSIVE DESIGNS
    ========================================== */
-/* PC & Desktop Screens (992px and wider) */
+/* Desktop Grid Layout (992px and wider) */
 @media (min-width: 992px) {
     .menu-toggle {
         display: none;
     }
 
     .slider-container {
-        height: 500px; /* Taller banner height for PC screens */
+        height: 500px;
         border-radius: 24px;
     }
 
     .slide img {
         object-fit: cover;
-        object-position: center 20%; /* Keeps faces centered on wide PC screens */
+        object-position: center 20%;
+    }
+
+    /* 3-Column Desktop Grid for Dashboard/Layout Content */
+    .content-wrapper {
+        display: grid;
+        grid-template-columns: 280px 1fr 320px;
+        gap: 20px;
+        align-items: start;
+    }
+
+    .slider-section,
+    .intro-card,
+    .controls-section {
+        grid-column: 1 / -1;
+    }
+
+    .sidebar-left,
+    #message-section {
+        grid-column: 1 / 2;
+    }
+
+    .main-content,
+    #plan-section,
+    #principles-section {
+        grid-column: 2 / 3;
+    }
+
+    .sidebar-right,
+    #news-section {
+        grid-column: 3 / 4;
     }
 }
 
@@ -764,7 +719,7 @@ body {
     .news-card {
         flex-direction: column;
     }
-    
+
     .news-image {
         width: 100%;
         height: 180px;
@@ -775,7 +730,7 @@ body {
     .controls-section {
         flex-direction: column;
     }
-    
+
     .slider-caption {
         left: 15px;
         right: 15px;
@@ -783,15 +738,16 @@ body {
         max-width: 85%;
         padding: 8px 14px;
     }
-    
+
     .slider-caption p {
         font-size: 12px;
     }
-    
+
     .next-btn {
         right: 50px;
     }
 }
+
 /* ==========================================
    11. LANGUAGE SELECTOR DROPDOWN STYLES
    ========================================== */
