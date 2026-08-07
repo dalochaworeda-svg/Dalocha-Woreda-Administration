@@ -12,26 +12,47 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- MAIN HEADER & NAVIGATION -->
+<header class="main-header">
+    <div class="nav-container">
 
-   <!-- MAIN HEADER & NAVIGATION -->
+        <!-- Branding / Logo -->
+        <div class="logo-group">
+            <div class="logo-text">
+                <h1 class="logo" data-am="የዳሎቻ ወረዳ ብልፅግና ፓርቲ" data-en="Dalocha Woreda Prosperity Party">የዳሎቻ ወረዳ ብልፅግና ፓርቲ</h1>
+                <p class="sub-slogan" data-am="ዳሎቻ በስራ፣ ብልፅግና በተግባር!" data-en="Dalocha in Action, Prosperity in Practice!">ዳሎቻ በስራ፣ ብልፅግና በተግባር!</p>
+            </div>
+        </div>
 
-    <header class="main-header">
+        <!-- Desktop Navigation Links -->
+        <nav class="desktop-menu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-        <div class="nav-container">
+        <!-- Right Controls: Language Selector & Mobile Menu Toggle -->
+        <div class="nav-controls">
+            <!-- Language Dropdown -->
+            <div class="lang-selector">
+                <button class="lang-btn" onclick="toggleLangDropdown()">
+                    <i class="fa-solid fa-globe"></i> EN
+                </button>
+                <ul class="lang-dropdown-menu" id="langDropdown">
+                    <li><a href="#" onclick="changeLanguage('am')">አማርኛ</a></li>
+                    <li><a href="#" onclick="changeLanguage('en')">English</a></li>
+                </ul>
+            </div>
 
-            <!-- Branding / Logo -->
+            <!-- Hamburger Button using Font Awesome Icon -->
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
 
-            <div class="logo-group">
-
-                <div class="logo-text">
-
-                    <h1 class="logo" data-am="የዳሎቻ ወረዳ ብልፅግና ፓርቲ" data-en="Dalocha Woreda Prosperity Party">የዳሎቻ ወረዳ ብልፅግና ፓርቲ</h1>
-
-                    <p class="sub-slogan" data-am="ዳሎቻ በስራ፣ ብልፅግና በተግባር!" data-en="Dalocha in Action, Prosperity in Practice!">ዳሎቻ በስራ፣ ብልፅግና በተግባር!</p>
-
-                </div>
-
-            </div>? 
+    </div>
+</header>
             <!-- Desktop Quick Links -->
             <nav class="desktop-menu" aria-label="Quick Links">
                 <a href="#message-section" data-am="ዋና ገጽ" data-en="Home">ዋና ገጽ</a>
