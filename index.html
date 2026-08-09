@@ -901,18 +901,21 @@
             });
         });
     });
-    </script>
-const video = document.getElementById('heroVideo');
-const soundBtn = document.getElementById('soundToggleBtn');
+    <script>
+    const video = document.getElementById('heroVideo');
+    const soundBtn = document.getElementById('soundToggleBtn');
 
-soundBtn.addEventListener('click', () => {
-  if (video.muted) {
-    video.muted = false;
-    soundBtn.textContent = '🔇 Mute';
-  } else {
-    video.muted = true;
-    soundBtn.textContent = '🔊 Unmute';
-  }
-});
+    soundBtn.addEventListener('click', () => {
+      if (video.muted) {
+        video.muted = false;
+        soundBtn.textContent = '🔇 Mute';
+      } else {
+        video.muted = true;
+        soundBtn.textContent = '🔊 Unmute';
+      }
+    });
+  </script>
+</body>
+</html>
         </body>
 </html>
