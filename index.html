@@ -780,159 +780,157 @@
     </div>
 </section>
 
-    <!-- UNIFIED SLIDER, NAVIGATION & LANGUAGE SCRIPT -->
-    <script>
-    // 1. Image Slider Logic
-    let currentSlide = 0;
+   <!-- UNIFIED SLIDER, NAVIGATION & LANGUAGE SCRIPT -->
+<script>
+  // 1. Image Slider Logic (Global Scope)
+  let currentSlide = 0;
 
-    function showSlide(index) {
-        const slides = document.querySelectorAll('.slide');
-        const numItems = document.querySelectorAll('.num-item');
+  function showSlide(index) {
+      const slides = document.querySelectorAll('.slide');
+      const numItems = document.querySelectorAll('.num-item');
 
-        if (!slides.length) return;
+      if (!slides.length) return;
 
-        if (index >= slides.length) currentSlide = 0;
-        else if (index < 0) currentSlide = slides.length - 1;
-        else currentSlide = index;
+      if (index >= slides.length) currentSlide = 0;
+      else if (index < 0) currentSlide = slides.length - 1;
+      else currentSlide = index;
 
-        slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === currentSlide);
-        });
-        numItems.forEach((num, i) => {
-            num.classList.toggle('active', i === currentSlide);
-        });
-    }
+      slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === currentSlide);
+      });
+      numItems.forEach((num, i) => {
+          num.classList.toggle('active', i === currentSlide);
+      });
+  }
 
-    function changeSlide(direction) {
-        showSlide(currentSlide + direction);
-    }
+  function changeSlide(direction) {
+      showSlide(currentSlide + direction);
+  }
 
-    function goToSlide(index) {
-        showSlide(index);
-    }
+  function goToSlide(index) {
+      showSlide(index);
+  }
 
-    // Auto slide change every 5 seconds
-    setInterval(() => {
-        changeSlide(1);
-    }, 5000);
+  // Auto slide change every 5 seconds
+  setInterval(() => {
+      changeSlide(1);
+  }, 5000);
 
-    // 2. DOM-dependent UI Logic
-    document.addEventListener('DOMContentLoaded', () => {
-        // Mobile Side Menu Toggle
-        const menuToggleBtn = document.getElementById('menuToggleBtn');
-        const sideMenu = document.getElementById('sideMenu');
+  // 2. Global Translation Function
+  function setLanguage(lang) {
+      const elements = document.querySelectorAll('[data-am][data-en]');
 
-        if (menuToggleBtn && sideMenu) {
-            menuToggleBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const isOpen = sideMenu.classList.toggle('open');
-                menuToggleBtn.setAttribute('aria-expanded', isOpen);
-            });
+      elements.forEach(el => {
+          const translation = el.getAttribute(`data-${lang}`);
+          if (!translation) return;
 
-            // Auto-close menu on link click
-            sideMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    sideMenu.classList.remove('open');
-                });
-            });
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+              el.placeholder = translation;
+              return;
+          }
 
-            // Close side menu on clicking outside
-            document.addEventListener('click', (e) => {
-                if (!sideMenu.contains(e.target) && e.target !== menuToggleBtn) {
-                    sideMenu.classList.remove('open');
-                    menuToggleBtn.setAttribute('aria-expanded', 'false');
-                }
-            });
-        }
+          const icon = el.querySelector('i, svg');
+          if (icon) {
+              el.childNodes.forEach(node => {
+                  if (node.nodeType === Node.TEXT_NODE) {
+                      node.nodeValue = translation + ' ';
+                  }
+              });
+          } else {
+              el.innerHTML = translation;
+          }
+      });
 
-        // Language Switching Logic
-        const langBtn = document.getElementById('langBtn');
-        const langMenu = document.getElementById('langMenu');
-        const currentLangLabel = document.getElementById('currentLangLabel');
+      const currentLangLabel = document.getElementById('currentLangLabel');
+      if (currentLangLabel) {
+          currentLangLabel.textContent = lang === 'am' ? 'አማርኛ' : 'English';
+      }
+      document.documentElement.lang = lang;
+  }
 
-        if (langBtn && langMenu) {
-            // Toggle dropdown menu
-            langBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const isOpen = langMenu.classList.toggle('show');
-                langBtn.setAttribute('aria-expanded', isOpen);
-            });
+  // 3. Global Unmute Video Function
+  function toggleSound() {
+      const video = document.getElementById('heroVideo');
+      const soundIcon = document.getElementById('soundIcon');
+      const soundText = document.getElementById('soundText');
 
-           // Close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            if (langMenu && !langBtn.contains(e.target) && !langMenu.contains(e.target)) {
-                langMenu.classList.remove('show');
-                langBtn.setAttribute('aria-expanded', 'false');
-            }
-        });
+      if (!video) return;
 
-        function setLanguage(lang) {
-            const elements = document.querySelectorAll('[data-am][data-en]');
+      if (video.muted) {
+          video.muted = false;
+          video.play().catch(err => console.log("Audio playback notice:", err));
+          if (soundIcon) soundIcon.className = 'fa-solid fa-volume-high';
+          if (soundText) soundText.textContent = 'ድምፅ ዝጋ (Mute)';
+      } else {
+          video.muted = true;
+          if (soundIcon) soundIcon.className = 'fa-solid fa-volume-xmark';
+          if (soundText) soundText.textContent = 'ድምፅ ክፈት (Unmute)';
+      }
+  }
 
-            elements.forEach(el => {
-                const translation = el.getAttribute(`data-${lang}`);
-                if (!translation) return;
+  // 4. DOM-dependent UI Listeners
+  document.addEventListener('DOMContentLoaded', () => {
+      // Mobile Side Menu Toggle
+      const menuToggleBtn = document.getElementById('menuToggleBtn');
+      const sideMenu = document.getElementById('sideMenu');
 
-                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                    el.placeholder = translation;
-                    return;
-                }
+      if (menuToggleBtn && sideMenu) {
+          menuToggleBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              const isOpen = sideMenu.classList.toggle('open');
+              menuToggleBtn.setAttribute('aria-expanded', isOpen);
+          });
 
-                const icon = el.querySelector('i, svg');
-                if (icon) {
-                    el.childNodes.forEach(node => {
-                        if (node.nodeType === Node.TEXT_NODE) {
-                            node.nodeValue = translation + ' ';
-                        }
-                    });
-                } else {
-                    el.textContent = translation;
-                }
-            });
+          // Auto-close menu on link click
+          sideMenu.querySelectorAll('a').forEach(link => {
+              link.addEventListener('click', () => {
+                  sideMenu.classList.remove('open');
+              });
+          });
 
-            if (typeof currentLangLabel !== 'undefined' && currentLangLabel) {
-                currentLangLabel.textContent = lang === 'am' ? 'አማርኛ' : 'English';
-            }
-            document.documentElement.lang = lang;
-        }
+          // Close side menu on clicking outside
+          document.addEventListener('click', (e) => {
+              if (!sideMenu.contains(e.target) && e.target !== menuToggleBtn) {
+                  sideMenu.classList.remove('open');
+                  menuToggleBtn.setAttribute('aria-expanded', 'false');
+              }
+          });
+      }
 
-        // Add event listeners to language options
-        const langLinks = document.querySelectorAll('#langMenu a[data-lang]');
-        langLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const lang = link.getAttribute('data-lang');
-                setLanguage(lang);
-                if (typeof langMenu !== 'undefined' && langMenu) {
-                    langMenu.classList.remove('show');
-                }
-            });
-        });
+      // Language Switcher Dropdown Logic
+      const langBtn = document.getElementById('langBtn');
+      const langMenu = document.getElementById('langMenu');
 
-    }); // Closes DOMContentLoaded listener
+      if (langBtn && langMenu) {
+          // Toggle dropdown menu
+          langBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              const isOpen = langMenu.classList.toggle('show');
+              langBtn.setAttribute('aria-expanded', isOpen);
+          });
 
-    // Hero Video Toggle Sound Function (Called by onclick="toggleSound()")
-    function toggleSound() {
-        const video = document.getElementById('heroVideo');
-        const soundIcon = document.getElementById('soundIcon');
-        const soundText = document.getElementById('soundText');
+          // Close dropdown when clicking outside
+          document.addEventListener('click', (e) => {
+              if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+                  langMenu.classList.remove('show');
+                  langBtn.setAttribute('aria-expanded', 'false');
+              }
+          });
+      }
 
-        if (!video) return;
+      // Add event listeners to language menu options
+      const langLinks = document.querySelectorAll('#langMenu a[data-lang]');
+      langLinks.forEach(link => {
+          link.addEventListener('click', (e) => {
+              e.preventDefault();
+              const lang = link.getAttribute('data-lang');
+              setLanguage(lang);
+              if (langMenu) {
+                  langMenu.classList.remove('show');
+                  if (langBtn) langBtn.setAttribute('aria-expanded', 'false');
+              }
+          });
+      });
 
-        // Toggle sound state
-        video.muted = !video.muted;
-
-        // Update UI elements
-        if (soundIcon && soundText) {
-            if (video.muted) {
-                soundIcon.className = 'fa-solid fa-volume-xmark';
-                soundText.textContent = 'ድምፅ ክፈት (Unmute)';
-            } else {
-                soundIcon.className = 'fa-solid fa-volume-high';
-                soundText.textContent = 'ድምፅ ዝጋ (Mute)';
-            }
-        }
-    }
-  </script>
-</body>
-</html>
+  }); // Closes DOMContentLoaded listener
+</script>
