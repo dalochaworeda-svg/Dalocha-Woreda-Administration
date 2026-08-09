@@ -902,5 +902,17 @@
         });
     });
     </script>
-</body>
+const video = document.getElementById('heroVideo');
+const soundBtn = document.getElementById('soundToggleBtn');
+
+soundBtn.addEventListener('click', () => {
+  if (video.muted) {
+    video.muted = false;
+    soundBtn.textContent = '🔇 Mute';
+  } else {
+    video.muted = true;
+    soundBtn.textContent = '🔊 Unmute';
+  }
+});
+        </body>
 </html>
