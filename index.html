@@ -131,14 +131,21 @@
                 <span class="num-item" onclick="goToSlide(4)">05</span>
             </div>
         </div>
+  <!-- HERO VIDEO SECTION -->
   <section class="hero-video-container">
-  <video id="heroVideo" autoplay loop muted playsinline class="hero-video">
-    <source src="እንኳን_ደህና_መጣቹ_የዳሎቻ_ብልፅግና_ፓርቲ—ለ.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  
-  <!-- Sound Toggle Button -->
-  <button id="soundToggleBtn" class="sound-toggle-btn">🔊 Unmute</button>
+    <!-- Added id="heroVideo" -->
+    <video id="heroVideo" autoplay loop muted playsinline class="hero-video">
+      <source srcእንኳን_ደህና_መጣቹ_የዳሎቻ_ብልፅግና_ፓርቲ—ለ.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+        </div>
+      </div>
+
+      <!-- Sound Toggle Button -->
+      <button id="soundToggle" class="btn-sound-toggle" onclick="toggleSound()">
+        <i id="soundIcon" class="fa-solid fa-volume-xmark"></i> <span id="soundText">ድምፅ ክፈት (Unmute)</span>
+      </button>
+    </div>
 </section>
         <!-- SOCIO-ECONOMIC CARD -->
         <section class="intro-card" id="population">
