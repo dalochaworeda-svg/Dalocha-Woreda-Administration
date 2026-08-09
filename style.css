@@ -977,3 +977,70 @@ body {
         grid-template-columns: 1fr;
     }
 }
+/* ==========================================
+   13. FULL WIDTH MAP & FLOATING OVERLAY CARD
+   ========================================== */
+.contact-map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  margin-top: 30px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.full-width-map {
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+  display: block;
+}
+
+.contact-overlay-box {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px 24px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(8px);
+  border-left: 5px solid #007bff;
+  max-width: 320px;
+}
+
+.contact-overlay-box h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+  color: #1a252f;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-overlay-box h3 i {
+  color: #007bff;
+}
+
+.contact-overlay-box p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #4a5568;
+}
+
+@media (max-width: 600px) {
+  .contact-map-wrapper {
+    height: 400px;
+  }
+  
+  .contact-overlay-box {
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    max-width: none;
+    padding: 15px 18px;
+  }
+}
