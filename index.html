@@ -858,12 +858,13 @@
                 langBtn.setAttribute('aria-expanded', isOpen);
             });
 
-            // Close dropdown when clicking outside
-            document.addEventListener('click', () => {
+           // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (langMenu && !langBtn.contains(e.target) && !langMenu.contains(e.target)) {
                 langMenu.classList.remove('show');
                 langBtn.setAttribute('aria-expanded', 'false');
-            });
-        }
+            }
+        });
 
         function setLanguage(lang) {
             const elements = document.querySelectorAll('[data-am][data-en]');
@@ -889,7 +890,7 @@
                 }
             });
 
-            if (currentLangLabel) {
+            if (typeof currentLangLabel !== 'undefined' && currentLangLabel) {
                 currentLangLabel.textContent = lang === 'am' ? 'አማርኛ' : 'English';
             }
             document.documentElement.lang = lang;
@@ -902,25 +903,36 @@
                 e.preventDefault();
                 const lang = link.getAttribute('data-lang');
                 setLanguage(lang);
-                if (langMenu) langMenu.classList.remove('show');
+                if (typeof langMenu !== 'undefined' && langMenu) {
+                    langMenu.classList.remove('show');
+                }
             });
         });
-    });
-    <script>
-    const video = document.getElementById('heroVideo');
-    const soundBtn = document.getElementById('soundToggleBtn');
 
-    soundBtn.addEventListener('click', () => {
-      if (video.muted) {
-        video.muted = false;
-        soundBtn.textContent = '🔇 Mute';
-      } else {
-        video.muted = true;
-        soundBtn.textContent = '🔊 Unmute';
-      }
-    });
+    }); // Closes DOMContentLoaded listener
+
+    // Hero Video Toggle Sound Function (Called by onclick="toggleSound()")
+    function toggleSound() {
+        const video = document.getElementById('heroVideo');
+        const soundIcon = document.getElementById('soundIcon');
+        const soundText = document.getElementById('soundText');
+
+        if (!video) return;
+
+        // Toggle sound state
+        video.muted = !video.muted;
+
+        // Update UI elements
+        if (soundIcon && soundText) {
+            if (video.muted) {
+                soundIcon.className = 'fa-solid fa-volume-xmark';
+                soundText.textContent = 'ድምፅ ክፈት (Unmute)';
+            } else {
+                soundIcon.className = 'fa-solid fa-volume-high';
+                soundText.textContent = 'ድምፅ ዝጋ (Mute)';
+            }
+        }
+    }
   </script>
 </body>
-</html>
-        </body>
 </html>
