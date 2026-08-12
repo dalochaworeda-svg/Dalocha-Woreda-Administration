@@ -1031,100 +1031,200 @@
 </footer>
 
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
 
-  /*
-   * DEMO DATA STORAGE
-   *
-   * This version uses browser localStorage.
-   * For a real government system, replace this
-   * with a secure server/database.
-   */
+  /* =========================================================
+     SUPABASE CONNECTION
+     ========================================================= */
 
-  let applications =
-    JSON.parse(localStorage.getItem("dalochaApplications")) || [];
+  const SUPABASE_URL = "YOUR_SUPABASE_PROJECT_URL";
+  const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+
+  const { createClient } = supabase;
+
+  const db = createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+  );
 
 
-  /* GENERATE REQUEST NUMBER */
+  /* =========================================================
+     APPLICATION DATA
+     ========================================================= */
 
-  function generateRequestNumber() {
+  let applications = [];
 
-    const number =
-      String(applications.length + 1).padStart(4, "0");
 
-    return "DW-" + number;
+  /* =========================================================
+     LOAD APPLICATIONS FROM SUPABASE
+     ========================================================= */
+
+  async function loadApplications() {
+
+    const { data, error } = await db
+      .from("applications")
+      .select("*")
+      .order("submitted_date", { ascending: false });
+
+    if (error) {
+
+      console.error("Load applications error:", error);
+
+      alert(
+        "Could not load applications.\n" +
+        "ማመልከቻዎችን መጫን አልተቻለም።"
+      );
+
+      return;
+    }
+
+    applications = data || [];
+
+    loadApprovalTable();
   }
 
 
-  /* SUBMIT REQUEST */
+  /* =========================================================
+     GENERATE REQUEST NUMBER
+     ========================================================= */
+
+  async function generateRequestNumber() {
+
+    const { count, error } = await db
+      .from("applications")
+      .select("*", {
+        count: "exact",
+        head: true
+      });
+
+    if (error) {
+
+      console.error("Request number error:", error);
+
+      return "DW-" + Date.now();
+    }
+
+    return "DW-" +
+      String((count || 0) + 1).padStart(4, "0");
+  }
+
+
+  /* =========================================================
+     SUBMIT REQUEST
+     ========================================================= */
 
   document
     .getElementById("requestForm")
-    .addEventListener("submit", function(event) {
+    .addEventListener("submit", async function(event) {
 
       event.preventDefault();
 
 
       const certificateType =
-        document.getElementById("certificateType").value;
+        document
+          .getElementById("certificateType")
+          .value
+          .trim();
+
 
       const fullName =
-        document.getElementById("fullName").value;
+        document
+          .getElementById("fullName")
+          .value
+          .trim();
+
 
       const phone =
-        document.getElementById("phone").value;
+        document
+          .getElementById("phone")
+          .value
+          .trim();
+
 
       const idNumber =
-        document.getElementById("idNumber").value;
+        document
+          .getElementById("idNumber")
+          .value
+          .trim();
+
 
       const reason =
-        document.getElementById("reason").value;
+        document
+          .getElementById("reason")
+          .value
+          .trim();
 
 
       const requestNumber =
-        generateRequestNumber();
+        await generateRequestNumber();
 
 
       const application = {
 
-        requestNumber: requestNumber,
+        request_number: requestNumber,
 
-        certificateType: certificateType,
+        certificate_type: certificateType,
 
-        fullName: fullName,
+        full_name: fullName,
 
         phone: phone,
 
-        idNumber: idNumber,
+        id_number: idNumber,
 
         reason: reason,
 
         status: "Pending",
 
-        submittedDate:
-          new Date().toLocaleDateString()
+        submitted_date:
+          new Date().toISOString()
 
       };
 
 
-      applications.push(application);
+      /* INSERT INTO SUPABASE */
+
+      const { data, error } = await db
+        .from("applications")
+        .insert([application])
+        .select()
+        .single();
 
 
-      localStorage.setItem(
-        "dalochaApplications",
-        JSON.stringify(applications)
-      );
+      if (error) {
 
+        console.error("Submit error:", error);
+
+        alert(
+          "Failed to submit application.\n\n" +
+          error.message
+        );
+
+        return;
+      }
+
+
+      /* ADD TO LOCAL PAGE DATA */
+
+      applications.unshift(data);
+
+
+      /* SHOW REQUEST NUMBER */
 
       document
         .getElementById("generatedNumber")
-        .textContent = requestNumber;
+        .textContent =
+        data.request_number;
 
 
       document
         .getElementById("requestResult")
-        .style.display = "block";
+        .style.display =
+        "block";
 
+
+      /* CLEAR FORM */
 
       document
         .getElementById("requestForm")
@@ -1139,12 +1239,15 @@
     });
 
 
-  /* LOAD APPLICATIONS */
+  /* =========================================================
+     LOAD APPROVAL TABLE
+     ========================================================= */
 
   function loadApprovalTable() {
 
     const table =
       document.getElementById("approvalTable");
+
 
     table.innerHTML = "";
 
@@ -1157,9 +1260,11 @@
 
       let statusClass = "";
 
+
       if (app.status === "Approved") {
         statusClass = "approved";
       }
+
 
       if (app.status === "Rejected") {
         statusClass = "rejected";
@@ -1169,21 +1274,23 @@
       row.innerHTML = `
 
         <td>
-          ${app.requestNumber}
+          ${escapeHtml(app.request_number)}
         </td>
 
         <td>
-          ${app.fullName}
+          ${escapeHtml(app.full_name)}
         </td>
 
         <td>
-          ${app.certificateType}
+          ${escapeHtml(app.certificate_type)}
         </td>
 
         <td>
+
           <span class="status ${statusClass}">
-            ${app.status}
+            ${escapeHtml(app.status)}
           </span>
+
         </td>
 
         <td>
@@ -1194,23 +1301,26 @@
             ?
 
             `
+
               <button
                 class="btn-success"
-                onclick="approveApplication('${app.requestNumber}')"
+                onclick="approveApplication('${app.request_number}')"
               >
                 Approve
                 <br>
                 አጽድቅ
               </button>
 
+
               <button
                 class="btn-danger"
-                onclick="rejectApplication('${app.requestNumber}')"
+                onclick="rejectApplication('${app.request_number}')"
               >
                 Reject
                 <br>
                 ውድቅ አድርግ
               </button>
+
             `
 
             :
@@ -1220,21 +1330,26 @@
             ?
 
             `
+
               <button
                 class="btn-success"
-                onclick="viewCertificate('${app.requestNumber}')"
+                onclick="viewCertificate('${app.request_number}')"
               >
                 View Certificate
                 <br>
                 ምስክር ወረቀት ይመልከቱ
               </button>
+
             `
 
             :
 
             `
+
               Rejected / ውድቅ ተደርጓል
+
             `
+
           }
 
         </td>
@@ -1249,26 +1364,57 @@
   }
 
 
-  /* APPROVE */
+  /* =========================================================
+     APPROVE APPLICATION
+     ========================================================= */
 
-  function approveApplication(requestNumber) {
+  async function approveApplication(requestNumber) {
 
-    const app =
-      applications.find(
-        item => item.requestNumber === requestNumber
+    const confirmation =
+      confirm(
+        "Approve this application?\n" +
+        "ይህን ማመልከቻ ማጽደቅ ይፈልጋሉ?"
       );
 
 
-    if (!app) return;
+    if (!confirmation) return;
 
 
-    app.status = "Approved";
+    const { data, error } = await db
+      .from("applications")
+      .update({
+        status: "Approved"
+      })
+      .eq("request_number", requestNumber)
+      .select()
+      .single();
 
 
-    localStorage.setItem(
-      "dalochaApplications",
-      JSON.stringify(applications)
-    );
+    if (error) {
+
+      console.error("Approval error:", error);
+
+      alert(
+        "Failed to approve application.\n\n" +
+        error.message
+      );
+
+      return;
+    }
+
+
+    /* UPDATE PAGE */
+
+    const index =
+      applications.findIndex(
+        item =>
+          item.request_number === requestNumber
+      );
+
+
+    if (index !== -1) {
+      applications[index] = data;
+    }
 
 
     loadApprovalTable();
@@ -1282,18 +1428,11 @@
   }
 
 
-  /* REJECT */
+  /* =========================================================
+     REJECT APPLICATION
+     ========================================================= */
 
-  function rejectApplication(requestNumber) {
-
-    const app =
-      applications.find(
-        item => item.requestNumber === requestNumber
-      );
-
-
-    if (!app) return;
-
+  async function rejectApplication(requestNumber) {
 
     const confirmation =
       confirm(
@@ -1305,13 +1444,41 @@
     if (!confirmation) return;
 
 
-    app.status = "Rejected";
+    const { data, error } = await db
+      .from("applications")
+      .update({
+        status: "Rejected"
+      })
+      .eq("request_number", requestNumber)
+      .select()
+      .single();
 
 
-    localStorage.setItem(
-      "dalochaApplications",
-      JSON.stringify(applications)
-    );
+    if (error) {
+
+      console.error("Reject error:", error);
+
+      alert(
+        "Failed to reject application.\n\n" +
+        error.message
+      );
+
+      return;
+    }
+
+
+    /* UPDATE PAGE */
+
+    const index =
+      applications.findIndex(
+        item =>
+          item.request_number === requestNumber
+      );
+
+
+    if (index !== -1) {
+      applications[index] = data;
+    }
 
 
     loadApprovalTable();
@@ -1325,9 +1492,11 @@
   }
 
 
-  /* CHECK STATUS */
+  /* =========================================================
+     CHECK APPLICATION STATUS
+     ========================================================= */
 
-  function checkStatus() {
+  async function checkStatus() {
 
     const requestNumber =
       document
@@ -1341,11 +1510,43 @@
       document.getElementById("statusResult");
 
 
-    const app =
-      applications.find(
-        item =>
-          item.requestNumber === requestNumber
-      );
+    if (!requestNumber) {
+
+      result.style.display = "block";
+
+      result.style.background = "#f8d7da";
+
+      result.style.color = "#842029";
+
+      result.innerHTML =
+        "Please enter your request number.";
+
+      return;
+    }
+
+
+    const { data: app, error } = await db
+      .from("applications")
+      .select("*")
+      .eq("request_number", requestNumber)
+      .maybeSingle();
+
+
+    if (error) {
+
+      console.error("Status error:", error);
+
+      result.style.display = "block";
+
+      result.style.background = "#f8d7da";
+
+      result.style.color = "#842029";
+
+      result.innerHTML =
+        "Unable to check application status.";
+
+      return;
+    }
 
 
     result.style.display = "block";
@@ -1370,7 +1571,6 @@
       `;
 
       return;
-
     }
 
 
@@ -1383,30 +1583,35 @@
 
       <strong>
         Application:
-        ${app.requestNumber}
+        ${escapeHtml(app.request_number)}
       </strong>
 
       <br><br>
 
       Applicant:
-      ${app.fullName}
+      ${escapeHtml(app.full_name)}
 
       <br>
 
       Certificate:
-      ${app.certificateType}
+      ${escapeHtml(app.certificate_type)}
 
       <br>
 
       Status:
-      <strong>${app.status}</strong>
+      <strong>
+        ${escapeHtml(app.status)}
+      </strong>
 
       <br>
 
       <span class="am">
+
         ሁኔታ:
         ${getAmharicStatus(app.status)}
+
       </span>
+
 
       ${
         app.status === "Approved"
@@ -1414,15 +1619,19 @@
         ?
 
         `
+
           <br><br>
 
           <button
             class="btn-success"
-            onclick="viewCertificate('${app.requestNumber}')"
+            onclick="viewCertificate('${app.request_number}')"
           >
+
             View Certificate /
             ምስክር ወረቀት ይመልከቱ
+
           </button>
+
         `
 
         :
@@ -1436,7 +1645,9 @@
   }
 
 
-  /* AMHARIC STATUS */
+  /* =========================================================
+     AMHARIC STATUS
+     ========================================================= */
 
   function getAmharicStatus(status) {
 
@@ -1453,18 +1664,32 @@
     }
 
     return status;
-
   }
 
 
-  /* VIEW CERTIFICATE */
+  /* =========================================================
+     VIEW CERTIFICATE
+     ========================================================= */
 
-  function viewCertificate(requestNumber) {
+  async function viewCertificate(requestNumber) {
 
-    const app =
-      applications.find(
-        item => item.requestNumber === requestNumber
+    const { data: app, error } = await db
+      .from("applications")
+      .select("*")
+      .eq("request_number", requestNumber)
+      .maybeSingle();
+
+
+    if (error) {
+
+      console.error("Certificate error:", error);
+
+      alert(
+        "Could not load certificate."
       );
+
+      return;
+    }
 
 
     if (!app || app.status !== "Approved") {
@@ -1475,32 +1700,31 @@
       );
 
       return;
-
     }
 
 
     document
       .getElementById("certificateNumber")
       .textContent =
-      "CERT-" + app.requestNumber;
+      "CERT-" + app.request_number;
 
 
     document
       .getElementById("certificateName")
       .textContent =
-      app.fullName;
+      app.full_name;
 
 
     document
       .getElementById("certificateTypeResult")
       .textContent =
-      app.certificateType;
+      app.certificate_type;
 
 
     document
       .getElementById("certificateId")
       .textContent =
-      app.idNumber;
+      app.id_number;
 
 
     document
@@ -1512,7 +1736,9 @@
     document
       .getElementById("certificateDate")
       .textContent =
-      new Date().toLocaleDateString();
+      new Date(
+        app.submitted_date
+      ).toLocaleDateString();
 
 
     document
@@ -1530,12 +1756,31 @@
   }
 
 
-  /* LOAD DATA WHEN PAGE OPENS */
+  /* =========================================================
+     SECURITY: ESCAPE HTML
+     ========================================================= */
 
-  loadApprovalTable();
+  function escapeHtml(value) {
+
+    if (value === null || value === undefined) {
+      return "";
+    }
+
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+
+  /* =========================================================
+     START APPLICATION
+     ========================================================= */
+
+  loadApplications();
 
 </script>
-
-
 </body>
 </html>
