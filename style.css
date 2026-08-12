@@ -1048,4 +1048,51 @@ body {
     padding: 15px 18px;
   }
 }
+/* Services dropdown */
+.desktop-menu .dropdown {
+    position: relative;
+}
+
+.desktop-menu .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 280px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    padding: 8px 0;
+    z-index: 9999;
+}
+
+/* Show dropdown when hovering */
+.desktop-menu .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Dropdown links */
+.desktop-menu .dropdown-menu a {
+    display: block;
+    padding: 12px 16px;
+    color: #123b5d;
+    text-decoration: none;
+    background: white;
+}
+
+.desktop-menu .dropdown-menu a:hover {
+    background: #f1f5f9;
+}
+
+.desktop-menu .dropdown-menu strong {
+    display: block;
+    font-size: 14px;
+}
+
+.desktop-menu .dropdown-menu small {
+    display: block;
+    margin-top: 4px;
+    color: #666;
+    font-size: 12px;
+}
 
