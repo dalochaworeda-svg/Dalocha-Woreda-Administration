@@ -1029,26 +1029,20 @@
   </p>
 
 </footer>
-
-
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
 
-  /* =========================================================
-     SUPABASE CONNECTION
-     ========================================================= */
+const SUPABASE_URL =
+  "https://wkfbfvlcqtkhdzmjwuwz.supabase.co";
 
-  const SUPABASE_URL = "YOUR_SUPABASE_PROJECT_URL";
-  const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+const SUPABASE_ANON_KEY =
+  "sb_publishable_ZHncljggLa4d_sldRlO9CQ_WAkynyw0";
 
-  const { createClient } = supabase;
-
-  const db = createClient(
-    SUPABASE_URL,
+const db = supabase.createClient(
+  SUPABASE_URL,
     SUPABASE_ANON_KEY
-  );
-
+);
 
   /* =========================================================
      APPLICATION DATA
