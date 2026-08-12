@@ -24,7 +24,8 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
-* ==========================================
+
+/* ==========================================
    2. HERO VIDEO & CONTROLS
    ========================================== */
 .hero-video-container {
@@ -83,8 +84,9 @@ body {
         font-size: 0.85rem;
     }
 }
+
 /* ==========================================
-   2. TOP HEADER & STICKY NAVBAR
+   3. TOP HEADER & STICKY NAVBAR
    ========================================== */
 .main-header {
     background-color: #0b2f4c;
@@ -185,7 +187,7 @@ body {
 }
 
 /* ==========================================
-   3. DROP-DOWN ACCORDION MENU OVERLAY (MOBILE)
+   4. DROP-DOWN ACCORDION MENU OVERLAY (MOBILE)
    ========================================== */
 .side-menu {
     position: fixed;
@@ -234,7 +236,7 @@ body {
 }
 
 /* ==========================================
-   4. APP IMAGE CAROUSEL SLIDER & INDICATORS
+   5. APP IMAGE CAROUSEL SLIDER & INDICATORS
    ========================================== */
 .slider-section {
     width: 100%;
@@ -350,7 +352,7 @@ body {
 }
 
 /* ==========================================
-   5. CENTRAL BLUE COMPONENT BANNER
+   6. CENTRAL BLUE COMPONENT BANNER
    ========================================== */
 .intro-card {
     background: linear-gradient(180deg, #e3f2fd 0%, #cbe5fe 100%);
@@ -378,7 +380,7 @@ body {
 }
 
 /* ==========================================
-   6. FILTERS & DISCOVERY CONTROLS
+   7. FILTERS & DISCOVERY CONTROLS
    ========================================== */
 .controls-section {
     display: flex;
@@ -442,7 +444,7 @@ body {
 }
 
 /* ==========================================
-   7. RUNNING CONTENT ARTICLES, PLAN GRID & NEWS
+   8. RUNNING CONTENT ARTICLES, PLAN GRID & NEWS
    ========================================== */
 .content-section {
     background-color: #ffffff;
@@ -614,7 +616,7 @@ body {
 }
 
 /* ==========================================
-   8. FOOTER SECTION STYLING
+   9. FOOTER SECTION STYLING
    ========================================== */
 .custom-footer {
     background-color: #0b2f4c;
@@ -729,7 +731,7 @@ body {
 }
 
 /* ==========================================
-   9. FIXED CONTACT FAB FLOATING BUTTON
+   10. FIXED CONTACT FAB FLOATING BUTTON
    ========================================== */
 .fab-btn {
     position: fixed;
@@ -756,7 +758,7 @@ body {
 }
 
 /* ==========================================
-   10. DESKTOP GRID & RESPONSIVE LAYOUT FIXES
+   11. DESKTOP GRID & RESPONSIVE LAYOUT FIXES
    ========================================== */
 @media (min-width: 992px) {
     .menu-toggle {
@@ -833,7 +835,7 @@ body {
 }
 
 /* ==========================================
-   11. LANGUAGE SELECTOR DROPDOWN STYLES
+   12. LANGUAGE SELECTOR DROPDOWN STYLES
    ========================================== */
 .lang-selector {
     position: relative;
@@ -891,7 +893,7 @@ body {
 }
 
 /* ==========================================
-   12. MEMBERSHIP FORM STYLING
+   13. MEMBERSHIP FORM & MODAL STYLING
    ========================================== */
 .form-container {
     background: #ffffff;
@@ -972,11 +974,7 @@ body {
     background-color: #007bff;
 }
 
-@media (max-width: 600px) {
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-   /* Styling for the modal background */
+/* Styling for the modal background */
 .modal {
     display: none; /* Hidden by default */
     position: fixed;
@@ -1011,6 +1009,7 @@ body {
     position: absolute;
     right: 20px;
     top: 10px;
+    z-index: 10;
 }
 
 .close-btn:hover,
@@ -1018,8 +1017,15 @@ body {
     color: #000;
     text-decoration: none;
 }
-//* ==========================================
-   13. FULL WIDTH MAP & FLOATING OVERLAY CARD
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================
+   14. FULL WIDTH MAP & FLOATING OVERLAY CARD
    ========================================== */
 .contact-map-wrapper,
 #contact-us.contact-map-wrapper {
