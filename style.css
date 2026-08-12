@@ -24,8 +24,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
-
-/* ==========================================
+* ==========================================
    2. HERO VIDEO & CONTROLS
    ========================================== */
 .hero-video-container {
@@ -84,9 +83,8 @@ body {
         font-size: 0.85rem;
     }
 }
-
 /* ==========================================
-   3. TOP HEADER & STICKY NAVBAR
+   2. TOP HEADER & STICKY NAVBAR
    ========================================== */
 .main-header {
     background-color: #0b2f4c;
@@ -187,7 +185,7 @@ body {
 }
 
 /* ==========================================
-   4. DROP-DOWN ACCORDION MENU OVERLAY (MOBILE)
+   3. DROP-DOWN ACCORDION MENU OVERLAY (MOBILE)
    ========================================== */
 .side-menu {
     position: fixed;
@@ -236,7 +234,7 @@ body {
 }
 
 /* ==========================================
-   5. APP IMAGE CAROUSEL SLIDER & INDICATORS
+   4. APP IMAGE CAROUSEL SLIDER & INDICATORS
    ========================================== */
 .slider-section {
     width: 100%;
@@ -352,7 +350,7 @@ body {
 }
 
 /* ==========================================
-   6. CENTRAL BLUE COMPONENT BANNER
+   5. CENTRAL BLUE COMPONENT BANNER
    ========================================== */
 .intro-card {
     background: linear-gradient(180deg, #e3f2fd 0%, #cbe5fe 100%);
@@ -380,7 +378,7 @@ body {
 }
 
 /* ==========================================
-   7. FILTERS & DISCOVERY CONTROLS
+   6. FILTERS & DISCOVERY CONTROLS
    ========================================== */
 .controls-section {
     display: flex;
@@ -444,7 +442,7 @@ body {
 }
 
 /* ==========================================
-   8. RUNNING CONTENT ARTICLES, PLAN GRID & NEWS
+   7. RUNNING CONTENT ARTICLES, PLAN GRID & NEWS
    ========================================== */
 .content-section {
     background-color: #ffffff;
@@ -616,7 +614,7 @@ body {
 }
 
 /* ==========================================
-   9. FOOTER SECTION STYLING
+   8. FOOTER SECTION STYLING
    ========================================== */
 .custom-footer {
     background-color: #0b2f4c;
@@ -731,7 +729,7 @@ body {
 }
 
 /* ==========================================
-   10. FIXED CONTACT FAB FLOATING BUTTON
+   9. FIXED CONTACT FAB FLOATING BUTTON
    ========================================== */
 .fab-btn {
     position: fixed;
@@ -758,7 +756,7 @@ body {
 }
 
 /* ==========================================
-   11. DESKTOP GRID & RESPONSIVE LAYOUT FIXES
+   10. DESKTOP GRID & RESPONSIVE LAYOUT FIXES
    ========================================== */
 @media (min-width: 992px) {
     .menu-toggle {
@@ -835,7 +833,7 @@ body {
 }
 
 /* ==========================================
-   12. LANGUAGE SELECTOR DROPDOWN STYLES
+   11. LANGUAGE SELECTOR DROPDOWN STYLES
    ========================================== */
 .lang-selector {
     position: relative;
@@ -893,7 +891,7 @@ body {
 }
 
 /* ==========================================
-   13. MEMBERSHIP FORM & MODAL STYLING
+   12. MEMBERSHIP FORM STYLING
    ========================================== */
 .form-container {
     background: #ffffff;
@@ -974,58 +972,13 @@ body {
     background-color: #007bff;
 }
 
-/* Styling for the modal background */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
-}
-
-/* Modal Content Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 20px;
-    width: 90%;
-    max-width: 700px;
-    border-radius: 8px;
-    position: relative;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-/* Close Button ("X") Style */
-.close-btn {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    z-index: 10;
-}
-
-.close-btn:hover,
-.close-btn:focus {
-    color: #000;
-    text-decoration: none;
-}
-
 @media (max-width: 600px) {
     .form-row {
         grid-template-columns: 1fr;
     }
 }
-
-/* ==========================================
-   14. FULL WIDTH MAP & FLOATING OVERLAY CARD
+//* ==========================================
+   13. FULL WIDTH MAP & FLOATING OVERLAY CARD
    ========================================== */
 .contact-map-wrapper,
 #contact-us.contact-map-wrapper {
@@ -1096,3 +1049,4 @@ body {
     padding: 15px 18px;
   }
 }
+
