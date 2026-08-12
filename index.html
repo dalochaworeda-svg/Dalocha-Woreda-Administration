@@ -837,18 +837,21 @@
       changeSlide(1);
   }, 5000);
 
-  // 2. Global Translation Function
+ // 2. Global Translation Function
   function setLanguage(lang) {
       const elements = document.querySelectorAll('[data-am][data-en]');
 
       elements.forEach(el => {
-          const translation = el.getAttribute(`data-${lang}`);
-          if (!translation) return;
-
           if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-              el.placeholder = translation;
+              const placeholderTranslation = el.getAttribute(`data-placeholder-${lang}`);
+              if (placeholderTranslation) {
+                  el.placeholder = placeholderTranslation;
+              }
               return;
           }
+
+          const translation = el.getAttribute(`data-${lang}`);
+          if (!translation) return;
 
           const icon = el.querySelector('i, svg');
           if (icon) {
