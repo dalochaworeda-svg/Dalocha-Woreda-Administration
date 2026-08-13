@@ -5,9 +5,7 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
         Dalocha Woreda Prosperity Party Membership Registration |
@@ -16,7 +14,7 @@
 
     <meta
         name="description"
-        content="Dalocha Woreda Prosperity Party membership registration service. Citizens can submit their membership registration information online."
+        content="Dalocha Woreda Prosperity Party membership registration service."
     >
 
     <link
@@ -32,10 +30,15 @@
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
+
     <style>
 
         * {
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -44,29 +47,33 @@
                 "Noto Sans Ethiopic",
                 Arial,
                 sans-serif;
+
             background:
                 linear-gradient(
                     135deg,
                     #f4f7fb,
                     #eef3f8
                 );
+
             color: #1e293b;
         }
 
+
         /* =========================
-           TOP GOVERNMENT BAR
+           TOP BAR
         ========================== */
 
         .top-bar {
-            background: #0b2f50;
+            background: #092841;
             color: white;
-            padding: 9px 20px;
+            padding: 10px 20px;
             text-align: center;
             font-size: 14px;
         }
 
+
         /* =========================
-           MAIN HEADER
+           HEADER
         ========================== */
 
         header {
@@ -76,98 +83,187 @@
                     #123c69,
                     #185a8a
                 );
+
             color: white;
-            padding: 38px 20px;
+
+            padding: 42px 20px;
+
             text-align: center;
+
             position: relative;
+
             overflow: hidden;
         }
 
+
         header::before {
             content: "";
+
             position: absolute;
-            width: 300px;
-            height: 300px;
+
+            width: 350px;
+            height: 350px;
+
             border-radius: 50%;
-            background: rgba(255,255,255,0.06);
-            top: -150px;
-            left: -80px;
+
+            background:
+                rgba(255,255,255,0.06);
+
+            top: -180px;
+            left: -100px;
         }
+
 
         header::after {
             content: "";
+
             position: absolute;
-            width: 250px;
-            height: 250px;
+
+            width: 300px;
+            height: 300px;
+
             border-radius: 50%;
-            background: rgba(255,255,255,0.05);
-            bottom: -150px;
-            right: -70px;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            bottom: -180px;
+            right: -100px;
         }
+
 
         .header-content {
             position: relative;
             z-index: 2;
-            max-width: 1000px;
+
+            max-width: 1050px;
+
             margin: auto;
         }
 
+
         /* =========================
-           PROSPERITY PARTY BADGE
+           ETHIOPIA GOVERNMENT BADGE
         ========================== */
 
         .party-badge {
             display: inline-flex;
+
             align-items: center;
-            gap: 10px;
-            background: rgba(255,255,255,0.14);
-            border: 1px solid rgba(255,255,255,0.25);
-            padding: 9px 18px;
-            border-radius: 30px;
-            margin-bottom: 18px;
-            font-size: 15px;
-            font-weight: 600;
-            backdrop-filter: blur(5px);
+            justify-content: center;
+
+            gap: 14px;
+
+            background:
+                rgba(255,255,255,0.13);
+
+            border:
+                1px solid rgba(255,255,255,0.28);
+
+            padding: 12px 22px;
+
+            border-radius: 15px;
+
+            color: white;
+
+            box-shadow:
+                0 6px 22px
+                rgba(0,0,0,0.08);
+
+            backdrop-filter: blur(8px);
+
+            text-align: left;
+
+            margin-bottom: 22px;
         }
 
-        .party-dot {
-            width: 12px;
-            height: 12px;
-            background: #f6c344;
+
+        .ethiopia-flag {
+            font-size: 38px;
+
+            width: 52px;
+            height: 52px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background:
+                rgba(255,255,255,0.12);
+
             border-radius: 50%;
-            box-shadow: 0 0 10px rgba(246,195,68,0.7);
+
+            flex-shrink: 0;
         }
+
+
+        .government-text {
+            line-height: 1.5;
+
+            font-size: 13px;
+        }
+
+
+        .government-text strong {
+            font-size: 14px;
+
+            font-weight: 800;
+        }
+
+
+        .government-text span {
+            font-size: 12px;
+
+            opacity: 0.95;
+        }
+
 
         /* =========================
-           TITLE
+           DALLOCHA TITLE
         ========================== */
 
         header h1 {
             margin: 0;
-            font-size: 38px;
+
+            font-size: 42px;
+
             font-weight: 800;
+
             letter-spacing: 0.3px;
         }
 
+
         .amharic-title {
             display: block;
+
             margin-top: 8px;
+
             font-size: 28px;
+
             font-weight: 700;
         }
 
+
         .header-subtitle {
-            margin-top: 18px;
+            margin-top: 20px;
+
             font-size: 21px;
-            font-weight: 500;
+
+            font-weight: 600;
         }
+
 
         .header-subtitle-am {
             display: block;
-            margin-top: 6px;
+
+            margin-top: 8px;
+
             font-size: 17px;
+
             opacity: 0.95;
         }
+
 
         /* =========================
            NAVIGATION
@@ -175,177 +271,276 @@
 
         nav {
             background: #092841;
+
             display: flex;
+
             justify-content: center;
+
             flex-wrap: wrap;
-            gap: 5px;
+
+            gap: 6px;
+
             padding: 10px;
         }
 
+
         nav a {
             color: white;
+
             text-decoration: none;
+
             padding: 11px 18px;
+
             border-radius: 7px;
+
             transition: 0.25s;
+
             font-size: 14px;
         }
+
 
         nav a:hover {
             background: #185a8a;
         }
 
+
         /* =========================
-           CONTAINER
+           MAIN CONTAINER
         ========================== */
 
         .container {
             width: 94%;
+
             max-width: 1100px;
+
             margin: 35px auto;
         }
 
+
         /* =========================
-           HERO CARD
+           HERO
         ========================== */
 
         .hero {
             background: white;
-            border-radius: 16px;
-            padding: 35px;
+
+            border-radius: 18px;
+
+            padding: 38px;
+
             text-align: center;
+
             box-shadow:
-                0 8px 30px rgba(15, 23, 42, 0.08);
-            border-top: 5px solid #123c69;
+                0 8px 30px
+                rgba(15,23,42,0.08);
+
+            border-top:
+                5px solid #123c69;
+
             margin-bottom: 25px;
         }
 
+
         .hero h2 {
             color: #123c69;
+
             margin-top: 0;
-            font-size: 27px;
+
+            font-size: 29px;
         }
 
+
         .hero p {
-            max-width: 800px;
+            max-width: 850px;
+
             margin: 12px auto;
-            line-height: 1.8;
+
+            line-height: 1.9;
+
             color: #475569;
         }
 
+
         /* =========================
-           PARTY INFORMATION CARD
+           PARTY INFORMATION
         ========================== */
 
         .party-card {
             display: grid;
+
             grid-template-columns: 90px 1fr;
+
             gap: 20px;
+
             align-items: center;
-            background: linear-gradient(
-                135deg,
-                #ffffff,
-                #f8fafc
-            );
-            border-radius: 15px;
-            padding: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #f8fafc
+                );
+
+            border-radius: 16px;
+
+            padding: 27px;
+
             margin-bottom: 25px;
+
             box-shadow:
-                0 6px 25px rgba(15,23,42,0.07);
-            border-left: 6px solid #f6c344;
+                0 6px 25px
+                rgba(15,23,42,0.07);
+
+            border-left:
+                6px solid #f6c344;
         }
+
 
         .party-icon {
-            width: 75px;
-            height: 75px;
+            width: 78px;
+            height: 78px;
+
             border-radius: 50%;
+
             display: flex;
+
             align-items: center;
             justify-content: center;
+
             background: #123c69;
+
             color: #f6c344;
-            font-size: 34px;
+
+            font-size: 36px;
+
             font-weight: bold;
+
+            box-shadow:
+                0 5px 15px
+                rgba(18,60,105,0.18);
         }
+
 
         .party-card h2 {
-            margin: 0 0 7px;
+            margin: 0 0 8px;
+
             color: #123c69;
+
+            font-size: 25px;
         }
+
 
         .party-card p {
-            margin: 4px 0;
+            margin: 5px 0;
+
             color: #475569;
+
+            line-height: 1.7;
         }
 
+
         /* =========================
-           FORM SECTION
+           FORM
         ========================== */
 
         .form-container {
             background: white;
-            border-radius: 16px;
-            padding: 35px;
+
+            border-radius: 18px;
+
+            padding: 38px;
+
             box-shadow:
-                0 8px 30px rgba(15,23,42,0.08);
+                0 8px 30px
+                rgba(15,23,42,0.08);
         }
+
 
         .form-container h2 {
             color: #123c69;
+
             margin-top: 0;
-            font-size: 26px;
+
+            font-size: 27px;
         }
+
 
         .form-description {
             color: #64748b;
-            line-height: 1.7;
+
+            line-height: 1.8;
+
+            margin-bottom: 25px;
         }
+
 
         .form-row {
             display: grid;
+
             grid-template-columns:
                 repeat(2, 1fr);
+
             gap: 20px;
         }
+
 
         .form-group {
             margin-top: 18px;
         }
 
+
         label {
             display: block;
+
             font-weight: 700;
-            margin-bottom: 7px;
+
+            margin-bottom: 8px;
+
             color: #334155;
         }
+
 
         input,
         select,
         textarea {
             width: 100%;
+
             padding: 13px 14px;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
+
+            border:
+                1px solid #cbd5e1;
+
+            border-radius: 9px;
+
             font-size: 15px;
+
             font-family: inherit;
-            background: #fff;
+
+            background: white;
+
             transition: 0.2s;
         }
+
 
         input:focus,
         select:focus,
         textarea:focus {
             outline: none;
+
             border-color: #123c69;
+
             box-shadow:
                 0 0 0 3px
                 rgba(18,60,105,0.10);
         }
 
+
         textarea {
             resize: vertical;
-            min-height: 110px;
+
+            min-height: 115px;
         }
+
 
         /* =========================
            RADIO
@@ -353,50 +548,76 @@
 
         .radio-group {
             display: flex;
+
             gap: 25px;
+
             padding: 10px 0;
         }
 
+
         .radio-group label {
             display: flex;
+
             align-items: center;
+
             gap: 7px;
+
             font-weight: 500;
+
+            margin: 0;
         }
+
 
         .radio-group input {
             width: auto;
         }
 
+
         /* =========================
-           SUBMIT BUTTON
+           SUBMIT
         ========================== */
 
         .submit-btn {
             width: 100%;
+
             background:
                 linear-gradient(
                     135deg,
                     #123c69,
                     #185a8a
                 );
+
             color: white;
+
             border: none;
-            padding: 15px;
-            margin-top: 25px;
-            border-radius: 8px;
+
+            padding: 16px;
+
+            margin-top: 27px;
+
+            border-radius: 9px;
+
             font-size: 17px;
+
             font-weight: 700;
+
             cursor: pointer;
+
             transition: 0.25s;
+
+            font-family: inherit;
         }
 
+
         .submit-btn:hover {
-            transform: translateY(-2px);
+            transform:
+                translateY(-2px);
+
             box-shadow:
                 0 7px 18px
                 rgba(18,60,105,0.25);
         }
+
 
         /* =========================
            FOOTER
@@ -404,20 +625,30 @@
 
         footer {
             background: #092841;
+
             color: white;
+
             text-align: center;
-            padding: 30px 20px;
+
+            padding: 32px 20px;
+
             margin-top: 45px;
         }
+
 
         footer strong {
             font-size: 19px;
         }
 
+
         footer p {
-            margin: 7px 0;
+            margin: 8px 0;
+
             opacity: 0.9;
+
+            line-height: 1.6;
         }
+
 
         /* =========================
            MOBILE
@@ -425,40 +656,116 @@
 
         @media (max-width: 700px) {
 
-            header h1 {
-                font-size: 28px;
+            .top-bar {
+                font-size: 12px;
             }
+
+
+            header {
+                padding: 30px 15px;
+            }
+
+
+            header h1 {
+                font-size: 29px;
+            }
+
 
             .amharic-title {
                 font-size: 22px;
             }
 
+
             .header-subtitle {
                 font-size: 17px;
             }
 
+
+            .header-subtitle-am {
+                font-size: 14px;
+            }
+
+
+            .government-badge {
+                width: 100%;
+
+                max-width: 450px;
+
+                padding: 10px 14px;
+            }
+
+
+            .ethiopia-flag {
+                font-size: 30px;
+
+                width: 45px;
+                height: 45px;
+            }
+
+
+            .government-text {
+                font-size: 11px;
+            }
+
+
+            .government-text strong {
+                font-size: 12px;
+            }
+
+
+            .government-text span {
+                font-size: 10px;
+            }
+
+
+            nav a {
+                padding: 9px 11px;
+
+                font-size: 12px;
+            }
+
+
             .form-row {
                 grid-template-columns: 1fr;
+
                 gap: 0;
             }
 
+
             .party-card {
                 grid-template-columns: 1fr;
+
                 text-align: center;
             }
+
 
             .party-icon {
                 margin: auto;
             }
 
+
             .hero,
             .form-container {
-                padding: 22px;
+                padding: 23px;
             }
 
-            nav a {
-                padding: 9px 12px;
+
+            .hero h2 {
+                font-size: 23px;
             }
+
+
+            .form-container h2 {
+                font-size: 23px;
+            }
+
+
+            .radio-group {
+                flex-direction: column;
+
+                gap: 8px;
+            }
+
         }
 
     </style>
@@ -468,34 +775,56 @@
 
 <body>
 
-    <!-- TOP BAR -->
+
+    <!-- =========================
+         TOP GOVERNMENT BAR
+    ========================== -->
 
     <div class="top-bar">
 
-        Dalocha Woreda Administration |
+        Dalocha Woreda Administration
+        |
         የዳሎቻ ወረዳ አስተዳደር
 
     </div>
 
 
-    <!-- HEADER -->
+    <!-- =========================
+         HEADER
+    ========================== -->
 
     <header>
 
         <div class="header-content">
 
-            <div class="party-badge">
 
-                <span class="party-dot"></span>
+            <!-- ETHIOPIA -->
 
-                Prosperity Party
+            <div class="party-badge government-badge">
 
-                <span>
-                    የብልፅግና ፓርቲ
+                <span class="ethiopia-flag">
+                    🇪🇹
+                </span>
+
+                <span class="government-text">
+
+                    <strong>
+                        Federal Democratic Republic of Ethiopia
+                    </strong>
+
+                    <br>
+
+                    <span>
+                        የኢትዮጵያ ፌዴራላዊ
+                        ዲሞክራሲያዊ ሪፐብሊክ
+                    </span>
+
                 </span>
 
             </div>
 
+
+            <!-- DALLOCHA -->
 
             <h1>
 
@@ -508,6 +837,8 @@
             </h1>
 
 
+            <!-- PROSPERITY PARTY -->
+
             <div class="header-subtitle">
 
                 Prosperity Party Membership
@@ -516,7 +847,8 @@
                 <span class="header-subtitle-am">
 
                     የብልፅግና ፓርቲ
-                    አባልነት መመዝገቢያ አገልግሎት
+                    አባልነት መመዝገቢያ
+                    አገልግሎት
 
                 </span>
 
@@ -527,7 +859,9 @@
     </header>
 
 
-    <!-- NAVIGATION -->
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
     <nav>
 
@@ -545,6 +879,10 @@
 
     </nav>
 
+
+    <!-- =========================
+         MAIN
+    ========================== -->
 
     <main class="container">
 
@@ -582,15 +920,17 @@
                 ወደ ዳሎቻ ወረዳ
                 የብልፅግና ፓርቲ
                 አባልነት መመዝገቢያ
-                አገልግሎት እንኳን በደህና
-                መጡ።
+                አገልግሎት
+                እንኳን በደህና መጡ።
 
             </p>
 
         </section>
 
 
-        <!-- PARTY INFORMATION -->
+        <!-- =========================
+             PARTY INFORMATION
+        ========================== -->
 
         <section
             class="party-card"
@@ -600,29 +940,32 @@
                 ★
             </div>
 
+
             <div>
 
                 <h2>
 
                     Prosperity Party
-
-                    <span>
-                        የብልፅግና ፓርቲ
-                    </span>
+                    |
+                    የብልፅግና ፓርቲ
 
                 </h2>
+
 
                 <p>
 
                     Dalocha Woreda Prosperity Party
-                    Membership Registration Service
+                    Membership Registration Service.
 
                 </p>
 
+
                 <p>
 
-                    የዳሎቻ ወረዳ የብልፅግና ፓርቲ
-                    አባልነት መመዝገቢያ አገልግሎት
+                    የዳሎቻ ወረዳ
+                    የብልፅግና ፓርቲ
+                    አባልነት መመዝገቢያ
+                    አገልግሎት።
 
                 </p>
 
@@ -631,11 +974,14 @@
         </section>
 
 
-        <!-- REGISTRATION FORM -->
+        <!-- =========================
+             REGISTRATION FORM
+        ========================== -->
 
         <section
             class="form-container"
             id="register">
+
 
             <h2>
 
@@ -663,14 +1009,17 @@
             </p>
 
 
-            <!-- YOUR EXISTING FORMSPREE FORM -->
+            <!-- FORMSPREE FORM -->
 
             <form
                 action="https://formspree.io/f/xaewwlde"
                 method="POST">
 
 
+                <!-- FULL NAME + EMAIL -->
+
                 <div class="form-row">
+
 
                     <div class="form-group">
 
@@ -680,6 +1029,7 @@
                             ሙሉ ስም *
 
                         </label>
+
 
                         <input
                             type="text"
@@ -701,6 +1051,7 @@
 
                         </label>
 
+
                         <input
                             type="email"
                             id="email"
@@ -713,7 +1064,10 @@
                 </div>
 
 
+                <!-- GENDER + PHONE -->
+
                 <div class="form-row">
+
 
                     <div class="form-group">
 
@@ -723,7 +1077,9 @@
 
                         </label>
 
+
                         <div class="radio-group">
+
 
                             <label>
 
@@ -749,6 +1105,7 @@
 
                             </label>
 
+
                         </div>
 
                     </div>
@@ -763,11 +1120,13 @@
 
                         </label>
 
+
                         <input
                             type="tel"
                             id="phone"
                             name="phone"
                             pattern="(\+251|0)[97]\d{8}"
+                            title="Please enter a valid Ethiopian phone number"
                             placeholder="09... ወይም +2519..."
                             required>
 
@@ -776,7 +1135,10 @@
                 </div>
 
 
+                <!-- EDUCATION + OCCUPATION -->
+
                 <div class="form-row">
+
 
                     <div class="form-group">
 
@@ -787,10 +1149,12 @@
 
                         </label>
 
+
                         <select
                             id="education"
                             name="education"
                             required>
+
 
                             <option
                                 value=""
@@ -801,33 +1165,61 @@
 
                             </option>
 
+
                             <option value="Primary">
-                                Primary / መሰረታዊ
+
+                                Primary /
+                                መሰረታዊ
+
                             </option>
+
 
                             <option value="HighSchool">
-                                High School / ሁለተኛ ደረጃ
+
+                                High School /
+                                ሁለተኛ ደረጃ
+
                             </option>
+
 
                             <option value="TVET">
-                                Diploma / ዲፕሎማ
+
+                                Diploma /
+                                ዲፕሎማ
+
                             </option>
+
 
                             <option value="Bachelor">
-                                Bachelor's Degree / የመጀመሪያ ዲግሪ
+
+                                Bachelor's Degree /
+                                የመጀመሪያ ዲግሪ
+
                             </option>
+
 
                             <option value="Master">
-                                Master's Degree / ማስተርስ
+
+                                Master's Degree /
+                                ማስተርስ
+
                             </option>
+
 
                             <option value="PhD">
-                                Doctorate / ዶክተሬት
+
+                                Doctorate /
+                                ዶክተሬት
+
                             </option>
 
+
                             <option value="Other">
+
                                 Other / ሌላ
+
                             </option>
+
 
                         </select>
 
@@ -843,6 +1235,7 @@
 
                         </label>
 
+
                         <input
                             type="text"
                             id="occupation"
@@ -854,7 +1247,10 @@
                 </div>
 
 
+                <!-- CITY + WOREDA -->
+
                 <div class="form-row">
+
 
                     <div class="form-group">
 
@@ -864,6 +1260,7 @@
                             ከተማ / ቀበሌ *
 
                         </label>
+
 
                         <input
                             type="text"
@@ -883,6 +1280,7 @@
 
                         </label>
 
+
                         <input
                             type="text"
                             id="woreda"
@@ -895,6 +1293,8 @@
                 </div>
 
 
+                <!-- MESSAGE -->
+
                 <div class="form-group">
 
                     <label for="formMessage">
@@ -903,6 +1303,7 @@
                         ተጨማሪ መልዕክት
 
                     </label>
+
 
                     <textarea
                         id="formMessage"
@@ -920,27 +1321,35 @@
                     class="submit-btn">
 
                     Submit Membership Application
-                    / የአባልነት ማመልከቻ አስገባ
+                    /
+                    የአባልነት ማመልከቻ አስገባ
 
                 </button>
+
 
             </form>
 
         </section>
 
+
     </main>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer>
 
+
         <strong>
 
-            Dalocha Woreda |
+            Dalocha Woreda
+            |
             ዳሎቻ ወረዳ
 
         </strong>
+
 
         <p>
 
@@ -949,12 +1358,15 @@
 
         </p>
 
+
         <p>
 
             የብልፅግና ፓርቲ
-            አባልነት መመዝገቢያ አገልግሎት
+            አባልነት መመዝገቢያ
+            አገልግሎት
 
         </p>
+
 
         <p>
 
@@ -963,7 +1375,9 @@
 
         </p>
 
+
     </footer>
+
 
 </body>
 
