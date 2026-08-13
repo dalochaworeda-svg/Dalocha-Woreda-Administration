@@ -1158,3 +1158,124 @@ body {
     font-size: 11px;
   }
 }
+
+/* ================================
+   SERVICES DROPDOWN
+================================ */
+
+.dropdown-menu {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    max-width: 100%;
+    background: #092841;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Each service */
+.dropdown-menu li {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* White service card */
+.dropdown-menu .service-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+    max-width: 100%;
+
+    padding: 15px;
+    margin: 6px 0;
+
+    background: #ffffff;
+    color: #123c69;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    transition: all 0.25s ease;
+}
+
+/* Icon */
+.dropdown-menu .service-icon {
+    flex: 0 0 42px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #123c69;
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 21px;
+}
+
+/* Text */
+.dropdown-menu .service-link strong {
+    flex: 1;
+    min-width: 0;
+
+    color: #123c69;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+/* Hover */
+.dropdown-menu .service-link:hover {
+    background: #f1f7fb;
+
+    transform: translateX(3px);
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 700px) {
+
+    .dropdown-menu {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .dropdown-menu .service-link {
+        padding: 12px;
+    }
+
+    .dropdown-menu .service-icon {
+        flex: 0 0 36px;
+
+        width: 36px;
+        height: 36px;
+
+        font-size: 18px;
+    }
+
+    .dropdown-menu .service-link strong {
+        font-size: 13px;
+    }
+}
