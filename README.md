@@ -1,4 +1,4 @@
-# Dalocha-Woreda-Administration
+#Dalocha-Woreda-Administration
 Dalocha Woreda Administration
 የዳሎቻ ወረዳ አስተዳደር
 መልካም አስተዳደርን ማስፈን: በወረዳው ውስጥ ግልጽነትን፣ ተጠያቂነትን እና ፍትሃዊ የአገልግሎት አሰጣጥ ሥርዓትን በማስፈን የህብረተሰቡን የመልካም አስተዳደር ጥያቄዎች መመለስ።
