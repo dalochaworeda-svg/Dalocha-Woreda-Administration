@@ -23,8 +23,6 @@
       color: #1e293b;
     }
 
-    /* HEADER */
-
     header {
       background: #123c69;
       color: white;
@@ -47,8 +45,6 @@
       margin-top: 6px;
     }
 
-    /* NAVIGATION */
-
     nav {
       background: #0b2f50;
       display: flex;
@@ -70,15 +66,11 @@
       background: #1d5d91;
     }
 
-    /* CONTAINER */
-
     .container {
       width: 94%;
       max-width: 1150px;
       margin: 30px auto;
     }
-
-    /* BACK BUTTON */
 
     .back-home {
       display: inline-block;
@@ -94,9 +86,8 @@
       background: #0b2f50;
     }
 
-    /* WELCOME */
-
-    .welcome {
+    .welcome,
+    .section {
       background: white;
       padding: 30px;
       border-radius: 10px;
@@ -104,12 +95,15 @@
       margin-bottom: 25px;
     }
 
-    .welcome h2 {
+    .welcome h2,
+    .section h2 {
       color: #123c69;
-      margin-top: 0;
     }
 
-    /* CARDS */
+    .section h2 {
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 12px;
+    }
 
     .cards {
       display: grid;
@@ -138,24 +132,6 @@
       margin-bottom: 10px;
     }
 
-    /* SECTIONS */
-
-    .section {
-      background: white;
-      padding: 28px;
-      margin: 25px 0;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-    }
-
-    .section h2 {
-      color: #123c69;
-      border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 12px;
-    }
-
-    /* WORKFLOW */
-
     .workflow {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
@@ -175,8 +151,6 @@
       display: block;
       margin-bottom: 8px;
     }
-
-    /* FORMS */
 
     label {
       display: block;
@@ -208,8 +182,6 @@
       box-shadow: 0 0 0 2px rgba(18,60,105,0.1);
     }
 
-    /* BUTTONS */
-
     button {
       border: none;
       padding: 12px 22px;
@@ -218,6 +190,11 @@
       font-size: 15px;
       cursor: pointer;
       margin-top: 20px;
+    }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
     }
 
     .btn-primary {
@@ -245,8 +222,6 @@
       background: #bb2d3b;
     }
 
-    /* STATUS */
-
     .status {
       display: inline-block;
       padding: 7px 13px;
@@ -266,8 +241,6 @@
       color: #842029;
     }
 
-    /* RESULT */
-
     .result {
       display: none;
       margin-top: 20px;
@@ -278,12 +251,27 @@
       border-left: 5px solid #198754;
     }
 
-    /* TABLE */
+    .error-result {
+      background: #f8d7da !important;
+      color: #842029 !important;
+      border-left-color: #dc3545 !important;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 20px;
+      color: #64748b;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
 
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
+      min-width: 750px;
     }
 
     th,
@@ -301,8 +289,6 @@
     tr:nth-child(even) {
       background: #f8fafc;
     }
-
-    /* CERTIFICATE */
 
     #certificate {
       display: none;
@@ -343,8 +329,6 @@
       margin-bottom: 25px;
     }
 
-    /* FOOTER */
-
     footer {
       background: #0b2f50;
       color: white;
@@ -353,7 +337,14 @@
       margin-top: 40px;
     }
 
-    /* MOBILE */
+    .notice {
+      background: #fff3cd;
+      color: #664d03;
+      border-left: 5px solid #ffc107;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 15px;
+    }
 
     @media (max-width: 650px) {
 
@@ -382,9 +373,11 @@
         margin-left: 0;
       }
 
+      .section,
+      .welcome {
+        padding: 20px;
+      }
     }
-
-    /* PRINT */
 
     @media print {
 
@@ -408,7 +401,6 @@
       .print-button {
         display: none;
       }
-
     }
 
   </style>
@@ -416,8 +408,6 @@
 
 
 <body>
-
-<!-- HEADER -->
 
 <header>
 
@@ -435,8 +425,6 @@
 
 </header>
 
-
-<!-- NAVIGATION -->
 
 <nav>
 
@@ -466,8 +454,6 @@
   </a>
 
 
-  <!-- WELCOME -->
-
   <section class="welcome">
 
     <h2>
@@ -490,8 +476,6 @@
   </section>
 
 
-  <!-- CERTIFICATE TYPES -->
-
   <section class="section">
 
     <h2>
@@ -502,70 +486,41 @@
     <div class="cards">
 
       <div class="card">
-
         <div class="card-icon">👶</div>
-
-        <h3>
-          Birth Certificate
-        </h3>
-
+        <h3>Birth Certificate</h3>
         <span class="am">
           የልደት ምስክር ወረቀት
         </span>
-
       </div>
 
-
       <div class="card">
-
         <div class="card-icon">💍</div>
-
-        <h3>
-          Marriage Certificate
-        </h3>
-
+        <h3>Marriage Certificate</h3>
         <span class="am">
           የጋብቻ ምስክር ወረቀት
         </span>
-
       </div>
 
-
       <div class="card">
-
         <div class="card-icon">📄</div>
-
-        <h3>
-          Divorce Certificate
-        </h3>
-
+        <h3>Divorce Certificate</h3>
         <span class="am">
           የፍቺ ምስክር ወረቀት
         </span>
-
       </div>
 
-
       <div class="card">
-
         <div class="card-icon">🕊️</div>
-
-        <h3>
-          Death Certificate
-        </h3>
-
+        <h3>Death Certificate</h3>
         <span class="am">
           የሞት ምስክር ወረቀት
         </span>
-
       </div>
 
     </div>
 
   </section>
 
-
-  <!-- WORKFLOW -->
 
   <section class="section">
 
@@ -579,7 +534,6 @@
     <div class="workflow">
 
       <div class="workflow-step">
-
         <strong>
           1. Applicant
           <span class="am">1. አመልካች</span>
@@ -592,12 +546,10 @@
         <p class="am">
           አመልካቹ የምስክር ወረቀት ጥያቄ ያቀርባል።
         </p>
-
       </div>
 
 
       <div class="workflow-step">
-
         <strong>
           2. Review
           <span class="am">2. ግምገማ</span>
@@ -610,12 +562,10 @@
         <p class="am">
           ሥልጣን ያለው ባለሙያ ጥያቄውን ይመረምራል።
         </p>
-
       </div>
 
 
       <div class="workflow-step">
-
         <strong>
           3. Decision
           <span class="am">3. ውሳኔ</span>
@@ -628,12 +578,10 @@
         <p class="am">
           ባለሙያው ጥያቄውን ያጸድቃል ወይም ውድቅ ያደርጋል።
         </p>
-
       </div>
 
 
       <div class="workflow-step">
-
         <strong>
           4. Certificate
           <span class="am">4. ምስክር ወረቀት</span>
@@ -646,7 +594,6 @@
         <p class="am">
           የጸደቀው ምስክር ወረቀት ይዘጋጃል።
         </p>
-
       </div>
 
     </div>
@@ -769,7 +716,7 @@
       <input type="file" id="document">
 
 
-      <button type="submit" class="btn-primary">
+      <button type="submit" class="btn-primary" id="submitButton">
         Submit Request / ጥያቄ አቅርብ
       </button>
 
@@ -836,6 +783,7 @@
 
     <button
       class="btn-primary"
+      id="statusButton"
       onclick="checkStatus()"
     >
       Check Status / ሁኔታ ይመልከቱ
@@ -869,53 +817,69 @@
       ሥልጣን ያላቸው የዳሎቻ ወረዳ ባለሙያዎች ብቻ ናቸው።
     </p>
 
-
-    <table>
-
-      <thead>
-
-        <tr>
-
-          <th>
-            Request No.
-            <br>
-            የጥያቄ ቁጥር
-          </th>
-
-          <th>
-            Applicant
-            <br>
-            አመልካች
-          </th>
-
-          <th>
-            Certificate
-            <br>
-            ምስክር ወረቀት
-          </th>
-
-          <th>
-            Status
-            <br>
-            ሁኔታ
-          </th>
-
-          <th>
-            Action
-            <br>
-            ተግባር
-          </th>
-
-        </tr>
-
-      </thead>
+    <div class="notice">
+      <strong>Important:</strong>
+      Officer approval should eventually be protected by
+      Supabase Authentication and officer-specific RLS policies.
+    </div>
 
 
-      <tbody id="approvalTable">
+    <div class="table-wrapper">
 
-      </tbody>
+      <table>
 
-    </table>
+        <thead>
+
+          <tr>
+
+            <th>
+              Request No.
+              <br>
+              የጥያቄ ቁጥር
+            </th>
+
+            <th>
+              Applicant
+              <br>
+              አመልካች
+            </th>
+
+            <th>
+              Certificate
+              <br>
+              ምስክር ወረቀት
+            </th>
+
+            <th>
+              Status
+              <br>
+              ሁኔታ
+            </th>
+
+            <th>
+              Action
+              <br>
+              ተግባር
+            </th>
+
+          </tr>
+
+        </thead>
+
+
+        <tbody id="approvalTable">
+
+          <tr>
+            <td colspan="5" class="loading">
+              Loading applications...
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
 
   </section>
 
@@ -1005,8 +969,6 @@
 </div>
 
 
-<!-- FOOTER -->
-
 <footer>
 
   <strong>
@@ -1029,224 +991,383 @@
   </p>
 
 </footer>
+
+
+<!-- SUPABASE -->
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 
 <script>
 
+/* =========================================================
+   SUPABASE CONNECTION
+   ========================================================= */
+
 const SUPABASE_URL =
-  "https://wkfbfvlcqtkhdzmjwuwz.supabase.co";
+  ""https://wkfbfvlcqtkhdzmjwuwz.supabase.co";
+
+
+/*
+ * PASTE YOUR SUPABASE PUBLISHABLE KEY BELOW.
+ *
+ * It should start with:
+ *
+ * sb_publishable_
+ *
+ */
 
 const SUPABASE_ANON_KEY =
   "sb_publishable_ZHncljggLa4d_sldRlO9CQ_WAkynyw0";
 
+
 const db = supabase.createClient(
   SUPABASE_URL,
-    SUPABASE_ANON_KEY
+  SUPABASE_ANON_KEY
 );
 
-  /* =========================================================
-     APPLICATION DATA
-     ========================================================= */
 
-  let applications = [];
+/* =========================================================
+   APPLICATION DATA
+   ========================================================= */
+
+let applications = [];
 
 
-  /* =========================================================
-     LOAD APPLICATIONS FROM SUPABASE
-     ========================================================= */
+/* =========================================================
+   GENERATE REQUEST NUMBER
+   ========================================================= */
 
-  async function loadApplications() {
+async function generateRequestNumber() {
 
-    const { data, error } = await db
-      .from("applications")
-      .select("*")
-      .order("submitted_date", { ascending: false });
+  const { count, error } = await db
+    .from("applications")
+    .select("*", {
+      count: "exact",
+      head: true
+    });
 
-    if (error) {
+  if (error) {
 
-      console.error("Load applications error:", error);
+    console.error(
+      "Request number error:",
+      error
+    );
 
-      alert(
-        "Could not load applications.\n" +
-        "ማመልከቻዎችን መጫን አልተቻለም።"
-      );
+    /*
+     * Fallback number.
+     */
 
-      return;
-    }
+    return "DW-" + Date.now();
+  }
 
-    applications = data || [];
+  const number =
+    String((count || 0) + 1).padStart(4, "0");
 
-    loadApprovalTable();
+  return "DW-" + number;
+}
+
+
+/* =========================================================
+   LOAD APPLICATIONS
+   ========================================================= */
+
+async function loadApplications() {
+
+  const table =
+    document.getElementById("approvalTable");
+
+  table.innerHTML = `
+    <tr>
+      <td colspan="5" class="loading">
+        Loading applications...
+      </td>
+    </tr>
+  `;
+
+
+  const { data, error } = await db
+    .from("applications")
+    .select("*")
+    .order("submitted_date", {
+      ascending: false
+    });
+
+
+  if (error) {
+
+    console.error(
+      "Load applications error:",
+      error
+    );
+
+    table.innerHTML = `
+      <tr>
+        <td colspan="5">
+          Could not load applications.
+          <br>
+          ${escapeHtml(error.message)}
+        </td>
+      </tr>
+    `;
+
+    return;
   }
 
 
-  /* =========================================================
-     GENERATE REQUEST NUMBER
-     ========================================================= */
+  applications = data || [];
 
-  async function generateRequestNumber() {
-
-    const { count, error } = await db
-      .from("applications")
-      .select("*", {
-        count: "exact",
-        head: true
-      });
-
-    if (error) {
-
-      console.error("Request number error:", error);
-
-      return "DW-" + Date.now();
-    }
-
-    return "DW-" +
-      String((count || 0) + 1).padStart(4, "0");
-  }
+  loadApprovalTable();
+}
 
 
-  /* =========================================================
-     SUBMIT REQUEST
-     ========================================================= */
+/* =========================================================
+   SUBMIT APPLICATION
+   ========================================================= */
 
-  document
-    .getElementById("requestForm")
-    .addEventListener("submit", async function(event) {
+document
+  .getElementById("requestForm")
+  .addEventListener(
+    "submit",
+    async function(event) {
 
       event.preventDefault();
 
 
-      const certificateType =
-        document
-          .getElementById("certificateType")
-          .value
-          .trim();
-
-
-      const fullName =
-        document
-          .getElementById("fullName")
-          .value
-          .trim();
-
-
-      const phone =
-        document
-          .getElementById("phone")
-          .value
-          .trim();
-
-
-      const idNumber =
-        document
-          .getElementById("idNumber")
-          .value
-          .trim();
-
-
-      const reason =
-        document
-          .getElementById("reason")
-          .value
-          .trim();
-
-
-      const requestNumber =
-        await generateRequestNumber();
-
-
-      const application = {
-
-        request_number: requestNumber,
-
-        certificate_type: certificateType,
-
-        full_name: fullName,
-
-        phone: phone,
-
-        id_number: idNumber,
-
-        reason: reason,
-
-        status: "Pending",
-
-        submitted_date:
-          new Date().toISOString()
-
-      };
-
-
-      /* INSERT INTO SUPABASE */
-
-      const { data, error } = await db
-        .from("applications")
-        .insert([application])
-        .select()
-        .single();
-
-
-      if (error) {
-
-        console.error("Submit error:", error);
-
-        alert(
-          "Failed to submit application.\n\n" +
-          error.message
+      const submitButton =
+        document.getElementById(
+          "submitButton"
         );
 
-        return;
+
+      submitButton.disabled = true;
+
+      submitButton.textContent =
+        "Submitting... / በመላክ ላይ...";
+
+
+      try {
+
+        const certificateType =
+          document
+            .getElementById(
+              "certificateType"
+            )
+            .value;
+
+
+        const fullName =
+          document
+            .getElementById("fullName")
+            .value
+            .trim();
+
+
+        const phone =
+          document
+            .getElementById("phone")
+            .value
+            .trim();
+
+
+        const idNumber =
+          document
+            .getElementById("idNumber")
+            .value
+            .trim();
+
+
+        const reason =
+          document
+            .getElementById("reason")
+            .value
+            .trim();
+
+
+        /*
+         * Generate request number.
+         */
+
+        const requestNumber =
+          await generateRequestNumber();
+
+
+        /*
+         * Create database record.
+         *
+         * These names MUST match your
+         * Supabase columns:
+         *
+         * request_number
+         * certificate_type
+         * full_name
+         * phone
+         * id_number
+         * reason
+         * status
+         * submitted_date
+         */
+
+        const application = {
+
+          request_number:
+            requestNumber,
+
+          certificate_type:
+            certificateType,
+
+          full_name:
+            fullName,
+
+          phone:
+            phone,
+
+          id_number:
+            idNumber,
+
+          reason:
+            reason,
+
+          status:
+            "Pending",
+
+          submitted_date:
+            new Date().toISOString()
+
+        };
+
+
+        /*
+         * INSERT INTO SUPABASE
+         */
+
+        const {
+          data,
+          error
+        } = await db
+          .from("applications")
+          .insert([application])
+          .select()
+          .single();
+
+
+        if (error) {
+
+          console.error(
+            "Submit error:",
+            error
+          );
+
+          showError(
+            document.getElementById(
+              "requestResult"
+            ),
+            "Application could not be submitted.<br>" +
+            escapeHtml(error.message)
+          );
+
+          return;
+        }
+
+
+        /*
+         * SUCCESS
+         */
+
+        document
+          .getElementById(
+            "generatedNumber"
+          )
+          .textContent =
+          data.request_number;
+
+
+        const result =
+          document.getElementById(
+            "requestResult"
+          );
+
+
+        result.classList.remove(
+          "error-result"
+        );
+
+
+        result.style.display =
+          "block";
+
+
+        document
+          .getElementById(
+            "requestForm"
+          )
+          .reset();
+
+
+        await loadApplications();
+
+
+        window.location.hash =
+          "request";
+
       }
 
+      catch (error) {
 
-      /* ADD TO LOCAL PAGE DATA */
+        console.error(error);
 
-      applications.unshift(data);
+        alert(
+          "Unexpected error occurred."
+        );
 
+      }
 
-      /* SHOW REQUEST NUMBER */
+      finally {
 
-      document
-        .getElementById("generatedNumber")
-        .textContent =
-        data.request_number;
+        submitButton.disabled =
+          false;
 
+        submitButton.textContent =
+          "Submit Request / ጥያቄ አቅርብ";
+      }
 
-      document
-        .getElementById("requestResult")
-        .style.display =
-        "block";
-
-
-      /* CLEAR FORM */
-
-      document
-        .getElementById("requestForm")
-        .reset();
+    }
+  );
 
 
-      loadApprovalTable();
+/* =========================================================
+   LOAD APPROVAL TABLE
+   ========================================================= */
+
+function loadApprovalTable() {
+
+  const table =
+    document.getElementById(
+      "approvalTable"
+    );
 
 
-      window.location.hash = "request";
-
-    });
+  table.innerHTML = "";
 
 
-  /* =========================================================
-     LOAD APPROVAL TABLE
-     ========================================================= */
+  if (!applications.length) {
 
-  function loadApprovalTable() {
+    table.innerHTML = `
+      <tr>
+        <td colspan="5">
+          No applications found.
+          <br>
+          ምንም ማመልከቻ አልተገኘም።
+        </td>
+      </tr>
+    `;
 
-    const table =
-      document.getElementById("approvalTable");
+    return;
+  }
 
 
-    table.innerHTML = "";
-
-
-    applications.forEach(function(app) {
+  applications.forEach(
+    function(app) {
 
       const row =
         document.createElement("tr");
@@ -1255,13 +1376,80 @@ const db = supabase.createClient(
       let statusClass = "";
 
 
-      if (app.status === "Approved") {
-        statusClass = "approved";
+      if (
+        app.status === "Approved"
+      ) {
+        statusClass =
+          "approved";
       }
 
 
-      if (app.status === "Rejected") {
-        statusClass = "rejected";
+      if (
+        app.status === "Rejected"
+      ) {
+        statusClass =
+          "rejected";
+      }
+
+
+      let actionHTML = "";
+
+
+      if (
+        app.status === "Pending"
+      ) {
+
+        actionHTML = `
+
+          <button
+            class="btn-success"
+            onclick="approveApplication('${escapeAttribute(app.request_number)}')"
+          >
+            Approve
+            <br>
+            አጽድቅ
+          </button>
+
+          <button
+            class="btn-danger"
+            onclick="rejectApplication('${escapeAttribute(app.request_number)}')"
+          >
+            Reject
+            <br>
+            ውድቅ አድርግ
+          </button>
+
+        `;
+
+      }
+
+
+      else if (
+        app.status === "Approved"
+      ) {
+
+        actionHTML = `
+
+          <button
+            class="btn-success"
+            onclick="viewCertificate('${escapeAttribute(app.request_number)}')"
+          >
+            View Certificate
+            <br>
+            ምስክር ወረቀት ይመልከቱ
+          </button>
+
+        `;
+
+      }
+
+
+      else {
+
+        actionHTML = `
+          Rejected / ውድቅ ተደርጓል
+        `;
+
       }
 
 
@@ -1281,71 +1469,16 @@ const db = supabase.createClient(
 
         <td>
 
-          <span class="status ${statusClass}">
+          <span
+            class="status ${statusClass}"
+          >
             ${escapeHtml(app.status)}
           </span>
 
         </td>
 
         <td>
-
-          ${
-            app.status === "Pending"
-
-            ?
-
-            `
-
-              <button
-                class="btn-success"
-                onclick="approveApplication('${app.request_number}')"
-              >
-                Approve
-                <br>
-                አጽድቅ
-              </button>
-
-
-              <button
-                class="btn-danger"
-                onclick="rejectApplication('${app.request_number}')"
-              >
-                Reject
-                <br>
-                ውድቅ አድርግ
-              </button>
-
-            `
-
-            :
-
-            app.status === "Approved"
-
-            ?
-
-            `
-
-              <button
-                class="btn-success"
-                onclick="viewCertificate('${app.request_number}')"
-              >
-                View Certificate
-                <br>
-                ምስክር ወረቀት ይመልከቱ
-              </button>
-
-            `
-
-            :
-
-            `
-
-              Rejected / ውድቅ ተደርጓል
-
-            `
-
-          }
-
+          ${actionHTML}
         </td>
 
       `;
@@ -1353,207 +1486,193 @@ const db = supabase.createClient(
 
       table.appendChild(row);
 
-    });
-
-  }
-
-
-  /* =========================================================
-     APPROVE APPLICATION
-     ========================================================= */
-
-  async function approveApplication(requestNumber) {
-
-    const confirmation =
-      confirm(
-        "Approve this application?\n" +
-        "ይህን ማመልከቻ ማጽደቅ ይፈልጋሉ?"
-      );
-
-
-    if (!confirmation) return;
-
-
-    const { data, error } = await db
-      .from("applications")
-      .update({
-        status: "Approved"
-      })
-      .eq("request_number", requestNumber)
-      .select()
-      .single();
-
-
-    if (error) {
-
-      console.error("Approval error:", error);
-
-      alert(
-        "Failed to approve application.\n\n" +
-        error.message
-      );
-
-      return;
     }
+  );
+}
 
 
-    /* UPDATE PAGE */
+/* =========================================================
+   APPROVE APPLICATION
+   ========================================================= */
 
-    const index =
-      applications.findIndex(
-        item =>
-          item.request_number === requestNumber
-      );
+async function approveApplication(
+  requestNumber
+) {
 
-
-    if (index !== -1) {
-      applications[index] = data;
-    }
-
-
-    loadApprovalTable();
-
-
-    alert(
-      "Application approved successfully.\n" +
-      "ጥያቄው በተሳካ ሁኔታ ጸድቋል።"
+  const confirmation =
+    confirm(
+      "Approve this application?\n" +
+      "ይህን ጥያቄ ማጽደቅ ይፈልጋሉ?"
     );
 
+
+  if (!confirmation) {
+    return;
   }
 
 
-  /* =========================================================
-     REJECT APPLICATION
-     ========================================================= */
-
-  async function rejectApplication(requestNumber) {
-
-    const confirmation =
-      confirm(
-        "Are you sure you want to reject this application?\n" +
-        "ይህን ጥያቄ ውድቅ ማድረግ እርግጠኛ ነዎት?"
-      );
-
-
-    if (!confirmation) return;
-
-
-    const { data, error } = await db
-      .from("applications")
-      .update({
-        status: "Rejected"
-      })
-      .eq("request_number", requestNumber)
-      .select()
-      .single();
-
-
-    if (error) {
-
-      console.error("Reject error:", error);
-
-      alert(
-        "Failed to reject application.\n\n" +
-        error.message
-      );
-
-      return;
-    }
-
-
-    /* UPDATE PAGE */
-
-    const index =
-      applications.findIndex(
-        item =>
-          item.request_number === requestNumber
-      );
-
-
-    if (index !== -1) {
-      applications[index] = data;
-    }
-
-
-    loadApprovalTable();
-
-
-    alert(
-      "Application rejected.\n" +
-      "ጥያቄው ውድቅ ተደርጓል።"
+  const {
+    error
+  } = await db
+    .from("applications")
+    .update({
+      status: "Approved"
+    })
+    .eq(
+      "request_number",
+      requestNumber
     );
 
+
+  if (error) {
+
+    console.error(error);
+
+    alert(
+      "Could not approve application.\n" +
+      error.message
+    );
+
+    return;
   }
 
 
-  /* =========================================================
-     CHECK APPLICATION STATUS
-     ========================================================= */
-
-  async function checkStatus() {
-
-    const requestNumber =
-      document
-        .getElementById("requestNumber")
-        .value
-        .trim()
-        .toUpperCase();
+  await loadApplications();
 
 
-    const result =
-      document.getElementById("statusResult");
+  alert(
+    "Application approved successfully.\n" +
+    "ጥያቄው በተሳካ ሁኔታ ጸድቋል።"
+  );
+}
 
 
-    if (!requestNumber) {
+/* =========================================================
+   REJECT APPLICATION
+   ========================================================= */
 
-      result.style.display = "block";
+async function rejectApplication(
+  requestNumber
+) {
 
-      result.style.background = "#f8d7da";
-
-      result.style.color = "#842029";
-
-      result.innerHTML =
-        "Please enter your request number.";
-
-      return;
-    }
-
-
-    const { data: app, error } = await db
-      .from("applications")
-      .select("*")
-      .eq("request_number", requestNumber)
-      .maybeSingle();
+  const confirmation =
+    confirm(
+      "Are you sure you want to reject this application?\n" +
+      "ይህን ጥያቄ ውድቅ ማድረግ እርግጠኛ ነዎት?"
+    );
 
 
-    if (error) {
-
-      console.error("Status error:", error);
-
-      result.style.display = "block";
-
-      result.style.background = "#f8d7da";
-
-      result.style.color = "#842029";
-
-      result.innerHTML =
-        "Unable to check application status.";
-
-      return;
-    }
+  if (!confirmation) {
+    return;
+  }
 
 
-    result.style.display = "block";
+  const {
+    error
+  } = await db
+    .from("applications")
+    .update({
+      status: "Rejected"
+    })
+    .eq(
+      "request_number",
+      requestNumber
+    );
 
 
-    if (!app) {
+  if (error) {
 
-      result.style.background = "#f8d7da";
+    console.error(error);
 
-      result.style.color = "#842029";
+    alert(
+      "Could not reject application.\n" +
+      error.message
+    );
 
-      result.innerHTML = `
+    return;
+  }
 
+
+  await loadApplications();
+
+
+  alert(
+    "Application rejected.\n" +
+    "ጥያቄው ውድቅ ተደርጓል።"
+  );
+}
+
+
+/* =========================================================
+   CHECK STATUS
+   ========================================================= */
+
+async function checkStatus() {
+
+  const requestNumber =
+    document
+      .getElementById(
+        "requestNumber"
+      )
+      .value
+      .trim()
+      .toUpperCase();
+
+
+  const result =
+    document.getElementById(
+      "statusResult"
+    );
+
+
+  if (!requestNumber) {
+
+    showError(
+      result,
+      "Please enter a request number.<br>" +
+      "እባክዎ የጥያቄ ቁጥር ያስገቡ።"
+    );
+
+    return;
+  }
+
+
+  const {
+    data: app,
+    error
+  } = await db
+    .from("applications")
+    .select("*")
+    .eq(
+      "request_number",
+      requestNumber
+    )
+    .maybeSingle();
+
+
+  result.style.display =
+    "block";
+
+
+  if (error) {
+
+    console.error(error);
+
+    showError(
+      result,
+      "Could not check application status.<br>" +
+      escapeHtml(error.message)
+    );
+
+    return;
+  }
+
+
+  if (!app) {
+
+    showError(
+      result,
+      `
         <strong>
           Application Not Found
         </strong>
@@ -1561,220 +1680,291 @@ const db = supabase.createClient(
         <span class="am">
           ጥያቄው አልተገኘም።
         </span>
+      `
+    );
 
-      `;
-
-      return;
-    }
-
-
-    result.style.background = "#d1e7dd";
-
-    result.style.color = "#0f5132";
-
-
-    result.innerHTML = `
-
-      <strong>
-        Application:
-        ${escapeHtml(app.request_number)}
-      </strong>
-
-      <br><br>
-
-      Applicant:
-      ${escapeHtml(app.full_name)}
-
-      <br>
-
-      Certificate:
-      ${escapeHtml(app.certificate_type)}
-
-      <br>
-
-      Status:
-      <strong>
-        ${escapeHtml(app.status)}
-      </strong>
-
-      <br>
-
-      <span class="am">
-
-        ሁኔታ:
-        ${getAmharicStatus(app.status)}
-
-      </span>
-
-
-      ${
-        app.status === "Approved"
-
-        ?
-
-        `
-
-          <br><br>
-
-          <button
-            class="btn-success"
-            onclick="viewCertificate('${app.request_number}')"
-          >
-
-            View Certificate /
-            ምስክር ወረቀት ይመልከቱ
-
-          </button>
-
-        `
-
-        :
-
-        ""
-
-      }
-
-    `;
-
+    return;
   }
 
 
-  /* =========================================================
-     AMHARIC STATUS
-     ========================================================= */
+  result.classList.remove(
+    "error-result"
+  );
 
-  function getAmharicStatus(status) {
 
-    if (status === "Pending") {
-      return "በግምገማ ላይ";
+  result.style.background =
+    "#d1e7dd";
+
+  result.style.color =
+    "#0f5132";
+
+
+  result.innerHTML = `
+
+    <strong>
+      Application:
+      ${escapeHtml(app.request_number)}
+    </strong>
+
+    <br><br>
+
+    Applicant:
+    ${escapeHtml(app.full_name)}
+
+    <br>
+
+    Certificate:
+    ${escapeHtml(app.certificate_type)}
+
+    <br>
+
+    Status:
+    <strong>
+      ${escapeHtml(app.status)}
+    </strong>
+
+    <br>
+
+    <span class="am">
+      ሁኔታ:
+      ${getAmharicStatus(app.status)}
+    </span>
+
+    ${
+      app.status === "Approved"
+
+      ?
+
+      `
+
+        <br><br>
+
+        <button
+          class="btn-success"
+          onclick="viewCertificate('${escapeAttribute(app.request_number)}')"
+        >
+          View Certificate /
+          ምስክር ወረቀት ይመልከቱ
+        </button>
+
+      `
+
+      :
+
+      ""
     }
 
-    if (status === "Approved") {
-      return "ጸድቋል";
-    }
+  `;
+}
 
-    if (status === "Rejected") {
-      return "ውድቅ ተደርጓል";
-    }
 
-    return status;
+/* =========================================================
+   AMHARIC STATUS
+   ========================================================= */
+
+function getAmharicStatus(
+  status
+) {
+
+  if (
+    status === "Pending"
+  ) {
+    return "በግምገማ ላይ";
   }
 
 
-  /* =========================================================
-     VIEW CERTIFICATE
-     ========================================================= */
-
-  async function viewCertificate(requestNumber) {
-
-    const { data: app, error } = await db
-      .from("applications")
-      .select("*")
-      .eq("request_number", requestNumber)
-      .maybeSingle();
-
-
-    if (error) {
-
-      console.error("Certificate error:", error);
-
-      alert(
-        "Could not load certificate."
-      );
-
-      return;
-    }
-
-
-    if (!app || app.status !== "Approved") {
-
-      alert(
-        "Certificate is not available.\n" +
-        "ምስክር ወረቀቱ እስካሁን አልተዘጋጀም።"
-      );
-
-      return;
-    }
-
-
-    document
-      .getElementById("certificateNumber")
-      .textContent =
-      "CERT-" + app.request_number;
-
-
-    document
-      .getElementById("certificateName")
-      .textContent =
-      app.full_name;
-
-
-    document
-      .getElementById("certificateTypeResult")
-      .textContent =
-      app.certificate_type;
-
-
-    document
-      .getElementById("certificateId")
-      .textContent =
-      app.id_number;
-
-
-    document
-      .getElementById("certificatePhone")
-      .textContent =
-      app.phone;
-
-
-    document
-      .getElementById("certificateDate")
-      .textContent =
-      new Date(
-        app.submitted_date
-      ).toLocaleDateString();
-
-
-    document
-      .getElementById("certificate")
-      .style.display =
-      "block";
-
-
-    document
-      .getElementById("certificate")
-      .scrollIntoView({
-        behavior: "smooth"
-      });
-
+  if (
+    status === "Approved"
+  ) {
+    return "ጸድቋል";
   }
 
 
-  /* =========================================================
-     SECURITY: ESCAPE HTML
-     ========================================================= */
-
-  function escapeHtml(value) {
-
-    if (value === null || value === undefined) {
-      return "";
-    }
-
-    return String(value)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
+  if (
+    status === "Rejected"
+  ) {
+    return "ውድቅ ተደርጓል";
   }
 
 
-  /* =========================================================
-     START APPLICATION
-     ========================================================= */
+  return escapeHtml(status);
+}
 
-  loadApplications();
+
+/* =========================================================
+   VIEW CERTIFICATE
+   ========================================================= */
+
+async function viewCertificate(
+  requestNumber
+) {
+
+  const {
+    data: app,
+    error
+  } = await db
+    .from("applications")
+    .select("*")
+    .eq(
+      "request_number",
+      requestNumber
+    )
+    .maybeSingle();
+
+
+  if (
+    error ||
+    !app ||
+    app.status !== "Approved"
+  ) {
+
+    alert(
+      "Certificate is not available.\n" +
+      "ምስክር ወረቀቱ እስካሁን አልተዘጋጀም።"
+    );
+
+    return;
+  }
+
+
+  document
+    .getElementById(
+      "certificateNumber"
+    )
+    .textContent =
+    "CERT-" +
+    app.request_number;
+
+
+  document
+    .getElementById(
+      "certificateName"
+    )
+    .textContent =
+    app.full_name;
+
+
+  document
+    .getElementById(
+      "certificateTypeResult"
+    )
+    .textContent =
+    app.certificate_type;
+
+
+  document
+    .getElementById(
+      "certificateId"
+    )
+    .textContent =
+    app.id_number;
+
+
+  document
+    .getElementById(
+      "certificatePhone"
+    )
+    .textContent =
+    app.phone;
+
+
+  document
+    .getElementById(
+      "certificateDate"
+    )
+    .textContent =
+    new Date(
+      app.submitted_date
+    ).toLocaleDateString();
+
+
+  document
+    .getElementById(
+      "certificate"
+    )
+    .style.display =
+    "block";
+
+
+  document
+    .getElementById(
+      "certificate"
+    )
+    .scrollIntoView({
+      behavior: "smooth"
+    });
+}
+
+
+/* =========================================================
+   ERROR DISPLAY
+   ========================================================= */
+
+function showError(
+  element,
+  message
+) {
+
+  element.style.display =
+    "block";
+
+  element.style.background =
+    "#f8d7da";
+
+  element.style.color =
+    "#842029";
+
+  element.style.borderLeftColor =
+    "#dc3545";
+
+  element.classList.add(
+    "error-result"
+  );
+
+  element.innerHTML =
+    message;
+}
+
+
+/* =========================================================
+   BASIC HTML ESCAPING
+   ========================================================= */
+
+function escapeHtml(
+  value
+) {
+
+  if (value === null ||
+      value === undefined) {
+    return "";
+  }
+
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+
+function escapeAttribute(
+  value
+) {
+
+  return String(value)
+    .replace(/\\/g, "\\\\")
+    .replace(/'/g, "\\'");
+}
+
+
+/* =========================================================
+   START APPLICATION
+   ========================================================= */
+
+loadApplications();
 
 </script>
+
 </body>
 </html>
