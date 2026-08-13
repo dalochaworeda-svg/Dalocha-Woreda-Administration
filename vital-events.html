@@ -59,7 +59,6 @@
       text-decoration: none;
       padding: 10px 18px;
       border-radius: 5px;
-      transition: 0.2s;
     }
 
     nav a:hover {
@@ -82,17 +81,13 @@
       margin-bottom: 20px;
     }
 
-    .back-home:hover {
-      background: #0b2f50;
-    }
-
     .welcome,
     .section {
       background: white;
-      padding: 30px;
+      padding: 28px;
+      margin: 25px 0;
       border-radius: 10px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-      margin-bottom: 25px;
     }
 
     .welcome h2,
@@ -109,7 +104,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       gap: 18px;
-      margin: 25px 0;
     }
 
     .card {
@@ -123,20 +117,16 @@
 
     .card h3 {
       color: #123c69;
-      margin-bottom: 10px;
     }
 
     .card-icon {
       font-size: 35px;
-      color: #123c69;
-      margin-bottom: 10px;
     }
 
     .workflow {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
       gap: 15px;
-      margin-top: 20px;
     }
 
     .workflow-step {
@@ -148,8 +138,6 @@
 
     .workflow-step strong {
       color: #123c69;
-      display: block;
-      margin-bottom: 8px;
     }
 
     label {
@@ -252,26 +240,15 @@
     }
 
     .error-result {
-      background: #f8d7da !important;
-      color: #842029 !important;
-      border-left-color: #dc3545 !important;
-    }
-
-    .loading {
-      text-align: center;
-      padding: 20px;
-      color: #64748b;
-    }
-
-    .table-wrapper {
-      overflow-x: auto;
+      background: #f8d7da;
+      color: #842029;
+      border-left-color: #dc3545;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
-      min-width: 750px;
     }
 
     th,
@@ -303,11 +280,6 @@
 
     .certificate h1 {
       color: #123c69;
-      margin-bottom: 5px;
-    }
-
-    .certificate h2 {
-      color: #333;
     }
 
     .certificate-number {
@@ -337,15 +309,6 @@
       margin-top: 40px;
     }
 
-    .notice {
-      background: #fff3cd;
-      color: #664d03;
-      border-left: 5px solid #ffc107;
-      padding: 15px;
-      border-radius: 6px;
-      margin-top: 15px;
-    }
-
     @media (max-width: 650px) {
 
       header h1 {
@@ -362,6 +325,8 @@
 
       table {
         font-size: 12px;
+        display: block;
+        overflow-x: auto;
       }
 
       th,
@@ -371,11 +336,6 @@
 
       .btn-danger {
         margin-left: 0;
-      }
-
-      .section,
-      .welcome {
-        padding: 20px;
       }
     }
 
@@ -408,6 +368,7 @@
 
 
 <body>
+
 
 <header>
 
@@ -449,522 +410,399 @@
 
 <div class="container">
 
-  <a href="index.html" class="back-home">
-    ← Back to Dalocha Woreda / ወደ ዳሎቻ ወረዳ ተመለስ
-  </a>
+
+<a href="index.html" class="back-home">
+  ← Back to Dalocha Woreda / ወደ ዳሎቻ ወረዳ ተመለስ
+</a>
 
 
-  <section class="welcome">
+<section class="welcome">
 
-    <h2>
-      Vital Event Certificate Service
-      <span class="am">
-        የወሳኝ ኩነት ምስክር ወረቀት አገልግሎት
-      </span>
-    </h2>
+  <h2>
+    Vital Event Certificate Service
+    <span class="am">
+      የወሳኝ ኩነት ምስክር ወረቀት አገልግሎት
+    </span>
+  </h2>
 
-    <p>
-      Citizens can request birth, marriage, divorce and death
-      certificates through this service.
-    </p>
+  <p>
+    Citizens can request birth, marriage, divorce and death
+    certificates through this service.
+  </p>
 
-    <p class="am">
-      ዜጎች የልደት፣ የጋብቻ፣ የፍቺ እና የሞት ምስክር
-      ወረቀቶችን በዚህ አገልግሎት መጠየቅ ይችላሉ።
-    </p>
+  <p class="am">
+    ዜጎች የልደት፣ የጋብቻ፣ የፍቺ እና የሞት ምስክር
+    ወረቀቶችን በዚህ አገልግሎት መጠየቅ ይችላሉ።
+  </p>
 
-  </section>
+</section>
 
 
-  <section class="section">
+<section class="section">
 
-    <h2>
-      Available Certificates
-      <span class="am">የሚገኙ የምስክር ወረቀቶች</span>
-    </h2>
+  <h2>
+    Available Certificates
+    <span class="am">የሚገኙ የምስክር ወረቀቶች</span>
+  </h2>
 
-    <div class="cards">
+  <div class="cards">
 
-      <div class="card">
-        <div class="card-icon">👶</div>
-        <h3>Birth Certificate</h3>
-        <span class="am">
-          የልደት ምስክር ወረቀት
-        </span>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">💍</div>
-        <h3>Marriage Certificate</h3>
-        <span class="am">
-          የጋብቻ ምስክር ወረቀት
-        </span>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">📄</div>
-        <h3>Divorce Certificate</h3>
-        <span class="am">
-          የፍቺ ምስክር ወረቀት
-        </span>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">🕊️</div>
-        <h3>Death Certificate</h3>
-        <span class="am">
-          የሞት ምስክር ወረቀት
-        </span>
-      </div>
-
+    <div class="card">
+      <div class="card-icon">👶</div>
+      <h3>Birth Certificate</h3>
+      <span class="am">የልደት ምስክር ወረቀት</span>
     </div>
 
-  </section>
-
-
-  <section class="section">
-
-    <h2>
-      Request and Approval Process
-      <span class="am">
-        የጥያቄና የማጽደቂያ ሂደት
-      </span>
-    </h2>
-
-    <div class="workflow">
-
-      <div class="workflow-step">
-        <strong>
-          1. Applicant
-          <span class="am">1. አመልካች</span>
-        </strong>
-
-        <p>
-          Applicant submits a certificate request.
-        </p>
-
-        <p class="am">
-          አመልካቹ የምስክር ወረቀት ጥያቄ ያቀርባል።
-        </p>
-      </div>
-
-
-      <div class="workflow-step">
-        <strong>
-          2. Review
-          <span class="am">2. ግምገማ</span>
-        </strong>
-
-        <p>
-          Authorized officer checks the application.
-        </p>
-
-        <p class="am">
-          ሥልጣን ያለው ባለሙያ ጥያቄውን ይመረምራል።
-        </p>
-      </div>
-
-
-      <div class="workflow-step">
-        <strong>
-          3. Decision
-          <span class="am">3. ውሳኔ</span>
-        </strong>
-
-        <p>
-          Officer approves or rejects the request.
-        </p>
-
-        <p class="am">
-          ባለሙያው ጥያቄውን ያጸድቃል ወይም ውድቅ ያደርጋል።
-        </p>
-      </div>
-
-
-      <div class="workflow-step">
-        <strong>
-          4. Certificate
-          <span class="am">4. ምስክር ወረቀት</span>
-        </strong>
-
-        <p>
-          Approved certificate becomes available.
-        </p>
-
-        <p class="am">
-          የጸደቀው ምስክር ወረቀት ይዘጋጃል።
-        </p>
-      </div>
-
+    <div class="card">
+      <div class="card-icon">💍</div>
+      <h3>Marriage Certificate</h3>
+      <span class="am">የጋብቻ ምስክር ወረቀት</span>
     </div>
 
-  </section>
-
-
-  <!-- REQUEST -->
-
-  <section id="request" class="section">
-
-    <h2>
-      Request a Vital Event Certificate
-      <span class="am">
-        የወሳኝ ኩነት ምስክር ወረቀት ይጠይቁ
-      </span>
-    </h2>
-
-
-    <form id="requestForm">
-
-      <label>
-        Certificate Type
-        <span class="am">
-          የምስክር ወረቀት ዓይነት
-        </span>
-      </label>
-
-      <select id="certificateType" required>
-
-        <option value="">
-          Select / ይምረጡ
-        </option>
-
-        <option value="Birth Certificate">
-          Birth Certificate / የልደት ምስክር ወረቀት
-        </option>
-
-        <option value="Marriage Certificate">
-          Marriage Certificate / የጋብቻ ምስክር ወረቀት
-        </option>
-
-        <option value="Divorce Certificate">
-          Divorce Certificate / የፍቺ ምስክር ወረቀት
-        </option>
-
-        <option value="Death Certificate">
-          Death Certificate / የሞት ምስክር ወረቀት
-        </option>
-
-      </select>
-
-
-      <label>
-        Full Name
-        <span class="am">
-          ሙሉ ስም
-        </span>
-      </label>
-
-      <input
-        type="text"
-        id="fullName"
-        placeholder="Enter full name / ሙሉ ስም ያስገቡ"
-        required
-      >
-
-
-      <label>
-        Phone Number
-        <span class="am">
-          ስልክ ቁጥር
-        </span>
-      </label>
-
-      <input
-        type="tel"
-        id="phone"
-        placeholder="Enter phone number / ስልክ ቁጥር ያስገቡ"
-        required
-      >
-
-
-      <label>
-        Identification Number
-        <span class="am">
-          የመታወቂያ ቁጥር
-        </span>
-      </label>
-
-      <input
-        type="text"
-        id="idNumber"
-        placeholder="Enter ID number / የመታወቂያ ቁጥር ያስገቡ"
-        required
-      >
-
-
-      <label>
-        Purpose of Request
-        <span class="am">
-          የጥያቄው ዓላማ
-        </span>
-      </label>
-
-      <textarea
-        id="reason"
-        placeholder="Enter purpose / የጥያቄውን ዓላማ ያስገቡ"
-        required
-      ></textarea>
-
-
-      <label>
-        Supporting Document
-        <span class="am">
-          የሚደግፍ ሰነድ
-        </span>
-      </label>
-
-      <input type="file" id="document">
-
-
-      <button type="submit" class="btn-primary" id="submitButton">
-        Submit Request / ጥያቄ አቅርብ
-      </button>
-
-    </form>
-
-
-    <div id="requestResult" class="result">
-
-      <strong>
-        Request Submitted Successfully!
-      </strong>
-
-      <span class="am">
-        ጥያቄዎ በተሳካ ሁኔታ ተመዝግቧል!
-      </span>
-
-      <br><br>
-
-      Your Request Number:
-      <strong id="generatedNumber"></strong>
-
-      <span class="am">
-        የጥያቄዎ ቁጥር
-      </span>
-
-      <br><br>
-
-      Please keep this number to check your application status.
-
-      <span class="am">
-        የጥያቄዎን ሁኔታ ለመከታተል ይህን ቁጥር ይያዙ።
-      </span>
-
+    <div class="card">
+      <div class="card-icon">📄</div>
+      <h3>Divorce Certificate</h3>
+      <span class="am">የፍቺ ምስክር ወረቀት</span>
     </div>
 
-  </section>
+    <div class="card">
+      <div class="card-icon">🕊️</div>
+      <h3>Death Certificate</h3>
+      <span class="am">የሞት ምስክር ወረቀት</span>
+    </div>
+
+  </div>
+
+</section>
 
 
-  <!-- STATUS -->
+<section class="section">
 
-  <section id="status" class="section">
+  <h2>
+    Request and Approval Process
+    <span class="am">የጥያቄና የማጽደቂያ ሂደት</span>
+  </h2>
 
-    <h2>
-      Check Application Status
-      <span class="am">
-        የጥያቄውን ሁኔታ ይመልከቱ
-      </span>
-    </h2>
+  <div class="workflow">
+
+    <div class="workflow-step">
+      <strong>1. Applicant</strong>
+      <p>Applicant submits a certificate request.</p>
+      <p class="am">አመልካቹ የምስክር ወረቀት ጥያቄ ያቀርባል።</p>
+    </div>
+
+    <div class="workflow-step">
+      <strong>2. Review</strong>
+      <p>Authorized officer checks the application.</p>
+      <p class="am">ሥልጣን ያለው ባለሙያ ጥያቄውን ይመረምራል።</p>
+    </div>
+
+    <div class="workflow-step">
+      <strong>3. Decision</strong>
+      <p>Officer approves or rejects the request.</p>
+      <p class="am">ባለሙያው ጥያቄውን ያጸድቃል ወይም ውድቅ ያደርጋል።</p>
+    </div>
+
+    <div class="workflow-step">
+      <strong>4. Certificate</strong>
+      <p>Approved certificate becomes available.</p>
+      <p class="am">የጸደቀው ምስክር ወረቀት ይዘጋጃል።</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- REQUEST -->
+
+<section id="request" class="section">
+
+  <h2>
+    Request a Vital Event Certificate
+    <span class="am">
+      የወሳኝ ኩነት ምስክር ወረቀት ይጠይቁ
+    </span>
+  </h2>
+
+
+  <form id="requestForm">
+
+    <label>
+      Certificate Type
+      <span class="am">የምስክር ወረቀት ዓይነት</span>
+    </label>
+
+    <select id="certificateType" required>
+
+      <option value="">Select / ይምረጡ</option>
+
+      <option value="Birth Certificate">
+        Birth Certificate / የልደት ምስክር ወረቀት
+      </option>
+
+      <option value="Marriage Certificate">
+        Marriage Certificate / የጋብቻ ምስክር ወረቀት
+      </option>
+
+      <option value="Divorce Certificate">
+        Divorce Certificate / የፍቺ ምስክር ወረቀት
+      </option>
+
+      <option value="Death Certificate">
+        Death Certificate / የሞት ምስክር ወረቀት
+      </option>
+
+    </select>
 
 
     <label>
-      Request Number
-      <span class="am">
-        የጥያቄ ቁጥር
-      </span>
+      Full Name
+      <span class="am">ሙሉ ስም</span>
     </label>
 
     <input
       type="text"
-      id="requestNumber"
-      placeholder="Example: DW-0001"
+      id="fullName"
+      required
+      placeholder="Enter full name / ሙሉ ስም ያስገቡ"
     >
+
+
+    <label>
+      Phone Number
+      <span class="am">ስልክ ቁጥር</span>
+    </label>
+
+    <input
+      type="tel"
+      id="phone"
+      required
+      placeholder="Enter phone number / ስልክ ቁጥር ያስገቡ"
+    >
+
+
+    <label>
+      Identification Number
+      <span class="am">የመታወቂያ ቁጥር</span>
+    </label>
+
+    <input
+      type="text"
+      id="idNumber"
+      required
+      placeholder="Enter ID number / የመታወቂያ ቁጥር ያስገቡ"
+    >
+
+
+    <label>
+      Purpose of Request
+      <span class="am">የጥያቄው ዓላማ</span>
+    </label>
+
+    <textarea
+      id="reason"
+      required
+      placeholder="Enter purpose / የጥያቄውን ዓላማ ያስገቡ"
+    ></textarea>
 
 
     <button
+      type="submit"
+      id="submitButton"
       class="btn-primary"
-      id="statusButton"
-      onclick="checkStatus()"
     >
-      Check Status / ሁኔታ ይመልከቱ
+      Submit Request / ጥያቄ አቅርብ
+    </button>
+
+  </form>
+
+
+  <div id="requestResult" class="result">
+
+    <strong>
+      Request Submitted Successfully!
+    </strong>
+
+    <span class="am">
+      ጥያቄዎ በተሳካ ሁኔታ ተመዝግቧል!
+    </span>
+
+    <br><br>
+
+    Your Request Number:
+    <strong id="generatedNumber"></strong>
+
+    <br><br>
+
+    Please keep this number to check your application status.
+
+    <span class="am">
+      የጥያቄዎን ሁኔታ ለመከታተል ይህን ቁጥር ይያዙ።
+    </span>
+
+  </div>
+
+</section>
+
+
+<!-- STATUS -->
+
+<section id="status" class="section">
+
+  <h2>
+    Check Application Status
+    <span class="am">
+      የጥያቄውን ሁኔታ ይመልከቱ
+    </span>
+  </h2>
+
+
+  <label>
+    Request Number
+    <span class="am">የጥያቄ ቁጥር</span>
+  </label>
+
+  <input
+    type="text"
+    id="requestNumber"
+    placeholder="Example: DW-0001"
+  >
+
+
+  <button
+    class="btn-primary"
+    onclick="checkStatus()"
+  >
+    Check Status / ሁኔታ ይመልከቱ
+  </button>
+
+
+  <div id="statusResult" class="result"></div>
+
+</section>
+
+
+<!-- OFFICER APPROVAL -->
+
+<section id="approval" class="section">
+
+  <h2>
+    Dalocha Woreda Officer Approval
+    <span class="am">
+      የዳሎቻ ወረዳ ባለሙያ ማጽደቂያ
+    </span>
+  </h2>
+
+  <p>
+    Only authorized Dalocha Woreda officers should approve or reject applications.
+  </p>
+
+  <p class="am">
+    ጥያቄዎችን ማጽደቅ ወይም ውድቅ ማድረግ የሚችሉት
+    ሥልጣን ያላቸው የዳሎቻ ወረዳ ባለሙያዎች ብቻ ናቸው።
+  </p>
+
+
+  <table>
+
+    <thead>
+
+      <tr>
+
+        <th>Request No.</th>
+        <th>Applicant</th>
+        <th>Certificate</th>
+        <th>Status</th>
+        <th>Action</th>
+
+      </tr>
+
+    </thead>
+
+
+    <tbody id="approvalTable">
+
+    </tbody>
+
+  </table>
+
+</section>
+
+
+<!-- CERTIFICATE -->
+
+<section id="certificate" class="section">
+
+  <div class="certificate">
+
+    <button
+      class="print-button"
+      onclick="window.print()"
+    >
+      Print Certificate / ምስክር ወረቀት አትም
     </button>
 
 
-    <div id="statusResult" class="result"></div>
+    <h1>DALOCHA WOREDA</h1>
 
-  </section>
+    <h2>ዳሎቻ ወረዳ</h2>
 
+    <h2>Vital Event Certificate</h2>
 
-  <!-- OFFICER APPROVAL -->
-
-  <section id="approval" class="section">
-
-    <h2>
-      Dalocha Woreda Officer Approval
-      <span class="am">
-        የዳሎቻ ወረዳ ባለሙያ ማጽደቂያ
-      </span>
-    </h2>
+    <h2>የወሳኝ ኩነት ምስክር ወረቀት</h2>
 
 
-    <p>
-      Only authorized Dalocha Woreda officers should approve or reject
-      applications.
-    </p>
+    <div class="certificate-number">
 
-    <p class="am">
-      ጥያቄዎችን ማጽደቅ ወይም ውድቅ ማድረግ የሚችሉት
-      ሥልጣን ያላቸው የዳሎቻ ወረዳ ባለሙያዎች ብቻ ናቸው።
-    </p>
-
-    <div class="notice">
-      <strong>Important:</strong>
-      Officer approval should eventually be protected by
-      Supabase Authentication and officer-specific RLS policies.
-    </div>
-
-
-    <div class="table-wrapper">
-
-      <table>
-
-        <thead>
-
-          <tr>
-
-            <th>
-              Request No.
-              <br>
-              የጥያቄ ቁጥር
-            </th>
-
-            <th>
-              Applicant
-              <br>
-              አመልካች
-            </th>
-
-            <th>
-              Certificate
-              <br>
-              ምስክር ወረቀት
-            </th>
-
-            <th>
-              Status
-              <br>
-              ሁኔታ
-            </th>
-
-            <th>
-              Action
-              <br>
-              ተግባር
-            </th>
-
-          </tr>
-
-        </thead>
-
-
-        <tbody id="approvalTable">
-
-          <tr>
-            <td colspan="5" class="loading">
-              Loading applications...
-            </td>
-          </tr>
-
-        </tbody>
-
-      </table>
+      Certificate No:
+      <span id="certificateNumber"></span>
 
     </div>
 
-  </section>
 
+    <div class="certificate-info">
 
-  <!-- CERTIFICATE -->
+      <p>
+        <strong>Applicant Name:</strong>
+        <span id="certificateName"></span>
+      </p>
 
-  <section id="certificate" class="section">
+      <p>
+        <strong>Certificate Type:</strong>
+        <span id="certificateTypeResult"></span>
+      </p>
 
-    <div class="certificate">
+      <p>
+        <strong>Identification Number:</strong>
+        <span id="certificateId"></span>
+      </p>
 
-      <button
-        class="print-button"
-        onclick="window.print()"
-      >
-        Print Certificate / ምስክር ወረቀት አትም
-      </button>
+      <p>
+        <strong>Phone:</strong>
+        <span id="certificatePhone"></span>
+      </p>
 
-
-      <h1>
-        DALOCHA WOREDA
-      </h1>
-
-      <h2>
-        ዳሎቻ ወረዳ
-      </h2>
-
-
-      <h2>
-        Vital Event Certificate
-      </h2>
-
-      <h2>
-        የወሳኝ ኩነት ምስክር ወረቀት
-      </h2>
-
-
-      <div class="certificate-number">
-
-        Certificate No:
-        <span id="certificateNumber"></span>
-
-      </div>
-
-
-      <div class="certificate-info">
-
-        <p>
-          <strong>Applicant Name:</strong>
-          <span id="certificateName"></span>
-        </p>
-
-        <p>
-          <strong>Certificate Type:</strong>
-          <span id="certificateTypeResult"></span>
-        </p>
-
-        <p>
-          <strong>Identification Number:</strong>
-          <span id="certificateId"></span>
-        </p>
-
-        <p>
-          <strong>Phone:</strong>
-          <span id="certificatePhone"></span>
-        </p>
-
-        <p>
-          <strong>Issue Date:</strong>
-          <span id="certificateDate"></span>
-        </p>
-
-      </div>
-
-
-      <h3>
-        Authorized by Dalocha Woreda
-      </h3>
-
-      <p class="am">
-        በዳሎቻ ወረዳ የተፈቀደ
+      <p>
+        <strong>Issue Date:</strong>
+        <span id="certificateDate"></span>
       </p>
 
     </div>
 
-  </section>
+
+    <h3>
+      Authorized by Dalocha Woreda
+    </h3>
+
+    <p class="am">
+      በዳሎቻ ወረዳ የተፈቀደ
+    </p>
+
+  </div>
+
+</section>
+
 
 </div>
 
@@ -973,14 +811,10 @@
 
   <strong>
     Dalocha Woreda
-    <span class="am">
-      ዳሎቻ ወረዳ
-    </span>
+    <span class="am">ዳሎቻ ወረዳ</span>
   </strong>
 
-  <p>
-    Vital Event Certificate Service
-  </p>
+  <p>Vital Event Certificate Service</p>
 
   <p class="am">
     የወሳኝ ኩነት ምስክር ወረቀት አገልግሎት
@@ -1000,91 +834,80 @@
 
 <script>
 
-/* =========================================================
+/* =====================================================
    SUPABASE CONNECTION
-   ========================================================= */
+   ===================================================== */
 
 const SUPABASE_URL =
-  ""https://wkfbfvlcqtkhdzmjwuwz.supabase.co";
-
-
-/*
- * PASTE YOUR SUPABASE PUBLISHABLE KEY BELOW.
- *
- * It should start with:
- *
- * sb_publishable_
- *
- */
+  "https://wkfbfvlcqtkhdzmjwuwz.supabase.co";
 
 const SUPABASE_ANON_KEY =
   "sb_publishable_ZHncljggLa4d_sldRlO9CQ_WAkynyw0";
 
+const db =
+  supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+  );
 
-const db = supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_ANON_KEY
-);
 
-
-/* =========================================================
+/* =====================================================
    APPLICATION DATA
-   ========================================================= */
+   ===================================================== */
 
 let applications = [];
 
 
-/* =========================================================
+/* =====================================================
    GENERATE REQUEST NUMBER
-   ========================================================= */
+   ===================================================== */
 
 async function generateRequestNumber() {
 
-  const { count, error } = await db
+  const { data, error } = await db
     .from("applications")
-    .select("*", {
-      count: "exact",
-      head: true
-    });
+    .select("request_number");
 
   if (error) {
 
-    console.error(
-      "Request number error:",
-      error
+    console.error(error);
+
+    throw new Error(
+      "Could not generate request number."
     );
-
-    /*
-     * Fallback number.
-     */
-
-    return "DW-" + Date.now();
   }
 
-  const number =
-    String((count || 0) + 1).padStart(4, "0");
+  let highest = 0;
 
-  return "DW-" + number;
+  (data || []).forEach(function(app) {
+
+    if (!app.request_number) return;
+
+    const match =
+      app.request_number.match(/^DW-(\d+)$/);
+
+    if (match) {
+
+      const number =
+        parseInt(match[1], 10);
+
+      if (number > highest) {
+        highest = number;
+      }
+    }
+
+  });
+
+  return "DW-" +
+    String(highest + 1).padStart(4, "0");
 }
 
 
-/* =========================================================
+/* =====================================================
    LOAD APPLICATIONS
-   ========================================================= */
+   ===================================================== */
 
 async function loadApplications() {
-
-  const table =
-    document.getElementById("approvalTable");
-
-  table.innerHTML = `
-    <tr>
-      <td colspan="5" class="loading">
-        Loading applications...
-      </td>
-    </tr>
-  `;
-
 
   const { data, error } = await db
     .from("applications")
@@ -1093,7 +916,6 @@ async function loadApplications() {
       ascending: false
     });
 
-
   if (error) {
 
     console.error(
@@ -1101,19 +923,20 @@ async function loadApplications() {
       error
     );
 
-    table.innerHTML = `
-      <tr>
-        <td colspan="5">
-          Could not load applications.
-          <br>
-          ${escapeHtml(error.message)}
-        </td>
-      </tr>
-    `;
+    document
+      .getElementById("approvalTable")
+      .innerHTML = `
+        <tr>
+          <td colspan="5">
+            Could not load applications.
+            <br>
+            ${error.message}
+          </td>
+        </tr>
+      `;
 
     return;
   }
-
 
   applications = data || [];
 
@@ -1121,9 +944,9 @@ async function loadApplications() {
 }
 
 
-/* =========================================================
+/* =====================================================
    SUBMIT APPLICATION
-   ========================================================= */
+   ===================================================== */
 
 document
   .getElementById("requestForm")
@@ -1138,7 +961,6 @@ document
         document.getElementById(
           "submitButton"
         );
-
 
       submitButton.disabled = true;
 
@@ -1155,58 +977,42 @@ document
             )
             .value;
 
-
         const fullName =
           document
-            .getElementById("fullName")
+            .getElementById(
+              "fullName"
+            )
             .value
             .trim();
-
 
         const phone =
           document
-            .getElementById("phone")
+            .getElementById(
+              "phone"
+            )
             .value
             .trim();
-
 
         const idNumber =
           document
-            .getElementById("idNumber")
+            .getElementById(
+              "idNumber"
+            )
             .value
             .trim();
-
 
         const reason =
           document
-            .getElementById("reason")
+            .getElementById(
+              "reason"
+            )
             .value
             .trim();
 
-
-        /*
-         * Generate request number.
-         */
 
         const requestNumber =
           await generateRequestNumber();
 
-
-        /*
-         * Create database record.
-         *
-         * These names MUST match your
-         * Supabase columns:
-         *
-         * request_number
-         * certificate_type
-         * full_name
-         * phone
-         * id_number
-         * reason
-         * status
-         * submitted_date
-         */
 
         const application = {
 
@@ -1232,68 +1038,50 @@ document
             "Pending",
 
           submitted_date:
-            new Date().toISOString()
+            new Date()
+              .toISOString()
+              .split("T")[0]
 
         };
 
 
-        /*
-         * INSERT INTO SUPABASE
-         */
-
-        const {
-          data,
-          error
-        } = await db
-          .from("applications")
-          .insert([application])
-          .select()
-          .single();
+        const { data, error } =
+          await db
+            .from("applications")
+            .insert([application])
+            .select()
+            .single();
 
 
         if (error) {
 
           console.error(
-            "Submit error:",
+            "Insert error:",
             error
           );
 
-          showError(
-            document.getElementById(
-              "requestResult"
-            ),
-            "Application could not be submitted.<br>" +
-            escapeHtml(error.message)
+          throw new Error(
+            error.message
           );
-
-          return;
         }
 
 
-        /*
-         * SUCCESS
-         */
+        applications.unshift(data);
+
 
         document
           .getElementById(
             "generatedNumber"
           )
           .textContent =
-          data.request_number;
+          requestNumber;
 
 
-        const result =
-          document.getElementById(
+        document
+          .getElementById(
             "requestResult"
-          );
-
-
-        result.classList.remove(
-          "error-result"
-        );
-
-
-        result.style.display =
+          )
+          .style.display =
           "block";
 
 
@@ -1304,11 +1092,17 @@ document
           .reset();
 
 
-        await loadApplications();
+        loadApprovalTable();
 
 
         window.location.hash =
           "request";
+
+
+        alert(
+          "Application submitted successfully.\n" +
+          "ጥያቄዎ በተሳካ ሁኔታ ተልኳል።"
+        );
 
       }
 
@@ -1317,27 +1111,28 @@ document
         console.error(error);
 
         alert(
-          "Unexpected error occurred."
+          "Could not submit application.\n\n" +
+          error.message
         );
 
       }
 
       finally {
 
-        submitButton.disabled =
-          false;
+        submitButton.disabled = false;
 
         submitButton.textContent =
           "Submit Request / ጥያቄ አቅርብ";
+
       }
 
     }
   );
 
 
-/* =========================================================
+/* =====================================================
    LOAD APPROVAL TABLE
-   ========================================================= */
+   ===================================================== */
 
 function loadApprovalTable() {
 
@@ -1345,7 +1140,6 @@ function loadApprovalTable() {
     document.getElementById(
       "approvalTable"
     );
-
 
   table.innerHTML = "";
 
@@ -1375,35 +1169,25 @@ function loadApprovalTable() {
 
       let statusClass = "";
 
-
-      if (
-        app.status === "Approved"
-      ) {
-        statusClass =
-          "approved";
+      if (app.status === "Approved") {
+        statusClass = "approved";
       }
 
-
-      if (
-        app.status === "Rejected"
-      ) {
-        statusClass =
-          "rejected";
+      if (app.status === "Rejected") {
+        statusClass = "rejected";
       }
 
 
       let actionHTML = "";
 
 
-      if (
-        app.status === "Pending"
-      ) {
+      if (app.status === "Pending") {
 
         actionHTML = `
 
           <button
             class="btn-success"
-            onclick="approveApplication('${escapeAttribute(app.request_number)}')"
+            onclick="approveApplication('${app.id}')"
           >
             Approve
             <br>
@@ -1412,7 +1196,7 @@ function loadApprovalTable() {
 
           <button
             class="btn-danger"
-            onclick="rejectApplication('${escapeAttribute(app.request_number)}')"
+            onclick="rejectApplication('${app.id}')"
           >
             Reject
             <br>
@@ -1423,7 +1207,6 @@ function loadApprovalTable() {
 
       }
 
-
       else if (
         app.status === "Approved"
       ) {
@@ -1432,7 +1215,7 @@ function loadApprovalTable() {
 
           <button
             class="btn-success"
-            onclick="viewCertificate('${escapeAttribute(app.request_number)}')"
+            onclick="viewCertificate('${app.id}')"
           >
             View Certificate
             <br>
@@ -1443,12 +1226,10 @@ function loadApprovalTable() {
 
       }
 
-
       else {
 
-        actionHTML = `
-          Rejected / ውድቅ ተደርጓል
-        `;
+        actionHTML =
+          "Rejected / ውድቅ ተደርጓል";
 
       }
 
@@ -1456,23 +1237,21 @@ function loadApprovalTable() {
       row.innerHTML = `
 
         <td>
-          ${escapeHtml(app.request_number)}
+          ${escapeHTML(app.request_number)}
         </td>
 
         <td>
-          ${escapeHtml(app.full_name)}
+          ${escapeHTML(app.full_name)}
         </td>
 
         <td>
-          ${escapeHtml(app.certificate_type)}
+          ${escapeHTML(app.certificate_type)}
         </td>
 
         <td>
 
-          <span
-            class="status ${statusClass}"
-          >
-            ${escapeHtml(app.status)}
+          <span class="status ${statusClass}">
+            ${escapeHTML(app.status)}
           </span>
 
         </td>
@@ -1488,16 +1267,15 @@ function loadApprovalTable() {
 
     }
   );
+
 }
 
 
-/* =========================================================
+/* =====================================================
    APPROVE APPLICATION
-   ========================================================= */
+   ===================================================== */
 
-async function approveApplication(
-  requestNumber
-) {
+async function approveApplication(id) {
 
   const confirmation =
     confirm(
@@ -1505,23 +1283,18 @@ async function approveApplication(
       "ይህን ጥያቄ ማጽደቅ ይፈልጋሉ?"
     );
 
-
-  if (!confirmation) {
-    return;
-  }
+  if (!confirmation) return;
 
 
-  const {
-    error
-  } = await db
-    .from("applications")
-    .update({
-      status: "Approved"
-    })
-    .eq(
-      "request_number",
-      requestNumber
-    );
+  const { data, error } =
+    await db
+      .from("applications")
+      .update({
+        status: "Approved"
+      })
+      .eq("id", id)
+      .select()
+      .single();
 
 
   if (error) {
@@ -1529,7 +1302,7 @@ async function approveApplication(
     console.error(error);
 
     alert(
-      "Could not approve application.\n" +
+      "Could not approve application.\n\n" +
       error.message
     );
 
@@ -1537,23 +1310,32 @@ async function approveApplication(
   }
 
 
-  await loadApplications();
+  const index =
+    applications.findIndex(
+      app => app.id === id
+    );
+
+  if (index !== -1) {
+    applications[index] = data;
+  }
+
+
+  loadApprovalTable();
 
 
   alert(
     "Application approved successfully.\n" +
     "ጥያቄው በተሳካ ሁኔታ ጸድቋል።"
   );
+
 }
 
 
-/* =========================================================
+/* =====================================================
    REJECT APPLICATION
-   ========================================================= */
+   ===================================================== */
 
-async function rejectApplication(
-  requestNumber
-) {
+async function rejectApplication(id) {
 
   const confirmation =
     confirm(
@@ -1561,23 +1343,18 @@ async function rejectApplication(
       "ይህን ጥያቄ ውድቅ ማድረግ እርግጠኛ ነዎት?"
     );
 
-
-  if (!confirmation) {
-    return;
-  }
+  if (!confirmation) return;
 
 
-  const {
-    error
-  } = await db
-    .from("applications")
-    .update({
-      status: "Rejected"
-    })
-    .eq(
-      "request_number",
-      requestNumber
-    );
+  const { data, error } =
+    await db
+      .from("applications")
+      .update({
+        status: "Rejected"
+      })
+      .eq("id", id)
+      .select()
+      .single();
 
 
   if (error) {
@@ -1585,7 +1362,7 @@ async function rejectApplication(
     console.error(error);
 
     alert(
-      "Could not reject application.\n" +
+      "Could not reject application.\n\n" +
       error.message
     );
 
@@ -1593,19 +1370,30 @@ async function rejectApplication(
   }
 
 
-  await loadApplications();
+  const index =
+    applications.findIndex(
+      app => app.id === id
+    );
+
+  if (index !== -1) {
+    applications[index] = data;
+  }
+
+
+  loadApprovalTable();
 
 
   alert(
     "Application rejected.\n" +
     "ጥያቄው ውድቅ ተደርጓል።"
   );
+
 }
 
 
-/* =========================================================
+/* =====================================================
    CHECK STATUS
-   ========================================================= */
+   ===================================================== */
 
 async function checkStatus() {
 
@@ -1627,100 +1415,106 @@ async function checkStatus() {
 
   if (!requestNumber) {
 
-    showError(
-      result,
-      "Please enter a request number.<br>" +
-      "እባክዎ የጥያቄ ቁጥር ያስገቡ።"
-    );
+    result.className =
+      "result error-result";
+
+    result.style.display =
+      "block";
+
+    result.innerHTML = `
+      <strong>
+        Please enter a request number.
+      </strong>
+
+      <span class="am">
+        እባክዎ የጥያቄ ቁጥር ያስገቡ።
+      </span>
+    `;
 
     return;
   }
 
 
-  const {
-    data: app,
-    error
-  } = await db
-    .from("applications")
-    .select("*")
-    .eq(
-      "request_number",
-      requestNumber
-    )
-    .maybeSingle();
-
-
-  result.style.display =
-    "block";
+  const { data: app, error } =
+    await db
+      .from("applications")
+      .select("*")
+      .eq(
+        "request_number",
+        requestNumber
+      )
+      .maybeSingle();
 
 
   if (error) {
 
     console.error(error);
 
-    showError(
-      result,
-      "Could not check application status.<br>" +
-      escapeHtml(error.message)
-    );
+    result.className =
+      "result error-result";
+
+    result.style.display =
+      "block";
+
+    result.innerHTML =
+      "Error: " +
+      escapeHTML(error.message);
 
     return;
   }
+
+
+  result.style.display =
+    "block";
 
 
   if (!app) {
 
-    showError(
-      result,
-      `
-        <strong>
-          Application Not Found
-        </strong>
+    result.className =
+      "result error-result";
 
-        <span class="am">
-          ጥያቄው አልተገኘም።
-        </span>
-      `
-    );
+    result.innerHTML = `
+
+      <strong>
+        Application Not Found
+      </strong>
+
+      <span class="am">
+        ጥያቄው አልተገኘም።
+      </span>
+
+    `;
 
     return;
   }
 
 
-  result.classList.remove(
-    "error-result"
-  );
-
-
-  result.style.background =
-    "#d1e7dd";
-
-  result.style.color =
-    "#0f5132";
+  result.className =
+    "result";
 
 
   result.innerHTML = `
 
     <strong>
       Application:
-      ${escapeHtml(app.request_number)}
+      ${escapeHTML(app.request_number)}
     </strong>
 
     <br><br>
 
     Applicant:
-    ${escapeHtml(app.full_name)}
+    ${escapeHTML(app.full_name)}
 
     <br>
 
     Certificate:
-    ${escapeHtml(app.certificate_type)}
+    ${escapeHTML(app.certificate_type)}
 
     <br>
 
     Status:
     <strong>
-      ${escapeHtml(app.status)}
+      ${escapeHTML(app.status)}
     </strong>
 
     <br>
@@ -1741,7 +1535,7 @@ async function checkStatus() {
 
         <button
           class="btn-success"
-          onclick="viewCertificate('${escapeAttribute(app.request_number)}')"
+          onclick="viewCertificate('${app.id}')"
         >
           View Certificate /
           ምስክር ወረቀት ይመልከቱ
@@ -1752,71 +1546,61 @@ async function checkStatus() {
       :
 
       ""
+
     }
 
   `;
+
 }
 
 
-/* =========================================================
+/* =====================================================
    AMHARIC STATUS
-   ========================================================= */
+   ===================================================== */
 
-function getAmharicStatus(
-  status
-) {
+function getAmharicStatus(status) {
 
-  if (
-    status === "Pending"
-  ) {
+  if (status === "Pending") {
     return "በግምገማ ላይ";
   }
 
-
-  if (
-    status === "Approved"
-  ) {
+  if (status === "Approved") {
     return "ጸድቋል";
   }
 
-
-  if (
-    status === "Rejected"
-  ) {
+  if (status === "Rejected") {
     return "ውድቅ ተደርጓል";
   }
 
-
-  return escapeHtml(status);
+  return status;
 }
 
 
-/* =========================================================
+/* =====================================================
    VIEW CERTIFICATE
-   ========================================================= */
+   ===================================================== */
 
-async function viewCertificate(
-  requestNumber
-) {
+async function viewCertificate(id) {
 
-  const {
-    data: app,
-    error
-  } = await db
-    .from("applications")
-    .select("*")
-    .eq(
-      "request_number",
-      requestNumber
-    )
-    .maybeSingle();
+  const { data: app, error } =
+    await db
+      .from("applications")
+      .select("*")
+      .eq("id", id)
+      .single();
 
 
-  if (
-    error ||
-    !app ||
-    app.status !== "Approved"
-  ) {
+  if (error || !app) {
+
+    alert(
+      "Could not find application."
+    );
+
+    return;
+  }
+
+
+  if (app.status !== "Approved") {
 
     alert(
       "Certificate is not available.\n" +
@@ -1873,9 +1657,8 @@ async function viewCertificate(
       "certificateDate"
     )
     .textContent =
-    new Date(
-      app.submitted_date
-    ).toLocaleDateString();
+    new Date()
+      .toLocaleDateString();
 
 
   document
@@ -1893,49 +1676,19 @@ async function viewCertificate(
     .scrollIntoView({
       behavior: "smooth"
     });
+
 }
 
 
-/* =========================================================
-   ERROR DISPLAY
-   ========================================================= */
+/* =====================================================
+   SECURITY: ESCAPE HTML
+   ===================================================== */
 
-function showError(
-  element,
-  message
-) {
-
-  element.style.display =
-    "block";
-
-  element.style.background =
-    "#f8d7da";
-
-  element.style.color =
-    "#842029";
-
-  element.style.borderLeftColor =
-    "#dc3545";
-
-  element.classList.add(
-    "error-result"
-  );
-
-  element.innerHTML =
-    message;
-}
-
-
-/* =========================================================
-   BASIC HTML ESCAPING
-   ========================================================= */
-
-function escapeHtml(
-  value
-) {
+function escapeHTML(value) {
 
   if (value === null ||
       value === undefined) {
+
     return "";
   }
 
@@ -1948,23 +1701,14 @@ function escapeHtml(
 }
 
 
-function escapeAttribute(
-  value
-) {
-
-  return String(value)
-    .replace(/\\/g, "\\\\")
-    .replace(/'/g, "\\'");
-}
-
-
-/* =========================================================
+/* =====================================================
    START APPLICATION
-   ========================================================= */
+   ===================================================== */
 
 loadApplications();
 
 </script>
+
 
 </body>
 </html>
