@@ -10,19 +10,27 @@
         content="width=device-width, initial-scale=1.0">
 
     <title>
-        Dalocha Woreda Membership Registration |
-        የዳሎቻ ወረዳ አባልነት መመዝገቢያ
+        Dalocha Woreda Prosperity Party Membership Registration |
+        የዳሎቻ ወረዳ የብልፅግና ፓርቲ አባልነት መመዝገቢያ
     </title>
 
     <meta
         name="description"
-        content="Dalocha Woreda membership registration service. Citizens can submit their membership registration information online."
+        content="Dalocha Woreda Prosperity Party membership registration service. Citizens can submit their membership registration information online."
     >
 
-    <!-- Font Awesome -->
     <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <style>
 
@@ -33,507 +41,424 @@
         body {
             margin: 0;
             font-family:
-                Arial,
                 "Noto Sans Ethiopic",
-                "Abyssinica SIL",
+                Arial,
                 sans-serif;
-
-            background: #f1f5f9;
+            background:
+                linear-gradient(
+                    135deg,
+                    #f4f7fb,
+                    #eef3f8
+                );
             color: #1e293b;
-            line-height: 1.6;
         }
-
 
         /* =========================
-           HEADER
-        ========================= */
+           TOP GOVERNMENT BAR
+        ========================== */
+
+        .top-bar {
+            background: #0b2f50;
+            color: white;
+            padding: 9px 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* =========================
+           MAIN HEADER
+        ========================== */
 
         header {
-            background: #123c69;
+            background:
+                linear-gradient(
+                    135deg,
+                    #123c69,
+                    #185a8a
+                );
             color: white;
-            padding: 28px 20px;
+            padding: 38px 20px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
+
+        header::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+            top: -150px;
+            left: -80px;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            bottom: -150px;
+            right: -70px;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        /* =========================
+           PROSPERITY PARTY BADGE
+        ========================== */
+
+        .party-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.14);
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 9px 18px;
+            border-radius: 30px;
+            margin-bottom: 18px;
+            font-size: 15px;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+        }
+
+        .party-dot {
+            width: 12px;
+            height: 12px;
+            background: #f6c344;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(246,195,68,0.7);
+        }
+
+        /* =========================
+           TITLE
+        ========================== */
 
         header h1 {
             margin: 0;
-            font-size: 30px;
+            font-size: 38px;
+            font-weight: 800;
+            letter-spacing: 0.3px;
         }
 
-        header p {
-            margin: 10px 0 0;
-            font-size: 18px;
-        }
-
-        .am {
+        .amharic-title {
             display: block;
-            margin-top: 5px;
+            margin-top: 8px;
+            font-size: 28px;
+            font-weight: 700;
         }
 
+        .header-subtitle {
+            margin-top: 18px;
+            font-size: 21px;
+            font-weight: 500;
+        }
+
+        .header-subtitle-am {
+            display: block;
+            margin-top: 6px;
+            font-size: 17px;
+            opacity: 0.95;
+        }
 
         /* =========================
            NAVIGATION
-        ========================= */
+        ========================== */
 
         nav {
-            background: #0b2f50;
-
+            background: #092841;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-
             gap: 5px;
-
             padding: 10px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-
-            padding: 10px 18px;
-
-            border-radius: 6px;
-
-            transition: 0.2s;
+            padding: 11px 18px;
+            border-radius: 7px;
+            transition: 0.25s;
+            font-size: 14px;
         }
 
         nav a:hover {
-            background: #1d5d91;
+            background: #185a8a;
         }
-
 
         /* =========================
            CONTAINER
-        ========================= */
+        ========================== */
 
         .container {
             width: 94%;
             max-width: 1100px;
-
-            margin: 30px auto;
+            margin: 35px auto;
         }
-
 
         /* =========================
-           BACK BUTTON
-        ========================= */
+           HERO CARD
+        ========================== */
 
-        .back-home {
-            display: inline-block;
-
-            background: #123c69;
-            color: white;
-
-            padding: 11px 18px;
-
-            border-radius: 6px;
-
-            text-decoration: none;
-
-            margin-bottom: 20px;
-        }
-
-        .back-home:hover {
-            background: #0b2f50;
-        }
-
-
-        /* =========================
-           WELCOME
-        ========================= */
-
-        .welcome {
+        .hero {
             background: white;
-
-            padding: 30px;
-
-            border-radius: 10px;
-
+            border-radius: 16px;
+            padding: 35px;
+            text-align: center;
             box-shadow:
-                0 3px 10px rgba(0,0,0,0.08);
-
+                0 8px 30px rgba(15, 23, 42, 0.08);
+            border-top: 5px solid #123c69;
             margin-bottom: 25px;
         }
 
-        .welcome h2 {
+        .hero h2 {
             color: #123c69;
-
             margin-top: 0;
+            font-size: 27px;
         }
 
+        .hero p {
+            max-width: 800px;
+            margin: 12px auto;
+            line-height: 1.8;
+            color: #475569;
+        }
 
         /* =========================
-           INFORMATION CARDS
-        ========================= */
+           PARTY INFORMATION CARD
+        ========================== */
 
-        .cards {
+        .party-card {
             display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(220px, 1fr));
-
-            gap: 18px;
-
-            margin: 25px 0;
-        }
-
-        .card {
-            background: white;
-
+            grid-template-columns: 90px 1fr;
+            gap: 20px;
+            align-items: center;
+            background: linear-gradient(
+                135deg,
+                #ffffff,
+                #f8fafc
+            );
+            border-radius: 15px;
             padding: 25px;
-
-            border-radius: 10px;
-
-            text-align: center;
-
+            margin-bottom: 25px;
             box-shadow:
-                0 3px 10px rgba(0,0,0,0.08);
-
-            border-top: 5px solid #123c69;
+                0 6px 25px rgba(15,23,42,0.07);
+            border-left: 6px solid #f6c344;
         }
 
-        .card-icon {
-            font-size: 35px;
-
-            color: #123c69;
-
-            margin-bottom: 10px;
-        }
-
-        .card h3 {
-            color: #123c69;
-
-            margin-bottom: 8px;
-        }
-
-
-        /* =========================
-           SECTIONS
-        ========================= */
-
-        .section {
-            background: white;
-
-            padding: 28px;
-
-            margin: 25px 0;
-
-            border-radius: 10px;
-
-            box-shadow:
-                0 3px 10px rgba(0,0,0,0.08);
-        }
-
-        .section h2 {
-            color: #123c69;
-
-            border-bottom:
-                2px solid #e2e8f0;
-
-            padding-bottom: 12px;
-        }
-
-
-        /* =========================
-           PROCESS
-        ========================= */
-
-        .workflow {
-            display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(200px, 1fr));
-
-            gap: 15px;
-
-            margin-top: 20px;
-        }
-
-        .workflow-step {
-            background: #f8fafc;
-
-            border-left:
-                5px solid #123c69;
-
-            padding: 20px;
-
-            border-radius: 6px;
-        }
-
-        .workflow-step strong {
-            color: #123c69;
-
-            display: block;
-
-            margin-bottom: 8px;
-        }
-
-
-        /* =========================
-           FORM BUTTON / OPEN BUTTON
-        ========================= */
-
-        .open-form-area {
-            text-align: center;
-
-            padding: 20px 0;
-        }
-
-        .open-form-btn {
+        .party-icon {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background: #123c69;
-
-            color: white;
-
-            border: none;
-
-            padding: 15px 28px;
-
-            border-radius: 7px;
-
-            font-size: 17px;
-
-            cursor: pointer;
-
-            transition: 0.2s;
+            color: #f6c344;
+            font-size: 34px;
+            font-weight: bold;
         }
 
-        .open-form-btn:hover {
-            background: #0b2f50;
-
-            transform: translateY(-1px);
+        .party-card h2 {
+            margin: 0 0 7px;
+            color: #123c69;
         }
 
+        .party-card p {
+            margin: 4px 0;
+            color: #475569;
+        }
 
         /* =========================
-           FORM
-        ========================= */
+           FORM SECTION
+        ========================== */
 
         .form-container {
-            background: #f8fafc;
+            background: white;
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow:
+                0 8px 30px rgba(15,23,42,0.08);
+        }
 
-            padding: 25px;
+        .form-container h2 {
+            color: #123c69;
+            margin-top: 0;
+            font-size: 26px;
+        }
 
-            border-radius: 8px;
-
-            border:
-                1px solid #e2e8f0;
+        .form-description {
+            color: #64748b;
+            line-height: 1.7;
         }
 
         .form-row {
             display: grid;
-
             grid-template-columns:
                 repeat(2, 1fr);
-
             gap: 20px;
         }
 
         .form-group {
-            margin-bottom: 18px;
+            margin-top: 18px;
         }
 
         label {
             display: block;
-
-            font-weight: bold;
-
+            font-weight: 700;
             margin-bottom: 7px;
+            color: #334155;
         }
 
         input,
         select,
         textarea {
             width: 100%;
-
-            padding: 12px;
-
-            border:
-                1px solid #cbd5e1;
-
-            border-radius: 6px;
-
+            padding: 13px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
             font-size: 15px;
-
-            background: white;
-        }
-
-        textarea {
-            min-height: 110px;
-
-            resize: vertical;
+            font-family: inherit;
+            background: #fff;
+            transition: 0.2s;
         }
 
         input:focus,
         select:focus,
         textarea:focus {
             outline: none;
-
             border-color: #123c69;
-
             box-shadow:
-                0 0 0 2px rgba(18,60,105,0.10);
+                0 0 0 3px
+                rgba(18,60,105,0.10);
         }
 
+        textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
 
         /* =========================
            RADIO
-        ========================= */
+        ========================== */
 
         .radio-group {
             display: flex;
-
             gap: 25px;
-
-            align-items: center;
-
-            padding-top: 8px;
+            padding: 10px 0;
         }
 
         .radio-group label {
             display: flex;
-
             align-items: center;
-
             gap: 7px;
-
-            font-weight: normal;
-
-            margin: 0;
+            font-weight: 500;
         }
 
         .radio-group input {
             width: auto;
         }
 
-
         /* =========================
            SUBMIT BUTTON
-        ========================= */
+        ========================== */
 
         .submit-btn {
-            background: #198754;
-
+            width: 100%;
+            background:
+                linear-gradient(
+                    135deg,
+                    #123c69,
+                    #185a8a
+                );
             color: white;
-
             border: none;
-
-            padding: 13px 24px;
-
-            border-radius: 6px;
-
-            font-size: 16px;
-
+            padding: 15px;
+            margin-top: 25px;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: 700;
             cursor: pointer;
+            transition: 0.25s;
         }
 
         .submit-btn:hover {
-            background: #146c43;
+            transform: translateY(-2px);
+            box-shadow:
+                0 7px 18px
+                rgba(18,60,105,0.25);
         }
-
-
-        /* =========================
-           CLOSE BUTTON
-        ========================= */
-
-        .close-btn {
-            background: #64748b;
-
-            color: white;
-
-            border: none;
-
-            padding: 13px 24px;
-
-            border-radius: 6px;
-
-            font-size: 16px;
-
-            cursor: pointer;
-
-            margin-left: 8px;
-        }
-
-        .close-btn:hover {
-            background: #475569;
-        }
-
-
-        /* =========================
-           SUCCESS MESSAGE
-        ========================= */
-
-        .success-message {
-            display: none;
-
-            background: #d1e7dd;
-
-            color: #0f5132;
-
-            border-left:
-                5px solid #198754;
-
-            padding: 20px;
-
-            margin-top: 20px;
-
-            border-radius: 7px;
-        }
-
 
         /* =========================
            FOOTER
-        ========================= */
+        ========================== */
 
         footer {
-            background: #0b2f50;
-
+            background: #092841;
             color: white;
-
             text-align: center;
-
-            padding: 30px;
-
-            margin-top: 40px;
+            padding: 30px 20px;
+            margin-top: 45px;
         }
 
+        footer strong {
+            font-size: 19px;
+        }
+
+        footer p {
+            margin: 7px 0;
+            opacity: 0.9;
+        }
 
         /* =========================
            MOBILE
-        ========================= */
+        ========================== */
 
         @media (max-width: 700px) {
 
             header h1 {
-                font-size: 23px;
+                font-size: 28px;
             }
 
-            header p {
-                font-size: 15px;
+            .amharic-title {
+                font-size: 22px;
             }
 
-            .container {
-                width: 92%;
+            .header-subtitle {
+                font-size: 17px;
             }
 
             .form-row {
                 grid-template-columns: 1fr;
+                gap: 0;
             }
 
-            .radio-group {
-                flex-direction: column;
-
-                align-items: flex-start;
-
-                gap: 10px;
+            .party-card {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
 
-            .close-btn {
-                margin-left: 0;
-
-                margin-top: 10px;
+            .party-icon {
+                margin: auto;
             }
 
+            .hero,
+            .form-container {
+                padding: 22px;
+            }
+
+            nav a {
+                padding: 9px 12px;
+            }
         }
 
     </style>
@@ -543,363 +468,101 @@
 
 <body>
 
+    <!-- TOP BAR -->
 
-<!-- =========================
-     HEADER
-========================= -->
+    <div class="top-bar">
 
-<header>
+        Dalocha Woreda Administration |
+        የዳሎቻ ወረዳ አስተዳደር
 
-    <h1>
-
-        Dalocha Woreda
-
-        <span class="am">
-            ዳሎቻ ወረዳ
-        </span>
-
-    </h1>
-
-    <p>
-
-        Membership Registration Service
-
-        <span class="am">
-            የአባልነት መመዝገቢያ አገልግሎት
-        </span>
-
-    </p>
-
-</header>
+    </div>
 
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+    <!-- HEADER -->
 
-<nav>
+    <header>
 
-    <a href="index.html">
-        <i class="fa-solid fa-house"></i>
-        Home / መነሻ
-    </a>
+        <div class="header-content">
 
-    <a href="#about">
-        About / ስለ አገልግሎቱ
-    </a>
+            <div class="party-badge">
 
-    <a href="#register">
-        Register / መመዝገቢያ
-    </a>
+                <span class="party-dot"></span>
 
-</nav>
+                Prosperity Party
 
-
-<div class="container">
-
-
-    <!-- BACK -->
-
-    <a
-        href="index.html"
-        class="back-home">
-
-        ← Back to Dalocha Woreda /
-        ወደ ዳሎቻ ወረዳ ተመለስ
-
-    </a>
-
-
-    <!-- =========================
-         WELCOME
-    ========================= -->
-
-    <section
-        class="welcome"
-        id="about">
-
-        <h2>
-
-            Membership Registration Service
-
-            <span class="am">
-                የአባልነት መመዝገቢያ አገልግሎት
-            </span>
-
-        </h2>
-
-
-        <p>
-
-            This page provides an online registration
-            form for individuals who wish to submit
-            their membership registration information.
-
-        </p>
-
-
-        <p class="am">
-
-            ይህ ገጽ የአባልነት መመዝገቢያ መረጃ
-            ለማቅረብ የመስመር ላይ መመዝገቢያ
-            ፎርም ያቀርባል።
-
-        </p>
-
-    </section>
-
-
-    <!-- =========================
-         INFORMATION CARDS
-    ========================= -->
-
-    <section class="section">
-
-        <h2>
-
-            Registration Information
-
-            <span class="am">
-                የመመዝገቢያ መረጃ
-            </span>
-
-        </h2>
-
-
-        <div class="cards">
-
-
-            <div class="card">
-
-                <div class="card-icon">
-                    <i class="fa-solid fa-user"></i>
-                </div>
-
-                <h3>
-                    Personal Information
-                </h3>
-
-                <span class="am">
-                    የግል መረጃ
+                <span>
+                    የብልፅግና ፓርቲ
                 </span>
-
-                <p>
-                    Enter your basic personal information.
-                </p>
 
             </div>
 
 
-            <div class="card">
+            <h1>
 
-                <div class="card-icon">
-                    <i class="fa-solid fa-phone"></i>
-                </div>
+                Dalocha Woreda
 
-                <h3>
-                    Contact Information
-                </h3>
-
-                <span class="am">
-                    የመገናኛ መረጃ
+                <span class="amharic-title">
+                    ዳሎቻ ወረዳ
                 </span>
 
-                <p>
-                    Provide your phone and email information.
-                </p>
-
-            </div>
+            </h1>
 
 
-            <div class="card">
+            <div class="header-subtitle">
 
-                <div class="card-icon">
-                    <i class="fa-solid fa-location-dot"></i>
-                </div>
+                Prosperity Party Membership
+                Registration Service
 
-                <h3>
-                    Location
-                </h3>
+                <span class="header-subtitle-am">
 
-                <span class="am">
-                    አድራሻ
+                    የብልፅግና ፓርቲ
+                    አባልነት መመዝገቢያ አገልግሎት
+
                 </span>
 
-                <p>
-                    Provide your city, kebele and woreda.
-                </p>
-
             </div>
-
-
-            <div class="card">
-
-                <div class="card-icon">
-                    <i class="fa-solid fa-envelope"></i>
-                </div>
-
-                <h3>
-                    Submit
-                </h3>
-
-                <span class="am">
-                    አስገባ
-                </span>
-
-                <p>
-                    Submit the completed registration form.
-                </p>
-
-            </div>
-
 
         </div>
 
-    </section>
+    </header>
 
 
-    <!-- =========================
-         PROCESS
-    ========================= -->
+    <!-- NAVIGATION -->
 
-    <section class="section">
+    <nav>
 
-        <h2>
+        <a href="index.html">
+            Home / መነሻ
+        </a>
 
-            Registration Process
+        <a href="#register">
+            Registration / መመዝገቢያ
+        </a>
 
-            <span class="am">
-                የመመዝገቢያ ሂደት
-            </span>
+        <a href="#information">
+            Information / መረጃ
+        </a>
 
-        </h2>
-
-
-        <div class="workflow">
-
-
-            <div class="workflow-step">
-
-                <strong>
-
-                    1. Open Form
-
-                    <span class="am">
-                        1. ፎርሙን ይክፈቱ
-                    </span>
-
-                </strong>
-
-                <p>
-                    Click the registration button below.
-                </p>
-
-                <p class="am">
-                    ከታች ያለውን የመመዝገቢያ
-                    ቁልፍ ይጫኑ።
-                </p>
-
-            </div>
+    </nav>
 
 
-            <div class="workflow-step">
-
-                <strong>
-
-                    2. Fill Information
-
-                    <span class="am">
-                        2. መረጃ ይሙሉ
-                    </span>
-
-                </strong>
-
-                <p>
-                    Enter the required registration information.
-                </p>
-
-                <p class="am">
-                    አስፈላጊውን የመመዝገቢያ
-                    መረጃ ያስገቡ።
-                </p>
-
-            </div>
+    <main class="container">
 
 
-            <div class="workflow-step">
+        <!-- HERO -->
 
-                <strong>
-
-                    3. Submit
-
-                    <span class="am">
-                        3. አስገባ
-                    </span>
-
-                </strong>
-
-                <p>
-                    Submit the completed form.
-                </p>
-
-                <p class="am">
-                    የሞሉትን ፎርም ያስገቡ።
-                </p>
-
-            </div>
-
-
-            <div class="workflow-step">
-
-                <strong>
-
-                    4. Review
-
-                    <span class="am">
-                        4. ግምገማ
-                    </span>
-
-                </strong>
-
-                <p>
-                    Submitted information can be reviewed
-                    by the responsible office.
-                </p>
-
-                <p class="am">
-                    የቀረበው መረጃ በሚመለከተው
-                    ቢሮ ሊመረመር ይችላል።
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         REGISTER
-    ========================= -->
-
-    <section
-        class="section"
-        id="register">
-
-
-        <!-- ONLY BUTTON VISIBLE INITIALLY -->
-
-        <div
-            class="open-form-area"
-            id="openFormArea">
+        <section class="hero">
 
             <h2>
 
-                Membership Registration
+                Prosperity Party Membership
+                Registration
 
-                <span class="am">
-                    የአባልነት መመዝገቢያ
+                <span class="amharic-title">
+
+                    የብልፅግና ፓርቲ
+                    አባልነት መመዝገቢያ
+
                 </span>
 
             </h2>
@@ -907,70 +570,92 @@
 
             <p>
 
-                Click the button below to open
-                the registration form.
+                Welcome to the Dalocha Woreda
+                Prosperity Party membership
+                registration service.
 
             </p>
 
 
-            <p class="am">
+            <p>
 
-                የመመዝገቢያ ፎርሙን ለመክፈት
-                ከታች ያለውን ቁልፍ ይጫኑ።
+                ወደ ዳሎቻ ወረዳ
+                የብልፅግና ፓርቲ
+                አባልነት መመዝገቢያ
+                አገልግሎት እንኳን በደህና
+                መጡ።
 
             </p>
 
-
-            <button
-                type="button"
-                class="open-form-btn"
-                onclick="openMembershipForm()">
-
-                <i class="fa-solid fa-file-pen"></i>
-
-                Open Registration Form
-
-                <br>
-
-                የመመዝገቢያ ፎርም ክፈት
-
-            </button>
-
-        </div>
+        </section>
 
 
-        <!-- =========================
-             HIDDEN FORM
-        ========================= -->
+        <!-- PARTY INFORMATION -->
 
-        <div
+        <section
+            class="party-card"
+            id="information">
+
+            <div class="party-icon">
+                ★
+            </div>
+
+            <div>
+
+                <h2>
+
+                    Prosperity Party
+
+                    <span>
+                        የብልፅግና ፓርቲ
+                    </span>
+
+                </h2>
+
+                <p>
+
+                    Dalocha Woreda Prosperity Party
+                    Membership Registration Service
+
+                </p>
+
+                <p>
+
+                    የዳሎቻ ወረዳ የብልፅግና ፓርቲ
+                    አባልነት መመዝገቢያ አገልግሎት
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- REGISTRATION FORM -->
+
+        <section
             class="form-container"
-            id="membershipFormContainer"
-            style="display:none;">
-
+            id="register">
 
             <h2>
 
                 Membership Registration Form
 
-                <span class="am">
+                <span class="amharic-title">
+
                     የአባልነት መመዝገቢያ ፎርም
+
                 </span>
 
             </h2>
 
 
-            <hr>
+            <p class="form-description">
 
+                Please fill out the information
+                below carefully.
 
-            <p>
-
-                Please fill out the information below carefully.
-
-            </p>
-
-
-            <p class="am">
+                <br>
 
                 እባክዎን ከዚህ በታች ያሉትን
                 መረጃዎች በጥንቃቄ ይሙሉ።
@@ -978,37 +663,23 @@
             </p>
 
 
-            <!-- =========================
-                 FORMSPREE FORM
-            ========================= -->
+            <!-- YOUR EXISTING FORMSPREE FORM -->
 
             <form
-                id="membershipForm"
                 action="https://formspree.io/f/xaewwlde"
                 method="POST">
 
 
-                <!-- FULL NAME + EMAIL -->
-
                 <div class="form-row">
-
 
                     <div class="form-group">
 
                         <label for="fullName">
 
-                            <span
-                                data-am="ሙሉ ስም"
-                                data-en="Full Name">
-
-                                ሙሉ ስም
-
-                            </span>
-
-                            *
+                            Full Name /
+                            ሙሉ ስም *
 
                         </label>
-
 
                         <input
                             type="text"
@@ -1025,18 +696,10 @@
 
                         <label for="email">
 
-                            <span
-                                data-am="ኢሜይል"
-                                data-en="Email Address">
-
-                                ኢሜይል
-
-                            </span>
-
-                            *
+                            Email Address /
+                            ኢሜይል *
 
                         </label>
-
 
                         <input
                             type="email"
@@ -1047,34 +710,20 @@
 
                     </div>
 
-
                 </div>
 
 
-                <!-- GENDER + PHONE -->
-
                 <div class="form-row">
-
 
                     <div class="form-group">
 
                         <label>
 
-                            <span
-                                data-am="ጾታ"
-                                data-en="Sex">
-
-                                ጾታ
-
-                            </span>
-
-                            *
+                            Sex / ጾታ *
 
                         </label>
 
-
                         <div class="radio-group">
-
 
                             <label>
 
@@ -1084,13 +733,7 @@
                                     value="Male"
                                     required>
 
-                                <span
-                                    data-am="ወንድ"
-                                    data-en="Male">
-
-                                    ወንድ
-
-                                </span>
+                                Male / ወንድ
 
                             </label>
 
@@ -1102,16 +745,9 @@
                                     name="gender"
                                     value="Female">
 
-                                <span
-                                    data-am="ሴት"
-                                    data-en="Female">
-
-                                    ሴት
-
-                                </span>
+                                Female / ሴት
 
                             </label>
-
 
                         </div>
 
@@ -1122,61 +758,39 @@
 
                         <label for="phone">
 
-                            <span
-                                data-am="ስልክ ቁጥር"
-                                data-en="Phone Number">
-
-                                ስልክ ቁጥር
-
-                            </span>
-
-                            *
+                            Phone Number /
+                            ስልክ ቁጥር *
 
                         </label>
-
 
                         <input
                             type="tel"
                             id="phone"
                             name="phone"
-                            pattern="(\+251|0)[97][0-9]{8}"
-                            title="Please enter a valid Ethiopian phone number"
+                            pattern="(\+251|0)[97]\d{8}"
                             placeholder="09... ወይም +2519..."
                             required>
 
                     </div>
 
-
                 </div>
 
 
-                <!-- EDUCATION + OCCUPATION -->
-
                 <div class="form-row">
-
 
                     <div class="form-group">
 
                         <label for="education">
 
-                            <span
-                                data-am="የትምህርት ደረጃ"
-                                data-en="Education Level">
-
-                                የትምህርት ደረጃ
-
-                            </span>
-
-                            *
+                            Education Level /
+                            የትምህርት ደረጃ *
 
                         </label>
-
 
                         <select
                             id="education"
                             name="education"
                             required>
-
 
                             <option
                                 value=""
@@ -1187,57 +801,33 @@
 
                             </option>
 
-
                             <option value="Primary">
-
-                                መሰረታዊ /
-                                የመጀመሪያ ደረጃ
-
+                                Primary / መሰረታዊ
                             </option>
-
 
                             <option value="HighSchool">
-
-                                ሁለተኛ ደረጃ
-
+                                High School / ሁለተኛ ደረጃ
                             </option>
-
 
                             <option value="TVET">
-
-                                ዲፕሎማ
-                                (TVET/College)
-
+                                Diploma / ዲፕሎማ
                             </option>
-
 
                             <option value="Bachelor">
-
-                                የመጀመሪያ ዲግሪ
-
+                                Bachelor's Degree / የመጀመሪያ ዲግሪ
                             </option>
-
 
                             <option value="Master">
-
-                                ማስተርስ
-
+                                Master's Degree / ማስተርስ
                             </option>
-
 
                             <option value="PhD">
-
-                                ዶክተሬት
-
+                                Doctorate / ዶክተሬት
                             </option>
-
 
                             <option value="Other">
-
-                                ሌላ
-
+                                Other / ሌላ
                             </option>
-
 
                         </select>
 
@@ -1248,16 +838,10 @@
 
                         <label for="occupation">
 
-                            <span
-                                data-am="የሥራ መስክ"
-                                data-en="Occupation">
-
-                                የሥራ መስክ
-
-                            </span>
+                            Occupation /
+                            የሥራ መስክ
 
                         </label>
-
 
                         <input
                             type="text"
@@ -1267,31 +851,19 @@
 
                     </div>
 
-
                 </div>
 
 
-                <!-- CITY + WOREDA -->
-
                 <div class="form-row">
-
 
                     <div class="form-group">
 
                         <label for="city">
 
-                            <span
-                                data-am="ከተማ/ቀበሌ"
-                                data-en="City / Town / Kebele">
-
-                                ከተማ/ቀበሌ
-
-                            </span>
-
-                            *
+                            City / Kebele /
+                            ከተማ / ቀበሌ *
 
                         </label>
-
 
                         <input
                             type="text"
@@ -1307,65 +879,38 @@
 
                         <label for="woreda">
 
-                            <span
-                                data-am="ወረዳ"
-                                data-en="Woreda">
-
-                                ወረዳ
-
-                            </span>
-
-                            *
+                            Woreda / ወረዳ *
 
                         </label>
-
 
                         <input
                             type="text"
                             id="woreda"
                             name="woreda"
-                            value="Dalocha Woreda"
+                            placeholder="ምሳሌ፡ ዳሎቻ ወረዳ"
                             required>
 
                     </div>
 
-
                 </div>
 
-
-                <!-- MESSAGE -->
 
                 <div class="form-group">
 
                     <label for="formMessage">
 
-                        <span
-                            data-am="ተጨማሪ አስተያየት ወይም መልዕክት"
-                            data-en="Additional Comments or Message">
-
-                            ተጨማሪ አስተያየት ወይም መልዕክት
-
-                        </span>
+                        Additional Message /
+                        ተጨማሪ መልዕክት
 
                     </label>
-
 
                     <textarea
                         id="formMessage"
                         name="message"
                         rows="4"
-                        placeholder="እዚህ ጋር ጽሑፍ ማስገባት ይችላሉ...">
-                    </textarea>
+                        placeholder="እዚህ ጋር መልዕክት ማስገባት ይችላሉ..."></textarea>
 
                 </div>
-
-
-                <!-- HIDDEN SUBJECT -->
-
-                <input
-                    type="hidden"
-                    name="_subject"
-                    value="Dalocha Woreda Membership Registration">
 
 
                 <!-- SUBMIT -->
@@ -1374,210 +919,51 @@
                     type="submit"
                     class="submit-btn">
 
-                    <i class="fa-solid fa-paper-plane"></i>
-
-                    Submit Application
-
-                    <br>
-
-                    አስገባ
+                    Submit Membership Application
+                    / የአባልነት ማመልከቻ አስገባ
 
                 </button>
-
-
-                <!-- CLOSE -->
-
-                <button
-                    type="button"
-                    class="close-btn"
-                    onclick="closeMembershipForm()">
-
-                    <i class="fa-solid fa-xmark"></i>
-
-                    Close
-
-                    <br>
-
-                    ዝጋ
-
-                </button>
-
 
             </form>
 
+        </section>
 
-            <!-- SUCCESS MESSAGE -->
-
-            <div
-                id="successMessage"
-                class="success-message">
-
-                <strong>
-
-                    Registration submitted successfully.
-
-                </strong>
+    </main>
 
 
-                <span class="am">
+    <!-- FOOTER -->
 
-                    መመዝገቢያው በተሳካ ሁኔታ
-                    ተልኳል።
+    <footer>
 
-                </span>
+        <strong>
 
-
-                <br><br>
-
-
-                Thank you for submitting your information.
-
-                <span class="am">
-
-                    መረጃዎን ስላቀረቡ እናመሰግናለን።
-
-                </span>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-</div>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-    <strong>
-
-        Dalocha Woreda
-
-        <span class="am">
+            Dalocha Woreda |
             ዳሎቻ ወረዳ
-        </span>
 
-    </strong>
+        </strong>
 
+        <p>
 
-    <p>
-        Membership Registration Service
-    </p>
+            Prosperity Party Membership
+            Registration Service
 
+        </p>
 
-    <p class="am">
-        የአባልነት መመዝገቢያ አገልግሎት
-    </p>
+        <p>
 
+            የብልፅግና ፓርቲ
+            አባልነት መመዝገቢያ አገልግሎት
 
-    <p>
-        © 2026 Dalocha Woreda. All Rights Reserved.
-    </p>
+        </p>
 
-</footer>
+        <p>
 
+            © 2026 Dalocha Woreda.
+            All Rights Reserved.
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
+        </p>
 
-<script>
-
-
-/* =========================
-   OPEN FORM
-========================= */
-
-function openMembershipForm() {
-
-    const form =
-        document.getElementById(
-            "membershipFormContainer"
-        );
-
-
-    const openArea =
-        document.getElementById(
-            "openFormArea"
-        );
-
-
-    form.style.display = "block";
-
-    openArea.style.display = "none";
-
-
-    form.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-
-}
-
-
-/* =========================
-   CLOSE FORM
-========================= */
-
-function closeMembershipForm() {
-
-    const form =
-        document.getElementById(
-            "membershipFormContainer"
-        );
-
-
-    const openArea =
-        document.getElementById(
-            "openFormArea"
-        );
-
-
-    form.style.display = "none";
-
-    openArea.style.display = "block";
-
-
-    document
-        .getElementById("register")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
-
-}
-
-
-/* =========================
-   FORM SUBMISSION
-========================= */
-
-document
-    .getElementById("membershipForm")
-    .addEventListener(
-        "submit",
-        function(event) {
-
-            /*
-             * We allow the form to submit
-             * normally to Formspree.
-             *
-             * Formspree will handle sending
-             * the information to your configured
-             * email address.
-             */
-
-        }
-    );
-
-
-</script>
-
+    </footer>
 
 </body>
 
