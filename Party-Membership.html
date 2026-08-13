@@ -1,1 +1,1584 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Dalocha Woreda Membership Registration |
+        የዳሎቻ ወረዳ አባልነት መመዝገቢያ
+    </title>
+
+    <meta
+        name="description"
+        content="Dalocha Woreda membership registration service. Citizens can submit their membership registration information online."
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family:
+                Arial,
+                "Noto Sans Ethiopic",
+                "Abyssinica SIL",
+                sans-serif;
+
+            background: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: #123c69;
+            color: white;
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 18px;
+        }
+
+        .am {
+            display: block;
+            margin-top: 5px;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            background: #0b2f50;
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            gap: 5px;
+
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+
+            padding: 10px 18px;
+
+            border-radius: 6px;
+
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            background: #1d5d91;
+        }
+
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
+        .container {
+            width: 94%;
+            max-width: 1100px;
+
+            margin: 30px auto;
+        }
+
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
+
+        .back-home {
+            display: inline-block;
+
+            background: #123c69;
+            color: white;
+
+            padding: 11px 18px;
+
+            border-radius: 6px;
+
+            text-decoration: none;
+
+            margin-bottom: 20px;
+        }
+
+        .back-home:hover {
+            background: #0b2f50;
+        }
+
+
+        /* =========================
+           WELCOME
+        ========================= */
+
+        .welcome {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 3px 10px rgba(0,0,0,0.08);
+
+            margin-bottom: 25px;
+        }
+
+        .welcome h2 {
+            color: #123c69;
+
+            margin-top: 0;
+        }
+
+
+        /* =========================
+           INFORMATION CARDS
+        ========================= */
+
+        .cards {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 18px;
+
+            margin: 25px 0;
+        }
+
+        .card {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 10px;
+
+            text-align: center;
+
+            box-shadow:
+                0 3px 10px rgba(0,0,0,0.08);
+
+            border-top: 5px solid #123c69;
+        }
+
+        .card-icon {
+            font-size: 35px;
+
+            color: #123c69;
+
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            color: #123c69;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        .section {
+            background: white;
+
+            padding: 28px;
+
+            margin: 25px 0;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            color: #123c69;
+
+            border-bottom:
+                2px solid #e2e8f0;
+
+            padding-bottom: 12px;
+        }
+
+
+        /* =========================
+           PROCESS
+        ========================= */
+
+        .workflow {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(200px, 1fr));
+
+            gap: 15px;
+
+            margin-top: 20px;
+        }
+
+        .workflow-step {
+            background: #f8fafc;
+
+            border-left:
+                5px solid #123c69;
+
+            padding: 20px;
+
+            border-radius: 6px;
+        }
+
+        .workflow-step strong {
+            color: #123c69;
+
+            display: block;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           FORM BUTTON / OPEN BUTTON
+        ========================= */
+
+        .open-form-area {
+            text-align: center;
+
+            padding: 20px 0;
+        }
+
+        .open-form-btn {
+            background: #123c69;
+
+            color: white;
+
+            border: none;
+
+            padding: 15px 28px;
+
+            border-radius: 7px;
+
+            font-size: 17px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .open-form-btn:hover {
+            background: #0b2f50;
+
+            transform: translateY(-1px);
+        }
+
+
+        /* =========================
+           FORM
+        ========================= */
+
+        .form-container {
+            background: #f8fafc;
+
+            padding: 25px;
+
+            border-radius: 8px;
+
+            border:
+                1px solid #e2e8f0;
+        }
+
+        .form-row {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+
+            font-weight: bold;
+
+            margin-bottom: 7px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+
+            padding: 12px;
+
+            border:
+                1px solid #cbd5e1;
+
+            border-radius: 6px;
+
+            font-size: 15px;
+
+            background: white;
+        }
+
+        textarea {
+            min-height: 110px;
+
+            resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+
+            border-color: #123c69;
+
+            box-shadow:
+                0 0 0 2px rgba(18,60,105,0.10);
+        }
+
+
+        /* =========================
+           RADIO
+        ========================= */
+
+        .radio-group {
+            display: flex;
+
+            gap: 25px;
+
+            align-items: center;
+
+            padding-top: 8px;
+        }
+
+        .radio-group label {
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            font-weight: normal;
+
+            margin: 0;
+        }
+
+        .radio-group input {
+            width: auto;
+        }
+
+
+        /* =========================
+           SUBMIT BUTTON
+        ========================= */
+
+        .submit-btn {
+            background: #198754;
+
+            color: white;
+
+            border: none;
+
+            padding: 13px 24px;
+
+            border-radius: 6px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #146c43;
+        }
+
+
+        /* =========================
+           CLOSE BUTTON
+        ========================= */
+
+        .close-btn {
+            background: #64748b;
+
+            color: white;
+
+            border: none;
+
+            padding: 13px 24px;
+
+            border-radius: 6px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            margin-left: 8px;
+        }
+
+        .close-btn:hover {
+            background: #475569;
+        }
+
+
+        /* =========================
+           SUCCESS MESSAGE
+        ========================= */
+
+        .success-message {
+            display: none;
+
+            background: #d1e7dd;
+
+            color: #0f5132;
+
+            border-left:
+                5px solid #198754;
+
+            padding: 20px;
+
+            margin-top: 20px;
+
+            border-radius: 7px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #0b2f50;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 30px;
+
+            margin-top: 40px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            header h1 {
+                font-size: 23px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .radio-group {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 10px;
+            }
+
+            .close-btn {
+                margin-left: 0;
+
+                margin-top: 10px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <h1>
+
+        Dalocha Woreda
+
+        <span class="am">
+            ዳሎቻ ወረዳ
+        </span>
+
+    </h1>
+
+    <p>
+
+        Membership Registration Service
+
+        <span class="am">
+            የአባልነት መመዝገቢያ አገልግሎት
+        </span>
+
+    </p>
+
+</header>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <a href="index.html">
+        <i class="fa-solid fa-house"></i>
+        Home / መነሻ
+    </a>
+
+    <a href="#about">
+        About / ስለ አገልግሎቱ
+    </a>
+
+    <a href="#register">
+        Register / መመዝገቢያ
+    </a>
+
+</nav>
+
+
+<div class="container">
+
+
+    <!-- BACK -->
+
+    <a
+        href="index.html"
+        class="back-home">
+
+        ← Back to Dalocha Woreda /
+        ወደ ዳሎቻ ወረዳ ተመለስ
+
+    </a>
+
+
+    <!-- =========================
+         WELCOME
+    ========================= -->
+
+    <section
+        class="welcome"
+        id="about">
+
+        <h2>
+
+            Membership Registration Service
+
+            <span class="am">
+                የአባልነት መመዝገቢያ አገልግሎት
+            </span>
+
+        </h2>
+
+
+        <p>
+
+            This page provides an online registration
+            form for individuals who wish to submit
+            their membership registration information.
+
+        </p>
+
+
+        <p class="am">
+
+            ይህ ገጽ የአባልነት መመዝገቢያ መረጃ
+            ለማቅረብ የመስመር ላይ መመዝገቢያ
+            ፎርም ያቀርባል።
+
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         INFORMATION CARDS
+    ========================= -->
+
+    <section class="section">
+
+        <h2>
+
+            Registration Information
+
+            <span class="am">
+                የመመዝገቢያ መረጃ
+            </span>
+
+        </h2>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <h3>
+                    Personal Information
+                </h3>
+
+                <span class="am">
+                    የግል መረጃ
+                </span>
+
+                <p>
+                    Enter your basic personal information.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <h3>
+                    Contact Information
+                </h3>
+
+                <span class="am">
+                    የመገናኛ መረጃ
+                </span>
+
+                <p>
+                    Provide your phone and email information.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <h3>
+                    Location
+                </h3>
+
+                <span class="am">
+                    አድራሻ
+                </span>
+
+                <p>
+                    Provide your city, kebele and woreda.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <h3>
+                    Submit
+                </h3>
+
+                <span class="am">
+                    አስገባ
+                </span>
+
+                <p>
+                    Submit the completed registration form.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROCESS
+    ========================= -->
+
+    <section class="section">
+
+        <h2>
+
+            Registration Process
+
+            <span class="am">
+                የመመዝገቢያ ሂደት
+            </span>
+
+        </h2>
+
+
+        <div class="workflow">
+
+
+            <div class="workflow-step">
+
+                <strong>
+
+                    1. Open Form
+
+                    <span class="am">
+                        1. ፎርሙን ይክፈቱ
+                    </span>
+
+                </strong>
+
+                <p>
+                    Click the registration button below.
+                </p>
+
+                <p class="am">
+                    ከታች ያለውን የመመዝገቢያ
+                    ቁልፍ ይጫኑ።
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <strong>
+
+                    2. Fill Information
+
+                    <span class="am">
+                        2. መረጃ ይሙሉ
+                    </span>
+
+                </strong>
+
+                <p>
+                    Enter the required registration information.
+                </p>
+
+                <p class="am">
+                    አስፈላጊውን የመመዝገቢያ
+                    መረጃ ያስገቡ።
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <strong>
+
+                    3. Submit
+
+                    <span class="am">
+                        3. አስገባ
+                    </span>
+
+                </strong>
+
+                <p>
+                    Submit the completed form.
+                </p>
+
+                <p class="am">
+                    የሞሉትን ፎርም ያስገቡ።
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <strong>
+
+                    4. Review
+
+                    <span class="am">
+                        4. ግምገማ
+                    </span>
+
+                </strong>
+
+                <p>
+                    Submitted information can be reviewed
+                    by the responsible office.
+                </p>
+
+                <p class="am">
+                    የቀረበው መረጃ በሚመለከተው
+                    ቢሮ ሊመረመር ይችላል።
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         REGISTER
+    ========================= -->
+
+    <section
+        class="section"
+        id="register">
+
+
+        <!-- ONLY BUTTON VISIBLE INITIALLY -->
+
+        <div
+            class="open-form-area"
+            id="openFormArea">
+
+            <h2>
+
+                Membership Registration
+
+                <span class="am">
+                    የአባልነት መመዝገቢያ
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Click the button below to open
+                the registration form.
+
+            </p>
+
+
+            <p class="am">
+
+                የመመዝገቢያ ፎርሙን ለመክፈት
+                ከታች ያለውን ቁልፍ ይጫኑ።
+
+            </p>
+
+
+            <button
+                type="button"
+                class="open-form-btn"
+                onclick="openMembershipForm()">
+
+                <i class="fa-solid fa-file-pen"></i>
+
+                Open Registration Form
+
+                <br>
+
+                የመመዝገቢያ ፎርም ክፈት
+
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             HIDDEN FORM
+        ========================= -->
+
+        <div
+            class="form-container"
+            id="membershipFormContainer"
+            style="display:none;">
+
+
+            <h2>
+
+                Membership Registration Form
+
+                <span class="am">
+                    የአባልነት መመዝገቢያ ፎርም
+                </span>
+
+            </h2>
+
+
+            <hr>
+
+
+            <p>
+
+                Please fill out the information below carefully.
+
+            </p>
+
+
+            <p class="am">
+
+                እባክዎን ከዚህ በታች ያሉትን
+                መረጃዎች በጥንቃቄ ይሙሉ።
+
+            </p>
+
+
+            <!-- =========================
+                 FORMSPREE FORM
+            ========================= -->
+
+            <form
+                id="membershipForm"
+                action="https://formspree.io/f/xaewwlde"
+                method="POST">
+
+
+                <!-- FULL NAME + EMAIL -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="fullName">
+
+                            <span
+                                data-am="ሙሉ ስም"
+                                data-en="Full Name">
+
+                                ሙሉ ስም
+
+                            </span>
+
+                            *
+
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            minlength="3"
+                            placeholder="ምሳሌ፡ አበበ ከበደ ተሰማ"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+
+                            <span
+                                data-am="ኢሜይል"
+                                data-en="Email Address">
+
+                                ኢሜይል
+
+                            </span>
+
+                            *
+
+                        </label>
+
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="_replyto"
+                            placeholder="example@gmail.com"
+                            required>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- GENDER + PHONE -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label>
+
+                            <span
+                                data-am="ጾታ"
+                                data-en="Sex">
+
+                                ጾታ
+
+                            </span>
+
+                            *
+
+                        </label>
+
+
+                        <div class="radio-group">
+
+
+                            <label>
+
+                                <input
+                                    type="radio"
+                                    name="gender"
+                                    value="Male"
+                                    required>
+
+                                <span
+                                    data-am="ወንድ"
+                                    data-en="Male">
+
+                                    ወንድ
+
+                                </span>
+
+                            </label>
+
+
+                            <label>
+
+                                <input
+                                    type="radio"
+                                    name="gender"
+                                    value="Female">
+
+                                <span
+                                    data-am="ሴት"
+                                    data-en="Female">
+
+                                    ሴት
+
+                                </span>
+
+                            </label>
+
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">
+
+                            <span
+                                data-am="ስልክ ቁጥር"
+                                data-en="Phone Number">
+
+                                ስልክ ቁጥር
+
+                            </span>
+
+                            *
+
+                        </label>
+
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            pattern="(\+251|0)[97][0-9]{8}"
+                            title="Please enter a valid Ethiopian phone number"
+                            placeholder="09... ወይም +2519..."
+                            required>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- EDUCATION + OCCUPATION -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="education">
+
+                            <span
+                                data-am="የትምህርት ደረጃ"
+                                data-en="Education Level">
+
+                                የትምህርት ደረጃ
+
+                            </span>
+
+                            *
+
+                        </label>
+
+
+                        <select
+                            id="education"
+                            name="education"
+                            required>
+
+
+                            <option
+                                value=""
+                                disabled
+                                selected>
+
+                                ይምረጡ...
+
+                            </option>
+
+
+                            <option value="Primary">
+
+                                መሰረታዊ /
+                                የመጀመሪያ ደረጃ
+
+                            </option>
+
+
+                            <option value="HighSchool">
+
+                                ሁለተኛ ደረጃ
+
+                            </option>
+
+
+                            <option value="TVET">
+
+                                ዲፕሎማ
+                                (TVET/College)
+
+                            </option>
+
+
+                            <option value="Bachelor">
+
+                                የመጀመሪያ ዲግሪ
+
+                            </option>
+
+
+                            <option value="Master">
+
+                                ማስተርስ
+
+                            </option>
+
+
+                            <option value="PhD">
+
+                                ዶክተሬት
+
+                            </option>
+
+
+                            <option value="Other">
+
+                                ሌላ
+
+                            </option>
+
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="occupation">
+
+                            <span
+                                data-am="የሥራ መስክ"
+                                data-en="Occupation">
+
+                                የሥራ መስክ
+
+                            </span>
+
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="occupation"
+                            name="occupation"
+                            placeholder="ምሳሌ፡ መምህር / ነጋዴ / ተማሪ">
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- CITY + WOREDA -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="city">
+
+                            <span
+                                data-am="ከተማ/ቀበሌ"
+                                data-en="City / Town / Kebele">
+
+                                ከተማ/ቀበሌ
+
+                            </span>
+
+                            *
+
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="city"
+                            name="city"
+                            placeholder="ምሳሌ፡ ዳሎቻ / ቀበሌ 01"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="woreda">
+
+                            <span
+                                data-am="ወረዳ"
+                                data-en="Woreda">
+
+                                ወረዳ
+
+                            </span>
+
+                            *
+
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="woreda"
+                            name="woreda"
+                            value="Dalocha Woreda"
+                            required>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- MESSAGE -->
+
+                <div class="form-group">
+
+                    <label for="formMessage">
+
+                        <span
+                            data-am="ተጨማሪ አስተያየት ወይም መልዕክት"
+                            data-en="Additional Comments or Message">
+
+                            ተጨማሪ አስተያየት ወይም መልዕክት
+
+                        </span>
+
+                    </label>
+
+
+                    <textarea
+                        id="formMessage"
+                        name="message"
+                        rows="4"
+                        placeholder="እዚህ ጋር ጽሑፍ ማስገባት ይችላሉ...">
+                    </textarea>
+
+                </div>
+
+
+                <!-- HIDDEN SUBJECT -->
+
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="Dalocha Woreda Membership Registration">
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="submit-btn">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Submit Application
+
+                    <br>
+
+                    አስገባ
+
+                </button>
+
+
+                <!-- CLOSE -->
+
+                <button
+                    type="button"
+                    class="close-btn"
+                    onclick="closeMembershipForm()">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                    Close
+
+                    <br>
+
+                    ዝጋ
+
+                </button>
+
+
+            </form>
+
+
+            <!-- SUCCESS MESSAGE -->
+
+            <div
+                id="successMessage"
+                class="success-message">
+
+                <strong>
+
+                    Registration submitted successfully.
+
+                </strong>
+
+
+                <span class="am">
+
+                    መመዝገቢያው በተሳካ ሁኔታ
+                    ተልኳል።
+
+                </span>
+
+
+                <br><br>
+
+
+                Thank you for submitting your information.
+
+                <span class="am">
+
+                    መረጃዎን ስላቀረቡ እናመሰግናለን።
+
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <strong>
+
+        Dalocha Woreda
+
+        <span class="am">
+            ዳሎቻ ወረዳ
+        </span>
+
+    </strong>
+
+
+    <p>
+        Membership Registration Service
+    </p>
+
+
+    <p class="am">
+        የአባልነት መመዝገቢያ አገልግሎት
+    </p>
+
+
+    <p>
+        © 2026 Dalocha Woreda. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+
+/* =========================
+   OPEN FORM
+========================= */
+
+function openMembershipForm() {
+
+    const form =
+        document.getElementById(
+            "membershipFormContainer"
+        );
+
+
+    const openArea =
+        document.getElementById(
+            "openFormArea"
+        );
+
+
+    form.style.display = "block";
+
+    openArea.style.display = "none";
+
+
+    form.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+}
+
+
+/* =========================
+   CLOSE FORM
+========================= */
+
+function closeMembershipForm() {
+
+    const form =
+        document.getElementById(
+            "membershipFormContainer"
+        );
+
+
+    const openArea =
+        document.getElementById(
+            "openFormArea"
+        );
+
+
+    form.style.display = "none";
+
+    openArea.style.display = "block";
+
+
+    document
+        .getElementById("register")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+/* =========================
+   FORM SUBMISSION
+========================= */
+
+document
+    .getElementById("membershipForm")
+    .addEventListener(
+        "submit",
+        function(event) {
+
+            /*
+             * We allow the form to submit
+             * normally to Formspree.
+             *
+             * Formspree will handle sending
+             * the information to your configured
+             * email address.
+             */
+
+        }
+    );
+
+
+</script>
+
+
+</body>
+
+</html>
