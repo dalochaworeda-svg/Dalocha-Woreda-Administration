@@ -619,7 +619,7 @@ body {
     background-color: #0b2f4c;
     color: #ffffff;
     position: relative;
-    padding-top: 80px;
+    padding-top: 40px;
     margin-top: 20px;
 }
 
@@ -632,7 +632,7 @@ body {
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 80px 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
