@@ -699,7 +699,7 @@
 
   <ul class="dropdown-menu">
 
-  <!-- SERVICES -->
+ <!-- SERVICES -->
 <ul class="dropdown-menu">
 
     <!-- PROSPERITY PARTY -->
@@ -737,6 +737,24 @@
         </a>
     </li>
 
+
+    <!-- APPOINTMENT SERVICE -->
+    <li>
+        <a href="appointment.html" class="service-link">
+
+            <span class="service-icon">📅</span>
+
+            <strong
+                data-en="Citizen Appointment Service"
+                data-am="የባለጉዳይ ቀጠሮ አገልግሎት">
+
+                Citizen Appointment Service
+
+            </strong>
+
+        </a>
+    </li>
+
 </ul>
   </div>
         <div class="footer-card center-align">
@@ -747,104 +765,6 @@
                 <a href="#" class="social-btn" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
     </div>
 </footer>
-        <!-- MEMBERSHIP FORM SECTION -->
-<section class="content-section" id="register">
-    <div class="form-container">
-        <h2 data-am="የብልፅግና ፓርቲ አባልነት መመዝገቢያ ፎርም" data-en="Prosperity Party Membership Registration Form">የብልፅግና ፓርቲ አባልነት መመዝገቢያ ፎርም</h2>
-        <hr>
-        <p data-am="እባክዎን ከዚህ በታች ያሉትን መረጃዎች በጥንቃቄ ይሙሉ::" data-en="Please fill out the information below carefully.">እባክዎን ከዚህ በታች ያሉትን መረጃዎች በጥንቃቄ ይሙሉ::</p>
-
-        <form action="https://formspree.io/f/xaewwlde" method="POST">
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="fullName">
-                        <span data-am="ሙሉ ስም" data-en="Full Name">ሙሉ ስም</span> *
-                    </label>
-                    <input type="text" id="fullName" name="fullName" minlength="3" placeholder="ምሳሌ፡ አበበ ከበደ ተሰማ" data-placeholder-am="ምሳሌ፡ አበበ ከበደ ተሰማ" data-placeholder-en="e.g. Abebe Kebede Tessema" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">
-                        <span data-am="ኢሜይል" data-en="Email Address">ኢሜይል</span> *
-                    </label>
-                    <input type="email" id="email" name="_replyto" placeholder="example@gmail.com" required>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label>
-                        <span data-am="ጾታ" data-en="Sex">ጾታ</span> *
-                    </label>
-                    <div class="radio-group">
-                        <label>
-                            <input type="radio" name="gender" value="Male" required> 
-                            <span data-am="ወንድ" data-en="Male">ወንድ</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="gender" value="Female"> 
-                            <span data-am="ሴት" data-en="Female">ሴት</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="phone">
-                        <span data-am="ስልክ ቁጥር" data-en="Phone Number">ስልክ ቁጥር</span> *
-                    </label>
-                    <input type="tel" id="phone" name="phone" pattern="(\+251|0)[97]\d{8}" title="እባክዎን ትክክለኛ የኢትዮጵያ ስልክ ቁጥር ያስገቡ (ምሳሌ፡ 0912345678 ወይም +251912345678)" data-title-am="እባክዎን ትክክለኛ የኢትዮጵያ ስልክ ቁጥር ያስገቡ (ምሳሌ፡ 0912345678 ወይም +251912345678)" data-title-en="Please enter a valid Ethiopian phone number (e.g. 0912345678 or +251912345678)" placeholder="09... ወይም +2519..." data-placeholder-am="09... ወይም +2519..." data-placeholder-en="09... or +2519..." required>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="education">
-                        <span data-am="የትምህርት ደረጃ" data-en="Education Level">የትምህርት ደረጃ</span> *
-                    </label>
-                    <select id="education" name="education" required>
-                        <option value="" disabled selected data-am="ይምረጡ..." data-en="Select...">ይምረጡ...</option>
-                        <option value="Primary" data-am="መሰረታዊ / የመጀመሪያ ደረጃ" data-en="Primary / Basic Education">መሰረታዊ / የመጀመሪያ ደረጃ</option>
-                        <option value="HighSchool" data-am="ሁለተኛ ደረጃ (10ኛ/12ኛ)" data-en="High School (Grade 10/12)">ሁለተኛ ደረጃ (10ኛ/12ኛ)</option>
-                        <option value="TVET" data-am="ዲፕሎማ (TVET/College)" data-en="Diploma (TVET/College)">ዲፕሎማ (TVET/College)</option>
-                        <option value="Bachelor" data-am="የመጀመሪያ ዲግሪ (Bachelor's)" data-en="Bachelor's Degree">የመጀመሪያ ዲግሪ (Bachelor's)</option>
-                        <option value="Master" data-am="ማስተርስ (Master's)" data-en="Master's Degree">ማስተርስ (Master's)</option>
-                        <option value="PhD" data-am="ዶክተሬት (PhD)" data-en="Doctorate (PhD)">ዶክተሬት (PhD)</option>
-                        <option value="Other" data-am="ሌላ" data-en="Other">ሌላ</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="occupation">
-                        <span data-am="የሥራ መስክ" data-en="Occupation">የሥራ መስክ</span>
-                    </label>
-                    <input type="text" id="occupation" name="occupation" placeholder="ምሳሌ፡ መምህር / ነጋዴ / ተማሪ" data-placeholder-am="ምሳሌ፡ መምህር / ነጋዴ / ተማሪ" data-placeholder-en="e.g. Teacher / Merchant / Student">
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="city">
-                        <span data-am="ከተማ/ቀበሌ" data-en="City / Town / Kebele">ከተማ/ቀበሌ</span> *
-                    </label>
-                    <input type="text" id="city" name="city" placeholder="ምሳሌ፡ ዳሎቻ / ቀበሌ 01" data-placeholder-am="ምሳሌ፡ ዳሎቻ / ቀበሌ 01" data-placeholder-en="e.g. Dalocha / Kebele 01" required>
-                </div>
-                <div class="form-group">
-                    <label for="woreda">
-                        <span data-am="ወረዳ" data-en="Woreda">ወረዳ</span> *
-                    </label>
-                    <input type="text" id="woreda" name="woreda" placeholder="ምሳሌ፡ ዳሎቻ ወረዳ" data-placeholder-am="ምሳሌ፡ ዳሎቻ ወረዳ" data-placeholder-en="e.g. Dalocha Woreda" required>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="formMessage">
-                    <span data-am="ተጨማሪ አስተያየት ወይም መልዕክት" data-en="Additional Comments or Message">ተጨማሪ አስተያየት ወይም መልዕክት</span>
-                </label>
-                <textarea id="formMessage" name="message" rows="4" placeholder="እዚህ ጋር ጽሑፍ ማስገባት ይችላሉ..." data-placeholder-am="እዚህ ጋር ጽሑፍ ማስገባት ይችላሉ..." data-placeholder-en="You can enter text here..."></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn" data-am="አስገባ" data-en="Submit Application">አስገባ</button>
-        </form>
-    </div>
-</section>  
-
    <!-- UNIFIED SLIDER, NAVIGATION & LANGUAGE SCRIPT -->
 <script>
   // 1. Image Slider Logic (Global Scope)
